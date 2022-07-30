@@ -11,7 +11,7 @@
 }
 
 .home-1__title {
-  @include snfine-ultracond-it;
+  @include sn-reg-it;
   position: absolute;
   text-align: center;
   width: 100%;
@@ -24,6 +24,7 @@
 }
 
 .home-1__btn {
+  @include cd-reg;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,9 +91,6 @@
     }
   }
 }
-
-
-
 
 .home-1__socials-img {
   display: block;
