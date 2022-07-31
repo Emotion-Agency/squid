@@ -1,7 +1,7 @@
 <template>
   <main>
     <header class="header">
-      <div class="container header__wrapper">
+      <div class="header__wrapper">
         <div class="header__left-elem">
           <button class="header__burger">
             <span class="header__line"></span>

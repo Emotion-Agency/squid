@@ -37,7 +37,7 @@
   align-self: center;
   position: relative;
   margin-top: auto;
-  margin-bottom: vw(88);
+  margin-bottom: vw(20);
   max-width: vw(360);
   background-color: transparent;
   color: #777777;
@@ -67,7 +67,8 @@
   bottom: 0;
   display: flex;
   align-items: center;
-  margin-bottom: vw(88);
+  margin-bottom: vw(20);
+  padding-left: vw(65);
 }
 
 .home-1__li {

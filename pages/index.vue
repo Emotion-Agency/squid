@@ -17,32 +17,32 @@ useTransition()
             <IconsArrowDown class="home-1__arrow-img" />
           </span>
         </button>
-        <ul class="home-1__socials">
-          <li class="home-1__li">
-            <a
-              href="#"
-              class="home-1__link"
-              target="_blank"
-              rel="noreferer noopener"
-            >
-              <IconsFacebook class="home-1__socials-img" />
-            </a>
-          </li>
-          <li class="home-1__li">
-            <a
-              href="#"
-              class="home-1__link"
-              target="_blank"
-              rel="noreferer noopener"
-            >
-              <IconsLinkedin class="home-1__socials-img" />
-            </a>
-          </li>
-          <li class="home-1__li">
-            <NuxtLink to="/" class="home-1__link"> contact </NuxtLink>
-          </li>
-        </ul>
       </div>
+      <ul class="home-1__socials">
+        <li class="home-1__li">
+          <a
+            href="#"
+            class="home-1__link"
+            target="_blank"
+            rel="noreferer noopener"
+          >
+            <IconsFacebook class="home-1__socials-img" />
+          </a>
+        </li>
+        <li class="home-1__li">
+          <a
+            href="#"
+            class="home-1__link"
+            target="_blank"
+            rel="noreferer noopener"
+          >
+            <IconsLinkedin class="home-1__socials-img" />
+          </a>
+        </li>
+        <li class="home-1__li">
+          <NuxtLink to="/" class="home-1__link"> contact </NuxtLink>
+        </li>
+      </ul>
     </section>
   </main>
 </template>
