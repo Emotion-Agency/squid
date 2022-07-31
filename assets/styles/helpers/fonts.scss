@@ -18,51 +18,12 @@
   font-weight: 600;
 }
 
-@mixin cd-bold {
-  font-family: 'ClashDisplay', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 700;
-}
-
-// SeriouslyNostalgic
-
-@mixin sn-reg {
-  font-family: 'SeriouslyNostalgic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 400;
-}
-
-// SeriouslyNostalgic Italic
-
-@mixin sn-regcond-it {
-  font-family: 'SeriouslyNostalgic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 400;
-  font-stretch: condensed;
-  font-style: italic;
-}
-
-@mixin sn-ultracond-it {
-  font-family: 'SeriouslyNostalgic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 400;
-  font-stretch: condensed;
-  font-style: italic;
-}
-
 // SeriouslyNostalgicFine
 
 @mixin snfine-reg {
   font-family: 'SeriouslyNostalgicFine', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 400;
-}
-
-@mixin snfine-regcond {
-  font-family: 'SeriouslyNostalgicFine', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 400;
-  font-stretch: condensed;
 }
 
 // SeriouslyNostalgicFine Italic
