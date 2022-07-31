@@ -11,12 +11,12 @@ useTransition()
           JUMP
           <span class="home-1__italic-title"> IN</span>
         </h1>
-        <button class="home-1__btn">
+        <NextPageButton>
           Don’t worry, the water’s fine
           <span class="home-1__arrow">
             <IconsArrowDown class="home-1__arrow-img" />
           </span>
-        </button>
+        </NextPageButton>
       </div>
       <ul class="home-1__socials">
         <li class="home-1__li">

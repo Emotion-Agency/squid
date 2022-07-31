@@ -28,40 +28,6 @@
   font-style: normal;
 }
 
-.home-1__btn {
-  @include cd-reg;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  align-self: center;
-  position: relative;
-  margin-top: auto;
-  margin-bottom: vw(20);
-  max-width: vw(360);
-  background-color: transparent;
-  color: #777777;
-  font-size: vw(15);
-  line-height: 100%;
-
-  &:hover {
-    .home-1__arrow {
-      transform: translateY(6px);
-    }
-  }
-}
-
-.home-1__arrow {
-  transition: transform 0.3s ease;
-  margin-top: vw(20);
-}
-
-.home-1__arrow-img {
-  display: block;
-  width: vw(25);
-  height: vw(12);
-}
-
 .home-1__socials {
   position: absolute;
   bottom: 0;
