@@ -53,8 +53,37 @@
   display: none;
 }
 
+.header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: vw(106);
+  height: vw(46);
+
+  &:hover {
+    .header__logo-img {
+      &--1 {
+        opacity: 0;
+      }
+
+      &--2 {
+        opacity: 1;
+      }
+    }
+  }
+}
+
 .header__logo-img {
   display: block;
+  position: absolute;
+  right: 0;
   width: vw(106);
   height: vw(23);
+  transition: opacity 0.3s ease;
+
+  &--2 {
+    height: vw(46);
+    opacity: 0;
+  }
 }

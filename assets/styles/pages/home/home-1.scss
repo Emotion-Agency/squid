@@ -11,7 +11,7 @@
 }
 
 .home-1__title {
-  @include sn-reg-it;
+  @include snfine-regcond-it;
   position: absolute;
   text-align: center;
   width: 100%;
@@ -21,6 +21,11 @@
   font-size: vw(156);
   line-height: 100%;
   letter-spacing: 8px;
+}
+
+.home-1__italic-title {
+  @include cd-light;
+  font-style: normal;
 }
 
 .home-1__btn {
@@ -76,18 +81,22 @@
     content: "";
     display: block;
     width: 100%;
-    height: 1px;
+    height: 5px;
     background-color: #A7A9AC;
-    transform: scaleX(0);
-    transition: transform .3s ease;
+    opacity: 0;
+    transition: opacity .3s ease;
     margin-top: 2px;
   }
 }
 
 .home-1__li {
+  position: relative;
+
   &:hover {
+    bottom: 10px;
+
     &::after {
-      transform: scaleX(1);
+      opacity: 1;
     }
   }
 }
@@ -99,6 +108,7 @@
 }
 
 .home-1__link {
+  @include snfine-reg-it;
   font-size: vw(23);
   line-height: 100%;
   letter-spacing: 1.15px;

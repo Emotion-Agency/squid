@@ -8,7 +8,8 @@ useTransition()
     <section class="section section--nm home-1">
       <div class="container home-1__wrapper">
         <h1 class="home-1__title">
-          <span class="home-1__italic-title">JUMP </span> IN
+          JUMP
+          <span class="home-1__italic-title"> IN</span>
         </h1>
         <button class="home-1__btn">
           Don’t worry, the water’s fine
@@ -24,7 +25,7 @@ useTransition()
               target="_blank"
               rel="noreferer noopener"
             >
-              <IconsTheFacebook class="home-1__socials-img" />
+              <IconsFacebook class="home-1__socials-img" />
             </a>
           </li>
           <li class="home-1__li">
@@ -34,7 +35,7 @@ useTransition()
               target="_blank"
               rel="noreferer noopener"
             >
-              <IconsTheLinkedin class="home-1__socials-img" />
+              <IconsLinkedin class="home-1__socials-img" />
             </a>
           </li>
           <li class="home-1__li">

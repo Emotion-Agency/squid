@@ -23,11 +23,10 @@
             </li>
           </ul>
         </div>
-        <div class="header__right-elem">
-          <NuxtLink to="/" class="header__logo">
-            <IconsTheLogo class="header__logo-img" />
-          </NuxtLink>
-        </div>
+        <NuxtLink to="/" class="header__logo">
+          <IconsLogo class="header__logo-img header__logo-img--1" />
+          <IconsLogoSquid class="header__logo-img header__logo-img--2" />
+        </NuxtLink>
       </div>
     </header>
   </main>
