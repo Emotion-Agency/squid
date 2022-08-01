@@ -13,8 +13,23 @@ useTransition()
         </h1>
         <NextPageButton>
           Don’t worry, the water’s fine
-          <span class="home-1__arrow">
-            <IconsArrowDown class="home-1__arrow-img" />
+          <span class="next-page-btn__arrow">
+            <IconsArrowDown class="next-page-btn__arrow-img" />
+          </span>
+        </NextPageButton>
+      </div>
+      <TheSocials />
+    </section>
+    <section class="section section--nm home-2">
+      <div class="container home-2__wrapper">
+        <h1 class="home-2__title">
+          DIVE
+          <span class="home-2__italic-title"> DEEP</span>
+        </h1>
+        <NextPageButton>
+          Into uncharted territory
+          <span class="next-page-btn__arrow">
+            <IconsArrowDown class="next-page-btn__arrow-img" />
           </span>
         </NextPageButton>
       </div>

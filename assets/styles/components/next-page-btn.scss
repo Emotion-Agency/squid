@@ -15,18 +15,18 @@
   line-height: 100%;
 
   &:hover {
-    .home-1__arrow {
+    .next-page-btn__arrow {
       transform: translateY(6px);
     }
   }
 }
 
-.home-1__arrow {
+.next-page-btn__arrow {
   transition: transform 0.3s ease;
   margin-top: vw(20);
 }
 
-.home-1__arrow-img {
+.next-page-btn__arrow-img {
   display: block;
   width: vw(25);
   height: vw(12);

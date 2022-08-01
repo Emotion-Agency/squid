@@ -1,0 +1,28 @@
+.home-2 {
+  height: 100vh;
+  position: relative;
+}
+
+.home-2__wrapper {
+  display: flex;
+  position: relative;
+  min-height: 100%;
+  flex-flow: column nowrap;
+}
+
+.home-2__title {
+  @include cd-light;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: vw(156);
+  line-height: 100%;
+  letter-spacing: 8px;
+}
+
+.home-2__italic-title {
+  @include snfine-reg-it;
+}
