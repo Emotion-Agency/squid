@@ -11,12 +11,7 @@ useTransition()
           JUMP
           <span class="home-1__style-title"> IN</span>
         </h1>
-        <NextPageButton>
-          Don’t worry, the water’s fine
-          <span class="next-page-btn__arrow">
-            <IconsArrowDown class="next-page-btn__arrow-img" />
-          </span>
-        </NextPageButton>
+        <NextPageButton> Don’t worry, the water’s fine </NextPageButton>
       </div>
       <TheSocials />
     </section>
@@ -26,12 +21,7 @@ useTransition()
           DIVE
           <span class="home-2__style-title"> DEEP</span>
         </h1>
-        <NextPageButton>
-          Into uncharted territory
-          <span class="next-page-btn__arrow">
-            <IconsArrowDown class="next-page-btn__arrow-img" />
-          </span>
-        </NextPageButton>
+        <NextPageButton> Into uncharted territory </NextPageButton>
       </div>
       <TheSocials />
     </section>
@@ -45,12 +35,7 @@ useTransition()
               SURFACE</span
             >
           </h1>
-          <NextPageButton>
-            This is where we thrive
-            <span class="next-page-btn__arrow">
-              <IconsArrowDown class="next-page-btn__arrow-img" />
-            </span>
-          </NextPageButton>
+          <NextPageButton> This is where we thrive </NextPageButton>
         </div>
         <TheSocials />
       </section>
@@ -67,12 +52,7 @@ useTransition()
             <span class="home-4__style-text">NAVIGATE</span> deep into
             <span class="home-4__style-text">UNCHARTED waters</span>.
           </h1>
-          <NextPageButton>
-            Let’s explore
-            <span class="next-page-btn__arrow">
-              <IconsArrowDown class="next-page-btn__arrow-img" />
-            </span>
-          </NextPageButton>
+          <NextPageButton> Let’s explore </NextPageButton>
         </div>
         <TheSocials />
       </section>
