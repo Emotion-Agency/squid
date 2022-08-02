@@ -1,0 +1,70 @@
+.home-6 {
+  height: 100vh;
+  position: relative;
+  background-color: var(--black);
+  min-width: 100vw;
+}
+
+.home-6__wrapper {
+  min-height: 100%;
+  padding-top: 30vh;
+}
+
+.home-6__text-wrapper {
+  &:nth-child(1) {
+    @include col(1, 5);
+  }
+
+  &:nth-child(2) {
+    @include col(8, 12);
+  }
+}
+
+.home-6__title {
+  @include snfine-reg;
+  color: var(--white);
+  font-size: vw(45);
+  line-height: 100%;
+  letter-spacing: 4.5px;
+}
+
+.home-6__style-title {
+  @include snfine-reg-it;
+}
+
+.home-6__content {
+  padding-left: vw(240);
+}
+
+.home-6__desc {
+  @include cd-reg;
+  color: var(--white);
+  letter-spacing: 2.2px;
+  line-height: 140%;
+  font-size: vw(22);
+  margin-top: vw(68);
+}
+
+.home-6__btn-wrapper {
+  display: flex;
+  align-items: flex-end;
+  margin-top: vw(70);
+}
+
+.home-6__btn {
+  @include cd-semibold;
+  background-color: transparent;
+  color: var(--white);
+  font-size: vw(17);
+  line-height: 100%;
+  letter-spacing: 3.4px;
+  margin-right: vw(4);
+}
+
+.home-6__btn-text {
+  @include snfine-reg-it;
+  color: var(--white);
+  font-size: vw(23);
+  line-height: 100%;
+  letter-spacing: 1.15px;
+}

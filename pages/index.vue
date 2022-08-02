@@ -58,6 +58,42 @@ useTransition()
           <TheAccordion class="home-5__accordion" />
         </div>
       </section>
+      <section class="section section--nm home-6">
+        <div class="container grid home-6__wrapper">
+          <div class="home-6__text-wrapper">
+            <h2 class="home-6__title">
+              THE <span class="home-6__style-title">AGENCY</span>
+            </h2>
+            <div class="home-6__content">
+              <p class="home-6__desc">
+                We’re a hybrid mix of business consultants and creative
+                developers who make the lives of our clients easier. It’s a
+                collaboration of determined, strategic thinkers & doers.
+              </p>
+              <div class="home-6__btn-wrapper">
+                <button class="home-6__btn">LEARN MORE</button>
+                <p class="home-6__btn-text">about us</p>
+              </div>
+            </div>
+          </div>
+          <div class="home-6__text-wrapper">
+            <h2 class="home-6__title">
+              THE <span class="home-6__style-title">EXPERTISE</span>
+            </h2>
+            <div class="home-6__content">
+              <p class="home-6__desc">
+                We inspire innovative business opportunities for our clients by
+                creating smart communications. We go below the surface with
+                stealth instead of splash.
+              </p>
+              <div class="home-6__btn-wrapper">
+                <button class="home-6__btn">LEARN MORE</button>
+                <p class="home-6__btn-text">expertise</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 </template>
