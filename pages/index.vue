@@ -35,7 +35,7 @@ useTransition()
         </div>
       </section>
       <section class="section section--nm home-4">
-        <div class="container home-4__wrapper">
+        <div class="container grid home-4__wrapper">
           <h1 class="home-4__text">
             The first step in
             <span class="home-4__style-text">ELEVATING A BRAND</span> is jumping
