@@ -52,6 +52,12 @@ useTransition()
           </h1>
         </div>
       </section>
+      <section class="section section--nm home-5">
+        <div class="container grid home-5__wrapper">
+          <p class="home-5__rotate-text">WE ARE</p>
+          <TheAccordion class="home-5__accordion" />
+        </div>
+      </section>
     </div>
   </main>
 </template>

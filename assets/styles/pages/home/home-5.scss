@@ -1,0 +1,28 @@
+.home-5 {
+  height: 100vh;
+  position: relative;
+  background-color: var(--black);
+  min-width: 100vw;
+}
+
+.home-5__wrapper {
+  min-height: 100%;
+  padding-top: 22vh;
+}
+
+.home-5__rotate-text {
+  @include cd-semibold;
+  @include col(1, 1);
+  display: flex;
+  justify-content: flex-end;
+  color: var(--white);
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
+  letter-spacing: 4px;
+  line-height: 100%;
+  font-size: vw(20);
+}
+
+.home-5__accordion {
+  @include col(2, 8);
+}
