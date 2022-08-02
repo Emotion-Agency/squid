@@ -6,35 +6,55 @@
 }
 
 .home-4__wrapper {
-  display: flex;
-  position: relative;
   min-height: 100%;
-  flex-flow: column nowrap;
 }
 
 .home-4__text {
   @include cd-reg;
   color: var(--white);
   max-width: vw(1080);
-  position: absolute;
   width: 100%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   font-size: vw(40);
   line-height: 138%;
   letter-spacing: 1.4px;
 }
 
 .home-4__style-text {
-  font-style: normal;
-  opacity: 0.45;
-
-  &--1 {
-    @include cd-light;
+  &:nth-child(1) {
+    @include snfine-reg;
   }
 
-  &--2 {
+  &:nth-child(2) {
+    @include snfine-reg-it;
+  }
+
+  &:nth-child(3) {
+    @include snfine-reg-it;
+  }
+
+  &:nth-child(4) {
     @include snfine-reg;
+  }
+
+  &:nth-child(5) {
+    @include snfine-reg-it;
+  }
+
+  &:nth-child(6) {
+    @include snfine-reg;
+  }
+
+  &:nth-child(7) {
+    @include snfine-reg;
+  }
+
+  &:nth-child(8) {
+    @include snfine-reg;
+  }
+
+  &:nth-child(9) {
+    @include snfine-reg-it;
   }
 }

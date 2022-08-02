@@ -1,0 +1,19 @@
+.bottom-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: vw(20);
+  z-index: 100;
+  width: 100%;
+}
+
+.bottom-nav__socials {
+  @include col(1, 1);
+  position: absolute;
+  left: vw(65);
+}
+
+.bottom-nav__btn {
+  @include col(6, 8);
+}
