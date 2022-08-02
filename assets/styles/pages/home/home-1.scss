@@ -18,6 +18,10 @@
   font-size: vw(156);
   line-height: 100%;
   letter-spacing: 8px;
+
+  @media (max-width: $br1) {
+    font-size: 56px;
+  }
 }
 
 .home-1__style-title {
