@@ -1,6 +1,20 @@
-@include font("ClashDisplay", "ClashDisplay-Light", "300", "normal");
-@include font("ClashDisplay", "ClashDisplay-Regular", "400", "normal");
-@include font("ClashDisplay", "ClashDisplay-Semibold", "600", "normal");
-@include font("SeriouslyNostalgicFine", "SeriouslyNostalgicFn-Regular", "400", "normal");
-@include font("SeriouslyNostalgicFine", "SeriouslyNostalgicFnIt-Cond", "400", "italic");
-@include font("SeriouslyNostalgicFine", "SeriouslyNostalgicFnIt-Reg", "400", "italic");
+@import url('http://fonts.cdnfonts.com/css/clash-display');
+
+@include font(
+  'SeriouslyNostalgicFn-Regular',
+  'SeriouslyNostalgicFn-Regular',
+  '400',
+  'normal'
+);
+@include font(
+  'SeriouslyNostalgicFnIt-Cond',
+  'SeriouslyNostalgicFnIt-Cond',
+  '400',
+  'italic'
+);
+@include font(
+  'SeriouslyNostalgicFnIt-Reg',
+  'SeriouslyNostalgicFnIt-Reg',
+  '400',
+  'italic'
+);
