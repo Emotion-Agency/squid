@@ -8,6 +8,10 @@
 .home-4__wrapper {
   min-height: 100%;
   padding-top: 40vh;
+
+  @media (max-width: $br1) {
+    padding-top: 35vh;
+  }
 }
 
 .home-4__text {
@@ -18,6 +22,16 @@
   font-size: vw(40);
   line-height: 138%;
   letter-spacing: 1.4px;
+
+  @media (max-width: $br1) {
+    max-width: 600px;
+    font-size: 20px;
+  }
+
+  @media (max-width: $br4) {
+    @include col(1, 4);
+    max-width: 100%;
+  }
 }
 
 .home-4__style-text {

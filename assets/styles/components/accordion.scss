@@ -18,6 +18,12 @@
   color: var(--white);
   margin-top: vw(38);
 
+  @media (max-width: $br1) {
+    font-size: 32px;
+    line-height: 100%;
+    margin-top: 40px;
+  }
+
   &--1 {
     margin-top: 0;
   }
@@ -28,6 +34,14 @@
   font-size: vw(24);
   line-height: 124%;
   color: var(--white);
+  text-align: start;
+  margin-top: vw(38);
+
+  @media (max-width: $br1) {
+    font-size: 18px;
+    line-height: 100%;
+    margin-top: 20px;
+  }
 }
 
 .accordion__line {
@@ -35,4 +49,8 @@
   height: 2px;
   background-color: #707070;
   margin-top: vw(38);
+
+  @media (max-width: $br1) {
+    margin-top: 40px;
+  }
 }

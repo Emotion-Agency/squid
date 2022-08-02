@@ -29,13 +29,22 @@
   transform: translate(-50%, -50%);
   font-size: vw(156);
   line-height: 100%;
-  letter-spacing: 8px;
+  letter-spacing: 0.07em;
+
+  @media (max-width: $br1) {
+    font-size: 56px;
+  }
 }
 
 .home-3__style-title {
   font-style: normal;
   font-size: vw(166);
   opacity: 0.45;
+  letter-spacing: 0.07em;
+
+  @media (max-width: $br1) {
+    font-size: 56px;
+  }
 
   &:nth-child(1) {
     @include cd-light;

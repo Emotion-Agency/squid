@@ -17,7 +17,11 @@
   transform: translate(-50%, -50%);
   font-size: vw(156);
   line-height: 100%;
-  letter-spacing: 8px;
+  letter-spacing: 0.07em;
+
+  @media (max-width: $br1) {
+    font-size: 56px;
+  }
 }
 
 .home-2__style-title {

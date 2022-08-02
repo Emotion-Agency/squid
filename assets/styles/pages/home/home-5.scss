@@ -8,6 +8,10 @@
 .home-5__wrapper {
   min-height: 100%;
   padding-top: 22vh;
+
+  @media (max-width: $br1) {
+    padding-top: 12vh;
+  }
 }
 
 .home-5__rotate-text {
@@ -21,8 +25,18 @@
   letter-spacing: 4px;
   line-height: 100%;
   font-size: vw(20);
+
+  @media (max-width: $br1) {
+    @include row(1, 1);
+    font-size: 16px;
+  }
 }
 
 .home-5__accordion {
   @include col(2, 8);
+
+  @media (max-width: $br1) {
+    @include col(1, 12);
+    @include row(2, 2);
+  }
 }
