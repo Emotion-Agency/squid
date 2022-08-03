@@ -6,17 +6,46 @@
 }
 
 .home-6__wrapper {
-  min-height: 100%;
   padding-top: 30vh;
+
+  @media (max-width: $br1) {
+    padding-top: 24vh;
+    row-gap: 60px;
+  }
 }
 
 .home-6__text-wrapper {
+  @media (max-width: $br1) {
+    max-width: 80%;
+  }
+
+  @media (max-width: $br4) {
+    max-width: 100%;
+  }
+
   &:nth-child(1) {
     @include col(1, 5);
+
+    @media (max-width: $br1) {
+      @include col(1, 12);
+    }
+
+    @media (max-width: $br4) {
+      @include col(1, 4);
+    }
   }
 
   &:nth-child(2) {
     @include col(8, 12);
+
+    @media (max-width: $br1) {
+      @include col(1, 12);
+      @include row(2, 2);
+    }
+
+    @media (max-width: $br4) {
+      @include col(1, 4);
+    }
   }
 }
 
@@ -26,6 +55,10 @@
   font-size: vw(45);
   line-height: 100%;
   letter-spacing: 4.5px;
+
+  @media (max-width: $br1) {
+    font-size: 32px;
+  }
 }
 
 .home-6__style-title {
@@ -33,7 +66,9 @@
 }
 
 .home-6__content {
-  padding-left: vw(240);
+  @media (min-width: $br1) {
+    padding-left: vw(240);
+  }
 }
 
 .home-6__desc {
@@ -43,12 +78,21 @@
   line-height: 140%;
   font-size: vw(22);
   margin-top: vw(68);
+
+  @media (max-width: $br1) {
+    font-size: 16px;
+    margin-top: 20px;
+  }
 }
 
 .home-6__btn-wrapper {
   display: flex;
   align-items: flex-end;
   margin-top: vw(70);
+
+  @media (max-width: $br1) {
+    margin-top: 25px;
+  }
 }
 
 .home-6__btn {
@@ -59,6 +103,11 @@
   line-height: 100%;
   letter-spacing: 3.4px;
   margin-right: vw(4);
+
+  @media (max-width: $br1) {
+    font-size: 17px;
+    margin-right: 4px;
+  }
 }
 
 .home-6__btn-text {
@@ -67,4 +116,8 @@
   font-size: vw(23);
   line-height: 100%;
   letter-spacing: 1.15px;
+
+  @media (max-width: $br1) {
+    font-size: 23px;
+  }
 }

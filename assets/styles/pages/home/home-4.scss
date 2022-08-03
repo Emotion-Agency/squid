@@ -7,10 +7,17 @@
 
 .home-4__wrapper {
   min-height: 100%;
-  padding-top: 40vh;
+
+  @media (min-width: $br1) {
+    padding-top: 40vh;
+  }
 
   @media (max-width: $br1) {
-    padding-top: 35vh;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -18,13 +25,20 @@
   @include col(3, 10);
   @include cd-reg;
   color: var(--white);
-  max-width: vw(1030);
   font-size: vw(40);
   line-height: 138%;
   letter-spacing: 1.4px;
 
+  @media (min-width: $br1) {
+    max-width: vw(1030);
+  }
+
   @media (max-width: $br1) {
-    max-width: 600px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 20px;
   }
 

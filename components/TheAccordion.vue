@@ -10,12 +10,12 @@
     </button>
     <button class="accordion__btn">
       <h2 class="accordion__title">STRATEGIZORS</h2>
-      <p class="accordion__text"></p>
+      <p class="accordion__text accordion__text--2"></p>
       <p class="accordion__line"></p>
     </button>
     <button class="accordion__btn">
       <h2 class="accordion__title">CREATORS</h2>
-      <p class="accordion__text"></p>
+      <p class="accordion__text accordion__text--3"></p>
       <p class="accordion__line"></p>
     </button>
   </div>

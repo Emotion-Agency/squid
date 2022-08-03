@@ -37,6 +37,14 @@
   text-align: start;
   margin-top: vw(38);
 
+  &--2 {
+    display: none;
+  }
+
+  &--3 {
+    display: none;
+  }
+
   @media (max-width: $br1) {
     font-size: 18px;
     line-height: 100%;

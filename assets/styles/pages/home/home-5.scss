@@ -7,16 +7,18 @@
 
 .home-5__wrapper {
   min-height: 100%;
-  padding-top: 22vh;
+
+  @media (min-width: $br1) {
+    padding-top: 22vh;
+  }
 
   @media (max-width: $br1) {
-    padding-top: 12vh;
+    padding-top: 26vh;
   }
 }
 
 .home-5__rotate-text {
   @include cd-semibold;
-  @include col(1, 1);
   display: flex;
   justify-content: flex-end;
   color: var(--white);
@@ -25,10 +27,18 @@
   letter-spacing: 4px;
   line-height: 100%;
   font-size: vw(20);
+  position: absolute;
+  left: vw(140);
+  top: 22vh;
 
   @media (max-width: $br1) {
-    @include row(1, 1);
+    left: 60px;
+    top: 12vh;
     font-size: 16px;
+  }
+
+  @media (max-width: $br3) {
+    left: 20px;
   }
 }
 
@@ -37,6 +47,9 @@
 
   @media (max-width: $br1) {
     @include col(1, 12);
-    @include row(2, 2);
+  }
+
+  @media (max-width: $br4) {
+    @include col(1, 4);
   }
 }
