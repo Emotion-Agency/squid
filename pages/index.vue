@@ -94,6 +94,21 @@ useTransition()
           </div>
         </div>
       </section>
+      <section class="section section--nm home-7">
+        <div class="grid home-7__wrapper">
+          <div class="container home-7__top-block">
+            <h2 class="home-7__top-title">
+              Our drive matches<span class="home-7__title-style"> yours</span>.
+            </h2>
+          </div>
+          <div class="container home-7__bottom-block">
+            <h2 class="home-7__bottom-title">
+              YOUR<span class="home-7__title-style"> SUCCESS </span> DETERMINES
+              OURS.
+            </h2>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 </template>
