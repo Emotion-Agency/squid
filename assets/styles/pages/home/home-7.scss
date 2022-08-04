@@ -1,7 +1,6 @@
 .home-7 {
   height: 100vh;
   position: relative;
-  // background-color: var(--black);
   min-width: 100vw;
 }
 
@@ -13,29 +12,37 @@
 
 .home-7__top-block {
   display: flex;
-  align-items: center;
-  height: 50%;
+  height: 100%;
   width: 100%;
   background-color: var(--black);
+
+  @media (max-width: $br1) {
+    align-items: center;
+  }
 }
 
 .home-7__top-title {
   @include cd-reg;
   text-transform: uppercase;
   color: var(--white);
-  font-size: vw(90);
+  font-size: vh(90);
   line-height: 140%;
   letter-spacing: 4.25px;
 
+  @media (min-width: $br1) {
+    position: absolute;
+    top: vh(340);
+  }
+
   @media (max-width: $br1) {
-    font-size: 56px;
+    font-size: 36px;
     line-height: 100%;
   }
 }
 
 .home-7__bottom-block {
-  display: flex;
-  align-items: center;
+  position: absolute;
+  bottom: 0;
   height: 50%;
   width: 100%;
   background-color: var(--white);
@@ -43,26 +50,29 @@
 
 .home-7__bottom-title {
   @include cd-reg;
+  position: relative;
+  top: 9vh;
   text-transform: uppercase;
   color: var(--black);
-  font-size: vw(90);
+  font-size: vh(90);
   line-height: 140%;
   letter-spacing: 4.25px;
 
   @media (max-width: $br1) {
-    font-size: 56px;
+    top: 4vh;
+    font-size: 36px;
     line-height: 100%;
   }
 }
 
 .home-7__title-style {
   @include snfine-reg;
-  font-size: vw(85);
+  font-size: vh(85);
   line-height: 150%;
   letter-spacing: 4.5px;
 
   @media (max-width: $br1) {
-    font-size: 56px;
+    font-size: 36px;
     line-height: 100%;
   }
 }
