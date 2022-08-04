@@ -111,5 +111,68 @@ useTransition()
         </div>
       </section>
     </div>
+    <section class="section section--nm home-8">
+      <div class="home-8__wrapper">
+        <div class="container home-8__text">
+          <h1 class="home-8__title">CASE STUDIES</h1>
+          <p class="home-8__desc">
+            Lorem ipsum dolor, blah words and a little blurb about our select
+            case studies.
+          </p>
+        </div>
+      </div>
+      <ul class="grid container home-8__img-list">
+        <li class="home-8__img-li">
+          <img src="/images/home/1.jpg" alt="Image" />
+          <div class="home-8__text-wrapper">
+            <p class="home-8__name">COSTA FARMS</p>
+            <div class="home-8__line-wrapper">
+              <span class="home-8__line"></span>
+            </div>
+            <NuxtLink to="/" class="home-link"> view case study </NuxtLink>
+          </div>
+        </li>
+        <li class="home-8__img-li">
+          <img src="/images/home/2.jpg" alt="Image" />
+          <div class="home-8__text-wrapper">
+            <p class="home-8__name">NOONAN GOLF CO</p>
+            <div class="home-8__line-wrapper">
+              <span class="home-8__line"></span>
+            </div>
+            <NuxtLink to="/" class="home-link"> view case study </NuxtLink>
+          </div>
+        </li>
+        <li class="home-8__img-li">
+          <img src="/images/home/3.jpg" alt="Image" />
+          <div class="home-8__text-wrapper">
+            <p class="home-8__name">NULEEV</p>
+            <div class="home-8__line-wrapper">
+              <span class="home-8__line"></span>
+            </div>
+            <NuxtLink to="/" class="home-link"> view case study </NuxtLink>
+          </div>
+        </li>
+        <li class="home-8__img-li">
+          <img src="/images/home/4.jpg" alt="Image" />
+          <div class="home-8__text-wrapper">
+            <p class="home-8__name">GREATWATERS</p>
+            <div class="home-8__line-wrapper">
+              <span class="home-8__line"></span>
+            </div>
+            <NuxtLink to="/" class="home-link"> view case study </NuxtLink>
+          </div>
+        </li>
+        <li class="home-8__img-li">
+          <img src="/images/home/5.jpg" alt="Image" />
+          <div class="home-8__text-wrapper">
+            <p class="home-8__name">FITVINE WINE</p>
+            <div class="home-8__line-wrapper">
+              <span class="home-8__line"></span>
+            </div>
+            <NuxtLink to="/" class="home-link"> view case study </NuxtLink>
+          </div>
+        </li>
+      </ul>
+    </section>
   </main>
 </template>
