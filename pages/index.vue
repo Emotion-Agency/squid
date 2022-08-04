@@ -57,10 +57,6 @@ useTransition()
           <TheAccordion class="home-5__accordion">
             <p class="home-5__rotate-text">WE ARE</p>
           </TheAccordion>
-          <!-- <TheAccordion class="home-5__accordion">
-
-            
-            <TheAccordion/> -->
         </div>
       </section>
       <section class="section section--nm home-6">
