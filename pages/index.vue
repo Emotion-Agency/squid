@@ -54,8 +54,13 @@ useTransition()
       </section>
       <section class="section section--nm home-5">
         <div class="container grid home-5__wrapper">
-          <p class="home-5__rotate-text">WE ARE</p>
-          <TheAccordion class="home-5__accordion" />
+          <TheAccordion class="home-5__accordion">
+            <p class="home-5__rotate-text">WE ARE</p>
+          </TheAccordion>
+          <!-- <TheAccordion class="home-5__accordion">
+
+            
+            <TheAccordion/> -->
         </div>
       </section>
       <section class="section section--nm home-6">

@@ -1,5 +1,6 @@
 <template>
   <div class="accordion">
+    <slot></slot>
     <button class="accordion__btn">
       <h2 class="accordion__title accordion__title--1">CHALLENGERS</h2>
       <p class="accordion__text">

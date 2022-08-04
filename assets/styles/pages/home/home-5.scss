@@ -6,34 +6,29 @@
 }
 
 .home-5__wrapper {
-  min-height: 100%;
-
-  @media (min-width: $br1) {
-    padding-top: 22vh;
-  }
-
-  @media (max-width: $br1) {
-    padding-top: 26vh;
-  }
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
 }
 
 .home-5__rotate-text {
   @include cd-semibold;
-  display: flex;
-  justify-content: flex-end;
+  // display: flex;
+  // justify-content: flex-end;
   color: var(--white);
-  writing-mode: tb-rl;
-  transform: rotate(-180deg);
+  // writing-mode: tb-rl;
+  transform: rotate(-90deg);
   letter-spacing: 4px;
   line-height: 100%;
   font-size: vw(20);
   position: absolute;
-  left: vw(140);
-  top: 22vh;
+  left: vw(-180);
+  top: 4vh;
 
   @media (max-width: $br1) {
-    left: 60px;
-    top: 12vh;
+    left: -38px;
+    top: -10vh;
     font-size: 16px;
   }
 
