@@ -129,7 +129,7 @@ useTransition()
             <div class="home-8__line-wrapper">
               <span class="home-8__line"></span>
             </div>
-            <NuxtLink to="/" class="home-link"> view case study </NuxtLink>
+            <NuxtLink to="/" class="home-8__link"> view case study </NuxtLink>
           </div>
         </li>
         <li class="home-8__img-li">
@@ -139,7 +139,7 @@ useTransition()
             <div class="home-8__line-wrapper">
               <span class="home-8__line"></span>
             </div>
-            <NuxtLink to="/" class="home-link"> view case study </NuxtLink>
+            <NuxtLink to="/" class="home-8__link"> view case study </NuxtLink>
           </div>
         </li>
         <li class="home-8__img-li">
@@ -149,7 +149,7 @@ useTransition()
             <div class="home-8__line-wrapper">
               <span class="home-8__line"></span>
             </div>
-            <NuxtLink to="/" class="home-link"> view case study </NuxtLink>
+            <NuxtLink to="/" class="home-8__link"> view case study </NuxtLink>
           </div>
         </li>
         <li class="home-8__img-li">
@@ -159,7 +159,7 @@ useTransition()
             <div class="home-8__line-wrapper">
               <span class="home-8__line"></span>
             </div>
-            <NuxtLink to="/" class="home-link"> view case study </NuxtLink>
+            <NuxtLink to="/" class="home-8__link"> view case study </NuxtLink>
           </div>
         </li>
         <li class="home-8__img-li">
@@ -169,10 +169,58 @@ useTransition()
             <div class="home-8__line-wrapper">
               <span class="home-8__line"></span>
             </div>
-            <NuxtLink to="/" class="home-link"> view case study </NuxtLink>
+            <NuxtLink to="/" class="home-8__link"> view case study </NuxtLink>
           </div>
         </li>
       </ul>
+    </section>
+    <section class="section section--nm home-9">
+      <div class="container home-9__wrapper">
+        <h2 class="home-9__title">SOME CLIENTS WE’VE HELPED</h2>
+        <ul class="home-9__list">
+          <li class="home-9__li">
+            <NuxtLink to="/" class="home-9__link">
+              White Claw Hard Seltzer
+            </NuxtLink>
+          </li>
+          <li class="home-9__li">
+            <NuxtLink to="/" class="home-9__link">
+              American gem trade association
+            </NuxtLink>
+          </li>
+          <li class="home-9__li">
+            <NuxtLink to="/" class="home-9__link"> ARCTIC CAT </NuxtLink>
+          </li>
+          <li class="home-9__li">
+            <NuxtLink to="/" class="home-9__link">
+              LUCE LINE BREWING CO
+            </NuxtLink>
+          </li>
+          <li class="home-9__li">
+            <NuxtLink to="/" class="home-9__link">
+              LUCE LINE BREWING CO
+            </NuxtLink>
+          </li>
+          <li class="home-9__li">
+            <NuxtLink to="/" class="home-9__link">
+              American gem trade association
+            </NuxtLink>
+          </li>
+          <li class="home-9__li">
+            <NuxtLink to="/" class="home-9__link"> ARCTIC CAT </NuxtLink>
+          </li>
+          <li class="home-9__li">
+            <NuxtLink to="/" class="home-9__link">
+              White Claw Hard Seltzer
+            </NuxtLink>
+          </li>
+          <li class="home-9__li">
+            <NuxtLink to="/" class="home-9__link">
+              LUCE LINE BREWING CO
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
     </section>
   </main>
 </template>

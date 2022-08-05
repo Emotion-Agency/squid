@@ -4,6 +4,7 @@
 
   @media (max-width: $br1) {
     padding-top: 120px;
+    padding-bottom: 120px;
   }
 }
 
@@ -174,7 +175,7 @@
   background-color: #707070;
 }
 
-.home-link {
+.home-8__link {
   @include snfine-reg-it;
   font-size: vw(23);
   line-height: 100%;
