@@ -221,7 +221,7 @@ useTransition()
           </li>
         </ul>
       </div>
-      <TheContacts />
+      <TheMenu />
     </section>
   </main>
 </template>

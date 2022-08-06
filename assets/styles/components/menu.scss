@@ -1,0 +1,45 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 90;
+  background-color: #EE3441;
+}
+
+.menu__list {
+  position: relative;
+  @include col(2, 12);
+
+  @media (max-width: $br4) {
+    @include col(1, 4);
+  }
+}
+
+.menu__li {
+  margin-top: vw(10);
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  @media (max-width: $br1) {
+    margin-top: 32px;
+  }
+}
+
+.menu__text {
+  @include cd-reg;
+  font-size: vw(90);
+  line-height: 124%;
+  color: var(--white);
+
+  @media (max-width: $br1) {
+    font-size: 36px;
+    line-height: 100%;
+  }
+}
