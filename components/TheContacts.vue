@@ -23,31 +23,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { iInputData } from '~~/composables/input'
-
-const $inputs = ref([])
-const formData = reactive({
-  hasErrors: true,
-  inputs: [
-    {
-      required: true,
-      id: 'email',
-      name: 'Email',
-      label: 'hello@agencysquid.com',
-      type: 'email',
-      validation: 'email',
-      validationText: 'incorrect email',
-      error: true,
-      value: '',
-    },
-  ],
-})
-
-const onInputValue = (data: iInputData) => {
-  const idx = formData.inputs.findIndex(el => el.id === data.id)
-  formData.inputs[idx].value = data.value
-  formData.inputs[idx].error = data.error
-}
-</script>
