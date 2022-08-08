@@ -18,7 +18,11 @@
       </div>
       <div class="contacts__place">
         <h2 class="contacts__title">Office</h2>
-        <p class="conctacts__info">2521 27th Ave S Minneapolis MN 55406</p>
+        <p class="conctacts__info">
+          <a href="#" target="_blank" rel="noreferer noopener">
+            2521 27th Ave S Minneapolis MN 55406
+          </a>
+        </p>
       </div>
     </div>
   </div>
