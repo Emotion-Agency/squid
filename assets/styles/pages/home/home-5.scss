@@ -1,8 +1,19 @@
 .home-5 {
-  height: 100vh;
   position: relative;
   background-color: var(--black);
-  min-width: 100vw;
+
+  @media (min-width: $br1) {
+    height: 100vh;
+    min-width: 100vw;
+  }
+
+  @media (max-width: $br1) {
+    padding-top: 200px;
+  }
+
+  @media (max-width: $br3) {
+    padding-top: 120px;
+  }
 }
 
 .home-5__wrapper {

@@ -123,7 +123,7 @@ useTransition()
       </div>
       <ul class="grid container home-8__img-list">
         <li class="home-8__img-li">
-          <img src="/images/home/1.jpg" alt="Image" />
+          <TheImage src="/images/home/1.jpg" alt="Image" />
           <div class="home-8__text-wrapper">
             <p class="home-8__name">COSTA FARMS</p>
             <div class="home-8__line-wrapper">
@@ -133,7 +133,7 @@ useTransition()
           </div>
         </li>
         <li class="home-8__img-li">
-          <img src="/images/home/2.jpg" alt="Image" />
+          <TheImage src="/images/home/2.jpg" alt="Image" />
           <div class="home-8__text-wrapper">
             <p class="home-8__name">NOONAN GOLF CO</p>
             <div class="home-8__line-wrapper">
@@ -143,7 +143,7 @@ useTransition()
           </div>
         </li>
         <li class="home-8__img-li">
-          <img src="/images/home/3.jpg" alt="Image" />
+          <TheImage src="/images/home/3.jpg" alt="Image" />
           <div class="home-8__text-wrapper">
             <p class="home-8__name">NULEEV</p>
             <div class="home-8__line-wrapper">
@@ -153,7 +153,7 @@ useTransition()
           </div>
         </li>
         <li class="home-8__img-li">
-          <img src="/images/home/4.jpg" alt="Image" />
+          <TheImage src="/images/home/4.jpg" alt="Image" />
           <div class="home-8__text-wrapper">
             <p class="home-8__name">GREATWATERS</p>
             <div class="home-8__line-wrapper">
@@ -163,7 +163,7 @@ useTransition()
           </div>
         </li>
         <li class="home-8__img-li">
-          <img src="/images/home/5.jpg" alt="Image" />
+          <TheImage src="/images/home/5.jpg" alt="Image" />
           <div class="home-8__text-wrapper">
             <p class="home-8__name">FITVINE WINE</p>
             <div class="home-8__line-wrapper">
@@ -176,50 +176,84 @@ useTransition()
     </section>
     <section class="section section--nm home-9">
       <div class="container home-9__wrapper">
-        <h2 class="home-9__title">SOME CLIENTS WE’VE HELPED</h2>
-        <ul class="home-9__list">
-          <li class="home-9__li">
-            <NuxtLink to="/" class="home-9__link">
-              White Claw Hard Seltzer
-            </NuxtLink>
-          </li>
-          <li class="home-9__li">
-            <NuxtLink to="/" class="home-9__link">
-              American gem trade association
-            </NuxtLink>
-          </li>
-          <li class="home-9__li">
-            <NuxtLink to="/" class="home-9__link"> ARCTIC CAT </NuxtLink>
-          </li>
-          <li class="home-9__li">
-            <NuxtLink to="/" class="home-9__link">
-              LUCE LINE BREWING CO
-            </NuxtLink>
-          </li>
-          <li class="home-9__li">
-            <NuxtLink to="/" class="home-9__link">
-              LUCE LINE BREWING CO
-            </NuxtLink>
-          </li>
-          <li class="home-9__li">
-            <NuxtLink to="/" class="home-9__link">
-              American gem trade association
-            </NuxtLink>
-          </li>
-          <li class="home-9__li">
-            <NuxtLink to="/" class="home-9__link"> ARCTIC CAT </NuxtLink>
-          </li>
-          <li class="home-9__li">
-            <NuxtLink to="/" class="home-9__link">
-              White Claw Hard Seltzer
-            </NuxtLink>
-          </li>
-          <li class="home-9__li">
-            <NuxtLink to="/" class="home-9__link">
-              LUCE LINE BREWING CO
-            </NuxtLink>
-          </li>
-        </ul>
+        <div class="home-9__title-wrapper">
+          <h2 class="home-9__title">SOME CLIENTS WE’VE HELPED</h2>
+        </div>
+        <div class="home-9__list-wrapper">
+          <ul class="home-9__list">
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                White Claw Hard Seltzer
+              </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                American gem trade association
+              </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link"> ARCTIC CAT </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                LUCE LINE BREWING CO
+              </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                LUCE LINE BREWING CO
+              </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                American gem trade association
+              </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link"> ARCTIC CAT </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                White Claw Hard Seltzer
+              </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                LUCE LINE BREWING CO
+              </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                LUCE LINE BREWING CO
+              </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                LUCE LINE BREWING CO
+              </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                LUCE LINE BREWING CO
+              </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                LUCE LINE BREWING CO
+              </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                LUCE LINE BREWING CO
+              </NuxtLink>
+            </li>
+            <li class="home-9__li">
+              <NuxtLink to="/" class="home-9__link">
+                LUCE LINE BREWING CO
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>

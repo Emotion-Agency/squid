@@ -1,8 +1,10 @@
 .wrapper {
-  max-width: 100vw;
-  overflow-x: auto;
-  display: flex;
-  flex-wrap: nowrap;
+  @media (min-width: $br1) {
+    max-width: 100vw;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+  }
 }
 
 .home-3 {
