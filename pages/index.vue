@@ -256,5 +256,6 @@ useTransition()
         </div>
       </div>
     </section>
+    <TheContacts/>
   </main>
 </template>
