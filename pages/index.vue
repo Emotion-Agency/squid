@@ -221,7 +221,6 @@ useTransition()
           </li>
         </ul>
       </div>
-      <TheMenu />
     </section>
   </main>
 </template>
