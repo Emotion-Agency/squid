@@ -21,13 +21,13 @@
 .expertise-5__rotate-text {
   @include cd-semibold;
   color: var(--white);
-  transform: rotate(-90deg);
   letter-spacing: 4px;
   line-height: 100%;
   width: fit-content;
 
   @media (min-width: $br1) {
     @include col(1, 1);
+    transform: rotate(-90deg);
     position: relative;
     top: vw(124);
     left: vw(-370);
@@ -36,9 +36,7 @@
 
   @media (max-width: $br1) {
     position: relative;
-    height: 100px;
-    left: -32px;
-    top: -65px;
+    margin-bottom: 40px;
     font-size: 16px;
   }
 }
