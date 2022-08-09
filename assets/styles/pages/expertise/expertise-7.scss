@@ -1,0 +1,57 @@
+.expertise-7 {
+  position: relative;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.expertise-7__wrapper {
+  height: 100%;
+}
+
+.expertise-7__text-wrapper {
+  row-gap: vw(60);
+
+  @media (max-width: $br1) {
+    row-gap: 20px;
+  }
+}
+
+.expertise-7__title {
+  @include snfine-reg;
+  @include col(1, 7);
+  font-size: vw(120);
+  line-height: 100%;
+  text-transform: uppercase;
+
+  @media (max-width: $br1) {
+    font-size: 56px;
+  }
+
+  @media (max-width: $br2) {
+    @include col(1, 12);
+  }
+
+  @media (max-width: $br4) {
+    @include col(1, 4);
+  }
+}
+
+.expertise-7__desc {
+  @include cd-reg;
+  @include col(3, 10);
+  @include row(2, 2);
+  font-size: vw(40);
+  line-height: 140%;
+
+  @media (max-width: $br1) {
+    font-size: 20px;
+  }
+
+  @media (max-width: $br2) {
+    @include col(1, 12);
+  }
+
+  @media (max-width: $br4) {
+    @include col(1, 4);
+  }
+}

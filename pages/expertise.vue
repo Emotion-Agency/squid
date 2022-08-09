@@ -78,10 +78,29 @@ useTransition()
         </p>
       </div>
     </section>
-
     <section class="section expertise-7">
       <div class="container expertise-7__wrapper">
-        <div class="grid expertise-7__text-wrapper"></div>
+        <div class="grid expertise-7__text-wrapper">
+          <h2 class="expertise-7__title">A DESIGN AGENCY WITH A GAMEPLAN.</h2>
+          <p class="expertise-7__desc">
+            Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui.
+            Etiam porta sem malesuada magna mollis euismod. Etiam porta sem
+            malesuada magna mollis euismod. Vivamus sagittis lacus vel augue
+            laore.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section expertise-8">
+      <div class="container expertise-8__wrapper">
+        <button class="expertise-8__btn">
+          <span class="expertise-8__text">Step One</span>
+          <span class="expertise-8__text">CONTACT US</span>
+          <span class="expertise-8__arrow">
+            <IconsArrowBtnDown />
+          </span>
+        </button>
       </div>
     </section>
   </main>
