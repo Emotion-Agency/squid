@@ -1,5 +1,14 @@
 .about-9 {
   position: relative;
+  padding-bottom: vw(300);
+
+  @media (max-width: $br1) {
+    padding-bottom: 200px;
+  }
+
+  @media (max-width: $br3) {
+    padding-bottom: 120px;
+  }
 }
 
 .about-9__wrapper {

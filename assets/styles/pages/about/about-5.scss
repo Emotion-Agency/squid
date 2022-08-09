@@ -30,8 +30,17 @@
     position: absolute;
     max-width: 246px;
     top: -62px;
-    right: 0;
+    left: 120px;
     font-size: 52px;
+  }
+
+  @media (max-width: $br3) {
+    left: 80px;
+  }
+
+  @media (max-width: $br4) {
+    right: 0;
+    left: unset;
   }
 }
 
