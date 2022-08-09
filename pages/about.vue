@@ -34,5 +34,34 @@ useTransition()
         <TheImage class="about-3__img" src="/images/about/1.jpg" alt="Image" />
       </div>
     </section>
+    <section class="section about-4">
+      <div class="container about-4__wrapper">
+        <h2 class="about-4__title">A LOOK INSIDE</h2>
+        <div class="about-4__list-wrapper">
+          <ul class="about-4__list">
+            <li class="about-4__li">
+              <h3 class="about-4__block-title">OUR PHILOSOPHY</h3>
+              <p class="about-4__desc">
+                We are changing the standard of agency culture by putting the
+                well-being of the person first. We respect, appreciate, and
+                cheer-on our employees in all aspects of their lives as we
+                understand that without them, we wouldn’t be successful.
+              </p>
+            </li>
+            <li class="about-4__li">
+              <h3 class="about-4__block-title">OUR VALUES</h3>
+              <p class="about-4__desc">
+                We believe that mental health is the foundation for purposeful
+                thinking, successful creative, and a positive work environment.
+                In order for everyone to bring their best selves and best work
+                to the agency, we understand that we need our team to be
+                mentally nourished, personally supported, and occupationally
+                fulfilled.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
