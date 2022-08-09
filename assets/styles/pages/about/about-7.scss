@@ -1,0 +1,48 @@
+.about-7 {
+  position: relative;
+}
+
+.about-7__wrapper {
+  height: 100%;
+}
+
+.about-7__content {
+  position: relative;
+
+  @media (max-width: $br1) {
+    row-gap: 40px;
+  }
+}
+
+.about-7__img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+
+  &:nth-of-type(1) {
+    @include col(1, 5);
+    @include row(2, 2);
+
+    @media (max-width: $br3) {
+      @include col(1, 12);
+    }
+
+    @media (max-width: $br4) {
+      @include col(1, 4);
+    }
+  }
+
+  &:nth-of-type(2) {
+    @include col(8, 12);
+    @include row(2, 2);
+
+    @media (max-width: $br3) {
+      @include col(1, 12);
+      @include row(3, 3);
+    }
+
+    @media (max-width: $br4) {
+      @include col(1, 4);
+    }
+  }
+}

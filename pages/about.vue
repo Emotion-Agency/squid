@@ -94,5 +94,60 @@ useTransition()
         </div>
       </div>
     </section>
+    <section class="section about-7">
+      <div class="container about-7__wrapper">
+        <div class="grid about-7__content">
+          <TheImage
+            class="about-7__img"
+            src="/images/about/4.jpg"
+            alt="Image"
+          />
+          <TheImage
+            class="about-7__img"
+            src="/images/about/5.jpg"
+            alt="Image"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="section about-8">
+      <div class="container about-8__wrapper">
+        <div class="grid about-8__content-wrapper">
+          <h3 class="about-8__title">
+            WE ARE <span class="about-8__style-title"> COLLABORATORS</span>
+          </h3>
+          <p class="about-8__desc">
+            We collaborate as a team to gather perspectives from all walks of
+            life. Our multi-generational group has different viewpoints,
+            cultural backgrounds, opinions, upbringings and life experiences,
+            which makes us an amazingly diverse group of thinkers and doers. We
+            all share. We all listen. We all contribute to the success of the
+            Agency.
+          </p>
+          <h3 class="about-8__title">
+            WE ARE <span class="about-8__style-title"> VISIONARIES</span>
+          </h3>
+          <p class="about-8__desc">
+            We think big and sometimes even bigger. We envision the impossible
+            and make it possible. We problem-solve by thinking creatively,
+            divergently, laterally, revolutionarily and unconventionally. In a
+            world where “everything’s been done”, we pride ourselves in
+            accepting that challenge.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section about-9">
+      <div class="container about-9__wrapper">
+        <div class="grid about-9__content">
+          <h2 class="about-9__title">YEARNING FOR MORE?</h2>
+        </div>
+        <div class="about-9__text-wrapper">
+          <p class="about-9__text">Chyeah</p>
+          <p class="about-9__text">Definitely</p>
+          <p class="about-9__text">Yerp</p>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
