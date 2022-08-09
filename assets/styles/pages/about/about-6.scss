@@ -1,0 +1,51 @@
+.about-6 {
+  position: relative;
+}
+
+.about-6__wrapper {
+  height: 100%;
+}
+
+.about-6__title {
+  @include cd-semibold;
+  @include col(3, 9);
+  font-size: vw(40);
+  line-height: 100%;
+  text-transform: uppercase;
+
+  @media (max-width: $br1) {
+    @include col(3, 10);
+    font-size: 32px;
+  }
+
+  @media (max-width: $br3) {
+    @include col(1, 12);
+  }
+
+  @media (max-width: $br4) {
+    @include col(1, 4);
+  }
+}
+
+.about-6__text {
+  @include cd-reg;
+  @include col(3, 9);
+  width: 100%;
+  font-size: vw(40);
+  line-height: 140%;
+  margin-top: vw(16);
+
+  @media (max-width: $br1) {
+    @include col(3, 10);
+    font-size: 20px;
+    margin-top: 16px;
+  }
+
+  @media (max-width: $br3) {
+    @include col(1, 12);
+  }
+
+  @media (max-width: $br4) {
+    @include col(1, 4);
+  }
+}

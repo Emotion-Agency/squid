@@ -18,7 +18,7 @@ useTransition()
     </section>
     <section class="section about-2">
       <div class="container about-2__wrapper">
-        <div class="about-2__text-wrapper">
+        <div class="grid about-2__text-wrapper">
           <p class="about-2__text">
             We are an industry-agnostic agency that focuses on doing great work
             for great people. We think big. We think smart. We ask the tough
@@ -77,6 +77,20 @@ useTransition()
             src="/images/about/3.jpg"
             alt="Image"
           />
+        </div>
+      </div>
+    </section>
+    <section class="section about-6">
+      <div class="container about-6__wrapper">
+        <div class="grid about-6__text-wrapper">
+          <h2 class="about-6__title">WE ARE ENTREPRENEURS</h2>
+          <p class="about-6__text">
+            Our seats are filled with thinkers, builders and creators who are
+            always hungry for more. We fully support and encourage different
+            side hustles and endeavors that feed the soul. By contributing time
+            for our personal businesses and passion projects, our cups
+            continuously get filled, all-the-while, attaining personal growth.
+          </p>
         </div>
       </div>
     </section>
