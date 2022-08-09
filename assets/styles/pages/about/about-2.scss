@@ -1,0 +1,31 @@
+.about-2 {
+  position: relative;
+}
+
+.about-2__wrapper {
+  height: 100%;
+}
+
+.about-2__text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.about-2__text {
+  @include cd-reg;
+  max-width: vw(1037);
+  width: 100%;
+  font-size: vw(40);
+  line-height: 140%;
+
+  @media (max-width: $br1) {
+    max-width: 70%;
+    font-size: 20px;
+  }
+
+  @media (max-width: $br3) {
+    max-width: 100%;
+  }
+}

@@ -23,7 +23,12 @@
   letter-spacing: 0.05em;
 
   @media (max-width: $br1) {
-    max-width: 335px;
+    max-width: 70%;
+    font-size: 80px;
+  }
+
+  @media (max-width: $br4) {
+    max-width: 100%;
     font-size: 52px;
   }
 }

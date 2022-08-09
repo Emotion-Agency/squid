@@ -51,9 +51,11 @@
 
 .section {
   padding-top: vw(300);
+  padding-bottom: vw(300);
 
   &--nm {
     padding-top: 0;
+    padding-bottom: 0;
   }
 
   &--pb {
@@ -62,9 +64,11 @@
 
   @media (max-width: $br1) {
     padding-top: 200px;
+    padding-bottom: 200px;
 
     &--nm {
       padding-top: 0;
+      padding-bottom: 0;
     }
 
     &--pb {
@@ -74,9 +78,11 @@
 
   @media (max-width: $br3) {
     padding-top: 120px;
+    padding-bottom: 120px;
 
     &--nm {
       padding-top: 0;
+      padding-bottom: 0;
     }
 
     &--pb {

@@ -19,6 +19,7 @@ body {
   position: relative;
   overscroll-behavior-y: none;
   @include smooth-font;
+
   @media (min-width: 1060px) {
     overflow: hidden;
   }
@@ -41,6 +42,7 @@ body {
 .page-leave-active {
   transition: all 0.2s;
 }
+
 .page-enter,
 .page-leave-to {
   opacity: 0;
