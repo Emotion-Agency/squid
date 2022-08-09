@@ -1,0 +1,23 @@
+.expertise-3 {
+  position: relative;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.expertise-3__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.expertise-3__img {
+  display: block;
+  width: vw(284);
+  height: vw(284);
+
+  @media (max-width: $br1) {
+    width: 142px;
+    height: 142px;
+  }
+}

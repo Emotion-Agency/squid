@@ -1,0 +1,45 @@
+.expertise-6 {
+  position: relative;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.expertise-6__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+
+  @media (max-width: $br1) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.expertise-6__title {
+  @include cd-reg;
+  font-size: vw(90);
+  line-height: 100%;
+
+  @media (max-width: $br1) {
+    font-size: 40px;
+  }
+}
+
+.expertise-6__text {
+  @include cd-semibold;
+  font-size: vw(50);
+  line-height: 130%;
+  letter-spacing: -0.01em;
+  max-width: vw(950);
+
+  @media (max-width: $br1) {
+    font-size: 24px;
+    max-width: 60%;
+    margin-top: 20px;
+  }
+
+  @media (max-width: $br3) {
+    max-width: 100%;
+  }
+}
