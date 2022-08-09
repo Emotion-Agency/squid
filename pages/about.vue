@@ -63,5 +63,22 @@ useTransition()
         </div>
       </div>
     </section>
+    <section class="section about-5">
+      <div class="container about-5__wrapper">
+        <div class="grid about-5__content">
+          <h2 class="about-5__title">WE DO GREAT WORK WITH GREAT PEOPLE.</h2>
+          <TheImage
+            class="about-5__img"
+            src="/images/about/2.jpg"
+            alt="Image"
+          />
+          <TheImage
+            class="about-5__img"
+            src="/images/about/3.jpg"
+            alt="Image"
+          />
+        </div>
+      </div>
+    </section>
   </main>
 </template>
