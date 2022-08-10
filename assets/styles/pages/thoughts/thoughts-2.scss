@@ -4,6 +4,15 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding-bottom: vw(300);
+
+  @media (max-width: $br1) {
+    padding-bottom: 200px;
+  }
+
+  @media (max-width: $br3) {
+    padding-bottom: 120px;
+  }
 }
 
 .thoughts-2__title {
@@ -200,5 +209,18 @@
   @media (max-width: $br1) {
     margin-top: 12px;
     font-size: 14px;
+  }
+}
+
+.thoughts-2__posts-btn {
+  @include cd-reg;
+  background-color: transparent;
+  font-size: vw(30);
+  line-height: 100%;
+  text-decoration-line: underline;
+  margin-top: vw(236);
+
+  @media (max-width: $br1) {
+    font-size: 20px;
   }
 }

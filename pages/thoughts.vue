@@ -229,6 +229,7 @@ useTransition()
             </div>
           </li>
         </ul>
+        <button class="thoughts-2__posts-btn">VIEW OLDER POSTS</button>
       </div>
     </section>
   </main>
