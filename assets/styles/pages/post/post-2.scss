@@ -1,0 +1,21 @@
+.post-1 {
+  position: relative;
+
+  @media (min-width: $br1) {
+    height: 100vh;
+  }
+}
+
+.post-2__img {
+  display: block;
+  width: 100%;
+  
+  @media (min-width: $br1) {
+    object-fit: cover;
+    height: 100vh;
+  }
+  
+  @media (max-width: $br1) {
+    height: 100%;
+  }
+}
