@@ -1,0 +1,65 @@
+.thoughts-2 {
+  @media (min-width: $br1) {
+    height: 100vh;
+  }
+}
+
+.thoughts-2__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.thoughts-2__title {
+  @include cd-semibold;
+  font-size: vw(22);
+  line-height: 100%;
+  letter-spacing: 4.4px;
+  text-transform: uppercase;
+
+  @media (max-width: $br1) {
+    font-size: 16px;
+    letter-spacing: 0.2em;
+  }
+}
+
+.thoughts-2__filter {
+  @include snfine-reg;
+  font-size: vw(110);
+  line-height: 100%;
+  text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: vw(90);
+  color: #C6C6C6;
+
+  @media (max-width: $br1) {
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 40px;
+  }
+}
+
+.thoughts-2__btn {
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+
+  &--active {
+    color: var(--black);
+    text-decoration: underline;
+  }
+}
+
+.thoughts-2__line {
+  padding-left: vw(8);
+  padding-right: vw(8);
+
+  @media (max-width: $br1) {
+    display: none;
+  }
+}

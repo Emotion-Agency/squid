@@ -30,5 +30,24 @@ useTransition()
         </div>
       </div>
     </section>
+    <section class="section thoughts-2">
+      <div class="container thoughts-2__wrapper">
+        <p class="thoughts-2__title">CATEGORIES</p>
+        <div class="thoughts-2__filter">
+          <button class="thoughts-2__btn">CASE STUDIES</button>
+          <div class="thoughts-2__line">/</div>
+          <button class="thoughts-2__btn">LATEST WORK</button>
+          <div class="thoughts-2__line">/</div>
+          <button class="thoughts-2__btn">AGENCY</button>
+          <button class="thoughts-2__btn">PROJECTS</button>
+          <div class="thoughts-2__line">/</div>
+          <button class="thoughts-2__btn">EXPERTISE</button>
+          <div class="thoughts-2__line">/</div>
+          <button class="thoughts-2__btn">MISC</button>
+          <div class="thoughts-2__line">/</div>
+          <button class="thoughts-2__btn thoughts-2__btn--active">ALL</button>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
