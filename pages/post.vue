@@ -172,5 +172,112 @@ useTransition()
         <TheImage class="post-12__img" src="/images/post/7.jpg" alt="Image" />
       </div>
     </section>
+    <section class="section post-13">
+      <div class="post-13__wrapper"></div>
+    </section>
+    <section class="section section--nm post-14">
+      <div class="container post-14__wrapper">
+        <div class="grid post-14__text-wrapper">
+          <h2 class="post-14__title">HEADLINE OPTION</h2>
+          <p class="post-14__text">
+            The Squid squad moves with powerful strokes. It’s our ambidexterity
+            that allows us to strike quickly and decisively – to solve complex
+            business problems and make our clients look really good.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section post-15">
+      <div class="post-15__wrapper"></div>
+    </section>
+    <section class="section post-16">
+      <div class="container post-16__wrapper">
+        <h2 class="post-16__title">RESULTS</h2>
+        <div class="post-16__list-wrapper">
+          <ul class="post-16__list">
+            <li class="post-16__li">
+              <h3 class="post-16__block-title">$1 BILLION GOAL MET</h3>
+              <p class="post-16__desc">
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur
+                et. Maecenas sed diam eget risus varius blandit sit.
+              </p>
+            </li>
+            <li class="post-16__li">
+              <h3 class="post-16__block-title">BRAND AWARENESS</h3>
+              <p class="post-16__desc">
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus.
+                Integer posuere erat a ante.
+              </p>
+            </li>
+            <li class="post-16__li">
+              <h3 class="post-16__block-title">FOLLOWING INCREASE</h3>
+              <p class="post-16__desc">
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur
+                et. Maecenas sed diam eget risus varius blandit sit amet non
+                magna. Morbi leo risus, porta ac consectetur ac, vestibulum at
+                eros. Maecenas sed diam eget risus varius blandit sit amet non
+                magna.
+              </p>
+            </li>
+            <li class="post-16__li">
+              <h3 class="post-16__block-title">SALE INCREASE</h3>
+              <p class="post-16__desc">
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus.
+                Integer posuere erat a ante venenatis dapibus posuere velit
+                aliquet.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section post-17">
+      <div class="post-17__wrapper">
+        <TheImage class="post-17__img" src="/images/post/8.jpg" alt="Image" />
+      </div>
+    </section>
+    <section class="section post-18">
+      <div class="container post-18__wrapper">
+        <TheImage class="post-18__img" src="/images/post/9.jpg" alt="Image" />
+      </div>
+    </section>
+    <section class="section section--nm post-19">
+      <div class="container grid post-19__wrapper">
+        <h2 class="post-19__title">
+          “Quote from the client will go here., it’ll be shortish. One to two
+          sentences singing our praises.”
+        </h2>
+        <p class="post-19__rotate-text">—mari, vp marketing costa farms</p>
+      </div>
+    </section>
+    <section class="section post-20">
+      <div class="container post-20__wrapper">
+        <div class="post-20__line"></div>
+        <ul class="grid post-20__list">
+          <li class="post-20__li">
+            <h3 class="post-20__title">Credits: The Team</h3>
+            <p class="post-20__text">
+              Creative Director: Brent Marmo<br />
+              Strategic Planning Director: Miles Marmo<br />
+              Art Director and Designer: Tanya Jacobson<br />
+              Designer and Producer: Braden Schlegel
+            </p>
+          </li>
+          <li class="post-20__li">
+            <h3 class="post-20__title">Partners</h3>
+            <p class="post-20__text">
+              Videographer: Johnathon Doe Studios / Johnathon Doe Studios<br />
+              Photographer: Braden Schlegel / Johnathon Doe<br />
+              Media Team: Johnathon Doe Studios<br />
+              Post-Production: Johnathon Doe<br />
+              Digital-Production: Johnathon Doe / Johnathon Doe Studios<br />
+              VFX Production: Johnathon Doe
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
 </template>

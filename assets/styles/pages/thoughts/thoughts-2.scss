@@ -90,37 +90,37 @@
 
   &:nth-of-type(3) {
     @include col(1, 5);
-    @include row(2, 2);
+    // @include row(2, 2);
   }
 
   &:nth-of-type(4) {
     @include col(8, 12);
-    @include row(2, 2);
+    // @include row(2, 2);
   }
 
   &:nth-of-type(5) {
     @include col(1, 5);
-    @include row(3, 3);
+    // @include row(3, 3);
   }
 
   &:nth-of-type(6) {
     @include col(8, 12);
-    @include row(3, 3);
+    // @include row(3, 3);
   }
 
   &:nth-of-type(7) {
     @include col(1, 5);
-    @include row(4, 4);
+    // @include row(4, 4);
   }
 
   &:nth-of-type(8) {
     @include col(8, 12);
-    @include row(4, 4);
+    // @include row(4, 4);
   }
 
   &:nth-of-type(9) {
     @include col(1, 5);
-    @include row(5, 5);
+    // @include row(5, 5);
   }
 }
 
