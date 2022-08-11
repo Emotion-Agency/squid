@@ -115,5 +115,62 @@ useTransition()
         </div>
       </div>
     </section>
+    <section class="section post-8">
+      <div class="post-8__wrapper">
+        <TheImage class="post-8__img" src="/images/post/4.jpg" alt="Image" />
+      </div>
+    </section>
+    <section class="section post-9">
+      <div class="container post-9__wrapper">
+        <div class="grid post-9__text-wrapper">
+          <p class="post-9__text">
+            The shift in consumer behavior caused by the pandemic magnified the
+            need to deeply research and acutely targeted audience segmentation.
+            Through this research, we built a data driven brand pyramid,
+            architecture, position, and marketing strategy.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section post-10">
+      <div class="container post-10__wrapper">
+        <div class="grid post-10__content">
+          <TheImage class="post-10__img" src="/images/post/5.jpg" alt="Image" />
+          <TheImage class="post-10__img" src="/images/post/6.jpg" alt="Image" />
+        </div>
+      </div>
+    </section>
+    <section class="section post-11">
+      <div class="container post-11__wrapper">
+        <h2 class="post-11__title">BRANDING</h2>
+        <div class="post-11__list-wrapper">
+          <ul class="post-11__list">
+            <li class="post-11__li">
+              <h3 class="post-11__block-title">Strategy</h3>
+              <p class="post-11__desc">
+                The process began by defining the brand process, objectives, and
+                expectations. We conducted an extensive competitor evaluation
+                that helped define the “white space” we could own. This,
+                combined with data collected, formed the brand vision,
+                manifesto, and persona..
+              </p>
+            </li>
+            <li class="post-11__li">
+              <h3 class="post-11__block-title">Identity</h3>
+              <p class="post-11__desc">
+                The brand identity needed to not only reflect the strategy but
+                also be ownable and recognizable while communicating a secure
+                and reputable organization – transcending fads and trends.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section post-12">
+      <div class="post-12__wrapper">
+        <TheImage class="post-12__img" src="/images/post/7.jpg" alt="Image" />
+      </div>
+    </section>
   </main>
 </template>

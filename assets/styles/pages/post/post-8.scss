@@ -1,0 +1,17 @@
+.post-8__list {
+  position: relative;
+}
+
+.post-8__img {
+  display: block;
+  width: 100%;
+
+  @media (min-width: $br1) {
+    object-fit: cover;
+    height: 100vh;
+  }
+
+  @media (max-width: $br1) {
+    height: 100%;
+  }
+}

@@ -1,0 +1,27 @@
+.post-9 {
+  position: relative;
+}
+
+.post-9__wrapper {
+  height: 100%;
+}
+
+.post-9__text {
+  @include cd-reg;
+  @include col(3, 10);
+  width: 100%;
+  font-size: vw(40);
+  line-height: 140%;
+
+  @media (max-width: $br1) {
+    font-size: 20px;
+  }
+
+  @media (max-width: $br3) {
+    @include col(1, 12);
+  }
+
+  @media (max-width: $br4) {
+    @include col(1, 4);
+  }
+}
