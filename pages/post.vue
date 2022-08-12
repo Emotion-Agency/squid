@@ -277,6 +277,46 @@ useTransition()
             </p>
           </li>
         </ul>
+        <div class="post-20__link-wrapper">
+          <h3 class="post-20__link-title">Other Case Studies</h3>
+          <div class="post-20__list-wrapper">
+            <div class="post-20__arrows-wrapper">
+              <IconsArrowLinkLeft class="post-20__arrow" />
+            </div>
+            <ul class="post-20__link-list">
+              <li class="post-20__link-li">
+                <NuxtLink to="/" class="post-20__link-text"> Nuleev </NuxtLink>
+                <div class="thoughts-2__line">/</div>
+              </li>
+              <li class="post-20__link-li">
+                <NuxtLink to="/" class="post-20__link-text">
+                  GREATWATERS
+                </NuxtLink>
+                <div class="thoughts-2__line">/</div>
+              </li>
+              <li class="post-20__link-li">
+                <NuxtLink to="/" class="post-20__link-text">
+                  Noonan golf
+                </NuxtLink>
+                <div class="thoughts-2__line">/</div>
+              </li>
+              <li class="post-20__link-li">
+                <NuxtLink to="/" class="post-20__link-text">
+                  Fitvine wine
+                </NuxtLink>
+                <div class="thoughts-2__line">/</div>
+              </li>
+              <li class="post-20__link-li">
+                <NuxtLink to="/" class="post-20__link-text">
+                  White claw
+                </NuxtLink>
+              </li>
+            </ul>
+            <div class="post-20__arrows-wrapper">
+              <IconsArrowLinkRight class="post-20__arrow" />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
