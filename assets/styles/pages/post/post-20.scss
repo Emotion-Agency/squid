@@ -141,6 +141,7 @@
 .post-20__link-li {
   @include cd-semibold;
   display: flex;
+  align-items: center;
   font-size: vw(30);
   line-height: 100%;
   text-transform: uppercase;
@@ -155,14 +156,21 @@
   }
 }
 
-.thoughts-2__line {
-  @include cd-reg;
-  font-weight: 300;
-  color: #707070;
-  padding-left: vw(20);
-  padding-right: vw(20);
+.post-20__line-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: vw(45);
+  width: vw(45);
 
   @media (max-width: $br1) {
     display: none;
   }
+}
+
+.post-20__small-line {
+  transform: rotate(110deg);
+  height: 1px;
+  width: 100%;
+  background-color: #707070;
 }

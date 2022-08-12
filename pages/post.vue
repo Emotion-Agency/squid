@@ -286,25 +286,33 @@ useTransition()
             <ul class="post-20__link-list">
               <li class="post-20__link-li">
                 <NuxtLink to="/" class="post-20__link-text"> Nuleev </NuxtLink>
-                <div class="thoughts-2__line">/</div>
+                <div class="post-20__line-wrapper">
+                  <span class="post-20__small-line"></span>
+                </div>
               </li>
               <li class="post-20__link-li">
                 <NuxtLink to="/" class="post-20__link-text">
                   GREATWATERS
                 </NuxtLink>
-                <div class="thoughts-2__line">/</div>
+                <div class="post-20__line-wrapper">
+                  <span class="post-20__small-line"></span>
+                </div>
               </li>
               <li class="post-20__link-li">
                 <NuxtLink to="/" class="post-20__link-text">
                   Noonan golf
                 </NuxtLink>
-                <div class="thoughts-2__line">/</div>
+                <div class="post-20__line-wrapper">
+                  <span class="post-20__small-line"></span>
+                </div>
               </li>
               <li class="post-20__link-li">
                 <NuxtLink to="/" class="post-20__link-text">
                   Fitvine wine
                 </NuxtLink>
-                <div class="thoughts-2__line">/</div>
+                <div class="post-20__line-wrapper">
+                  <span class="post-20__small-line"></span>
+                </div>
               </li>
               <li class="post-20__link-li">
                 <NuxtLink to="/" class="post-20__link-text">
