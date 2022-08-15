@@ -20,11 +20,7 @@ useTransition()
     </section>
     <section class="section section--nm post-2">
       <div class="post-2__wrapper">
-        <TheImage
-          class="post-2__img"
-          src="/images/post/1.jpg"
-          alt="Image"
-        />
+        <TheImage class="post-2__img" src="/images/post/1.jpg" alt="Image" />
       </div>
     </section>
     <section class="section post-3">
@@ -82,20 +78,12 @@ useTransition()
     </section>
     <section class="section post-5">
       <div class="post-5__wrapper">
-        <TheImage
-          class="post-5__img"
-          src="/images/post/2.jpg"
-          alt="Image"
-        />
+        <TheImage class="post-5__img" src="/images/post/2.jpg" alt="Image" />
       </div>
     </section>
     <section class="section post-6">
       <div class="container post-6__wrapper">
-        <TheImage
-          class="post-6__img"
-          src="/images/post/3.jpg"
-          alt="Image"
-        />
+        <TheImage class="post-6__img" src="/images/post/3.jpg" alt="Image" />
       </div>
     </section>
     <section class="section post-7">
@@ -129,11 +117,7 @@ useTransition()
     </section>
     <section class="section post-8">
       <div class="post-8__wrapper">
-        <TheImage
-          class="post-8__img"
-          src="/images/post/4.jpg"
-          alt="Image"
-        />
+        <TheImage class="post-8__img" src="/images/post/4.jpg" alt="Image" />
       </div>
     </section>
     <section class="section post-9">
@@ -151,16 +135,8 @@ useTransition()
     <section class="section post-10">
       <div class="container post-10__wrapper">
         <div class="grid post-10__content">
-          <TheImage
-            class="post-10__img"
-            src="/images/post/5.jpg"
-            alt="Image"
-          />
-          <TheImage
-            class="post-10__img"
-            src="/images/post/6.jpg"
-            alt="Image"
-          />
+          <TheImage class="post-10__img" src="/images/post/5.jpg" alt="Image" />
+          <TheImage class="post-10__img" src="/images/post/6.jpg" alt="Image" />
         </div>
       </div>
     </section>
@@ -193,15 +169,74 @@ useTransition()
     </section>
     <section class="section post-12">
       <div class="post-12__wrapper">
-        <TheImage
-          class="post-12__img"
-          src="/images/post/7.jpg"
-          alt="Image"
-        />
+        <TheImage class="post-12__img" src="/images/post/7.jpg" alt="Image" />
       </div>
     </section>
     <section class="section post-13">
-      <div class="post-13__wrapper"></div>
+      <div class="container post-13__wrapper">
+        <ul class="post-13__img-list">
+          <li class="post-13__li">
+            <TheImage
+              class="post-13__img"
+              src="/images/post/10.jpg"
+              alt="Image"
+            />
+            <div class="post-13__block">
+              <p class="post-13__text">
+                Option to add a caption to these images.
+              </p>
+            </div>
+          </li>
+          <li class="post-13__li">
+            <TheImage
+              class="post-13__img"
+              src="/images/post/11.jpg"
+              alt="Image"
+            />
+            <div class="post-13__block">
+              <p class="post-13__text">
+                Option to add a caption to these images.
+              </p>
+            </div>
+          </li>
+          <li class="post-13__li">
+            <TheImage
+              class="post-13__img"
+              src="/images/post/12.jpg"
+              alt="Image"
+            />
+            <div class="post-13__block">
+              <p class="post-13__text">
+                Option to add a caption to these images.
+              </p>
+            </div>
+          </li>
+          <li class="post-13__li">
+            <TheImage
+              class="post-13__img"
+              src="/images/post/13.jpg"
+              alt="Image"
+            />
+            <div class="post-13__block">
+              <p class="post-13__text">
+                Option to add a caption to these images.
+              </p>
+            </div>
+          </li>
+          <li class="post-13__li">
+            <TheImage
+              class="post-13__img"
+              src="/images/post/14.jpg"
+              alt="Image"
+            />
+            <div class="post-13__block">
+              <p class="post-13__text">
+                Option to add a caption to these images.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
     <section class="section section--nm post-14">
       <div class="container post-14__wrapper">
@@ -263,20 +298,12 @@ useTransition()
     </section>
     <section class="section post-17">
       <div class="post-17__wrapper">
-        <TheImage
-          class="post-17__img"
-          src="/images/post/8.jpg"
-          alt="Image"
-        />
+        <TheImage class="post-17__img" src="/images/post/8.jpg" alt="Image" />
       </div>
     </section>
     <section class="section post-18">
       <div class="container post-18__wrapper">
-        <TheImage
-          class="post-18__img"
-          src="/images/post/9.jpg"
-          alt="Image"
-        />
+        <TheImage class="post-18__img" src="/images/post/9.jpg" alt="Image" />
       </div>
     </section>
     <section class="section section--nm post-19">
@@ -321,19 +348,13 @@ useTransition()
             </div>
             <ul class="post-20__link-list">
               <li class="post-20__link-li">
-                <NuxtLink
-                  to="/"
-                  class="post-20__link-text"
-                > Nuleev </NuxtLink>
+                <NuxtLink to="/" class="post-20__link-text"> Nuleev </NuxtLink>
                 <div class="post-20__line-wrapper">
                   <span class="post-20__small-line"></span>
                 </div>
               </li>
               <li class="post-20__link-li">
-                <NuxtLink
-                  to="/"
-                  class="post-20__link-text"
-                >
+                <NuxtLink to="/" class="post-20__link-text">
                   GREATWATERS
                 </NuxtLink>
                 <div class="post-20__line-wrapper">
@@ -341,10 +362,7 @@ useTransition()
                 </div>
               </li>
               <li class="post-20__link-li">
-                <NuxtLink
-                  to="/"
-                  class="post-20__link-text"
-                >
+                <NuxtLink to="/" class="post-20__link-text">
                   Noonan golf
                 </NuxtLink>
                 <div class="post-20__line-wrapper">
@@ -352,10 +370,7 @@ useTransition()
                 </div>
               </li>
               <li class="post-20__link-li">
-                <NuxtLink
-                  to="/"
-                  class="post-20__link-text"
-                >
+                <NuxtLink to="/" class="post-20__link-text">
                   Fitvine wine
                 </NuxtLink>
                 <div class="post-20__line-wrapper">
@@ -363,10 +378,7 @@ useTransition()
                 </div>
               </li>
               <li class="post-20__link-li">
-                <NuxtLink
-                  to="/"
-                  class="post-20__link-text"
-                >
+                <NuxtLink to="/" class="post-20__link-text">
                   White claw
                 </NuxtLink>
               </li>
