@@ -1,27 +1,29 @@
-.bottom-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: vw(20);
-  z-index: 100;
-  width: 100%;
-
-  @media (max-width: $br1) {
-    bottom: 20px;
-  }
-}
-
 .bottom-nav__socials {
+  position: fixed;
+  z-index: 100;
+
   @media (min-width: $br1) {
     @include col(1, 1);
-    position: absolute;
+    position: fixed;
+    bottom: vw(30);
+    z-index: 100;
     left: vw(65);
+  }
+
+  @media (max-width: $br1) {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
   }
 }
 
 .bottom-nav__btn {
   @include col(6, 8);
+  position: fixed;
+  bottom: vw(30);
+  z-index: 85;
+  left: 50%;
+  transform: translateX(-50%);
 
   @media (max-width: $br1) {
     display: none;

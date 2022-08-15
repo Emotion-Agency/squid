@@ -3,16 +3,28 @@
     <div class="container grid menu__wrapper">
       <ul class="menu__list">
         <li class="menu__li">
-          <NuxtLink to="/" class="menu__text"> EXPERTISE </NuxtLink>
+          <NuxtLink
+            to="/expertise/"
+            class="menu__text"
+          > EXPERTISE </NuxtLink>
         </li>
         <li class="menu__li">
-          <NuxtLink to="/" class="menu__text"> CASE STUDIES </NuxtLink>
+          <NuxtLink
+            to="/thoughts?filter=case_studies"
+            class="menu__text"
+          > CASE STUDIES </NuxtLink>
         </li>
         <li class="menu__li">
-          <NuxtLink to="/" class="menu__text"> ABOUT US </NuxtLink>
+          <NuxtLink
+            to="/about/"
+            class="menu__text"
+          > ABOUT US </NuxtLink>
         </li>
         <li class="menu__li">
-          <NuxtLink to="/" class="menu__text"> SQUID THOUGHTS </NuxtLink>
+          <NuxtLink
+            to="/thoughts/"
+            class="menu__text"
+          > SQUID THOUGHTS </NuxtLink>
         </li>
       </ul>
     </div>

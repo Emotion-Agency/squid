@@ -9,6 +9,16 @@
   @media (max-width: $br1) {
     padding: 20px;
   }
+  &--active {
+    .header__line {
+      background-color: #fff;
+    }
+    .header__logo {
+      path {
+        fill: #fff;
+      }
+    }
+  }
 }
 
 .header__wrapper {
@@ -20,14 +30,34 @@
 .header__burger {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background-color: transparent;
   width: vw(44);
+  height: vw(44);
 
   @media (max-width: $br1) {
     width: 44px;
+    height: 44px;
+  }
+  &--active {
+    .header__line {
+      &:nth-of-type(1) {
+        transform: rotate(28deg) translateY(3px);
+      }
+
+      &:nth-of-type(2) {
+        opacity: 0;
+        margin-top: 0;
+        height: 0px;
+      }
+
+      &:nth-of-type(3) {
+        transform: rotate(-28deg) translateY(-4px);
+      }
+    }
   }
 
-  &:hover {
+  &:hover:not(.header__burger--active) {
     .header__line {
       &:nth-of-type(1) {
         width: 75%;
@@ -44,23 +74,15 @@
   display: block;
   height: 2px;
   width: 100%;
-  background-color: #A7A9AC;
-  transition: width 0.3s ease;
+  background-color: #a7a9ac;
+  transition: all 0.3s ease;
 
   &:nth-of-type(2) {
-    margin-top: vw(4);
-
-    @media (max-width: $br1) {
-      margin-top: 4px;
-    }
+    margin-top: 4px;
   }
 
   &:nth-of-type(3) {
-    margin-top: vw(4);
-
-    @media (max-width: $br1) {
-      margin-top: 4px;
-    }
+    margin-top: 4px;
   }
 }
 
