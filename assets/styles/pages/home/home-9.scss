@@ -11,6 +11,14 @@
   }
 }
 
+.home-9__wrapper {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: $br1) {
+    flex-direction: column;
+  }
+}
+
 .home-9__title-wrapper {
   @media (min-width: $br1) {
     display: flex;
@@ -18,7 +26,7 @@
     position: sticky;
     top: 20px;
     left: 0;
-    height: 100vh;
+    height: fit-content;
   }
 }
 
@@ -27,19 +35,18 @@
   font-size: vw(90);
   line-height: 124%;
   max-width: vw(536);
+  height: fit-content;
 
   @media (max-width: $br1) {
     font-size: 56px;
     line-height: 100%;
-    max-width: 335px;
+    max-width: none;
   }
 }
 
 .home-9__list-wrapper {
   @media (min-width: $br1) {
     display: flex;
-    justify-content: flex-end;
-    margin-top: -100vh;
   }
 }
 
