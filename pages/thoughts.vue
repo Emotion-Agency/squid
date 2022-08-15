@@ -56,16 +56,20 @@ useTransition()
             />
             <div class="thoughts-2__block">
               <div class="thoughts-2__text-wrapper">
-                <h3 class="thoughts-2__block-title">TCF BANK</h3>
-                <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
-                <p class="thoughts-2__text">
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Vestibulum id ligula porta felis
-                  euismod semper.
-                </p>
-                <button class="thoughts-2__block-btn">READ MORE</button>
+                <div class="thoughts-2__name">
+                  <h3 class="thoughts-2__block-title">TCF BANK</h3>
+                  <p class="thoughts-2__category">Category Project</p>
+                </div>
+                <div class="thoughts-2__desc">
+                  <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
+                  <p class="thoughts-2__text">
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Vestibulum id ligula porta
+                    felis euismod semper.
+                  </p>
+                  <TextButton class="thoughts-2__text-btn" />
+                </div>
               </div>
-              <p class="thoughts-2__category">Category Project</p>
             </div>
           </li>
           <li class="thoughts-2__li">
@@ -76,16 +80,20 @@ useTransition()
             />
             <div class="thoughts-2__block">
               <div class="thoughts-2__text-wrapper">
-                <h3 class="thoughts-2__block-title">TCF BANK</h3>
-                <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
-                <p class="thoughts-2__text">
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Vestibulum id ligula porta felis
-                  euismod semper.
-                </p>
-                <button class="thoughts-2__block-btn">READ MORE</button>
+                <div class="thoughts-2__name">
+                  <h3 class="thoughts-2__block-title">TCF BANK</h3>
+                  <p class="thoughts-2__category">Category Project</p>
+                </div>
+                <div class="thoughts-2__desc">
+                  <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
+                  <p class="thoughts-2__text">
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Vestibulum id ligula porta
+                    felis euismod semper.
+                  </p>
+                  <TextButton class="thoughts-2__text-btn" />
+                </div>
               </div>
-              <p class="thoughts-2__category">Category Project</p>
             </div>
           </li>
           <li class="thoughts-2__li">
@@ -96,16 +104,20 @@ useTransition()
             />
             <div class="thoughts-2__block">
               <div class="thoughts-2__text-wrapper">
-                <h3 class="thoughts-2__block-title">TCF BANK</h3>
-                <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
-                <p class="thoughts-2__text">
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Vestibulum id ligula porta felis
-                  euismod semper.
-                </p>
-                <button class="thoughts-2__block-btn">READ MORE</button>
+                <div class="thoughts-2__name">
+                  <h3 class="thoughts-2__block-title">TCF BANK</h3>
+                  <p class="thoughts-2__category">Category Project</p>
+                </div>
+                <div class="thoughts-2__desc">
+                  <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
+                  <p class="thoughts-2__text">
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Vestibulum id ligula porta
+                    felis euismod semper.
+                  </p>
+                  <TextButton class="thoughts-2__text-btn" />
+                </div>
               </div>
-              <p class="thoughts-2__category">Category Project</p>
             </div>
           </li>
           <li class="thoughts-2__li">
@@ -116,16 +128,20 @@ useTransition()
             />
             <div class="thoughts-2__block">
               <div class="thoughts-2__text-wrapper">
-                <h3 class="thoughts-2__block-title">TCF BANK</h3>
-                <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
-                <p class="thoughts-2__text">
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Vestibulum id ligula porta felis
-                  euismod semper.
-                </p>
-                <button class="thoughts-2__block-btn">READ MORE</button>
+                <div class="thoughts-2__name">
+                  <h3 class="thoughts-2__block-title">TCF BANK</h3>
+                  <p class="thoughts-2__category">Category Project</p>
+                </div>
+                <div class="thoughts-2__desc">
+                  <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
+                  <p class="thoughts-2__text">
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Vestibulum id ligula porta
+                    felis euismod semper.
+                  </p>
+                  <TextButton class="thoughts-2__text-btn" />
+                </div>
               </div>
-              <p class="thoughts-2__category">Category Project</p>
             </div>
           </li>
           <li class="thoughts-2__li">
@@ -136,16 +152,20 @@ useTransition()
             />
             <div class="thoughts-2__block">
               <div class="thoughts-2__text-wrapper">
-                <h3 class="thoughts-2__block-title">TCF BANK</h3>
-                <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
-                <p class="thoughts-2__text">
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Vestibulum id ligula porta felis
-                  euismod semper.
-                </p>
-                <button class="thoughts-2__block-btn">READ MORE</button>
+                <div class="thoughts-2__name">
+                  <h3 class="thoughts-2__block-title">TCF BANK</h3>
+                  <p class="thoughts-2__category">Category Project</p>
+                </div>
+                <div class="thoughts-2__desc">
+                  <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
+                  <p class="thoughts-2__text">
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Vestibulum id ligula porta
+                    felis euismod semper.
+                  </p>
+                  <TextButton class="thoughts-2__text-btn" />
+                </div>
               </div>
-              <p class="thoughts-2__category">Category Project</p>
             </div>
           </li>
           <li class="thoughts-2__li">
@@ -156,16 +176,20 @@ useTransition()
             />
             <div class="thoughts-2__block">
               <div class="thoughts-2__text-wrapper">
-                <h3 class="thoughts-2__block-title">TCF BANK</h3>
-                <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
-                <p class="thoughts-2__text">
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Vestibulum id ligula porta felis
-                  euismod semper.
-                </p>
-                <button class="thoughts-2__block-btn">READ MORE</button>
+                <div class="thoughts-2__name">
+                  <h3 class="thoughts-2__block-title">TCF BANK</h3>
+                  <p class="thoughts-2__category">Category Project</p>
+                </div>
+                <div class="thoughts-2__desc">
+                  <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
+                  <p class="thoughts-2__text">
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Vestibulum id ligula porta
+                    felis euismod semper.
+                  </p>
+                  <TextButton class="thoughts-2__text-btn" />
+                </div>
               </div>
-              <p class="thoughts-2__category">Category Project</p>
             </div>
           </li>
           <li class="thoughts-2__li">
@@ -176,16 +200,20 @@ useTransition()
             />
             <div class="thoughts-2__block">
               <div class="thoughts-2__text-wrapper">
-                <h3 class="thoughts-2__block-title">TCF BANK</h3>
-                <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
-                <p class="thoughts-2__text">
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Vestibulum id ligula porta felis
-                  euismod semper.
-                </p>
-                <button class="thoughts-2__block-btn">READ MORE</button>
+                <div class="thoughts-2__name">
+                  <h3 class="thoughts-2__block-title">TCF BANK</h3>
+                  <p class="thoughts-2__category">Category Project</p>
+                </div>
+                <div class="thoughts-2__desc">
+                  <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
+                  <p class="thoughts-2__text">
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Vestibulum id ligula porta
+                    felis euismod semper.
+                  </p>
+                  <TextButton class="thoughts-2__text-btn" />
+                </div>
               </div>
-              <p class="thoughts-2__category">Category Project</p>
             </div>
           </li>
           <li class="thoughts-2__li">
@@ -196,16 +224,20 @@ useTransition()
             />
             <div class="thoughts-2__block">
               <div class="thoughts-2__text-wrapper">
-                <h3 class="thoughts-2__block-title">TCF BANK</h3>
-                <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
-                <p class="thoughts-2__text">
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Vestibulum id ligula porta felis
-                  euismod semper.
-                </p>
-                <button class="thoughts-2__block-btn">READ MORE</button>
+                <div class="thoughts-2__name">
+                  <h3 class="thoughts-2__block-title">TCF BANK</h3>
+                  <p class="thoughts-2__category">Category Project</p>
+                </div>
+                <div class="thoughts-2__desc">
+                  <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
+                  <p class="thoughts-2__text">
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Vestibulum id ligula porta
+                    felis euismod semper.
+                  </p>
+                  <TextButton class="thoughts-2__text-btn" />
+                </div>
               </div>
-              <p class="thoughts-2__category">Category Project</p>
             </div>
           </li>
           <li class="thoughts-2__li">
@@ -216,16 +248,20 @@ useTransition()
             />
             <div class="thoughts-2__block">
               <div class="thoughts-2__text-wrapper">
-                <h3 class="thoughts-2__block-title">TCF BANK</h3>
-                <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
-                <p class="thoughts-2__text">
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Vestibulum id ligula porta felis
-                  euismod semper.
-                </p>
-                <button class="thoughts-2__block-btn">READ MORE</button>
+                <div class="thoughts-2__name">
+                  <h3 class="thoughts-2__block-title">TCF BANK</h3>
+                  <p class="thoughts-2__category">Category Project</p>
+                </div>
+                <div class="thoughts-2__desc">
+                  <p class="thoughts-2__date">August 24, 2021 / Miles Marmo</p>
+                  <p class="thoughts-2__text">
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Vestibulum id ligula porta
+                    felis euismod semper.
+                  </p>
+                  <TextButton class="thoughts-2__text-btn" />
+                </div>
               </div>
-              <p class="thoughts-2__category">Category Project</p>
             </div>
           </li>
         </ul>

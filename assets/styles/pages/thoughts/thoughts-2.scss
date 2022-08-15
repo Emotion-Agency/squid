@@ -82,9 +82,11 @@
   @media (min-width: $br1) {
     margin-bottom: vw(148);
     width: vw(674);
+
     &:nth-of-type(odd) {
       float: left;
     }
+
     &:nth-of-type(even) {
       float: right;
     }
@@ -115,21 +117,17 @@
   }
 }
 
-.thoughts-2__category {
-  @include snfine-reg-it;
-  font-size: vw(17);
-  line-height: 100%;
-  letter-spacing: 1.7px;
-  color: #919191;
-
-  @media (max-width: $br1) {
-    letter-spacing: 0.1em;
-    font-size: 17px;
-  }
+.thoughts-2__text-wrapper {
+  width: 100%;
 }
 
-.thoughts-2__text-wrapper {
-  max-width: vw(457);
+.thoughts-2__name {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $br1) {
+    flex-direction: column;
+  }
 }
 
 .thoughts-2__block-title {
@@ -141,6 +139,32 @@
 
   @media (max-width: $br1) {
     font-size: 30px;
+  }
+}
+
+.thoughts-2__category {
+  @include snfine-reg-it;
+  font-size: vw(17);
+  line-height: 100%;
+  letter-spacing: 1.7px;
+  color: #919191;
+
+  @media (max-width: $br1) {
+    letter-spacing: 0.1em;
+    font-size: 17px;
+    margin-top: 12px;
+  }
+}
+
+.thoughts-2__desc {
+  max-width: vw(457);
+
+  @media (max-width: $br1) {
+    max-width: 70%;
+  }
+
+  @media (max-width: $br3) {
+    max-width: 100%;
   }
 }
 
@@ -172,18 +196,12 @@
   }
 }
 
-.thoughts-2__block-btn {
-  @include cd-semibold;
-  background-color: transparent;
-  width: fit-content;
-  font-size: vw(16);
-  line-height: 100%;
-  letter-spacing: 0.2em;
+.thoughts-2__text-btn {
+  max-width: fit-content;
   margin-top: vw(34);
 
   @media (max-width: $br1) {
     margin-top: 12px;
-    font-size: 14px;
   }
 }
 

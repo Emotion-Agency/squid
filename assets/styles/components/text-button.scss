@@ -1,0 +1,13 @@
+.text-button {
+  @include cd-semibold;
+  background-color: transparent;
+  width: fit-content;
+  font-size: vw(16);
+  line-height: 100%;
+  letter-spacing: 0.2em;
+  width: 100%;
+
+  @media (max-width: $br1) {
+    font-size: 14px;
+  }
+}
