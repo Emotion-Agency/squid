@@ -42,36 +42,38 @@ useTransition()
         <ul class="grid post-4__list">
           <li class="post-4__li">
             <h3 class="post-4__title">Role</h3>
-            <p class="post-4__text">
-              Research<br />
-              Strategy<br />
-              Creative<br />
-              Direction<br />
-              Production
-            </p>
+            <div class="post-4__text-wrapper">
+              <p class="post-4__text">Research</p>
+              <p class="post-4__text">Strategy</p>
+              <p class="post-4__text">Creative</p>
+              <p class="post-4__text">Direction</p>
+              <p class="post-4__text">Production</p>
+            </div>
           </li>
           <li class="post-4__li">
             <h3 class="post-4__title">Deliverables</h3>
-            <p class="post-4__text">
-              Marketing & Branding Strategy<br />
-              Branding/Art Direction<br />
-              Copywriting/Brand Voice<br />
-              Videography/Photography<br />
-              Digital Presence<br />
-              Website Design<br />
-              Social Media Strategy/Launch
-            </p>
+            <div class="post-4__text-wrapper">
+              <p class="post-4__text">Marketing & Branding Strategy</p>
+              <p class="post-4__text">Branding/Art Direction</p>
+              <p class="post-4__text">Copywriting/Brand Voice</p>
+              <p class="post-4__text">Videography/Photography</p>
+              <p class="post-4__text">Digital Presence</p>
+              <p class="post-4__text">Website Design</p>
+              <p class="post-4__text">Social Media Strategy/Launch</p>
+            </div>
           </li>
           <li class="post-4__li">
             <h3 class="post-4__title">Client</h3>
-            <p class="post-4__text">Costa Farms</p>
+            <div class="post-4__text-wrapper">
+              <p class="post-4__text">Costa Farms</p>
+            </div>
           </li>
           <li class="post-4__li">
             <h3 class="post-4__title">Company Type</h3>
-            <p class="post-4__text">
-              B2C / B2B<br />
-              Agriculture
-            </p>
+            <div class="post-4__text-wrapper">
+              <p class="post-4__text">B2C / B2B</p>
+              <p class="post-4__text">Agriculture</p>
+            </div>
           </li>
         </ul>
       </div>
@@ -205,11 +207,6 @@ useTransition()
               src="/images/post/12.jpg"
               alt="Image"
             />
-            <div class="post-13__block">
-              <p class="post-13__text">
-                Option to add a caption to these images.
-              </p>
-            </div>
           </li>
           <li class="post-13__li">
             <TheImage
@@ -217,11 +214,6 @@ useTransition()
               src="/images/post/13.jpg"
               alt="Image"
             />
-            <div class="post-13__block">
-              <p class="post-13__text">
-                Option to add a caption to these images.
-              </p>
-            </div>
           </li>
           <li class="post-13__li">
             <TheImage
@@ -251,7 +243,44 @@ useTransition()
       </div>
     </section>
     <section class="section post-15">
-      <div class="post-15__wrapper"></div>
+      <div class="container post-15__wrapper">
+        <h2 class="post-15__title">
+          BIG TEXT OPTION. IMAGES WOULD SCROLL BEHIND TEXT.
+        </h2>
+        <ul class="post-15__img-list">
+          <li class="post-15__li">
+            <TheImage
+              class="post-15__img"
+              src="/images/post/15.jpg"
+              alt="Image"
+            />
+            <div class="post-15__block">
+              <p class="post-15__text">
+                Option to add a caption to these images.
+              </p>
+            </div>
+          </li>
+          <li class="post-15__li">
+            <TheImage
+              class="post-15__img"
+              src="/images/post/16.jpg"
+              alt="Image"
+            />
+            <div class="post-15__block">
+              <p class="post-15__text">
+                Option to add a caption to these images.
+              </p>
+            </div>
+          </li>
+          <li class="post-15__li">
+            <TheImage
+              class="post-15__img"
+              src="/images/post/17.jpg"
+              alt="Image"
+            />
+          </li>
+        </ul>
+      </div>
     </section>
     <section class="section post-16">
       <div class="container post-16__wrapper">
@@ -321,23 +350,35 @@ useTransition()
         <ul class="grid post-20__list">
           <li class="post-20__li">
             <h3 class="post-20__title">Credits: The Team</h3>
-            <p class="post-20__text">
-              Creative Director: Brent Marmo<br />
-              Strategic Planning Director: Miles Marmo<br />
-              Art Director and Designer: Tanya Jacobson<br />
-              Designer and Producer: Braden Schlegel
-            </p>
+            <div class="post-20__text-wrapper">
+              <p class="post-20__text">Creative Director: Brent Marmo</p>
+              <p class="post-20__text">
+                Strategic Planning Director: Miles Marmo
+              </p>
+              <p class="post-20__text">
+                Art Director and Designer: Tanya Jacobson
+              </p>
+              <p class="post-20__text">
+                Designer and Producer: Braden Schlegel
+              </p>
+            </div>
           </li>
           <li class="post-20__li">
             <h3 class="post-20__title">Partners</h3>
-            <p class="post-20__text">
-              Videographer: Johnathon Doe Studios / Johnathon Doe Studios<br />
-              Photographer: Braden Schlegel / Johnathon Doe<br />
-              Media Team: Johnathon Doe Studios<br />
-              Post-Production: Johnathon Doe<br />
-              Digital-Production: Johnathon Doe / Johnathon Doe Studios<br />
-              VFX Production: Johnathon Doe
-            </p>
+            <div class="post-20__text-wrapper">
+              <p class="post-20__text">
+                Videographer: Johnathon Doe Studios / Johnathon Doe Studios
+              </p>
+              <p class="post-20__text">
+                Photographer: Braden Schlegel / Johnathon Doe
+              </p>
+              <p class="post-20__text">Media Team: Johnathon Doe Studios</p>
+              <p class="post-20__text">Post-Production: Johnathon Doe</p>
+              <p class="post-20__text">
+                Digital-Production: Johnathon Doe / Johnathon Doe Studios
+              </p>
+              <p class="post-20__text">VFX Production: Johnathon Doe</p>
+            </div>
           </li>
         </ul>
         <div class="post-20__link-wrapper">

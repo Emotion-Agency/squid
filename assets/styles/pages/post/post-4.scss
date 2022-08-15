@@ -59,15 +59,21 @@
   }
 }
 
+.post-4__text-wrapper {
+  margin-top: vw(24);
+
+  @media (max-width: $br1) {
+    margin-top: 12px;
+  }
+}
+
 .post-4__text {
   @include cd-reg;
   font-size: vw(17);
   line-height: 147%;
   letter-spacing: 0.05em;
-  margin-top: vw(28);
 
   @media (max-width: $br1) {
     font-size: 17px;
-    margin-top: 12px;
   }
 }

@@ -67,7 +67,11 @@ useTransition()
                     montes, nascetur ridiculus mus. Vestibulum id ligula porta
                     felis euismod semper.
                   </p>
-                  <TextButton class="thoughts-2__text-btn" />
+                  <div class="thoughts-2__text-btn">
+                    <TextButton tag="nuxt-link" to="/post">
+                      READ MORE
+                    </TextButton>
+                  </div>
                 </div>
               </div>
             </div>
@@ -91,7 +95,11 @@ useTransition()
                     montes, nascetur ridiculus mus. Vestibulum id ligula porta
                     felis euismod semper.
                   </p>
-                  <TextButton class="thoughts-2__text-btn" />
+                  <div class="thoughts-2__text-btn">
+                    <TextButton tag="nuxt-link" to="/post">
+                      READ MORE
+                    </TextButton>
+                  </div>
                 </div>
               </div>
             </div>
@@ -115,7 +123,11 @@ useTransition()
                     montes, nascetur ridiculus mus. Vestibulum id ligula porta
                     felis euismod semper.
                   </p>
-                  <TextButton class="thoughts-2__text-btn" />
+                  <div class="thoughts-2__text-btn">
+                    <TextButton tag="nuxt-link" to="/post">
+                      READ MORE
+                    </TextButton>
+                  </div>
                 </div>
               </div>
             </div>
@@ -139,7 +151,11 @@ useTransition()
                     montes, nascetur ridiculus mus. Vestibulum id ligula porta
                     felis euismod semper.
                   </p>
-                  <TextButton class="thoughts-2__text-btn" />
+                  <div class="thoughts-2__text-btn">
+                    <TextButton tag="nuxt-link" to="/post">
+                      READ MORE
+                    </TextButton>
+                  </div>
                 </div>
               </div>
             </div>
@@ -163,7 +179,11 @@ useTransition()
                     montes, nascetur ridiculus mus. Vestibulum id ligula porta
                     felis euismod semper.
                   </p>
-                  <TextButton class="thoughts-2__text-btn" />
+                  <div class="thoughts-2__text-btn">
+                    <TextButton tag="nuxt-link" to="/post">
+                      READ MORE
+                    </TextButton>
+                  </div>
                 </div>
               </div>
             </div>
@@ -187,7 +207,11 @@ useTransition()
                     montes, nascetur ridiculus mus. Vestibulum id ligula porta
                     felis euismod semper.
                   </p>
-                  <TextButton class="thoughts-2__text-btn" />
+                  <div class="thoughts-2__text-btn">
+                    <TextButton tag="nuxt-link" to="/post">
+                      READ MORE
+                    </TextButton>
+                  </div>
                 </div>
               </div>
             </div>
@@ -211,7 +235,11 @@ useTransition()
                     montes, nascetur ridiculus mus. Vestibulum id ligula porta
                     felis euismod semper.
                   </p>
-                  <TextButton class="thoughts-2__text-btn" />
+                  <div class="thoughts-2__text-btn">
+                    <TextButton tag="nuxt-link" to="/post">
+                      READ MORE
+                    </TextButton>
+                  </div>
                 </div>
               </div>
             </div>
@@ -235,7 +263,11 @@ useTransition()
                     montes, nascetur ridiculus mus. Vestibulum id ligula porta
                     felis euismod semper.
                   </p>
-                  <TextButton class="thoughts-2__text-btn" />
+                  <div class="thoughts-2__text-btn">
+                    <TextButton tag="nuxt-link" to="/post">
+                      READ MORE
+                    </TextButton>
+                  </div>
                 </div>
               </div>
             </div>
@@ -259,7 +291,11 @@ useTransition()
                     montes, nascetur ridiculus mus. Vestibulum id ligula porta
                     felis euismod semper.
                   </p>
-                  <TextButton class="thoughts-2__text-btn" />
+                  <div class="thoughts-2__text-btn">
+                    <TextButton tag="nuxt-link" to="/post">
+                      READ MORE
+                    </TextButton>
+                  </div>
                 </div>
               </div>
             </div>
