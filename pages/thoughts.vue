@@ -47,7 +47,7 @@ useTransition()
           <div class="thoughts-2__line">/</div>
           <button class="thoughts-2__btn thoughts-2__btn--active">ALL</button>
         </div>
-        <ul class="grid thoughts-2__img-list">
+        <ul class="thoughts-2__img-list">
           <li class="thoughts-2__li">
             <TheImage
               class="thoughts-2__img"

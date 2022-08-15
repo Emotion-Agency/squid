@@ -38,7 +38,7 @@
   justify-content: center;
   align-items: center;
   margin-top: vw(90);
-  color: #C6C6C6;
+  color: #c6c6c6;
 
   @media (max-width: $br1) {
     flex-direction: column;
@@ -68,7 +68,7 @@
 }
 
 .thoughts-2__img-list {
-  gap: vw(150);
+  display: inline-block;
   margin-top: vw(320);
 
   @media (max-width: $br1) {
@@ -77,50 +77,25 @@
 }
 
 .thoughts-2__li {
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
 
-  &:nth-of-type(1) {
-    @include col(1, 5);
+  @media (min-width: $br1) {
+    margin-bottom: vw(148);
+    width: vw(674);
+    &:nth-of-type(odd) {
+      float: left;
+    }
+    &:nth-of-type(even) {
+      float: right;
+    }
   }
 
-  &:nth-of-type(2) {
-    @include col(8, 12);
+  @media (max-width: $br1) {
+    margin-bottom: 40px;
   }
 
-  &:nth-of-type(3) {
-    @include col(1, 5);
-    // @include row(2, 2);
-  }
-
-  &:nth-of-type(4) {
-    @include col(8, 12);
-    // @include row(2, 2);
-  }
-
-  &:nth-of-type(5) {
-    @include col(1, 5);
-    // @include row(3, 3);
-  }
-
-  &:nth-of-type(6) {
-    @include col(8, 12);
-    // @include row(3, 3);
-  }
-
-  &:nth-of-type(7) {
-    @include col(1, 5);
-    // @include row(4, 4);
-  }
-
-  &:nth-of-type(8) {
-    @include col(8, 12);
-    // @include row(4, 4);
-  }
-
-  &:nth-of-type(9) {
-    @include col(1, 5);
-    // @include row(5, 5);
+  &:last-of-type {
+    margin-bottom: 0;
   }
 }
 

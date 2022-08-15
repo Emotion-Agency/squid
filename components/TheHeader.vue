@@ -34,12 +34,16 @@ const toggleMenu = () => {
             <span class="header__line"></span>
           </button>
           <Teleport to="body">
-            <TheMenu :style="{ display: isOpenMenu ? 'flex' : 'none' }" />
+            <TheMenu
+              :class="[isOpenMenu && 'menu--active']"
+              @close="closeMenu()"
+            />
           </Teleport>
         </div>
         <NuxtLink
           to="/"
           class="header__logo"
+          @click="closeMenu()"
         >
           <IconsLogo class="header__logo-img header__logo-img--1" />
           <IconsLogoSquid class="header__logo-img header__logo-img--2" />
