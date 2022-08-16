@@ -3,6 +3,11 @@
   position: relative;
 }
 
+.color-changer {
+  background-color: var(--white);
+  color: var(--black);
+}
+
 .home-1__wrapper {
   min-height: 100%;
 }

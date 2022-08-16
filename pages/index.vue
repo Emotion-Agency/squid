@@ -6,6 +6,11 @@ const $el = ref(null)
 const $container = ref(null)
 const $scroller = ref(null)
 
+const $scrollEl = ref(null)
+const $colorEl = ref(null)
+let sa
+
+
 
 onMounted(async () => {
   const { HorizontalScroll } = await import(
@@ -17,125 +22,152 @@ onMounted(async () => {
     $container.value,
     $scroller.value
   )
+
+
+  const { OnScrollAppereance } = await import(
+    '~/assets/scripts/OnScrollAppereance'
+  )
+  sa = new OnScrollAppereance($scrollEl.value,$container.value)
+
+
+  const { OnScrollColor } = await import(
+    '~/assets/scripts/OnScrollColor'
+  )
+
+  new OnScrollColor($colorEl.value)
+})
+
+onBeforeUnmount(() => {
+  sa && sa.destroy()
 })
 </script>
 
 <template>
   <main>
-    <section class="section section--nm home-1">
-      <div class="container home-1__wrapper">
-        <h1 class="home-1__title">
-          JUMP
-          <span class="home-1__style-title"> IN</span>
-        </h1>
-      </div>
-      <BottomNavigation />
-    </section>
-    <section class="section section--nm home-2">
-      <div class="container home-2__wrapper">
-        <h1 class="home-2__title">
-          DIVE
-          <span class="home-2__style-title"> DEEP</span>
-        </h1>
-      </div>
-    </section>
     <div
-      ref="$container"
-      class="wrapper"
+      ref="$colorEl"
+      class="color-changer"
     >
+      <section class="section section--nm home-1">
+        <div class="container home-1__wrapper">
+          <h1 class="home-1__title">
+            JUMP
+            <span class="home-1__style-title"> IN</span>
+          </h1>
+        </div>
+        <BottomNavigation />
+      </section>
+      <section class="section section--nm home-2">
+        <div class="container home-2__wrapper">
+          <h1 class="home-2__title">
+            DIVE
+            <span class="home-2__style-title"> DEEP</span>
+          </h1>
+        </div>
+      </section>
+
       <div
-        ref="$scroller"
-        class="scroller"
+        ref="$container"
+        class="wrapper"
       >
         <div
-          ref="$el"
-          class="scroller-el"
+          ref="$scroller"
+          class="scroller"
         >
-          <section class="section section--nm home-3">
-            <div class="container home-3__wrapper">
-              <h1 class="home-3__title">
-                BENEATH
-                <span class="home-3__title-wrapper">
-                  <span class="home-3__style-title"> THE</span>
-                  <span class="home-3__style-title"> SURFACE</span></span>
-              </h1>
-            </div>
-          </section>
-          <section class="section section--nm home-4">
-            <div class="container grid home-4__wrapper">
-              <h1 class="home-4__text">
-                The first step in
-                <span class="home-4__style-text">ELEVATING A BRAND</span> is jumping
-                in. It takes <span class="home-4__style-text">COURAGE</span> and
-                <span class="home-4__style-text">commitment</span>, but we don’t
-                embark alone. We
-                <span class="home-4__style-text"> INVITE</span>
-                <span class="home-4__style-text"> YOUR</span>
-                <span class="home-4__style-text"> TEAM </span> to be an integrated
-                part of ours as we
-                <span class="home-4__style-text">NAVIGATE</span> deep into
-                <span class="home-4__style-text">UNCHARTED</span><span class="home-4__style-text"> waters</span>.
-              </h1>
-            </div>
-          </section>
-          <section class="section section--nm home-5">
-            <div class="container grid home-5__wrapper">
-              <TheAccordion class="home-5__accordion">
-                <p class="home-5__rotate-text">WE ARE</p>
-              </TheAccordion>
-            </div>
-          </section>
-          <section class="section section--nm home-6">
-            <div class="container grid home-6__wrapper">
-              <div class="home-6__text-wrapper">
-                <h2 class="home-6__title">
-                  THE <span class="home-6__style-title">AGENCY</span>
-                </h2>
-                <div class="home-6__content">
-                  <p class="home-6__desc">
-                    We’re a hybrid mix of business consultants and creative
-                    developers who make the lives of our clients easier. It’s a
-                    collaboration of determined, strategic thinkers & doers.
-                  </p>
-                  <div class="home-6__btn-wrapper">
-                    <button class="home-6__btn">LEARN MORE</button>
-                    <p class="home-6__btn-text">about us</p>
+          <div
+            ref="$el"
+            class="scroller-el"
+          >
+            <section class="section section--nm home-3">
+              <div class="container home-3__wrapper">
+                <h1 class="home-3__title">
+                  BENEATH
+                  <span class="home-3__title-wrapper">
+                    <span class="home-3__style-title"> THE</span>
+                    <span class="home-3__style-title"> SURFACE</span></span>
+                </h1>
+              </div>
+            </section>
+            <section class="section section--nm home-4">
+              <div class="container grid home-4__wrapper">
+                <h1 class="home-4__text">
+                  The first step in
+                  <span class="home-4__style-text">ELEVATING A BRAND</span> is jumping
+                  in. It takes <span class="home-4__style-text">COURAGE</span> and
+                  <span class="home-4__style-text">commitment</span>, but we don’t
+                  embark alone. We
+                  <span class="home-4__style-text"> INVITE</span>
+                  <span class="home-4__style-text"> YOUR</span>
+                  <span class="home-4__style-text"> TEAM </span> to be an integrated
+                  part of ours as we
+                  <span class="home-4__style-text">NAVIGATE</span> deep into
+                  <span class="home-4__style-text">UNCHARTED</span><span class="home-4__style-text"> waters</span>.
+                </h1>
+              </div>
+            </section>
+            <section class="section section--nm home-5">
+              <div class="container grid home-5__wrapper">
+                <TheAccordion class="home-5__accordion">
+                  <p class="home-5__rotate-text">WE ARE</p>
+                </TheAccordion>
+              </div>
+            </section>
+            <section class="section section--nm home-6">
+              <div class="container grid home-6__wrapper">
+                <div class="home-6__text-wrapper">
+                  <h2 class="home-6__title">
+                    THE <span class="home-6__style-title">AGENCY</span>
+                  </h2>
+                  <div class="home-6__content">
+                    <p class="home-6__desc">
+                      We’re a hybrid mix of business consultants and creative
+                      developers who make the lives of our clients easier. It’s a
+                      collaboration of determined, strategic thinkers & doers.
+                    </p>
+                    <div class="home-6__btn-wrapper">
+                      <button class="home-6__btn">LEARN MORE</button>
+                      <p class="home-6__btn-text">about us</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="home-6__text-wrapper">
+                  <h2 class="home-6__title">
+                    THE <span class="home-6__style-title">EXPERTISE</span>
+                  </h2>
+                  <div class="home-6__content">
+                    <p class="home-6__desc">
+                      We inspire innovative business opportunities for our clients by
+                      creating smart communications. We go below the surface with
+                      stealth instead of splash.
+                    </p>
+                    <div class="home-6__btn-wrapper">
+                      <button class="home-6__btn">LEARN MORE</button>
+                      <p class="home-6__btn-text">expertise</p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="home-6__text-wrapper">
-                <h2 class="home-6__title">
-                  THE <span class="home-6__style-title">EXPERTISE</span>
-                </h2>
-                <div class="home-6__content">
-                  <p class="home-6__desc">
-                    We inspire innovative business opportunities for our clients by
-                    creating smart communications. We go below the surface with
-                    stealth instead of splash.
-                  </p>
-                  <div class="home-6__btn-wrapper">
-                    <button class="home-6__btn">LEARN MORE</button>
-                    <p class="home-6__btn-text">expertise</p>
-                  </div>
+            </section>
+            <section class="section section--nm home-7">
+              <div class="grid home-7__wrapper">
+                <div class="container home-7__top-block">
+                  <h2 class="home-7__top-title">
+                    Our drive matches<span class="home-7__title-style"> yours</span>.
+                  </h2>
+                </div>
+                <div
+                  ref="$scrollEl"
+                  class="container home-7__bottom-block"
+                >
+                  <h2 class="home-7__bottom-title">
+                    YOUR<span class="home-7__title-style"> SUCCESS </span> DETERMINES
+                    OURS.
+                  </h2>
                 </div>
               </div>
-            </div>
-          </section>
-          <section class="section section--nm home-7">
-            <div class="grid home-7__wrapper">
-              <div class="container home-7__top-block">
-                <h2 class="home-7__top-title">
-                  Our drive matches<span class="home-7__title-style"> yours</span>.
-                </h2>
-              </div>
-              <div class="container home-7__bottom-block">
-                <h2 class="home-7__bottom-title">
-                  YOUR<span class="home-7__title-style"> SUCCESS </span> DETERMINES
-                  OURS.
-                </h2>
-              </div>
-            </div>
-          </section>
+              <div></div>
+            </section>
+          </div>
         </div>
       </div>
     </div>

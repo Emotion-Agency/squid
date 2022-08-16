@@ -1,20 +1,21 @@
 .home-7 {
   height: 100vh;
   position: relative;
-  min-width: 100vw;
+  width: 100vw;
+  background-color: var(--black);
 }
 
 .home-7__wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow: hidden;
+  width: 100vw;
 }
 
 .home-7__top-block {
   display: flex;
   height: 100%;
-  width: 100%;
-  background-color: var(--black);
 
   @media (max-width: $br1) {
     align-items: center;
@@ -46,6 +47,7 @@
   height: 50%;
   width: 100%;
   background-color: var(--white);
+  transform: translateY(100%);
 }
 
 .home-7__bottom-title {

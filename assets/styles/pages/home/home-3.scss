@@ -1,5 +1,6 @@
 .wrapper {
   position: relative;
+  color: var(--white);
   @media (min-width: $br1) {
     height: 600vh;
     width: 100%;
@@ -27,7 +28,6 @@
 .home-3 {
   height: 100vh;
   position: relative;
-  background-color: var(--black);
   min-width: 100vw;
 }
 
@@ -37,7 +37,7 @@
 
 .home-3__title {
   @include snfine-reg-it;
-  color: var(--white);
+
   display: flex;
   flex-direction: column;
   position: absolute;

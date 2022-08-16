@@ -1,7 +1,7 @@
 .home-4 {
   height: 100vh;
   position: relative;
-  background-color: var(--black);
+
   min-width: 100vw;
 }
 
@@ -24,7 +24,6 @@
 .home-4__text {
   @include col(3, 10);
   @include cd-reg;
-  color: var(--white);
   font-size: vw(40);
   line-height: 138%;
   letter-spacing: 1.4px;
