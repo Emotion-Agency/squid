@@ -384,7 +384,7 @@ useTransition()
         <div class="post-20__link-wrapper">
           <h3 class="post-20__link-title">Other Case Studies</h3>
           <div class="post-20__list-wrapper">
-            <button class="post-20__arrows-btn">
+            <button class="post-20__arrows-btn post-20__arrows-btn--prev">
               <IconsArrowLinkLeft class="post-20__arrow" />
             </button>
             <ul class="post-20__link-list">
@@ -424,7 +424,7 @@ useTransition()
                 </NuxtLink>
               </li>
             </ul>
-            <button class="post-20__arrows-btn">
+            <button class="post-20__arrows-btn post-20__arrows-btn--next">
               <IconsArrowLinkRight class="post-20__arrow" />
             </button>
           </div>

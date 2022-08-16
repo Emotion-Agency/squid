@@ -118,12 +118,21 @@
 .post-20__arrows-btn {
   background-color: transparent;
   display: block;
-  width: vw(15);
-  height: vw(27);
+  padding: 6px;
 
   svg {
     display: block;
     max-width: 100%;
+    width: vw(15);
+    height: vw(27);
+  }
+
+  &--next {
+    padding-right: 0;
+  }
+
+  &--prev {
+    padding-left: 0;
   }
 
   @media (max-width: $br1) {
