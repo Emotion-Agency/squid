@@ -2,6 +2,7 @@ import { raf } from '@emotionagency/utils'
 
 export default class NavbarPos {
   $sc = document.querySelector('#scroll-container')
+  $navbar = document.querySelector('.navbar')
   hovered = false
 
   constructor() {
@@ -17,7 +18,7 @@ export default class NavbarPos {
   }
 
   mouseHandler(e) {
-    if (e.screenY <= 300) {
+    if (e.screenY <= 300 || this.isFixed) {
       document.body.classList.remove('nav-hidden')
       this.hovered = true
     } else {
@@ -49,15 +50,21 @@ export default class NavbarPos {
   }
 
   get isFixed() {
-    return window.smoothScroll ? window.smoothScroll.isFixed : false
+    return window.ss ? window.ss.isFixed : false
   }
 
   addVisibility() {
+    document.body.style.setProperty(
+      '--nav-height',
+      this.$navbar.getBoundingClientRect().height + 'px'
+    )
     document.body.classList.remove('nav-hidden')
     document.removeEventListener('mousemove', this.mouseFunc)
   }
 
   removeVisibility() {
+    document.body.style.setProperty('--nav-height', '0px')
+
     document.body.classList.add('nav-hidden')
     document.addEventListener('mousemove', this.mouseFunc)
   }

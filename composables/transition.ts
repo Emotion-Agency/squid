@@ -1,5 +1,6 @@
 import gsap from 'gsap'
 import { TransitionProps } from 'nuxt/dist/app/compat/capi'
+import { resetScroll } from '~/assets/scripts/utils/resetScroll'
 
 export const useTransition = () => {
   const route = useRoute()
@@ -8,18 +9,23 @@ export const useTransition = () => {
     mode: 'out-in',
     css: false,
     appear: true,
-    onEnter(el, done) {
-      gsap.fromTo(
-        el,
-        { opacity: 0 },
-        { duration: 0.5, opacity: 1, onComplete: done }
-      )
+    onEnter(_, done) {
+      done()
+
+      setTimeout(() => {
+        resetScroll()
+      }, 300)
     },
+
     onLeave(el, done) {
+      setTimeout(() => {
+        window.ss.isFixed = true
+      }, 500)
+
       gsap.fromTo(
         el,
         { opacity: 1 },
-        { duration: 0.5, opacity: 0, onComplete: done }
+        { duration: 0.5, opacity: 0, y: -100, onComplete: done }
       )
     },
   }
