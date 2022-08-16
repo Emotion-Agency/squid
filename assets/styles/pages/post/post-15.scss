@@ -26,18 +26,13 @@
 
   @media (max-width: $br1) {
     position: absolute;
-    max-width: 246px;
+    max-width: 168px;
     top: -102px;
-    left: 120px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 52px;
-  }
-
-  @media (max-width: $br3) {
-    left: 80px;
-  }
-
-  @media (max-width: $br4) {
-    left: 127px;
   }
 }
 
