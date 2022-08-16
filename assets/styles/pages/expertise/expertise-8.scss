@@ -63,14 +63,23 @@
 }
 
 .expertise-8__arrow {
-  display: block;
-  width: vw(21);
-  height: vw(34);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: vw(38);
 
+  svg {
+    display: block;
+    width: vw(21);
+    height: vw(34);
+
+    @media (max-width: $br1) {
+      width: 15px;
+      height: 24px;
+    }
+  }
+
   @media (max-width: $br1) {
-    width: 15px;
-    height: 24px;
     margin-top: 16px;
   }
 }
