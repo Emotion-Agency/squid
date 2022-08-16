@@ -1,5 +1,6 @@
 .text-button {
   @include cd-semibold;
+  display: block;
   background-color: transparent;
   width: fit-content;
   font-size: vw(16);
