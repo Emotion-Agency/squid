@@ -1,5 +1,4 @@
 import gsap from 'gsap'
-import { raf } from '@emotionagency/utils'
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -12,18 +11,6 @@ export class OnScrollAppereance {
     this.breakpoint = opts.breakpoint || 960
 
     this.animation()
-
-    this.onScrolling = this.onScrolling.bind(this)
-
-    raf.on(this.onScrolling)
-  }
-
-  onScrolling() {
-    console.log(
-      this.$el.getBoundingClientRect().left -
-        this.$wrapper.getBoundingClientRect().width +
-        window.innerWidth
-    )
   }
 
   animation() {

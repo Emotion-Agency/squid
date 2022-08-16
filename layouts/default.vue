@@ -17,7 +17,7 @@ onMounted(async () => {
   hello()
 
   const { winSizes } = await import('~/assets/scripts/utils/winSizes')
-  const { resize } = await import('@emotionagency/utils')
+  const { resize } = await import('@/assets/scripts/utils/ea')
   resize.on(winSizes)
 })
 </script>
