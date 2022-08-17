@@ -9,12 +9,16 @@ export const useTransition = () => {
     mode: 'out-in',
     css: false,
     appear: true,
-    onEnter(_, done) {
-      done()
-
+    onEnter(el, done) {
       setTimeout(() => {
         resetScroll()
-      }, 300)
+      }, 150)
+
+      gsap.fromTo(
+        el,
+        { opacity: 0 },
+        { duration: 0.5, opacity: 1, onComplete: done }
+      )
     },
 
     onLeave(el, done) {
@@ -27,6 +31,9 @@ export const useTransition = () => {
         { opacity: 1 },
         { duration: 0.5, opacity: 0, y: -100, onComplete: done }
       )
+      setTimeout(() => {
+        resetScroll()
+      }, 500)
     },
   }
 

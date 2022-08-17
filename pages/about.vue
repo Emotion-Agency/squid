@@ -14,7 +14,8 @@ useTransition()
           </h1>
         </div>
       </div>
-      <BottomNavigation class="navigation-notfixed" />
+      <TheSocials class="bottom-nav-socials" />
+      <NextBlockButton>Scroll</NextBlockButton>
     </section>
     <section class="section about-2">
       <div class="container about-2__wrapper">
@@ -31,7 +32,11 @@ useTransition()
     </section>
     <section class="section about-3">
       <div class="container grid about-3__wrapper">
-        <TheImage class="about-3__img" src="/images/about/1.jpg" alt="Image" />
+        <TheImage
+          class="about-3__img"
+          src="/images/about/1.jpg"
+          alt="Image"
+        />
       </div>
     </section>
     <section class="section about-4">

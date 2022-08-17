@@ -14,7 +14,8 @@ useTransition()
           </h1>
         </div>
       </div>
-      <BottomNavigation class="navigation-notfixed" />
+      <TheSocials class="bottom-nav-socials" />
+      <NextBlockButton>Scroll</NextBlockButton>
     </section>
     <section class="section expertise-2">
       <div class="container expertise-2__wrapper">

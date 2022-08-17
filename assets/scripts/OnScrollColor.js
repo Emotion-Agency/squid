@@ -24,11 +24,18 @@ export class OnScrollColor {
       },
     })
 
-    this.tl.to(this.$el, {
-      backgroundColor: '#000000',
-      color: '#ffffff',
-      ease: 'linear.none',
-    })
+    this.tl.fromTo(
+      this.$el,
+      {
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        color: 'rgba(0, 0, 0, 1)',
+      },
+      {
+        backgroundColor: 'rgba(0, 0, 0, 1)',
+        color: 'rgba(255, 255, 255, 1)',
+        ease: 'linear.none',
+      }
+    )
   }
 
   destroy() {

@@ -17,24 +17,30 @@ onMounted(async () => {
     '~/assets/scripts/HorizontalScroll'
   )
 
-  new HorizontalScroll(
-    $el.value,
-    $container.value,
-    $scroller.value
-  )
-
-
-  const { OnScrollAppereance } = await import(
-    '~/assets/scripts/OnScrollAppereance'
-  )
-  sa = new OnScrollAppereance($scrollEl.value,$container.value)
-
-
   const { OnScrollColor } = await import(
     '~/assets/scripts/OnScrollColor'
   )
 
-  new OnScrollColor($colorEl.value)
+  const { OnScrollAppereance } = await import(
+    '~/assets/scripts/OnScrollAppereance'
+  )
+
+
+  setTimeout(() => {
+
+    new OnScrollColor($colorEl.value)
+
+    new HorizontalScroll(
+      $el.value,
+      $container.value,
+      $scroller.value
+    )
+
+    setTimeout(() => {
+
+      sa = new OnScrollAppereance($scrollEl.value,$container.value)
+    },100)
+  },500)
 })
 
 onBeforeUnmount(() => {
@@ -55,7 +61,8 @@ onBeforeUnmount(() => {
             <span class="home-1__style-title"> IN</span>
           </h1>
         </div>
-        <BottomNavigation />
+        <TheSocials class="bottom-nav-socials" />
+        <NextBlockButton :is-fixed="true">Scroll</NextBlockButton>
       </section>
       <section class="section section--nm home-2">
         <div class="container home-2__wrapper">
