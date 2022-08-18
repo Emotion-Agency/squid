@@ -28,7 +28,7 @@
 }
 
 .menu__li {
-  margin-top: vw(10);
+  margin-top: vw(24);
   width: fit-content;
 
   &:first-of-type {
@@ -36,21 +36,30 @@
   }
 
   @media (max-width: $br1) {
-    margin-top: 32px;
+    margin-top: 40px;
   }
 }
 
 .menu__text {
   @include cd-reg;
   font-size: vw(90);
-  line-height: 124%;
+  line-height: 1em;
   color: var(--white);
   display: block;
+  overflow: hidden;
+
+  span {
+    transition: transform 0.3s ease;
+    display: block;
+  }
+
   &:hover,
   &.router-link-exact-active {
+    span {
+      transform: translateY(-10px);
+    }
     &::after {
-      height: 5px;
-      margin-top: 2px;
+      transform: translateY(0%);
     }
   }
 
@@ -58,9 +67,10 @@
     content: '';
     display: block;
     width: 100%;
-    height: 0px;
-    margin-top: 0px;
-    transition: height 0.3s ease, margin-top 0.3s ease;
+    height: 5px;
+    transform: translateY(100%);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
     background-color: #fff;
   }
 

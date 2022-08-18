@@ -1,38 +1,45 @@
 <script lang='ts' setup>
 const emit = defineEmits(['close'])
+
+interface iMenuItem {
+  to: string,
+  text: string
+}
+
+const menuItems: iMenuItem[] = [
+  {
+    to: '/expertise/',
+    text: 'EXPERTISE',
+  },
+  {
+    to: '/thoughts/?filter=case_studies',
+    text: 'CASE STUDIES',
+  },
+  {
+    to: '/about/',
+    text: 'ABOUT US',
+  },
+  {
+    to: '/thoughts/',
+    text: 'SQUID THOUGHTS',
+  }
+]
 </script>
 
 <template>
   <div class="menu">
     <div class="container grid menu__wrapper">
       <ul class="menu__list">
-        <li class="menu__li">
+        <li
+          v-for="item in menuItems"
+          :key="item.text"
+          class="menu__li"
+        >
           <NuxtLink
-            to="/expertise/"
+            :to="item.to"
             class="menu__text"
             @click="emit('close')"
-          > EXPERTISE </NuxtLink>
-        </li>
-        <li class="menu__li">
-          <NuxtLink
-            to="/thoughts?filter=case_studies"
-            class="menu__text"
-            @click="emit('close')"
-          > CASE STUDIES </NuxtLink>
-        </li>
-        <li class="menu__li">
-          <NuxtLink
-            to="/about/"
-            class="menu__text"
-            @click="emit('close')"
-          > ABOUT US </NuxtLink>
-        </li>
-        <li class="menu__li">
-          <NuxtLink
-            to="/thoughts/"
-            class="menu__text"
-            @click="emit('close')"
-          > SQUID THOUGHTS </NuxtLink>
+          > <span>{{ item.text }}</span> </NuxtLink>
         </li>
       </ul>
     </div>

@@ -3,6 +3,9 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
+  @media (min-width: $br1) {
+    max-width: vw(950);
+  }
 }
 
 .accordion__btn {
@@ -32,11 +35,12 @@
 
 .accordion__text {
   @include cd-light;
-  font-size: vh(24);
-  line-height: 124%;
+  font-size: vh(40);
+  line-height: 140%;
+  letter-spacing: 0.01em;
   color: var(--white);
   text-align: start;
-  margin-top: vh(38);
+  margin-top: vh(28);
 
   &--2 {
     display: none;
@@ -47,7 +51,7 @@
   }
 
   @media (max-width: $br1) {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 100%;
     margin-top: 20px;
   }
