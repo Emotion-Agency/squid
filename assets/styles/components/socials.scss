@@ -1,4 +1,5 @@
 .socials {
+  --s-color: #a7a9ac;
   display: flex;
   align-items: baseline;
 }
@@ -19,8 +20,8 @@
     display: block;
     width: 100%;
     height: 0px;
-    background-color: #a7a9ac;
-    transition: height 0.3s ease;
+    background-color: var(--s-color);
+    transition: height 0.3s ease, background-color 0.3s ease;
     position: absolute;
     bottom: -7px;
   }
@@ -46,9 +47,15 @@
   line-height: 100%;
   letter-spacing: 1.15px;
   display: block;
-  color: #a7a9ac;
+  color: var(--s-color);
 
   @media (max-width: $br1) {
     font-size: 23px;
+  }
+  svg {
+    path {
+      fill: var(--s-color);
+      transition: fill 0.3s ease;
+    }
   }
 }

@@ -4,11 +4,13 @@ const isOpenMenu = ref(false)
 
 const openMenu = () => {
   window.ss && (window.ss.isFixed = true)
+  document.body.classList.add('nav-open')
   isOpenMenu.value = true
 }
 
 const closeMenu = () => {
   window.ss && (window.ss.isFixed = false)
+  document.body.classList.remove('nav-open')
 
   isOpenMenu.value = false
 
