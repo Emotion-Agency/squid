@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
+import { iAccordionItem } from '~~/types/accordion'
 useTransition()
 
 const $el = ref(null)
@@ -46,6 +47,21 @@ onMounted(async () => {
 onBeforeUnmount(() => {
   sa && sa.destroy()
 })
+
+const accordionItems: iAccordionItem[] = [
+  {
+    title: 'CHALLENGERS',
+    text: 'We will fight for what’s right for your business and challenge you to do the same.'
+  },
+  {
+    title: 'STRATEGIZORS',
+    text: 'We will fight for what’s right for your business and challenge you to do the same.'
+  },
+  {
+    title: 'CREATORS',
+    text: 'We will fight for what’s right for your business and challenge you to do the same.'
+  }
+]
 </script>
 
 <template>
@@ -114,7 +130,10 @@ onBeforeUnmount(() => {
             </section>
             <section class="section section--nm home-5">
               <div class="container grid home-5__wrapper">
-                <TheAccordion class="home-5__accordion">
+                <TheAccordion
+                  class="home-5__accordion"
+                  :items="accordionItems"
+                >
                   <p class="home-5__rotate-text">WE ARE</p>
                 </TheAccordion>
               </div>

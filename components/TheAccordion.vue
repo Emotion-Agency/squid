@@ -1,23 +1,46 @@
+<script lang='ts' setup>
+import { iAccordionItem } from '~/types/accordion'
+import { keysGenerator } from '~/assets/scripts/utils/ea'
+
+
+interface iProps {
+  items: iAccordionItem[]
+}
+
+const props = defineProps<iProps>()
+
+const updatedItems = ref({ ...props }.items.map(item => ({ ...item,isOpen: false,id: keysGenerator(8) })))
+
+
+
+const onClick = (id: string) => {
+  updatedItems.value = updatedItems.value.map(el => {
+    if (id === el.id) {
+      return {
+        ...el,isOpen: true
+      }
+    }
+
+    return {
+      ...el,isOpen: false
+    }
+  })
+
+}
+</script>
+
 <template>
   <div class="accordion">
     <slot></slot>
-    <button class="accordion__btn">
-      <h2 class="accordion__title accordion__title--1">CHALLENGERS</h2>
-      <p class="accordion__text">
-        We will fight for what's right for your business and challenge you to do
-        the same.
-      </p>
-      <p class="accordion__line"></p>
-    </button>
-    <button class="accordion__btn">
-      <h2 class="accordion__title">STRATEGIZORS</h2>
-      <p class="accordion__text accordion__text--2"></p>
-      <p class="accordion__line"></p>
-    </button>
-    <button class="accordion__btn">
-      <h2 class="accordion__title">CREATORS</h2>
-      <p class="accordion__text accordion__text--3"></p>
-      <p class="accordion__line"></p>
-    </button>
+    <AccordionItem
+      v-for="item in updatedItems"
+      :id="item.id"
+      :key="item.title"
+      :title="item.title"
+      :text="item.text"
+      :is-open="item.isOpen"
+      @clicked="onClick"
+    />
+
   </div>
 </template>
