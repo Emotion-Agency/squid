@@ -3,12 +3,11 @@
   padding-bottom: vw(280);
 
   @media (max-width: $br1) {
-    padding-top: 200px;
+    padding-top: 0px;
     padding-bottom: 200px;
   }
 
   @media (max-width: $br3) {
-    padding-top: 120px;
     padding-bottom: 120px;
   }
 }

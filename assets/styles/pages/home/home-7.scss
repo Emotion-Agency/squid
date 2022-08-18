@@ -1,8 +1,17 @@
+@media (min-width: $br1) {
+  .home-all-w {
+    height: calc(var(--hh) + 100vh);
+  }
+
+  .wrapper {
+    position: sticky;
+    top: calc((var(--hh) - 100vh) * -1);
+  }
+}
+
 .home-7 {
   height: 100vh;
-  position: relative;
   width: 100vw;
-  background-color: var(--black);
 }
 
 .home-7__wrapper {
@@ -11,6 +20,7 @@
   height: 100%;
   overflow: hidden;
   width: 100vw;
+  position: relative;
 }
 
 .home-7__top-block {

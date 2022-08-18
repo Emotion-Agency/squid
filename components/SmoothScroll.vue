@@ -4,8 +4,8 @@ onMounted(async () => {
   const { raf } = await import('@/assets/scripts/utils/ea')
 
   window.ss = new SmoothScroll({
-    mobile: false,
-    breakpoint: 1060,
+    mobile: true,
+    // breakpoint: 1060,
     passive: false,
     isFixed: false,
     friction: 0.07,

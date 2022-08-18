@@ -58,6 +58,10 @@ export class HorizontalScroll {
 
   setHeight() {
     this.$container.style.height = this.scrollHeight + 'px'
+    this.$container.parentElement.style.setProperty(
+      '--hh',
+      this.scrollHeight + 'px'
+    )
   }
 
   get inView() {

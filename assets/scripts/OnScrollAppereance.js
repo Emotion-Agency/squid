@@ -19,7 +19,7 @@ export class OnScrollAppereance {
         scrollTrigger: {
           trigger: this.$wrapper,
           pin: false,
-          start: this.$el.getBoundingClientRect().left,
+          start: this.$el.getBoundingClientRect().left + window.innerWidth,
           scrub: 0.1,
           scroller: document.getElementById('scroll-container'),
         },
@@ -27,9 +27,9 @@ export class OnScrollAppereance {
     } else {
       this.tl = gsap.timeline({
         scrollTrigger: {
-          trigger: this.$el,
-          pin: false,
-          end: '+=bottom',
+          trigger: this.$wrapper.querySelector('.home-7'),
+          pin: true,
+          end: this.$wrapper.querySelector('.home-7').top,
           scrub: 0.1,
           scroller: document.getElementById('scroll-container'),
         },
