@@ -3,9 +3,6 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  @media (min-width: $br1) {
-    max-width: vw(950);
-  }
 }
 
 .accordion__btn {

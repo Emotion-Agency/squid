@@ -1,6 +1,22 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
+import { iAccordionItem } from '~/types/accordion'
 useTransition()
+
+const accordionItems: iAccordionItem[] = [
+  {
+    title: 'CHALLENGERS',
+    text: 'We will fight for what’s right for your business and challenge you to do the same.'
+  },
+  {
+    title: 'STRATEGIZORS',
+    text: 'We will fight for what’s right for your business and challenge you to do the same.'
+  },
+  {
+    title: 'CREATORS',
+    text: 'We will fight for what’s right for your business and challenge you to do the same.'
+  }
+]
 </script>
 
 <template>
@@ -66,7 +82,10 @@ useTransition()
     </section>
     <section class="section expertise-5">
       <div class="container grid expertise-5__wrapper">
-        <TheAccordion class="expertise-5__accordion">
+        <TheAccordion
+          class="expertise-5__accordion"
+          :items="accordionItems"
+        >
           <p class="expertise-5__rotate-text">MASTER PLAN</p>
         </TheAccordion>
       </div>
@@ -74,9 +93,20 @@ useTransition()
     <section class="section expertise-6">
       <div class="container expertise-6__wrapper">
         <h2 class="expertise-6__title">ROI</h2>
-        <p class="expertise-6__text">
-          COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.
-        </p>
+        <div class="expertise-6__text-wrapper">
+          <p class="expertise-6__text">
+            COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.
+          </p>
+          <p class="expertise-6__text">
+            COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.
+          </p>
+          <p class="expertise-6__text">
+            COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.
+          </p>
+          <p class="expertise-6__text">
+            COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.
+          </p>
+        </div>
       </div>
     </section>
     <section class="section expertise-7">

@@ -2,13 +2,20 @@
   position: relative;
   background-color: var(--black);
   color: var(--white);
+
+  @media (min-width: $br1) {
+    height: 100vh;
+    height: var(--vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .expertise-6__wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  height: 100%;
 
   @media (max-width: $br1) {
     flex-direction: column;
@@ -20,10 +27,16 @@
   @include cd-reg;
   font-size: vw(90);
   line-height: 100%;
+  height: fit-content;
 
   @media (max-width: $br1) {
     font-size: 40px;
   }
+}
+
+.expertise-6__text-wrapper {
+  overflow: hidden;
+  height: vw(130);
 }
 
 .expertise-6__text {
