@@ -17,7 +17,7 @@ const onClick = (id: string) => {
   updatedItems.value = updatedItems.value.map(el => {
     if (id === el.id) {
       return {
-        ...el,isOpen: true
+        ...el,isOpen: !el.isOpen
       }
     }
 
