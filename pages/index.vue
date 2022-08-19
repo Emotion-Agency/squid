@@ -199,7 +199,7 @@ const accordionItems: iAccordionItem[] = [
       </div>
 
     </div>
-    <section class="section section--nm home-8">
+    <section class="section home-8">
       <div class="home-8__wrapper">
         <div class="container home-8__text">
           <h1 class="home-8__title">CASE STUDIES</h1>

@@ -40,7 +40,10 @@ onBeforeUnmount(() => {
     :class="[isOpen && 'opened']"
     @click="onClick"
   >
-    <h2 class="accordion__title">{{ title }}</h2>
+    <div class="accordion__top">
+      <h2 class="accordion__title">{{ title }}</h2>
+      <IconsDropDown />
+    </div>
     <p
       ref="$child"
       class="accordion__text"

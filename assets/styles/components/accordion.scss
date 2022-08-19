@@ -15,16 +15,37 @@
   &.opened {
     .accordion__text {
       height: calc(var(--h, 1vh) * 100);
-      // margin-bottom: vh(28);
       @media (max-width: $br1) {
-        margin-bottom: 20px;
+        margin-top: 20px;
       }
+    }
+    svg {
+      transform: rotate(-180deg);
     }
   }
   + .accordion__btn {
     margin-top: vh(38);
     @media (max-width: $br1) {
       margin-top: 40px;
+    }
+  }
+}
+
+.accordion__top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  svg {
+    max-width: 100%;
+    height: vw(16);
+    width: vw(30);
+    display: block;
+    fill: #707070;
+    transition: transform 0.3s ease;
+    @media (max-width: $br1) {
+      height: 8px;
+      width: 15px;
     }
   }
 }

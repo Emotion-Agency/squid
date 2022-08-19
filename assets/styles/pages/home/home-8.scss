@@ -16,7 +16,11 @@
   @media (min-width: $br1) {
     display: flex;
     align-items: center;
-    height: 100vh;
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    // height: 100vh;
   }
 }
 
@@ -26,16 +30,15 @@
   width: 100%;
 
   @media (min-width: $br1) {
-    position: absolute;
     justify-content: center;
   }
 }
 
 .home-8__title {
   @include cd-reg;
-  font-size: vh(90);
+  font-size: vw(90);
   line-height: 124%;
-  max-width: vh(370);
+  max-width: vw(370);
 
   @media (max-width: $br1) {
     font-size: 56px;
@@ -45,10 +48,10 @@
 
 .home-8__desc {
   @include cd-reg;
-  font-size: vh(22);
+  font-size: vw(22);
   line-height: 140%;
   letter-spacing: 0.1em;
-  max-width: vh(370);
+  max-width: vw(370);
 
   @media (max-width: $br1) {
     max-width: 50%;
@@ -66,9 +69,11 @@
 }
 
 .home-8__img-list {
+  position: relative;
+  z-index: 1;
   @media (min-width: $br1) {
     row-gap: vw(70);
-    margin-top: -80vh;
+    margin-top: -48vh;
   }
 
   @media (max-width: $br1) {
