@@ -292,7 +292,7 @@ const accordionItems: iAccordionItem[] = [
         </li>
       </ul>
     </section>
-    <section class="section section--nm home-9">
+    <section class="section home-9">
       <div class="container home-9__wrapper">
         <div class="home-9__title-wrapper">
           <h2 class="home-9__title">SOME CLIENTS WE’VE HELPED</h2>

@@ -4,11 +4,7 @@
 
   @media (max-width: $br1) {
     padding-top: 0px;
-    padding-bottom: 200px;
-  }
-
-  @media (max-width: $br3) {
-    padding-bottom: 120px;
+    padding-bottom: 0px;
   }
 }
 
@@ -74,6 +70,7 @@
   @media (min-width: $br1) {
     row-gap: vw(70);
     margin-top: -48vh;
+    padding-bottom: 100vh;
   }
 
   @media (max-width: $br1) {
