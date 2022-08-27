@@ -17,6 +17,21 @@ const accordionItems: iAccordionItem[] = [
     text: 'We will fight for what’s right for your business and challenge you to do the same.'
   }
 ]
+
+const $rotatingEl = ref(null)
+let ros
+
+onMounted(async () => {
+  const { RotateOnScroll } = await import('~/assets/scripts/RotateOnScroll')
+
+  ros = new RotateOnScroll($rotatingEl.value.$el)
+
+  ros.animate()
+})
+
+onBeforeUnmount(() => {
+  ros && ros.destroy()
+})
 </script>
 
 <template>
@@ -49,7 +64,10 @@ const accordionItems: iAccordionItem[] = [
     </section>
     <section class="section expertise-3">
       <div class="container expertise-3__wrapper">
-        <IconsCircle class="expertise-3__img" />
+        <IconsCircle
+          ref="$rotatingEl"
+          class="expertise-3__img"
+        />
       </div>
     </section>
     <section class="section expertise-4">
@@ -90,25 +108,7 @@ const accordionItems: iAccordionItem[] = [
         </TheAccordion>
       </div>
     </section>
-    <section class="section expertise-6">
-      <div class="container expertise-6__wrapper">
-        <h2 class="expertise-6__title">ROI</h2>
-        <div class="expertise-6__text-wrapper">
-          <p class="expertise-6__text">
-            COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.
-          </p>
-          <p class="expertise-6__text">
-            COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.
-          </p>
-          <p class="expertise-6__text">
-            COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.
-          </p>
-          <p class="expertise-6__text">
-            COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.
-          </p>
-        </div>
-      </div>
-    </section>
+    <ExpertiseScroller />
     <section class="section expertise-7">
       <div class="container expertise-7__wrapper">
         <div class="grid expertise-7__text-wrapper">
