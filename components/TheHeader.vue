@@ -1,24 +1,6 @@
 <script lang='ts' setup>
 
-const isOpenMenu = ref(false)
-
-const openMenu = () => {
-  window.ss && (window.ss.isFixed = true)
-  document.body.classList.add('nav-open')
-  isOpenMenu.value = true
-}
-
-const closeMenu = () => {
-  window.ss && (window.ss.isFixed = false)
-  document.body.classList.remove('nav-open')
-
-  isOpenMenu.value = false
-
-}
-
-const toggleMenu = () => {
-  isOpenMenu.value === true ? closeMenu() : openMenu()
-}
+const { isOpenMenu,closeMenu,toggleMenu } = useMenu()
 
 let navbarPos
 
@@ -50,12 +32,6 @@ onBeforeUnmount(() => {
           <span class="header__line"></span>
           <span class="header__line"></span>
         </button>
-        <Teleport to="body">
-          <TheMenu
-            :class="[isOpenMenu && 'menu--active']"
-            @close="closeMenu()"
-          />
-        </Teleport>
       </div>
       <NuxtLink
         to="/"
@@ -66,5 +42,9 @@ onBeforeUnmount(() => {
         <IconsLogoSquid class="header__logo-img header__logo-img--2" />
       </NuxtLink>
     </div>
+    <TheMenu
+      :class="[isOpenMenu && 'menu--active']"
+      @close="closeMenu()"
+    />
   </header>
 </template>

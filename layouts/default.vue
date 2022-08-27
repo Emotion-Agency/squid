@@ -46,10 +46,12 @@ onMounted(async () => {
     </Head>
     <AppGrid />
     <UiLoader />
+
     <SmoothScroll>
       <TheHeader />
       <slot />
       <TheFooter />
     </SmoothScroll>
+
   </div>
 </template>

@@ -40,6 +40,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 91;
+  position: relative;
 }
 
 .header__burger {

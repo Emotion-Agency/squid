@@ -8,14 +8,24 @@
   bottom: 0;
   right: 0;
   z-index: 90;
-  background-color: #ee3441;
-  opacity: 0;
+
   visibility: hidden;
+  overflow: hidden;
   transition: opacity 1s ease, visibility 1s ease;
   &--active {
-    opacity: 1;
     visibility: visible;
   }
+}
+
+.menu__bg {
+  background-color: #ee3441;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  transform: translateY(100%);
 }
 
 .menu__list {
@@ -27,9 +37,15 @@
   }
 }
 
+.menu__wrapper {
+  z-index: 3;
+}
+
 .menu__li {
   margin-top: vw(24);
   width: fit-content;
+  transform: translateY(50px);
+  opacity: 0;
 
   &:first-of-type {
     margin-top: 0;

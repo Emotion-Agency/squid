@@ -28,6 +28,7 @@ const menuItems: iMenuItem[] = [
 
 <template>
   <div class="menu">
+    <div class="menu__bg"></div>
     <div class="container grid menu__wrapper">
       <ul class="menu__list">
         <li
