@@ -31,6 +31,13 @@
   border-radius: 50%;
   width: vw(410);
   height: vw(410);
+  transition: box-shadow 0.4s ease;
+  &:hover {
+    box-shadow: 0px 4px 64px 30px rgba(255, 255, 255, 0.85);
+    .expertise-8__arrow {
+      transform: translateY(8px);
+    }
+  }
 
   @media (max-width: $br1) {
     width: 100%;
@@ -67,6 +74,7 @@
   justify-content: center;
   align-items: center;
   margin-top: vw(38);
+  transition: transform 0.4s ease;
 
   svg {
     display: block;
