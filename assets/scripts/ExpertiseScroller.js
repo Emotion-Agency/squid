@@ -46,6 +46,6 @@ export class ExpertiseScroller {
   }
 
   destroy() {
-    this.tl && this.tl.destroy()
+    this.tl && this.tl.kill()
   }
 }
