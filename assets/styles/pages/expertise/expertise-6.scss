@@ -4,18 +4,20 @@
   color: var(--white);
 
   @media (min-width: $br1) {
-    height: 100vh;
-    height: var(--vh);
+    height: 300vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding-top: 0;
   }
 }
 
 .expertise-6__wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  height: 100vh;
+  top: 0;
 
   @media (max-width: $br1) {
     flex-direction: column;
@@ -34,13 +36,18 @@
   }
 }
 
-.expertise-6__text-wrapper {
+.expertise-6__scroll-wrapper {
   overflow: hidden;
   height: vw(130);
 }
 
+.expertise-6__text-wrapper {
+  overflow: hidden;
+}
+
 .expertise-6__text {
   @include cd-semibold;
+  text-transform: uppercase;
   font-size: vw(50);
   line-height: 130%;
   letter-spacing: -0.01em;
