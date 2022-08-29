@@ -62,6 +62,8 @@ const accordionItems: iAccordionItem[] = [
     text: 'We will fight for what’s right for your business and challenge you to do the same.'
   }
 ]
+
+const {bottomText, isRotated, isVisible} = useBottomBlock()
 </script>
 
 <template>
@@ -70,7 +72,10 @@ const accordionItems: iAccordionItem[] = [
       ref="$colorEl"
       class="color-changer"
     >
-      <section class="section section--nm home-1">
+      <section
+        data-bottom-s="'Don’t worry, the water’s fine'|false"
+        class="section section--nm home-1"
+      >
         <div class="container home-1__wrapper">
           <h1 class="home-1__title">
             JUMP
@@ -78,9 +83,16 @@ const accordionItems: iAccordionItem[] = [
           </h1>
         </div>
         <TheSocials class="bottom-nav-socials" />
-        <NextBlockButton :is-fixed="true">Scroll</NextBlockButton>
+        <NextBlockButton
+          :is-fixed="true"
+          :is-rotated="isRotated"
+          :is-visible="isVisible"
+        >{{bottomText}}</NextBlockButton>
       </section>
-      <section class="section section--nm home-2">
+      <section
+        data-bottom-s="'Into uncharted territory'|false"
+        class="section section--nm home-2"
+      >
         <div class="container home-2__wrapper">
           <h1 class="home-2__title">
             DIVE
@@ -101,7 +113,10 @@ const accordionItems: iAccordionItem[] = [
               ref="$el"
               class="scroller-el"
             >
-              <section class="section section--nm home-3">
+              <section
+                data-bottom-s="'This is where we thrive'|true"
+                class="section section--nm home-3"
+              >
                 <div class="container home-3__wrapper">
                   <h1 class="home-3__title">
                     BENEATH
@@ -111,7 +126,10 @@ const accordionItems: iAccordionItem[] = [
                   </h1>
                 </div>
               </section>
-              <section class="section section--nm home-4">
+              <section
+                data-bottom-s="'Let’s explore'|true"
+                class="section section--nm home-4"
+              >
                 <div class="container grid home-4__wrapper">
                   <h1 class="home-4__text">
                     The first step in
@@ -128,7 +146,10 @@ const accordionItems: iAccordionItem[] = [
                   </h1>
                 </div>
               </section>
-              <section class="section section--nm home-5">
+              <section
+                data-bottom-s="'There’s more to see here'|true"
+                class="section section--nm home-5"
+              >
                 <div class="container grid home-5__wrapper">
                   <TheAccordion
                     class="home-5__accordion"
@@ -138,7 +159,10 @@ const accordionItems: iAccordionItem[] = [
                   </TheAccordion>
                 </div>
               </section>
-              <section class="section section--nm home-6">
+              <section
+                data-bottom-s="'Join us in the abyss'|true"
+                class="section section--nm home-6"
+              >
                 <div class="container grid home-6__wrapper">
                   <div class="home-6__text-wrapper">
                     <h2 class="home-6__title">
@@ -175,7 +199,10 @@ const accordionItems: iAccordionItem[] = [
                 </div>
               </section>
 
-              <section class="section section--nm home-7">
+              <section
+                data-bottom-s="'let’s go deeper'|false"
+                class="section section--nm home-7"
+              >
                 <div class="grid home-7__wrapper">
                   <div class="container home-7__top-block">
                     <h2 class="home-7__top-title">
@@ -185,6 +212,7 @@ const accordionItems: iAccordionItem[] = [
                   <div
                     ref="$scrollEl"
                     class="container home-7__bottom-block"
+                    data-bottom-s="'see for yourself'|false"
                   >
                     <h2 class="home-7__bottom-title">
                       YOUR<span class="home-7__title-style"> SUCCESS </span> DETERMINES
@@ -199,7 +227,10 @@ const accordionItems: iAccordionItem[] = [
       </div>
 
     </div>
-    <section class="section home-8">
+    <section
+      data-bottom-s="undefined"
+      class="section home-8"
+    >
       <div class="home-8__wrapper">
         <div class="container home-8__text">
           <h1 class="home-8__title">CASE STUDIES</h1>
@@ -292,7 +323,10 @@ const accordionItems: iAccordionItem[] = [
         </li>
       </ul>
     </section>
-    <section class="section home-9">
+    <section
+      data-bottom-s="undefined"
+      class="section home-9"
+    >
       <div class="container home-9__wrapper">
         <div class="home-9__title-wrapper">
           <h2 class="home-9__title">SOME CLIENTS WE’VE HELPED</h2>

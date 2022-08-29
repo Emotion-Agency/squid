@@ -1,3 +1,7 @@
+.bottom-nav-btn--hidden {
+  visibility: hidden;
+}
+
 .next-page-btn {
   @include cd-reg;
   display: flex;
@@ -14,12 +18,21 @@
     .next-page-btn__arrow {
       transform: translateY(6px);
     }
+    .next-page-btn__arrow--rotated {
+      transform: translateX(6px);
+    }
   }
 }
 
 .next-page-btn__arrow {
   transition: transform 0.3s ease;
   margin-top: vw(20);
+  &--rotated {
+    svg {
+      transition: transform 0.3s ease;
+      transform: rotate(-90deg);
+    }
+  }
 }
 
 .next-page-btn__arrow-img {
