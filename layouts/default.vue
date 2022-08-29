@@ -38,11 +38,6 @@ onMounted(async () => {
         href="/favicon.ico"
       >
       </Link>
-      <Link
-        href="http://fonts.cdnfonts.com/css/clash-display"
-        rel="stylesheet"
-      >
-      </Link>
     </Head>
     <AppGrid />
     <UiLoader />
