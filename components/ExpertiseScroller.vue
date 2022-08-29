@@ -1,12 +1,53 @@
 <script lang='ts' setup>
+import { keysGenerator } from '~/assets/scripts/utils/ea'
+
 let es
+
+const $el = ref(null)
+const $wrapper = ref(null)
+const $children = ref(null)
+const $container = ref(null)
+
+const items = ref([
+  {
+    id: keysGenerator(8),
+    text: 'COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.',
+  },
+  {
+    id: keysGenerator(8),
+    text: 'Id senectus cras magna cursus id aliquet sit fames dignissim.',
+  },
+  {
+    id: keysGenerator(8),
+    text: 'Morbi porttitor diam tristique sodales neque id nisl tempus.',
+  },
+  {
+    id: keysGenerator(8),
+    text: 'Feugiat in mauris porttitor consequat est tortor viverra.',
+  },
+  {
+    id: keysGenerator(8),
+    text: 'COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.',
+  },
+  {
+    id: keysGenerator(8),
+    text: 'Id senectus cras magna cursus id aliquet sit fames dignissim.',
+  },
+  {
+    id: keysGenerator(8),
+    text: 'Morbi porttitor diam tristique sodales neque id nisl tempus.',
+  },
+  {
+    id: keysGenerator(8),
+    text: 'Feugiat in mauris porttitor consequat est tortor viverra.',
+  },
+])
+
 onMounted(async () => {
   const { ExpertiseScroller } = await import('~/assets/scripts/ExpertiseScroller')
-  const $el = document.querySelector('.expertise-6')
-  const $wrapper = document.querySelector('.expertise-6__text-wrapper')
-  const $children = document.querySelectorAll('.expertise-6__text')
 
-  es = new ExpertiseScroller($el,$wrapper,$children)
+  es = new ExpertiseScroller($wrapper.value, $el.value, $children.value)
+
 })
 
 onBeforeUnmount(() => {
@@ -15,35 +56,29 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="section expertise-6">
-    <div class="container expertise-6__wrapper">
+  <section
+    ref="$el"
+    class="section expertise-6"
+  >
+    <div
+      ref="$container"
+      class="container expertise-6__wrapper"
+    >
       <h2 class="expertise-6__title">ROI</h2>
       <div class="expertise-6__scroll-wrapper">
-        <div class="expertise-6__text-wrapper">
-          <p class="expertise-6__text">
-            COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.
+        <div
+          ref="$wrapper"
+          class="expertise-6__text-wrapper"
+        >
+          <p
+            v-for="item in items"
+            :key="item.id"
+            ref="$children"
+            class="expertise-6__text"
+          >
+            {{item.text}}
           </p>
-          <p class="expertise-6__text">
-            Id senectus cras magna cursus id aliquet sit fames dignissim.
-          </p>
-          <p class="expertise-6__text">
-            Morbi porttitor diam tristique sodales neque id nisl tempus.
-          </p>
-          <p class="expertise-6__text">
-            Feugiat in mauris porttitor consequat est tortor viverra.
-          </p>
-          <p class="expertise-6__text">
-            COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.
-          </p>
-          <p class="expertise-6__text">
-            Id senectus cras magna cursus id aliquet sit fames dignissim.
-          </p>
-          <p class="expertise-6__text">
-            Morbi porttitor diam tristique sodales neque id nisl tempus.
-          </p>
-          <p class="expertise-6__text">
-            Feugiat in mauris porttitor consequat est tortor viverra.
-          </p>
+
         </div>
       </div>
     </div>

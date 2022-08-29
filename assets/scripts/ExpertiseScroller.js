@@ -1,43 +1,27 @@
-import gsap from 'gsap'
+import Scrolling from './Scrolling'
+import { resize } from './utils/ea'
 
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+export class ExpertiseScroller extends Scrolling {
+  constructor($wrapper, $el, $children) {
+    super($wrapper, $el)
+    this.$el = $wrapper
 
-export class ExpertiseScroller {
-  constructor($el, $wrapper, $children) {
-    this.$el = $el
-    this.$wrapper = $wrapper
-    this.$children = [...$children]
-
-    gsap.registerPlugin(ScrollTrigger)
-
-    this.init()
+    this.$children = $children
+    this.resize = this.resize.bind(this)
+    resize.on(this.resize)
   }
 
-  init() {
-    if (screen.width > 1060) {
-      this.setHeight()
-      this.animate()
+  resize() {
+    this.setHeight()
+    if (screen.width >= 1060) {
+      super.init()
     }
   }
 
-  animate() {
-    this.tl = gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: this.$el.querySelector('.container'),
-          pin: false,
-          scrub: 0.1,
-          start: 'top',
-          end: this.$el.getBoundingClientRect().bottom - window.innerHeight,
-          scroller: document.getElementById('scroll-container'),
-        },
-      })
-      .to(this.$wrapper, {
-        y:
-          -this.$wrapper.scrollHeight +
-          this.$children[this.$children.length - 1].scrollHeight,
-        ease: 'none',
-      })
+  get top() {
+    const min = 0
+    const max = 892
+    return this.computeFromMinToMax(min, max)
   }
 
   setHeight() {
@@ -45,7 +29,13 @@ export class ExpertiseScroller {
       this.$children.length * (window.innerHeight * 0.5) + 'px'
   }
 
+  onScroll() {
+    super.onScroll()
+
+    this.$el.style.transform = `translateY(${-this.top + 'px'})`
+  }
   destroy() {
-    this.tl && this.tl.kill()
+    super.destroy()
+    resize.off(this.resize)
   }
 }

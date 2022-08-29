@@ -15,9 +15,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  height: 100vh;
-  top: 0;
+
+  @media (min-width: $br1) {
+    position: sticky;
+    height: 100vh;
+    top: 0;
+  }
 
   @media (max-width: $br1) {
     flex-direction: column;
@@ -37,8 +40,10 @@
 }
 
 .expertise-6__scroll-wrapper {
-  overflow: hidden;
-  height: vw(130);
+  @media (min-width: $br1) {
+    overflow: hidden;
+    height: vw(130);
+  }
 }
 
 .expertise-6__text-wrapper {
@@ -52,6 +57,11 @@
   line-height: 130%;
   letter-spacing: -0.01em;
   max-width: vw(950);
+  @media (min-width: $br1) {
+    + .expertise-6__text {
+      margin-top: vw(40);
+    }
+  }
 
   @media (max-width: $br1) {
     font-size: 24px;
