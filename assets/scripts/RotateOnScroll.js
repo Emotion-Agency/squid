@@ -6,6 +6,8 @@ export class RotateOnScroll {
   constructor($el) {
     this.$el = $el
 
+    console.log(this.$el)
+
     gsap.registerPlugin(ScrollTrigger)
   }
 
@@ -13,10 +15,10 @@ export class RotateOnScroll {
     this.tl = gsap
       .timeline({
         scrollTrigger: {
-          trigger: document.body,
+          trigger: document.getElementById('scroll-container'),
           pin: false,
           scrub: 0.2,
-          start: 'top top',
+          start: 0,
           scroller: document.getElementById('scroll-container'),
           end: '+=10000',
         },
