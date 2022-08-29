@@ -1,5 +1,4 @@
-import { raf } from '~~/assets/scripts/utils/ea'
-import { delayPromise } from '~~/dist/_nuxt/index-c0d83db4.mjs'
+import { raf, delayPromise } from '~/assets/scripts/utils/ea'
 
 export const useBottomBlock = () => {
   const bottomText = ref('Scroll')
