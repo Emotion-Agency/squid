@@ -69,6 +69,62 @@ export const usePosts = () => {
         'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.',
       image: '/images/thoughts/6.jpg',
     },
+    {
+      id: keysGenerator(8),
+      title: 'TCF BANK',
+      slug: 'tcf-bank',
+      category: 'CASE STUDIES',
+      date: 'August 24, 2021',
+      client: 'Miles Marmo',
+      description:
+        'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.',
+      image: '/images/thoughts/2.jpg',
+    },
+    {
+      id: keysGenerator(8),
+      title: 'Lorem',
+      slug: 'lorem',
+      category: 'AGENCY',
+
+      date: 'August 24, 2021',
+      client: 'Miles Marmo',
+      description:
+        'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.',
+      image: '/images/thoughts/3.jpg',
+    },
+    {
+      id: keysGenerator(8),
+      title: 'ipsum',
+      slug: 'ipsum',
+      category: 'LATEST WORK',
+      date: 'August 24, 2021',
+      client: 'Miles Marmo',
+      description:
+        'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.',
+      image: '/images/thoughts/4.jpg',
+    },
+    {
+      id: keysGenerator(8),
+      title: 'dolor',
+      slug: 'dolor',
+      category: 'CASE STUDIES',
+      date: 'August 24, 2021',
+      client: 'Miles Marmo',
+      description:
+        'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.',
+      image: '/images/thoughts/5.jpg',
+    },
+    {
+      id: keysGenerator(8),
+      title: 'amet',
+      slug: 'amet',
+      category: 'AGENCY',
+      date: 'August 24, 2021',
+      client: 'Miles Marmo',
+      description:
+        'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.',
+      image: '/images/thoughts/6.jpg',
+    },
   ])
 
   const filteredPosts = ref<iPost[]>(posts.value)
