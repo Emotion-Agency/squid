@@ -3,8 +3,14 @@
     <div class="grid container contacts__wrapper">
       <div class="contacts__email-wrapper">
         <h2 class="contacts__small-text">Let’s Start a Conversation</h2>
-        <a class="contacts__email" href="mailto:hello@agencysquid.com">
-          <span class="contacts__style-email">hello</span>@agencysquid.com
+        <a
+          class="contacts__email"
+          href="mailto:hello@agencysquid.com"
+        >
+          <span class="contacts__email-text">
+            <span class="contacts__style-email">hello</span>@agencysquid.com
+          </span>
+          <span class="contacts__email-line"></span>
         </a>
       </div>
       <div class="contacts__phone">
@@ -16,7 +22,11 @@
       <div class="contacts__place">
         <h2 class="contacts__title">Office</h2>
         <p class="conctacts__info">
-          <a href="#" target="_blank" rel="noreferer noopener">
+          <a
+            href="#"
+            target="_blank"
+            rel="noreferer noopener"
+          >
             2521 27th Ave S Minneapolis MN 55406
           </a>
         </p>

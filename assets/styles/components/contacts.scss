@@ -50,21 +50,31 @@
   font-size: vw(90);
   line-height: 124%;
   letter-spacing: 1px;
-
-  &::after {
-    position: absolute;
-    content: '';
-    border-bottom: 2px solid #707070;
-    width: 100%;
-    transform: translateX(-50%);
-    bottom: -15px;
-    left: 50%;
+  .contacts__email-text {
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: block;
+  }
+  &:hover {
+    .contacts__email-text {
+      transform: translateY(-5px);
+      color: #fff;
+    }
   }
 
   @media (max-width: $br1) {
     font-size: 24px;
     line-height: 100%;
   }
+}
+
+.contacts__email-line {
+  position: absolute;
+  content: '';
+  height: 2px;
+  background-color: #707070;
+  width: 100%;
+  bottom: -15px;
+  left: 0;
 }
 
 .contacts__style-email {
@@ -140,6 +150,11 @@
   line-height: 130%;
   color: #707070;
   margin-top: vw(30);
+  transition: color 0.3s ease, transform 0.3s ease;
+  &:hover {
+    color: #fff;
+    transform: translateX(8px);
+  }
 
   @media (max-width: $br1) {
     font-size: 20px;
