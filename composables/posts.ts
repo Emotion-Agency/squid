@@ -9,12 +9,14 @@ export const usePosts = () => {
     client: string
     description: string
     image: string
+    slug: string
   }
 
   const posts = ref<iPost[]>([
     {
       id: keysGenerator(8),
       title: 'TCF BANK',
+      slug: 'tcf-bank',
       category: 'CASE STUDIES',
       date: 'August 24, 2021',
       client: 'Miles Marmo',
@@ -24,8 +26,10 @@ export const usePosts = () => {
     },
     {
       id: keysGenerator(8),
-      title: 'TCF BANK',
+      title: 'Lorem',
+      slug: 'lorem',
       category: 'AGENCY',
+
       date: 'August 24, 2021',
       client: 'Miles Marmo',
       description:
@@ -34,7 +38,8 @@ export const usePosts = () => {
     },
     {
       id: keysGenerator(8),
-      title: 'TCF BANK',
+      title: 'ipsum',
+      slug: 'ipsum',
       category: 'LATEST WORK',
       date: 'August 24, 2021',
       client: 'Miles Marmo',
@@ -44,7 +49,8 @@ export const usePosts = () => {
     },
     {
       id: keysGenerator(8),
-      title: 'TCF BANK',
+      title: 'dolor',
+      slug: 'dolor',
       category: 'CASE STUDIES',
       date: 'August 24, 2021',
       client: 'Miles Marmo',
@@ -54,53 +60,14 @@ export const usePosts = () => {
     },
     {
       id: keysGenerator(8),
-      title: 'TCF BANK',
+      title: 'amet',
+      slug: 'amet',
       category: 'AGENCY',
       date: 'August 24, 2021',
       client: 'Miles Marmo',
       description:
         'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.',
       image: '/images/thoughts/6.jpg',
-    },
-    {
-      id: keysGenerator(8),
-      title: 'TCF BANK',
-      category: 'LATEST WORK',
-      date: 'August 24, 2021',
-      client: 'Miles Marmo',
-      description:
-        'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.',
-      image: '/images/thoughts/7.jpg',
-    },
-    {
-      id: keysGenerator(8),
-      title: 'TCF BANK',
-      category: 'CASE STUDIES',
-      date: 'August 24, 2021',
-      client: 'Miles Marmo',
-      description:
-        'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.',
-      image: '/images/thoughts/8.jpg',
-    },
-    {
-      id: keysGenerator(8),
-      title: 'TCF BANK',
-      category: 'AGENCY',
-      date: 'August 24, 2021',
-      client: 'Miles Marmo',
-      description:
-        'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.',
-      image: '/images/thoughts/9.jpg',
-    },
-    {
-      id: keysGenerator(8),
-      title: 'TCF BANK',
-      category: 'LATEST WORK',
-      date: 'August 24, 2021',
-      client: 'Miles Marmo',
-      description:
-        'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.',
-      image: '/images/thoughts/10.jpg',
     },
   ])
 
@@ -122,7 +89,7 @@ export const usePosts = () => {
   const selectCategory = (category: string) => {
     if (category === 'ALL') {
       filteredPosts.value = posts.value
-      router.push('/thoughts/')
+      router.push({ query: null })
       return
     }
 

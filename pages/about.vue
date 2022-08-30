@@ -154,5 +154,6 @@ useTransition()
         </div>
       </div>
     </section>
+    <TheFooter />
   </main>
 </template>

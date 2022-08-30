@@ -123,5 +123,6 @@ onBeforeUnmount(() => {
       </div>
     </section>
     <ExpertiseScrollBottom />
+    <TheFooter />
   </main>
 </template>

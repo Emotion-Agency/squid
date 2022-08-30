@@ -453,5 +453,6 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
         </div>
       </div>
     </section>
+    <TheFooter />
   </main>
 </template>

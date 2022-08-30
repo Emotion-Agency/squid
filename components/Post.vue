@@ -7,6 +7,7 @@
     client: string
     description: string
     image: string
+    slug: string
   }
 
   defineProps<iProps>()
@@ -34,7 +35,7 @@
           <TextButton
             class="thoughts-2__text-btn"
             tag="nuxt-link"
-            :to="`/thoughts/${title.toLocaleLowerCase().replace(' ', '-')}`"
+            :to="`/thoughts/${slug}/`"
           >
             READ MORE
           </TextButton>

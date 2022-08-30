@@ -21,7 +21,10 @@
       </a>
     </li>
     <li class="socials__li">
-      <NuxtLink to="/" class="socials__link"> contact </NuxtLink>
+      <NuxtLink
+        to="/contacts/"
+        class="socials__link"
+      > contact </NuxtLink>
     </li>
   </ul>
 </template>

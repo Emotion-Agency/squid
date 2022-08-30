@@ -1,6 +1,35 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 useTransition()
+
+
+const route = useRoute()
+
+const slug = route.params.slug
+
+const {posts} = usePosts()
+
+const post = computed(() => {
+  return posts.value.find(post => post.slug === slug)
+})
+
+const prevPost = computed(() => {
+  const idx = posts.value.findIndex(post => post.slug === slug)
+
+  return idx <= 0 ? posts.value[posts.value.length - 1] : posts.value[idx - 1]
+})
+
+const nextPost = computed(() => {
+  const idx = posts.value.findIndex(post => post.slug === slug)
+
+  return idx >= posts.value.length - 1 ? posts.value[0] : posts.value[idx + 1]
+})
+
+const otherPosts = computed(() => {
+  return  posts.value.filter(post => post.slug !== slug)
+})
+
+
 </script>
 
 <template>
@@ -8,12 +37,21 @@ useTransition()
     <section class="section section--nm post-1">
       <div class="container post-1__wrapper">
         <h1 class="post-1__title">
-          COSTA
-          <span class="post-1__style-title"> FARMS</span>
+          {{post.title.split(' ')[0]}}
+          <span
+            v-if="post.title?.split(' ')[1]"
+            class="post-1__style-title"
+          > {{post.title.split(' ')[1]}}</span>
         </h1>
         <div class="post-1__btns-wrapper">
-          <button class="post-1__btn post-1__btn--prev">PREVIOUS</button>
-          <button class="post-1__btn post-1__btn--next">NEXT</button>
+          <NuxtLink
+            :to="`/thoughts/${prevPost.slug}`"
+            class="post-1__btn post-1__btn--prev"
+          >PREVIOUS</NuxtLink>
+          <NuxtLink
+            :to="`/thoughts/${nextPost.slug}`"
+            class="post-1__btn post-1__btn--next"
+          >NEXT</NuxtLink>
         </div>
       </div>
       <TheSocials class="bottom-nav-socials" />
@@ -23,7 +61,7 @@ useTransition()
       <div class="post-2__wrapper">
         <TheImage
           class="post-2__img"
-          src="/images/post/1.jpg"
+          :src="post.image"
           alt="Image"
         />
       </div>
@@ -425,56 +463,21 @@ useTransition()
               <IconsArrowLinkLeft class="post-20__arrow" />
             </button>
             <ul class="post-20__link-list">
-              <li class="post-20__link-li">
+              <li
+                v-for="item in otherPosts"
+                :key="item.id"
+                class="post-20__link-li"
+              >
                 <NuxtLink
-                  to="/"
+                  :to="item.slug"
                   class="post-20__link-text"
-                > Nuleev </NuxtLink>
+                > {{item.title}} </NuxtLink>
                 <div class="post-20__line-wrapper">
                   <span class="post-20__small-line"></span>
                 </div>
               </li>
-              <li class="post-20__link-li">
-                <NuxtLink
-                  to="/"
-                  class="post-20__link-text"
-                >
-                  GREATWATERS
-                </NuxtLink>
-                <div class="post-20__line-wrapper">
-                  <span class="post-20__small-line"></span>
-                </div>
-              </li>
-              <li class="post-20__link-li">
-                <NuxtLink
-                  to="/"
-                  class="post-20__link-text"
-                >
-                  Noonan golf
-                </NuxtLink>
-                <div class="post-20__line-wrapper">
-                  <span class="post-20__small-line"></span>
-                </div>
-              </li>
-              <li class="post-20__link-li">
-                <NuxtLink
-                  to="/"
-                  class="post-20__link-text"
-                >
-                  Fitvine wine
-                </NuxtLink>
-                <div class="post-20__line-wrapper">
-                  <span class="post-20__small-line"></span>
-                </div>
-              </li>
-              <li class="post-20__link-li">
-                <NuxtLink
-                  to="/"
-                  class="post-20__link-text"
-                >
-                  White claw
-                </NuxtLink>
-              </li>
+
+
             </ul>
             <button class="post-20__arrows-btn post-20__arrows-btn--next">
               <IconsArrowLinkRight class="post-20__arrow" />
@@ -483,5 +486,6 @@ useTransition()
         </div>
       </div>
     </section>
+    <TheFooter />
   </main>
 </template>

@@ -99,6 +99,7 @@ const {filteredPosts, selectCategory, activeCategory} = usePosts()
             :date="item.date"
             :description="item.description"
             :image="item.image"
+            :slug="item.slug"
           />
         </ul>
         <div
@@ -111,5 +112,6 @@ const {filteredPosts, selectCategory, activeCategory} = usePosts()
         >VIEW OLDER POSTS</button>
       </div>
     </section>
+    <TheFooter />
   </main>
 </template>
