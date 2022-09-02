@@ -2,6 +2,7 @@
 import { useTransition } from '~/composables/transition'
 import { iAccordionItem } from '~/types/accordion'
 useTransition()
+useObserver('.section')
 
 const accordionItems: iAccordionItem[] = [
   {

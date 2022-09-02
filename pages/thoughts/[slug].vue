@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 useTransition()
+useObserver('.section')
 
 
 const route = useRoute()
@@ -469,7 +470,7 @@ const otherPosts = computed(() => {
                 class="post-20__link-li"
               >
                 <NuxtLink
-                  :to="item.slug"
+                  :to="`/thoughts/${item.slug}/`"
                   class="post-20__link-text"
                 > {{item.title}} </NuxtLink>
                 <div class="post-20__line-wrapper">

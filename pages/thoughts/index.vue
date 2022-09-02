@@ -2,6 +2,7 @@
 import { useTransition } from '~/composables/transition'
 import { usePosts } from '~/composables/posts'
 useTransition()
+useObserver('.section')
 
 const {filteredPosts, selectCategory, activeCategory} = usePosts()
 

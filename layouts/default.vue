@@ -5,6 +5,12 @@ import { useFonts } from '~/composables/fonts'
 useFonts()
 
 const appStore = useAppStore()
+
+const parallaxInit = async () => {
+  const { Parallax } = await import('@emotionagency/parallax')
+  window.parallax = new Parallax({ mobile: false })
+}
+
 onMounted(async () => {
   const { default: supportsWebP } = await import('supports-webp')
 
@@ -19,6 +25,13 @@ onMounted(async () => {
   const { winSizes } = await import('~/assets/scripts/utils/winSizes')
   const { resize } = await import('@/assets/scripts/utils/ea')
   resize.on(winSizes)
+
+  await parallaxInit()
+
+})
+
+onBeforeUnmount(() => {
+  window.parallax && window.parallax.destroy()
 })
 </script>
 

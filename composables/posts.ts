@@ -143,6 +143,11 @@ export const usePosts = () => {
   const route = useRoute()
 
   const selectCategory = (category: string) => {
+    setTimeout(() => {
+      console.log('test')
+      window.parallax && window.parallax.update()
+    }, 500)
+
     if (category === 'ALL') {
       filteredPosts.value = posts.value
       router.push({ query: null })

@@ -87,6 +87,8 @@
 .thoughts-2__img-list {
   display: inline-block;
   margin-top: vw(320);
+  width: 100%;
+  clear: both;
 
   @media (max-width: $br1) {
     margin-top: 120px;
@@ -102,10 +104,12 @@
 
     &:nth-of-type(odd) {
       float: left;
+      clear: left;
     }
 
     &:nth-of-type(even) {
       float: right;
+      clear: right;
     }
   }
 
