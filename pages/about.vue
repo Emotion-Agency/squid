@@ -75,11 +75,13 @@ useObserver('.section')
           <h2 class="about-5__title">WE DO GREAT WORK WITH GREAT PEOPLE.</h2>
           <TheImage
             class="about-5__img"
+            data-parallax="-0.1"
             src="/images/about/2.jpg"
             alt="Image"
           />
           <TheImage
             class="about-5__img"
+            data-parallax="-0.05"
             src="/images/about/3.jpg"
             alt="Image"
           />
