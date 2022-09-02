@@ -65,6 +65,8 @@ const accordionItems: iAccordionItem[] = [
 ]
 
 const {bottomText, isRotated, isVisible} = useBottomBlock()
+
+const {posts} = usePosts()
 </script>
 
 <template>
@@ -241,86 +243,28 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
           </p>
         </div>
       </div>
-      <ul class="grid container home-8__img-list">
-        <li class="home-8__img-li">
-          <TheImage
-            src="/images/home/1.jpg"
-            alt="Image"
-          />
-          <div class="home-8__text-wrapper">
-            <p class="home-8__name">COSTA FARMS</p>
-            <div class="home-8__line-wrapper">
-              <span class="home-8__line"></span>
+      <ul class="container home-8__img-list">
+        <li
+          v-for="post in posts"
+          :key="post.id"
+          class="home-8__img-li"
+        >
+          <NuxtLink
+            class="home-8__img-link"
+            :to="`/thoughts/${post.slug}/`"
+          >
+            <TheImage
+              :src="post.image"
+              alt="Image"
+            />
+            <div class="home-8__text-wrapper">
+              <p class="home-8__name">{{post.title}}</p>
+              <div class="home-8__line-wrapper">
+                <span class="home-8__line"></span>
+              </div>
+              <button class="home-8__link"> view case study </button>
             </div>
-            <NuxtLink
-              to="/"
-              class="home-8__link"
-            > view case study </NuxtLink>
-          </div>
-        </li>
-        <li class="home-8__img-li">
-          <TheImage
-            src="/images/home/2.jpg"
-            alt="Image"
-          />
-          <div class="home-8__text-wrapper">
-            <p class="home-8__name">NOONAN GOLF CO</p>
-            <div class="home-8__line-wrapper">
-              <span class="home-8__line"></span>
-            </div>
-            <NuxtLink
-              to="/"
-              class="home-8__link"
-            > view case study </NuxtLink>
-          </div>
-        </li>
-        <li class="home-8__img-li">
-          <TheImage
-            src="/images/home/3.jpg"
-            alt="Image"
-          />
-          <div class="home-8__text-wrapper">
-            <p class="home-8__name">NULEEV</p>
-            <div class="home-8__line-wrapper">
-              <span class="home-8__line"></span>
-            </div>
-            <NuxtLink
-              to="/"
-              class="home-8__link"
-            > view case study </NuxtLink>
-          </div>
-        </li>
-        <li class="home-8__img-li">
-          <TheImage
-            src="/images/home/4.jpg"
-            alt="Image"
-          />
-          <div class="home-8__text-wrapper">
-            <p class="home-8__name">GREATWATERS</p>
-            <div class="home-8__line-wrapper">
-              <span class="home-8__line"></span>
-            </div>
-            <NuxtLink
-              to="/"
-              class="home-8__link"
-            > view case study </NuxtLink>
-          </div>
-        </li>
-        <li class="home-8__img-li">
-          <TheImage
-            src="/images/home/5.jpg"
-            alt="Image"
-          />
-          <div class="home-8__text-wrapper">
-            <p class="home-8__name">FITVINE WINE</p>
-            <div class="home-8__line-wrapper">
-              <span class="home-8__line"></span>
-            </div>
-            <NuxtLink
-              to="/"
-              class="home-8__link"
-            > view case study </NuxtLink>
-          </div>
+          </NuxtLink>
         </li>
       </ul>
     </section>

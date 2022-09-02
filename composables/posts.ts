@@ -129,16 +129,6 @@ export const usePosts = () => {
 
   const filteredPosts = ref<iPost[]>(posts.value)
 
-  // const categories = ref([
-  //   'CASE STUDIES',
-  //   'LATEST WORK',
-  //   'AGENCY',
-  //   'PROJECTS',
-  //   'EXPERTISE',
-  //   'MISC',
-  //   'ALL',
-  // ])
-
   const router = useRouter()
   const route = useRoute()
 
