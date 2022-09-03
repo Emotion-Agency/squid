@@ -277,10 +277,10 @@
   dependencies:
     mime "^3.0.0"
 
-"@emotionagency/parallax@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@emotionagency/parallax/-/parallax-1.0.2.tgz#e20ebc02ef4cc40083a9ae639723d118d88a523a"
-  integrity sha512-VzjlpxXkTeIJnXqmuE/xIasUPw6LiUBPDMQYdzbRmvwJLqPSnFscXY+oaCbcZslRzc7P57NbwIs+X+iCzvm8gw==
+"@emotionagency/parallax@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@emotionagency/parallax/-/parallax-1.0.3.tgz#6c47b1ee929b06860af75a4eddf9fb5ae1e15ec5"
+  integrity sha512-/WuhIQz6xO/7v4K/fCLRoem9YE9ZrcDSHFhD1I3UX5/OhjgtKbRe4L5lNM/BMg5JtDWt61f8BFoSWWIjMLjDtQ==
   dependencies:
     "@emotionagency/utils" "*"
 

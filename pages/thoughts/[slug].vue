@@ -316,7 +316,10 @@ const otherPosts = computed(() => {
           BIG TEXT OPTION. IMAGES WOULD SCROLL BEHIND TEXT.
         </h2>
         <ul class="post-15__img-list">
-          <li class="post-15__li">
+          <li
+            class="post-15__li"
+            data-parallax="-0.1"
+          >
             <TheImage
               class="post-15__img"
               src="/images/post/15.jpg"
@@ -328,7 +331,10 @@ const otherPosts = computed(() => {
               </p>
             </div>
           </li>
-          <li class="post-15__li">
+          <li
+            data-parallax="-0.05"
+            class="post-15__li"
+          >
             <TheImage
               class="post-15__img"
               src="/images/post/16.jpg"

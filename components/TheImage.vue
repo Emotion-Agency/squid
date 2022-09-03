@@ -63,6 +63,7 @@ const src = props.transform ? transformedSrc : props.src
         :alt="alt"
         data-parallax="0.06"
         :data-scale="scale"
+        :data-scale-animation="true"
         data-pli
       />
     </div>
