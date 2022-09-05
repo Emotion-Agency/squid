@@ -64,6 +64,45 @@ const accordionItems: iAccordionItem[] = [
   }
 ]
 
+const clients = [
+  {
+    title: 'WHITE CLAW HARD SELTZER',
+    img: '/images/home/clients/1.jpg'
+  },
+  {
+    title: 'AMERICAN GEM TRADE ASSOCIATION',
+    img: '/images/home/clients/2.jpg'
+  },
+  {
+    title: 'ARCTIC CAT',
+    img: '/images/home/clients/3.jpg'
+  },
+  {
+    title: 'LUCE LINE BREWING CO',
+    img: '/images/home/clients/1.jpg'
+  },
+  {
+    title: 'Ultrices consequat',
+    img: '/images/home/clients/2.jpg'
+  },
+  {
+    title: 'Facilisis id elit',
+    img: '/images/home/clients/3.jpg'
+  },
+  {
+    title: 'Sed tortor tincidunt nisi ut consectetur sed at',
+    img: '/images/home/clients/1.jpg'
+  },
+  {
+    title: 'Et lectus amet sit',
+    img: '/images/home/clients/2.jpg'
+  },
+  {
+    title: 'Dui odio consequat',
+    img: '/images/home/clients/3.jpg'
+  }
+]
+
 const {bottomText, isRotated, isVisible} = useBottomBlock()
 
 const {posts} = usePosts()
@@ -278,121 +317,24 @@ const {posts} = usePosts()
         </div>
         <div class="home-9__list-wrapper">
           <ul class="home-9__list">
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                White Claw Hard Seltzer
-              </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                American gem trade association
-              </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              > ARCTIC CAT </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                LUCE LINE BREWING CO
-              </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                LUCE LINE BREWING CO
-              </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                American gem trade association
-              </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              > ARCTIC CAT </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                White Claw Hard Seltzer
-              </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                LUCE LINE BREWING CO
-              </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                LUCE LINE BREWING CO
-              </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                LUCE LINE BREWING CO
-              </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                LUCE LINE BREWING CO
-              </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                LUCE LINE BREWING CO
-              </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                LUCE LINE BREWING CO
-              </NuxtLink>
-            </li>
-            <li class="home-9__li">
-              <NuxtLink
-                to="/"
-                class="home-9__link"
-              >
-                LUCE LINE BREWING CO
-              </NuxtLink>
+            <li
+              v-for="item in clients"
+              :key="item.title"
+              class="home-9__li"
+            >
+              <div class="home-9__item-wrapper">
+                <h3 class="home-9__item-text">
+                  {{item.title}}
+                </h3>
+                <div class="home-9__item-img-wrapper">
+
+                  <img
+                    class="home-9__item-img"
+                    :src="item.img"
+                    alt=""
+                  >
+                </div>
+              </div>
             </li>
           </ul>
         </div>
