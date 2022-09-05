@@ -134,7 +134,6 @@ export const usePosts = () => {
 
   const selectCategory = (category: string) => {
     setTimeout(() => {
-      console.log('test')
       window.parallax && window.parallax.update()
     }, 500)
 

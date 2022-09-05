@@ -6,8 +6,6 @@ export class RotateOnScroll {
   constructor($el) {
     this.$el = $el
 
-    console.log(this.$el)
-
     gsap.registerPlugin(ScrollTrigger)
   }
 
