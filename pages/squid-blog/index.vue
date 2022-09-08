@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
-import { usePosts } from '~/composables/posts'
+import { useArticles } from '~/composables/articles'
 useTransition()
 useObserver('.section')
 
-const {filteredPosts, selectCategory, activeCategory} = usePosts()
-
+const { filteredArticles, selectCategory, activeCategory } = useArticles()
 </script>
 
 <template>
@@ -27,7 +26,7 @@ const {filteredPosts, selectCategory, activeCategory} = usePosts()
           <TextButton
             class="thoughts-1__btn"
             tag="nuxt-link"
-            to="/thoughts/stage-seven"
+            to="/squid-blog/stage-seven"
           >
             READ MORE
           </TextButton>
@@ -47,51 +46,70 @@ const {filteredPosts, selectCategory, activeCategory} = usePosts()
         <div class="thoughts-2__filter">
           <button
             class="thoughts-2__btn"
-            :class="[activeCategory === 'CASE STUDIES' && 'thoughts-2__btn--active']"
+            :class="[
+              activeCategory === 'CASE STUDIES' && 'thoughts-2__btn--active',
+            ]"
             @click="selectCategory('CASE STUDIES')"
-          >CASE STUDIES</button>
+          >
+            CASE STUDIES
+          </button>
           <div class="thoughts-2__line">/</div>
           <button
             class="thoughts-2__btn"
-            :class="[activeCategory === 'LATEST WORK' && 'thoughts-2__btn--active']"
+            :class="[
+              activeCategory === 'LATEST WORK' && 'thoughts-2__btn--active',
+            ]"
             @click="selectCategory('LATEST WORK')"
-          >LATEST WORK</button>
+          >
+            LATEST WORK
+          </button>
           <div class="thoughts-2__line">/</div>
           <button
             class="thoughts-2__btn"
             :class="[activeCategory === 'AGENCY' && 'thoughts-2__btn--active']"
             @click="selectCategory('AGENCY')"
-          >AGENCY</button>
+          >
+            AGENCY
+          </button>
           <button
             class="thoughts-2__btn"
-            :class="[activeCategory === 'PROJECTS' && 'thoughts-2__btn--active']"
+            :class="[
+              activeCategory === 'PROJECTS' && 'thoughts-2__btn--active',
+            ]"
             @click="selectCategory('PROJECTS')"
-          >PROJECTS</button>
+          >
+            PROJECTS
+          </button>
           <div class="thoughts-2__line">/</div>
           <button
             class="thoughts-2__btn"
-            :class="[activeCategory === 'EXPERTISE' && 'thoughts-2__btn--active']"
+            :class="[
+              activeCategory === 'EXPERTISE' && 'thoughts-2__btn--active',
+            ]"
             @click="selectCategory('EXPERTISE')"
-          >EXPERTISE</button>
+          >
+            EXPERTISE
+          </button>
           <div class="thoughts-2__line">/</div>
           <button
             class="thoughts-2__btn"
             :class="[activeCategory === 'MISC' && 'thoughts-2__btn--active']"
             @click="selectCategory('MISC')"
-          >MISC</button>
+          >
+            MISC
+          </button>
           <div class="thoughts-2__line">/</div>
           <button
             class="thoughts-2__btn"
             :class="[activeCategory === 'ALL' && 'thoughts-2__btn--active']"
             @click="selectCategory('ALL')"
-          >ALL</button>
+          >
+            ALL
+          </button>
         </div>
-        <ul
-          v-if="filteredPosts.length"
-          class="thoughts-2__img-list"
-        >
+        <ul v-if="filteredArticles.length" class="thoughts-2__img-list">
           <Post
-            v-for="item in filteredPosts"
+            v-for="item in filteredArticles"
             :id="item.id"
             :key="item.id"
             :title="item.title"
@@ -100,17 +118,13 @@ const {filteredPosts, selectCategory, activeCategory} = usePosts()
             :date="item.date"
             :description="item.description"
             :image="item.image"
-            :slug="item.slug"
+            :link="`/squid-blog/${item.slug}/`"
           />
         </ul>
-        <div
-          v-else
-          class="no-posts"
-        >no posts yet</div>
-        <button
-          v-if="filteredPosts.length"
-          class="thoughts-2__posts-btn"
-        >VIEW OLDER POSTS</button>
+        <div v-else class="no-posts">no posts yet</div>
+        <button v-if="filteredArticles.length" class="thoughts-2__posts-btn">
+          VIEW OLDER POSTS
+        </button>
       </div>
     </section>
     <TheFooter />

@@ -12,7 +12,7 @@ const menuItems: iMenuItem[] = [
     text: 'EXPERTISE',
   },
   {
-    to: '/thoughts/?filter=case_studies',
+    to: '/portfolio/',
     text: 'CASE STUDIES',
   },
   {
@@ -20,7 +20,7 @@ const menuItems: iMenuItem[] = [
     text: 'ABOUT US',
   },
   {
-    to: '/thoughts/',
+    to: '/squid-blog/',
     text: 'SQUID THOUGHTS',
   }
 ]

@@ -290,7 +290,7 @@ const {posts} = usePosts()
         >
           <NuxtLink
             class="home-8__img-link"
-            :to="`/thoughts/${post.slug}/`"
+            :to="`/portfolio/${post.slug}/`"
           >
             <TheImage
               :src="post.image"

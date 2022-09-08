@@ -1,0 +1,12 @@
+.blog-1 {
+  position: relative;
+}
+
+.blog-1__img-wrapper {
+  height: 100vh;
+  width: 100%;
+  background-image: url('/public/images/blog/1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+}

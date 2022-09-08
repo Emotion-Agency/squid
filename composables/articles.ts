@@ -1,7 +1,7 @@
 import { keysGenerator } from '~~/assets/scripts/utils/ea'
 
-export const usePosts = () => {
-  interface iPost {
+export const useArticles = () => {
+  interface iArticles {
     id: string
     title: string
     category: string
@@ -12,7 +12,7 @@ export const usePosts = () => {
     slug: string
   }
 
-  const posts = ref<iPost[]>([
+  const articles = ref<iArticles[]>([
     {
       id: keysGenerator(8),
       title: 'TCF BANK',
@@ -127,7 +127,7 @@ export const usePosts = () => {
     },
   ])
 
-  const filteredPosts = ref<iPost[]>(posts.value)
+  const filteredArticles = ref<iArticles[]>(articles.value)
 
   const router = useRouter()
   const route = useRoute()
@@ -138,16 +138,16 @@ export const usePosts = () => {
     }, 500)
 
     if (category === 'ALL') {
-      filteredPosts.value = posts.value
+      filteredArticles.value = articles.value
       router.push({ query: null })
       return
     }
 
-    filteredPosts.value = [...posts.value].filter(
+    filteredArticles.value = [...articles.value].filter(
       post => post.category === category
     )
     router.push(
-      `/portfolio/?filter=${category.toLocaleLowerCase().replace(' ', '_')}`
+      `/squid-blog/?filter=${category.toLocaleLowerCase().replace(' ', '_')}`
     )
   }
 
@@ -161,5 +161,5 @@ export const usePosts = () => {
     selectCategory(activeCategory.value)
   })
 
-  return { posts, filteredPosts, selectCategory, activeCategory }
+  return { articles, filteredArticles, selectCategory, activeCategory }
 }

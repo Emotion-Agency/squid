@@ -7,7 +7,7 @@
     client: string
     description: string
     image: string
-    slug: string
+    link: string
   }
 
   defineProps<iProps>()
@@ -17,7 +17,7 @@
 
   <li class="thoughts-2__li">
     <NuxtLink
-      :to="`/thoughts/${slug}/`"
+      :to="link"
       class="thoughts-2__link"
     >
       <TheImage

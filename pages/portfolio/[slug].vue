@@ -46,11 +46,11 @@ const otherPosts = computed(() => {
         </h1>
         <div class="post-1__btns-wrapper">
           <NuxtLink
-            :to="`/thoughts/${prevPost.slug}`"
+            :to="`/portfolio/${prevPost.slug}`"
             class="post-1__btn post-1__btn--prev"
           >PREVIOUS</NuxtLink>
           <NuxtLink
-            :to="`/thoughts/${nextPost.slug}`"
+            :to="`/portfolio/${nextPost.slug}`"
             class="post-1__btn post-1__btn--next"
           >NEXT</NuxtLink>
         </div>
@@ -476,7 +476,7 @@ const otherPosts = computed(() => {
                 class="post-20__link-li"
               >
                 <NuxtLink
-                  :to="`/thoughts/${item.slug}/`"
+                  :to="`/portfolio/${item.slug}/`"
                   class="post-20__link-text"
                 > {{item.title}} </NuxtLink>
                 <div class="post-20__line-wrapper">
