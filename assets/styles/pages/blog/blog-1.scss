@@ -1,12 +1,16 @@
 .blog-1 {
   position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .blog-1__img-wrapper {
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  background-image: url('/public/images/blog/1.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-origin: content-box;
+}
+
+.blog-1__img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }

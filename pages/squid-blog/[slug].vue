@@ -7,7 +7,10 @@ useObserver('.section')
 <template>
   <main>
     <section class="section section--nm blog-1">
-      <div class="blog-1__img-wrapper"></div>
+      <div class="blog-1__img-wrapper">
+        <TheImage class="blog-1__img" src="/images/blog/1.jpg" alt="Image" />
+      </div>
+      <TheSocials class="bottom-nav-socials" />
     </section>
     <section class="section blog-2">
       <div class="container blog-2__wrapper">
@@ -16,51 +19,54 @@ useObserver('.section')
             <p class="blog-2__category-name">Category: Project</p>
             <p class="blog-2__date">August 28, 2022 / Miles Marmo</p>
             <h1 class="blog-2__title">CLARITY HARD SPARKLING WATER</h1>
-            <p class="blog-2__desc">
-              Eel River Brewing is the country’s first 100% certified organic
-              brewery and regionally has had great success in northern
-              California and southern Oregon. They observed that not everyone
-              who visited their “on-premises” operations was looking for a
-              microbrew. The large consumer gap was wanting a cleaner, lighter,
-              and “healthier” adult beverage. So, they developed a hard
-              sparkling water line that represented the Eel River organic beer
-              brand with its ethos: a clean beverage with simple, high-quality
-              ingredients.
-              <br /><br />
-              Eel River Brewing used its knowledge and proprietary brew process
-              to create a product that only used three clean, natural
-              ingredients – water, flavoring, alcohol offering 5% ABV and less
-              than 100 calories.
-            </p>
+            <div class="blog-2__long-text">
+              <p class="blog-2__desc">
+                Eel River Brewing is the country’s first 100% certified organic
+                brewery and regionally has had great success in northern
+                California and southern Oregon. They observed that not everyone
+                who visited their “on-premises” operations was looking for a
+                microbrew. The large consumer gap was wanting a cleaner,
+                lighter, and “healthier” adult beverage. So, they developed a
+                hard sparkling water line that represented the Eel River organic
+                beer brand with its ethos: a clean beverage with simple,
+                high-quality ingredients.
+              </p>
+              <p class="blog-2__desc">
+                Eel River Brewing used its knowledge and proprietary brew
+                process to create a product that only used three clean, natural
+                ingredients – water, flavoring, alcohol offering 5% ABV and less
+                than 100 calories.
+              </p>
+            </div>
           </div>
           <div class="blog-2__about">
             <div class="blog-2__line"></div>
             <div class="grid blog-2__about-list">
               <div class="blog-2__about-block">
                 <h3 class="blog-2__about-title">Services Provided:</h3>
-                <div class="blog-2__about-wrapper">
-                  <p class="blog-2__about-text">Business Consulting</p>
-                  <p class="blog-2__about-text">Naming</p>
-                  <p class="blog-2__about-text">Branding</p>
-                  <p class="blog-2__about-text">Packaging Design</p>
-                  <p class="blog-2__about-text">Web UI/UX Design</p>
-                  <p class="blog-2__about-text">Web Development</p>
-                  <p class="blog-2__about-text">Marketing</p>
-                  <p class="blog-2__about-text">Advertising</p>
-                </div>
+                <ul class="blog-2__about-wrapper">
+                  <li class="blog-2__about-text">Business Consulting</li>
+                  <li class="blog-2__about-text">Naming</li>
+                  <li class="blog-2__about-text">Branding</li>
+                  <li class="blog-2__about-text">Packaging Design</li>
+                  <li class="blog-2__about-text">Web UI/UX Design</li>
+                  <li class="blog-2__about-text">Web Development</li>
+                  <li class="blog-2__about-text">Marketing</li>
+                  <li class="blog-2__about-text">Advertising</li>
+                </ul>
               </div>
               <div class="blog-2__about-block">
                 <h3 class="blog-2__about-title">Client:</h3>
-                <div class="blog-2__about-wrapper">
-                  <p class="blog-2__about-text">Eel River Brewing</p>
-                </div>
+                <ul class="blog-2__about-wrapper">
+                  <li class="blog-2__about-text">Eel River Brewing</li>
+                </ul>
                 <h3 class="blog-2__about-title blog-2__about-title--distance">
                   Project:
                 </h3>
-                <div class="blog-2__about-wrapper">
-                  <p class="blog-2__about-text">Product Launch</p>
-                  <p class="blog-2__about-text">B2B + B2C</p>
-                </div>
+                <ul class="blog-2__about-wrapper">
+                  <li class="blog-2__about-text">Product Launch</li>
+                  <li class="blog-2__about-text">B2B + B2C</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -98,7 +104,7 @@ useObserver('.section')
             <ul class="blog-2__posts-list">
               <li class="blog-2__posts-li">
                 <NuxtLink to="/" class="blog-2__link">
-                  <TheImage
+                  <img
                     class="blog-2__posts-img"
                     src="/images/blog/4.jpg"
                     alt="Image"
@@ -114,7 +120,7 @@ useObserver('.section')
               </li>
               <li class="blog-2__posts-li">
                 <NuxtLink to="/" class="blog-2__link">
-                  <TheImage
+                  <img
                     class="blog-2__posts-img"
                     src="/images/blog/5.jpg"
                     alt="Image"
@@ -132,7 +138,7 @@ useObserver('.section')
               </li>
               <li class="blog-2__posts-li">
                 <NuxtLink to="/" class="blog-2__link">
-                  <TheImage
+                  <img
                     class="blog-2__posts-img"
                     src="/images/blog/6.jpg"
                     alt="Image"
@@ -158,4 +164,5 @@ useObserver('.section')
       </div>
     </section>
   </main>
+  <TheFooter />
 </template>
