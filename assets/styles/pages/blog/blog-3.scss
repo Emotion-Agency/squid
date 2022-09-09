@@ -2,16 +2,6 @@
   position: relative;
 }
 
-.blog-3__wrapper {
-  max-width: vw(1366);
-
-  @media (max-width: $br1) {
-    max-width: 100%;
-  }
-}
-
-.blog-3__text-wrapper {}
-
 .blog-3__title {
   @include cd-reg;
   font-size: vw(40);
