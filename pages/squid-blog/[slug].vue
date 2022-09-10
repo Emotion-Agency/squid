@@ -156,12 +156,12 @@ useObserver('.section')
             />
             <div class="blog-4__double-imgs">
               <TheImage
-                class="blog-4__img"
+                class="blog-4__double-img"
                 src="/images/blog/10.jpg"
                 alt="Image"
               />
               <TheImage
-                class="blog-4__img"
+                class="blog-4__double-img"
                 src="/images/blog/11.jpg"
                 alt="Image"
               />
