@@ -1,0 +1,46 @@
+.blog-7 {
+  position: relative;
+  padding-bottom: vw(350);
+
+  @media (max-width: $br1) {
+    padding-bottom: 200px;
+  }
+
+  @media (max-width: $br3) {
+    padding-bottom: 120px;
+  }
+}
+
+.blog-7__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.blog-7__btn {
+  @include cd-reg;
+  background-color: transparent;
+  font-size: vw(30);
+  line-height: 100%;
+  text-decoration-line: underline;
+
+  @media (max-width: $br1) {
+    font-size: 20px;
+  }
+}
+
+.blog-7__arrow-btn {
+  background-color: transparent;
+}
+
+.blog-7__arrow {
+  display: block;
+  width: vw(34);
+  height: vw(56);
+
+  @media (max-width: $br1) {
+    width: 20px;
+    height: 33px;
+  }
+}

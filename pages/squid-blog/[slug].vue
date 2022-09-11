@@ -173,6 +173,59 @@ useObserver('.section')
             />
           </div>
         </section>
+        <section class="section blog-5">
+          <div class="blog-5__text-wrapper">
+            <h3 class="blog-5__title">
+              THE <span class="blog-5__title-italic">SOLUTION</span>
+            </h3>
+            <p class="blog-5__desc">
+              Sales materials were developed to help the Eel River Brewing team
+              educate distributors and retailers on why the product was
+              different and how current brand advocates are repeat and loyal
+              purchasers. We used ghosted-back black and white lifestyle imagery
+              to focus on product and brand attributes while, secondarily,
+              putting it in relatable environments.
+            </p>
+          </div>
+          <div class="blog-5__imgs-wrapper">
+            <h2 class="blog-5__text">
+              Local success has led to national expansion.
+            </h2>
+            <ul class="blog-5__img-list">
+              <li class="blog-5__img-li">
+                <TheImage
+                  class="blog-5__img"
+                  src="/images/blog/13.jpg"
+                  alt="Image"
+                />
+                <p class="blog-5__img-desc">
+                  Option to add a caption to these images.
+                </p>
+              </li>
+              <li class="blog-5__img-li">
+                <TheImage
+                  class="blog-5__img"
+                  src="/images/blog/14.jpg"
+                  alt="Image"
+                />
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="section blog-6">
+          <div class="blog-6__wrapper">
+            <h3 class="blog-6__title">
+              THE <span class="blog-6__title-italic">RESULTS</span>
+            </h3>
+            <p class="blog-6__desc">
+              This innovative product provided Eel River Brewery with the
+              opportunity to expand its market and convert to new consumers
+              other than beer drinkers. Their local success has allowed them to
+              expand nationally. Clarity Hard Sparkling Water has been picked up
+              by retailers across the country.
+            </p>
+          </div>
+        </section>
       </article>
       <aside class="aside">
         <div class="aside__wrapper">
@@ -266,6 +319,17 @@ useObserver('.section')
         </div>
       </aside>
     </div>
+    <section class="section blog-7">
+      <div class="container blog-7__wrapper">
+        <button class="blog-7__arrow-btn">
+          <IconsLongArrowLeft class="blog-7__arrow" />
+        </button>
+        <button class="blog-7__btn">VIEW ALL POSTS</button>
+        <button class="blog-7__arrow-btn">
+          <IconsLongArrowRight class="blog-7__arrow" />
+        </button>
+      </div>
+    </section>
   </main>
   <TheFooter />
 </template>
