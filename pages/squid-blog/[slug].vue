@@ -8,7 +8,11 @@ useObserver('.section')
   <main>
     <section class="section section--nm blog-1">
       <div class="blog-1__img-wrapper">
-        <TheImage class="blog-1__img" src="/images/blog/1.jpg" alt="Image" />
+        <TheImage
+          class="blog-1__img"
+          src="/images/blog/1.jpg"
+          alt="Image"
+        />
       </div>
       <TheSocials class="bottom-nav-socials" />
     </section>
@@ -259,7 +263,10 @@ useObserver('.section')
             <h2 class="aside__posts-main">LATEST POSTS</h2>
             <ul class="aside__posts-list">
               <li class="aside__posts-li">
-                <NuxtLink to="/" class="aside__link">
+                <NuxtLink
+                  to="/"
+                  class="aside__link"
+                >
                   <img
                     class="aside__posts-img"
                     src="/images/blog/4.jpg"
@@ -275,7 +282,10 @@ useObserver('.section')
                 </NuxtLink>
               </li>
               <li class="aside__posts-li">
-                <NuxtLink to="/" class="aside__link">
+                <NuxtLink
+                  to="/"
+                  class="aside__link"
+                >
                   <img
                     class="aside__posts-img"
                     src="/images/blog/5.jpg"
@@ -293,7 +303,10 @@ useObserver('.section')
                 </NuxtLink>
               </li>
               <li class="aside__posts-li">
-                <NuxtLink to="/" class="aside__link">
+                <NuxtLink
+                  to="/"
+                  class="aside__link"
+                >
                   <img
                     class="aside__posts-img"
                     src="/images/blog/6.jpg"
@@ -330,6 +343,6 @@ useObserver('.section')
         </button>
       </div>
     </section>
+    <TheFooter />
   </main>
-  <TheFooter />
 </template>
