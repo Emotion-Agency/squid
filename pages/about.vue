@@ -4,9 +4,7 @@ useTransition()
 useObserver('.section')
 
 const scrollBottom = () => {
-
   window.ss.state.target = window.ss.max
-
 }
 </script>
 

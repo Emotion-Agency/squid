@@ -1,10 +1,19 @@
 <script setup lang="ts">
+  import gsap from 'gsap'
 import { useTransition } from '~/composables/transition'
 import { useArticles } from '~/composables/articles'
 useTransition()
 useObserver('.section')
 
 const { filteredArticles, selectCategory, activeCategory } = useArticles()
+
+const $posts = ref(null)
+
+watch(filteredArticles, () => {
+  const tl = gsap.timeline()
+  tl.to($posts.value, { duration: 0, opacity: 0 })
+  tl.to($posts.value, { duration: 0.5, opacity: 1 }, 0.5)
+})
 </script>
 
 <template>
@@ -107,22 +116,36 @@ const { filteredArticles, selectCategory, activeCategory } = useArticles()
             ALL
           </button>
         </div>
-        <ul v-if="filteredArticles.length" class="thoughts-2__img-list">
-          <Post
-            v-for="item in filteredArticles"
-            :id="item.id"
-            :key="item.id"
-            :title="item.title"
-            :category="item.category"
-            :client="item.client"
-            :date="item.date"
-            :description="item.description"
-            :image="item.image"
-            :link="`/squid-blog/${item.slug}/`"
-          />
-        </ul>
-        <div v-else class="no-posts">no posts yet</div>
-        <button v-if="filteredArticles.length" class="thoughts-2__posts-btn">
+        <div
+          ref="$posts"
+          class="thoughts-2__img-list-wrapper"
+        >
+          <ul
+            v-if="filteredArticles.length"
+            class="thoughts-2__img-list"
+          >
+            <Post
+              v-for="item in filteredArticles"
+              :id="item.id"
+              :key="item.id"
+              :title="item.title"
+              :category="item.category"
+              :client="item.client"
+              :date="item.date"
+              :description="item.description"
+              :image="item.image"
+              :link="`/squid-blog/${item.slug}/`"
+            />
+          </ul>
+          <div
+            v-else
+            class="no-posts"
+          >no posts yet</div>
+        </div>
+        <button
+          v-if="filteredArticles.length"
+          class="thoughts-2__posts-btn"
+        >
           VIEW OLDER POSTS
         </button>
       </div>
