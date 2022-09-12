@@ -2,6 +2,12 @@
 import { useTransition } from '~/composables/transition'
 useTransition()
 useObserver('.section')
+
+const scrollBottom = () => {
+
+  window.ss.state.target = window.ss.max
+
+}
 </script>
 
 <template>
@@ -151,9 +157,18 @@ useObserver('.section')
           <h2 class="about-9__title">YEARNING FOR MORE?</h2>
         </div>
         <div class="about-9__text-wrapper">
-          <p class="about-9__text">Chyeah</p>
-          <p class="about-9__text">Definitely</p>
-          <p class="about-9__text">Yerp</p>
+          <button
+            class="about-9__text"
+            @click="scrollBottom"
+          >Chyeah</button>
+          <button
+            class="about-9__text"
+            @click="scrollBottom"
+          >Definitely</button>
+          <button
+            class="about-9__text"
+            @click="scrollBottom"
+          >Yerp</button>
         </div>
       </div>
     </section>
