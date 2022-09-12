@@ -212,3 +212,10 @@
   width: 100%;
   background-color: #707070;
 }
+
+.post-20__nav {
+  margin-top: vw(38);
+  @media (max-width: $br1) {
+    margin-top: 24px;
+  }
+}

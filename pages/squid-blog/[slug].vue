@@ -332,17 +332,12 @@ useObserver('.section')
         </div>
       </aside>
     </div>
-    <section class="section blog-7">
-      <div class="container blog-7__wrapper">
-        <button class="blog-7__arrow-btn">
-          <IconsLongArrowLeft class="blog-7__arrow" />
-        </button>
-        <button class="blog-7__btn">VIEW ALL POSTS</button>
-        <button class="blog-7__arrow-btn">
-          <IconsLongArrowRight class="blog-7__arrow" />
-        </button>
-      </div>
-    </section>
+    <PostNavigation
+      class="section"
+      :prev-post-link="`/squid-blog/`"
+      :next-post-link="`/squid-blog/`"
+      all-posts-link="/squid-blog/"
+    />
     <TheFooter />
   </main>
 </template>

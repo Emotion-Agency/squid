@@ -1,4 +1,4 @@
-.blog-7 {
+.post-nav {
   position: relative;
   padding-bottom: vw(350);
 
@@ -11,14 +11,14 @@
   }
 }
 
-.blog-7__wrapper {
+.post-nav__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.blog-7__btn {
+.post-nav__btn {
   @include cd-reg;
   background-color: transparent;
   font-size: vw(30);
@@ -30,11 +30,11 @@
   }
 }
 
-.blog-7__arrow-btn {
+.post-nav__arrow-btn {
   background-color: transparent;
 }
 
-.blog-7__arrow {
+.post-nav__arrow {
   display: block;
   width: vw(34);
   height: vw(56);

@@ -26,10 +26,9 @@ const nextPost = computed(() => {
   return idx >= posts.value.length - 1 ? posts.value[0] : posts.value[idx + 1]
 })
 
-const otherPosts = computed(() => {
-  return  posts.value.filter(post => post.slug !== slug)
-})
-
+// const otherPosts = computed(() => {
+//   return  posts.value.filter(post => post.slug !== slug)
+// })
 
 </script>
 
@@ -465,31 +464,12 @@ const otherPosts = computed(() => {
         </ul>
         <div class="post-20__link-wrapper">
           <h3 class="post-20__link-title">Other Case Studies</h3>
-          <div class="post-20__list-wrapper">
-            <button class="post-20__arrows-btn post-20__arrows-btn--prev">
-              <IconsArrowLinkLeft class="post-20__arrow" />
-            </button>
-            <ul class="post-20__link-list">
-              <li
-                v-for="item in otherPosts"
-                :key="item.id"
-                class="post-20__link-li"
-              >
-                <NuxtLink
-                  :to="`/portfolio/${item.slug}/`"
-                  class="post-20__link-text"
-                > {{item.title}} </NuxtLink>
-                <div class="post-20__line-wrapper">
-                  <span class="post-20__small-line"></span>
-                </div>
-              </li>
-
-
-            </ul>
-            <button class="post-20__arrows-btn post-20__arrows-btn--next">
-              <IconsArrowLinkRight class="post-20__arrow" />
-            </button>
-          </div>
+          <PostNavigation
+            class="post-20__nav"
+            :prev-post-link="`/portfolio/${prevPost.slug}/`"
+            :next-post-link="`/portfolio/${nextPost.slug}/`"
+            all-posts-link="/portfolio/"
+          />
         </div>
       </div>
     </section>
