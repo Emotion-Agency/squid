@@ -1,12 +1,12 @@
-.post-11 {
+.table-text-2 {
   position: relative;
 }
 
-.post-11__wrapper {
+.table-text-2__wrapper {
   height: 100%;
 }
 
-.post-11__title {
+.table-text-2__title {
   @include cd-semibold;
   font-size: vw(65);
   line-height: 85%;
@@ -17,7 +17,7 @@
   }
 }
 
-.post-11__list-wrapper {
+.table-text-2__list-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@
   }
 }
 
-.post-11__list {
+.table-text-2__list {
   display: flex;
   column-gap: vw(114);
 
@@ -40,7 +40,7 @@
   }
 }
 
-.post-11__li {
+.table-text-2__li {
   padding-left: vw(50);
   border-left: 4px solid var(--black);
   max-width: vw(560);
@@ -55,7 +55,7 @@
   }
 }
 
-.post-11__block-title {
+.table-text-2__block-title {
   @include cd-semibold;
   font-size: vw(22);
   line-height: 100%;
@@ -67,7 +67,7 @@
   }
 }
 
-.post-11__desc {
+.table-text-2__desc {
   @include cd-reg;
   font-size: vw(22);
   line-height: 140%;

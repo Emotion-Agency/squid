@@ -74,3 +74,27 @@ body {
     display: block;
   }
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include cd-reg;
+  .cd-light {
+    @include cd-light;
+  }
+  .cd-semibold {
+    @include cd-semibold;
+  }
+  .snfine-reg {
+    @include snfine-reg;
+  }
+  .snfine-reg-it {
+    @include snfine-reg-it;
+  }
+  .snfine-regcond-it {
+    @include snfine-regcond-it;
+  }
+}

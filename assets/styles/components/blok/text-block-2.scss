@@ -1,0 +1,26 @@
+.text-block-2__title {
+  @include snfine-reg;
+  font-size: vw(45);
+  line-height: 100%;
+  letter-spacing: 0.1em;
+
+  @media (max-width: $br1) {
+    font-size: 32px;
+  }
+}
+
+.text-block-2__title-italic {
+  @include snfine-reg-it;
+}
+
+.text-block-2__desc {
+  @include cd-reg;
+  font-size: vw(22);
+  line-height: 150%;
+  margin-top: vw(18);
+
+  @media (max-width: $br1) {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+}

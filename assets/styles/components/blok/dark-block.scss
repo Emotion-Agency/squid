@@ -1,19 +1,20 @@
-.post-14 {
+.dark-block {
   position: relative;
   background-color: var(--black);
   color: var(--white);
   height: 100vh;
 }
 
-.post-14__wrapper {
+.dark-block__wrapper {
   display: flex;
   align-items: center;
   height: 100%;
 
-  @media (min-width: $br1) {}
+  @media (min-width: $br1) {
+  }
 }
 
-.post-14__title {
+.dark-block__title {
   @include cd-semibold;
   @include col(3, 9);
   font-size: vw(40);
@@ -34,7 +35,7 @@
   }
 }
 
-.post-14__text {
+.dark-block__text {
   @include cd-reg;
   @include col(3, 9);
   width: 100%;

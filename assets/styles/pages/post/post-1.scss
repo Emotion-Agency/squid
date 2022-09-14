@@ -17,13 +17,6 @@
     width: 100%;
   }
   h1 {
-    @include cd-reg;
-    .snfine-reg {
-      @include snfine-reg;
-    }
-    .snfine-reg-it {
-      @include snfine-reg-it;
-    }
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -88,6 +81,15 @@
       right: vw(65);
 
       transform: rotate(90deg) translateX(50%);
+    }
+  }
+}
+
+.article-section {
+  > * + * {
+    margin-top: vw(160);
+    @media (max-width: $br1) {
+      margin-top: 60px;
     }
   }
 }

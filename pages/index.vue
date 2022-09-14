@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { iAccordionItem } from '~~/types/accordion'
-import { useHomeStory } from '~/composables/stories/home.story'
+// import { useHomeStory } from '~/composables/stories/home.story'
 useTransition()
 useObserver('.section')
 
@@ -13,9 +13,9 @@ const $scrollEl = ref(null)
 const $colorEl = ref(null)
 let sa
 
-const { story } = await useHomeStory()
+// const { story } = await useHomeStory()
 
-console.log(story.value)
+// console.log(story.value)
 
 
 
@@ -110,7 +110,7 @@ const clients = [
 
 const {bottomText, isRotated, isVisible} = useBottomBlock()
 
-const {posts} = usePosts()
+// const {posts} = usePosts()
 </script>
 
 <template>
@@ -287,7 +287,7 @@ const {posts} = usePosts()
           </p>
         </div>
       </div>
-      <ul class="container home-8__img-list">
+      <!-- <ul class="container home-8__img-list">
         <li
           v-for="post in posts"
           :key="post.id"
@@ -310,7 +310,7 @@ const {posts} = usePosts()
             </div>
           </NuxtLink>
         </li>
-      </ul>
+      </ul> -->
     </section>
     <section
       data-bottom-s="undefined"

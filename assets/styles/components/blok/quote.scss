@@ -1,4 +1,4 @@
-.post-19 {
+.quote {
   height: 100vh;
   position: relative;
   background-color: var(--black);
@@ -14,7 +14,7 @@
   }
 }
 
-.post-19__wrapper {
+.quote__wrapper {
   height: 100%;
   align-content: center;
 
@@ -30,7 +30,7 @@
   }
 }
 
-.post-19__title {
+.quote__title {
   @include snfine-reg;
   @include col(1, 9);
   font-size: vh(120);
@@ -42,7 +42,7 @@
   }
 }
 
-.post-19__rotate-text {
+.quote__rotate-text {
   @include cd-semibold;
   font-size: vh(17);
   line-height: 140%;

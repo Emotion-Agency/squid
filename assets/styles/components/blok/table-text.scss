@@ -1,0 +1,64 @@
+.table-text {
+  position: relative;
+}
+
+.table-text__wrapper {
+  height: 100%;
+}
+
+.table-text__content-wrapper {
+  @media (max-width: $br1) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.table-text__title {
+  @include snfine-reg;
+  font-size: vw(45);
+  line-height: 100%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  &:nth-of-type(1) {
+    @include col(1, 5);
+  }
+
+  &:nth-of-type(2) {
+    @include col(8, 11);
+
+    @media (max-width: $br1) {
+      margin-top: 60px;
+    }
+  }
+
+  @media (max-width: $br1) {
+    font-size: 32px;
+  }
+}
+
+.table-text__style-title {
+  @include snfine-reg-it;
+}
+
+.table-text__desc {
+  @include cd-reg;
+  font-size: vw(22);
+  line-height: 140%;
+  margin-top: vw(62);
+
+  &:nth-of-type(1) {
+    @include col(3, 6);
+    @include row(2, 2);
+  }
+
+  &:nth-of-type(2) {
+    @include col(9, 12);
+    @include row(2, 2);
+  }
+
+  @media (max-width: $br1) {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+}

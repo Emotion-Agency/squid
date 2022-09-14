@@ -46,8 +46,9 @@ if (width && height) {
 const src = props.transform ? transformedSrc : props.src
 </script>
   
-  <template>
+<template>
   <div
+    v-if="src"
     class="p-img-wrapper"
     :style="resolution && { paddingBottom: resolution.value,height: '0px' }"
   >

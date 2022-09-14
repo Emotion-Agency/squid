@@ -37,6 +37,8 @@ export interface iStory {
 export interface iImage {
   _uid: string
   filename: string
+  title?: string
+  alt?: string
 }
 
 interface iBlogVideo {
@@ -60,4 +62,8 @@ export interface iPost {
   description: string
   image: string
   slug: string
+}
+
+export interface iStyledText {
+  text: Richtext
 }

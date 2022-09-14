@@ -37,6 +37,8 @@
     "@typescript-eslint/no-empty-function": "off",
     "import/no-named-as-default": "off",
     "@typescript-eslint/no-empty-interface": "off",
+    "vue/prop-name-casing": "off",
+    "@typescript-eslint/no-explicit-any": "off",
     "prettier/prettier": [
       "off",
       {
