@@ -4,7 +4,7 @@ export const transformImage = (image, options = {}) => {
   const filters = options.filters ?? 'filters:quality(92):format(webp)'
   const size = options.size ?? null
 
-  const imageService = 'https://a.storyblok.com'
+  const imageService = 'https://a-us.storyblok.com'
   const path = image.replace(imageService, '')
 
   const customPath = size ? '/m/' + size + '/' + filters : '/m/' + filters

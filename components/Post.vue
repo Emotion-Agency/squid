@@ -1,16 +1,21 @@
 <script lang='ts' setup>
+import { iImage } from '~~/types/story';
+
   interface iProps {
     id: string
-    title: string
-    category: string
-    date: string
-    client: string
-    description: string
-    image: string
-    link: string
+    title?: string
+    category?: string
+    date?: string | number
+    author?: string
+    description?: string
+    image?: iImage
+    link?: string
   }
 
-  defineProps<iProps>()
+ const props =  defineProps<iProps>()
+
+    const formattedDate = useFormattedDate(props.date)
+
 </script>
 
 <template>
@@ -21,8 +26,10 @@
       class="thoughts-2__link"
     >
       <TheImage
+        v-if="image?.filename"
+        :transform="true"
         class="thoughts-2__img"
-        :src="image"
+        :src="image.filename"
         alt="Image"
       />
       <div class="thoughts-2__block">
@@ -32,7 +39,7 @@
             <p class="thoughts-2__category">{{category}}</p>
           </div>
           <div class="thoughts-2__desc">
-            <p class="thoughts-2__date">{{date}} / {{client}}</p>
+            <p class="thoughts-2__date">{{formattedDate}} / {{author}}</p>
             <p class="thoughts-2__text">
               {{description}}
             </p>

@@ -47,9 +47,15 @@
   }
 }
 
+.thoughts-2__btn-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .thoughts-2__btn {
   background-color: transparent;
   color: inherit;
+  text-transform: uppercase;
   font: inherit;
   transition: color 0.4s ease;
   overflow: hidden;

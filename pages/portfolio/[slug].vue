@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { useProjectsStories } from '~/composables/stories/projects.story'
 import { useTransition } from '~/composables/transition'
+
 useTransition()
 useObserver('.section')
 
@@ -30,19 +32,26 @@ const nextPost = computed(() => {
 //   return  posts.value.filter(post => post.slug !== slug)
 // })
 
+
+const { stories } = await useProjectsStories()
+
+
+
+const story = computed(() => {
+  return stories.value.find(story => story.slug === 'case-test-1').content
+})
+
+console.log(story.value)
 </script>
 
 <template>
   <main>
+
     <section class="section section--nm post-1">
       <div class="container post-1__wrapper">
-        <h1 class="post-1__title">
-          {{post.title.split(' ')[0]}}
-          <span
-            v-if="post.title?.split(' ')[1]"
-            class="post-1__style-title"
-          > {{post.title.split(' ')[1]}}</span>
-        </h1>
+        <div class="post-1__title">
+          <RichText :text="story.title[0].text" />
+        </div>
         <div class="post-1__btns-wrapper">
           <NuxtLink
             :to="`/portfolio/${prevPost.slug}`"

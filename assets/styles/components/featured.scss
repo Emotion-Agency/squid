@@ -1,4 +1,4 @@
-.thoughts-1 {
+.featured {
   background-color: var(--black);
   color: var(--white);
 
@@ -11,7 +11,7 @@
   }
 }
 
-.thoughts-1__wrapper {
+.featured__wrapper {
   display: flex;
   width: 100%;
 
@@ -20,7 +20,7 @@
   }
 }
 
-.thoughts-1__left-block {
+.featured__left-block {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -32,7 +32,7 @@
   }
 }
 
-.thoughts-1__title {
+.featured__title {
   @include snfine-reg;
   font-size: vw(100);
   line-height: 100%;
@@ -44,7 +44,7 @@
   }
 }
 
-.thoughts-1__small-text {
+.featured__small-text {
   @include cd-reg;
   display: flex;
   flex-direction: column;
@@ -62,7 +62,7 @@
   }
 }
 
-.thoughts-1__italic-text {
+.featured__italic-text {
   @include snfine-reg-it;
   letter-spacing: 0.1em;
   font-size: vw(17);
@@ -72,7 +72,7 @@
   }
 }
 
-.thoughts-1__desc {
+.featured__desc {
   @include cd-reg;
   font-size: vw(22);
   line-height: 160%;
@@ -91,7 +91,7 @@
   }
 }
 
-.thoughts-1__btn {
+.featured__btn {
   @include cd-semibold;
   background-color: transparent;
   color: var(--white);
@@ -107,7 +107,7 @@
   }
 }
 
-.thoughts-1__right-block {
+.featured__right-block {
   width: 50%;
 
   @media (max-width: $br1) {
@@ -115,7 +115,7 @@
   }
 }
 
-.thoughts-1__img {
+.featured__img {
   display: block;
   width: 100%;
 
@@ -127,6 +127,11 @@
   @media (max-width: $br1) {
     width: 100%;
   }
+}
+
+.featured__info {
+  display: flex;
+  gap: 4px;
 }
 
 .no-posts {

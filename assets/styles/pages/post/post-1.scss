@@ -12,27 +12,39 @@
 }
 
 .post-1__title {
-  @include snfine-reg;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 100%;
-  font-size: vw(300);
-  line-height: 85%;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-
+  width: 90%;
   @media (max-width: $br1) {
-    font-size: 100px;
+    width: 100%;
   }
-  @media (max-width: $br3) {
-    font-size: 56px;
+  h1 {
+    @include cd-reg;
+    .snfine-reg {
+      @include snfine-reg;
+    }
+    .snfine-reg-it {
+      @include snfine-reg-it;
+    }
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-align: center;
+    font-size: vw(150);
+    line-height: 1em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @media (max-width: $br1) {
+      font-size: 100px;
+    }
+    @media (max-width: $br3) {
+      font-size: 56px;
+    }
   }
 }
 
-.post-1__style-title {
-  @include cd-reg;
-}
+// .post-1__style-title {
+//   @include cd-reg;
+// }
 
 .post-1__btns-wrapper {
   width: 100%;

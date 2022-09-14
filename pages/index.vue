@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { iAccordionItem } from '~~/types/accordion'
+import { useHomeStory } from '~/composables/stories/home.story'
 useTransition()
 useObserver('.section')
 
@@ -11,6 +12,10 @@ const $scroller = ref(null)
 const $scrollEl = ref(null)
 const $colorEl = ref(null)
 let sa
+
+const { story } = await useHomeStory()
+
+console.log(story.value)
 
 
 

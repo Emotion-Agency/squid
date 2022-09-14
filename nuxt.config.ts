@@ -6,6 +6,18 @@ export default defineNuxtConfig({
 
   modules: ['@pinia/nuxt', '@nuxtjs/eslint-module'],
 
+  buildModules: [
+    [
+      '@storyblok/nuxt',
+      {
+        accessToken: 'aY1nI5dvXQvAvo9YTKrAAwtt',
+        apiOptions: {
+          region: 'us',
+        },
+      },
+    ],
+  ],
+
   // head: {
   //   title: 'emotion',
   //   meta: [
