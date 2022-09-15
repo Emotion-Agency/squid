@@ -6,24 +6,3 @@
 .home-2__wrapper {
   min-height: 100%;
 }
-
-.home-2__title {
-  @include cd-light;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: vw(156);
-  line-height: 100%;
-  letter-spacing: 0.07em;
-
-  @media (max-width: $br1) {
-    font-size: 56px;
-  }
-}
-
-.home-2__style-title {
-  @include snfine-reg-it;
-}

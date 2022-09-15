@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
-import { iAccordionItem } from '~~/types/accordion'
-// import { useHomeStory } from '~/composables/stories/home.story'
+import { useProjectsStories } from '~/composables/stories/projects.story'
+import { useHomeStory } from '~/composables/stories/home.story'
 useTransition()
 useObserver('.section')
+
+const { stories: projects } = await useProjectsStories()
+
+
+
 
 const $el = ref(null)
 const $container = ref(null)
@@ -13,10 +18,9 @@ const $scrollEl = ref(null)
 const $colorEl = ref(null)
 let sa
 
-// const { story } = await useHomeStory()
+const { story } = await useHomeStory()
 
-// console.log(story.value)
-
+console.log(story.value)
 
 
 onMounted(async () => {
@@ -54,63 +58,9 @@ onBeforeUnmount(() => {
   sa && sa.destroy()
 })
 
-const accordionItems: iAccordionItem[] = [
-  {
-    title: 'CHALLENGERS',
-    text: 'We will fight for what’s right for your business and challenge you to do the same.'
-  },
-  {
-    title: 'STRATEGIZORS',
-    text: 'We will fight for what’s right for your business and challenge you to do the same.'
-  },
-  {
-    title: 'CREATORS',
-    text: 'We will fight for what’s right for your business and challenge you to do the same.'
-  }
-]
 
-const clients = [
-  {
-    title: 'WHITE CLAW HARD SELTZER',
-    img: '/images/home/clients/1.jpg'
-  },
-  {
-    title: 'AMERICAN GEM TRADE ASSOCIATION',
-    img: '/images/home/clients/2.jpg'
-  },
-  {
-    title: 'ARCTIC CAT',
-    img: '/images/home/clients/3.jpg'
-  },
-  {
-    title: 'LUCE LINE BREWING CO',
-    img: '/images/home/clients/1.jpg'
-  },
-  {
-    title: 'Ultrices consequat',
-    img: '/images/home/clients/2.jpg'
-  },
-  {
-    title: 'Facilisis id elit',
-    img: '/images/home/clients/3.jpg'
-  },
-  {
-    title: 'Sed tortor tincidunt nisi ut consectetur sed at',
-    img: '/images/home/clients/1.jpg'
-  },
-  {
-    title: 'Et lectus amet sit',
-    img: '/images/home/clients/2.jpg'
-  },
-  {
-    title: 'Dui odio consequat',
-    img: '/images/home/clients/3.jpg'
-  }
-]
 
 const {bottomText, isRotated, isVisible} = useBottomBlock()
-
-// const {posts} = usePosts()
 </script>
 
 <template>
@@ -124,10 +74,10 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
         class="section section--nm home-1"
       >
         <div class="container home-1__wrapper">
-          <h1 class="home-1__title">
-            JUMP
-            <span class="home-1__style-title"> IN</span>
-          </h1>
+          <RichText
+            class="home-1__title"
+            :text="story.storytelling[0].screen_1[0].text"
+          />
         </div>
         <TheSocials class="bottom-nav-socials" />
         <NextBlockButton
@@ -141,10 +91,10 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
         class="section section--nm home-2"
       >
         <div class="container home-2__wrapper">
-          <h1 class="home-2__title">
-            DIVE
-            <span class="home-2__style-title"> DEEP</span>
-          </h1>
+          <RichText
+            class="home-1__title"
+            :text="story.storytelling[0].screen_2[0].text"
+          />
         </div>
       </section>
       <div class="home-all-w">
@@ -165,12 +115,13 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
                 class="section section--nm home-3"
               >
                 <div class="container home-3__wrapper">
-                  <h1 class="home-3__title">
-                    BENEATH
-                    <span class="home-3__title-wrapper">
-                      <span class="home-3__style-title"> THE</span>
-                      <span class="home-3__style-title"> SURFACE</span></span>
-                  </h1>
+                  <div class="home-1__title">
+                    <RichText :text="story.storytelling[0].screen_3[0].text" />
+                    <RichText
+                      class="home-1__title--gray"
+                      :text="story.storytelling[0].screen_3[1].text"
+                    />
+                  </div>
                 </div>
               </section>
               <section
@@ -178,19 +129,10 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
                 class="section section--nm home-4"
               >
                 <div class="container grid home-4__wrapper">
-                  <h1 class="home-4__text">
-                    The first step in
-                    <span class="home-4__style-text">ELEVATING A BRAND</span> is jumping
-                    in. It takes <span class="home-4__style-text">COURAGE</span> and
-                    <span class="home-4__style-text">commitment</span>, but we don’t
-                    embark alone. We
-                    <span class="home-4__style-text"> INVITE</span>
-                    <span class="home-4__style-text"> YOUR</span>
-                    <span class="home-4__style-text"> TEAM </span> to be an integrated
-                    part of ours as we
-                    <span class="home-4__style-text">NAVIGATE</span> deep into
-                    <span class="home-4__style-text">UNCHARTED</span><span class="home-4__style-text"> waters</span>.
-                  </h1>
+                  <RichText
+                    class="home-4__text"
+                    :text="story.storytelling[0].screen_4[0].text"
+                  />
                 </div>
               </section>
               <section
@@ -199,8 +141,9 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
               >
                 <div class="container grid home-5__wrapper">
                   <TheAccordion
+                    v-if="story.dropdown_list[0]"
                     class="home-5__accordion"
-                    :items="accordionItems"
+                    :items="story.dropdown_list[0].dropdown_points"
                   >
                     <p class="home-5__rotate-text">WE ARE</p>
                   </TheAccordion>
@@ -212,35 +155,41 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
               >
                 <div class="container grid home-6__wrapper">
                   <div class="home-6__text-wrapper">
-                    <h2 class="home-6__title">
-                      THE <span class="home-6__style-title">AGENCY</span>
-                    </h2>
+                    <RichText
+                      class="home-6__title"
+                      :text="story.table_texts[0].title[0].text"
+                    />
+
+
                     <div class="home-6__content">
                       <p class="home-6__desc">
-                        We’re a hybrid mix of business consultants and creative
-                        developers who make the lives of our clients easier. It’s a
-                        collaboration of determined, strategic thinkers & doers.
+                        {{story.table_texts[0].text}}
                       </p>
-                      <div class="home-6__btn-wrapper">
-                        <button class="home-6__btn">LEARN MORE</button>
-                        <p class="home-6__btn-text">about us</p>
-                      </div>
+                      <NuxtLink
+                        to="/about/"
+                        class="home-6__btn-wrapper"
+                      >
+                        <div class="home-6__btn">LEARN MORE</div>
+                        <small class="home-6__btn-text">about us</small>
+                      </NuxtLink>
                     </div>
                   </div>
                   <div class="home-6__text-wrapper">
-                    <h2 class="home-6__title">
-                      THE <span class="home-6__style-title">EXPERTISE</span>
-                    </h2>
+                    <RichText
+                      class="home-6__title"
+                      :text="story.table_texts[1].title[0].text"
+                    />
                     <div class="home-6__content">
                       <p class="home-6__desc">
-                        We inspire innovative business opportunities for our clients by
-                        creating smart communications. We go below the surface with
-                        stealth instead of splash.
+                        {{story.table_texts[1].text}}
                       </p>
-                      <div class="home-6__btn-wrapper">
-                        <button class="home-6__btn">LEARN MORE</button>
-                        <p class="home-6__btn-text">expertise</p>
-                      </div>
+                      <NuxtLink
+                        to="/expertise/"
+                        class="home-6__btn-wrapper"
+                      >
+                        <div class="home-6__btn">LEARN MORE</div>
+                        <small class="home-6__btn-text">expertise</small>
+                      </NuxtLink>
                     </div>
                   </div>
                 </div>
@@ -252,19 +201,20 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
               >
                 <div class="grid home-7__wrapper">
                   <div class="container home-7__top-block">
-                    <h2 class="home-7__top-title">
-                      Our drive matches<span class="home-7__title-style"> yours</span>.
-                    </h2>
+                    <RichText
+                      class="home-7__top-title"
+                      :text="story.headings[0].text"
+                    />
                   </div>
                   <div
                     ref="$scrollEl"
                     class="container home-7__bottom-block"
                     data-bottom-s="'see for yourself'|false"
                   >
-                    <h2 class="home-7__bottom-title">
-                      YOUR<span class="home-7__title-style"> SUCCESS </span> DETERMINES
-                      OURS.
-                    </h2>
+                    <RichText
+                      class="home-7__bottom-title"
+                      :text="story.headings[1].text"
+                    />
                   </div>
                 </div>
               </section>
@@ -282,15 +232,14 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
         <div class="container home-8__text">
           <h1 class="home-8__title">CASE STUDIES</h1>
           <p class="home-8__desc">
-            Lorem ipsum dolor, blah words and a little blurb about our select
-            case studies.
+            {{story.cases_description}}
           </p>
         </div>
       </div>
-      <!-- <ul class="container home-8__img-list">
+      <ul class="container home-8__img-list">
         <li
-          v-for="post in posts"
-          :key="post.id"
+          v-for="post in projects"
+          :key="post._uid"
           class="home-8__img-li"
         >
           <NuxtLink
@@ -298,11 +247,11 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
             :to="`/portfolio/${post.slug}/`"
           >
             <TheImage
-              :src="post.image"
+              :src="post.content?.preview_image?.filename ?? post.content?.image?.filename"
               alt="Image"
             />
             <div class="home-8__text-wrapper">
-              <p class="home-8__name">{{post.title}}</p>
+              <p class="home-8__name">{{post.name}}</p>
               <div class="home-8__line-wrapper">
                 <span class="home-8__line"></span>
               </div>
@@ -310,9 +259,10 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
             </div>
           </NuxtLink>
         </li>
-      </ul> -->
+      </ul>
     </section>
     <section
+      v-if="story.clients_list[0].clients_points.length"
       data-bottom-s="undefined"
       class="section home-9"
     >
@@ -323,8 +273,8 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
         <div class="home-9__list-wrapper">
           <ul class="home-9__list">
             <li
-              v-for="item in clients"
-              :key="item.title"
+              v-for="item in story.clients_list[0].clients_points"
+              :key="item._uid"
               class="home-9__li"
             >
               <div class="home-9__item-wrapper">
@@ -335,7 +285,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
 
                   <img
                     class="home-9__item-img"
-                    :src="item.img"
+                    :src="item.image.filename"
                     alt=""
                   >
                 </div>

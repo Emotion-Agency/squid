@@ -25,9 +25,6 @@ const featuredCase = computed(() => {
   return story.value.content.Featured_case
 })
 
-
-console.log(filteredPosts.value)
-
 </script>
 
 <template>
@@ -101,12 +98,12 @@ console.log(filteredPosts.value)
             class="no-posts"
           >no posts yet</div>
         </div>
-        <button
+        <!-- <button
           v-if="filteredPosts.length"
           class="thoughts-2__posts-btn"
         >
           VIEW OLDER POSTS
-        </button>
+        </button> -->
       </div>
     </section>
     <TheFooter />

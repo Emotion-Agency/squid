@@ -54,22 +54,3 @@
     font-size: 56px;
   }
 }
-
-.home-3__style-title {
-  font-style: normal;
-  font-size: vw(166);
-  opacity: 0.45;
-  letter-spacing: 0.07em;
-
-  @media (max-width: $br1) {
-    font-size: 56px;
-  }
-
-  &:nth-child(1) {
-    @include cd-light;
-  }
-
-  &:nth-child(2) {
-    @include snfine-reg;
-  }
-}

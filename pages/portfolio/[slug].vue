@@ -35,9 +35,6 @@ const nextPost = computed(() => {
   return idx >= posts.value.length - 1 ? posts.value[0] : posts.value[idx + 1]
 })
 
-
-console.log(post.value)
-
 </script>
 
 <template>

@@ -22,11 +22,15 @@
 }
 
 .home-4__text {
+  * {
+    font-size: vw(40);
+    line-height: 138%;
+    letter-spacing: 1.4px;
+    @media (max-width: $br1) {
+      font-size: 20px;
+    }
+  }
   @include col(3, 10);
-  @include cd-reg;
-  font-size: vw(40);
-  line-height: 138%;
-  letter-spacing: 1.4px;
 
   @media (min-width: $br1) {
     max-width: vw(1030);
@@ -38,7 +42,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 20px;
   }
 
   @media (max-width: $br4) {

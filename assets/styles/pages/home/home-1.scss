@@ -13,20 +13,24 @@
 }
 
 .home-1__title {
-  @include snfine-regcond-it;
+  h1,
+  h2 {
+    font-size: vw(156);
+    line-height: 100%;
+    letter-spacing: 0.07em;
+    @media (max-width: $br1) {
+      font-size: 56px;
+    }
+  }
+  &--gray {
+    opacity: 0.45;
+  }
   position: absolute;
   text-align: center;
   width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: vw(156);
-  line-height: 100%;
-  letter-spacing: 0.07em;
-
-  @media (max-width: $br1) {
-    font-size: 56px;
-  }
 }
 
 .home-1__style-title {

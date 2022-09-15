@@ -65,19 +65,15 @@
 }
 
 .home-6__title {
-  @include snfine-reg;
-  color: var(--white);
-  font-size: vw(45);
-  line-height: 100%;
-  letter-spacing: 4.5px;
-
-  @media (max-width: $br1) {
-    font-size: 32px;
+  * {
+    font-size: vw(45);
+    line-height: 100%;
+    letter-spacing: 4.5px;
+    @media (max-width: $br1) {
+      font-size: 32px;
+    }
   }
-}
-
-.home-6__style-title {
-  @include snfine-reg-it;
+  color: var(--white);
 }
 
 .home-6__content {

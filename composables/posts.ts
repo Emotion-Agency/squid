@@ -3,7 +3,6 @@ import { iStory } from '~/types/story'
 
 export const usePosts = (posts: Ref<iStory[]>) => {
   const filteredPosts = ref<iStory[]>(posts.value)
-  console.log(posts.value)
 
   const router = useRouter()
   const route = useRoute()

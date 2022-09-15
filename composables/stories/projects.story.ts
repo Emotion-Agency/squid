@@ -39,7 +39,6 @@ export const useProjectsStories: tProjectStories = async () => {
   stories.value = stories.value
     .map(s => {
       useStoryblokBridge(s.id, evStory => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         s = evStory as any
       })
       return s

@@ -11,9 +11,9 @@ export const useHomeStory = async () => {
     console.log(e.message)
   }
 
-  // useStoryblokBridge(initStory.value.id, evStory => {
-  //   initStory.value = evStory
-  // })
+  useStoryblokBridge(initStory.value.id, evStory => {
+    initStory.value = evStory
+  })
 
   const story = computed(() => {
     return initStory.value?.content
