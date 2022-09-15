@@ -17,26 +17,33 @@
 }
 
 .expertise-1__title {
-  @include snfine-reg;
+  * {
+    font-size: vw(200);
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    @media (max-width: $br1) {
+      font-size: 80px;
+    }
+    @media (max-width: $br3) {
+      font-size: 52px;
+    }
+    @media (max-width: $br4) {
+      font-size: 42px;
+    }
+  }
   max-width: vw(1456);
   width: 100%;
-  font-size: vw(200);
-  line-height: 100%;
-  letter-spacing: 0.05em;
 
   @media (max-width: $br1) {
     max-width: 80%;
-    font-size: 80px;
   }
 
   @media (max-width: $br3) {
     max-width: 80%;
-    font-size: 52px;
   }
 
   @media (max-width: $br4) {
     max-width: 100%;
-    font-size: 42px;
   }
 }
 

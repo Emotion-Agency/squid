@@ -1,10 +1,12 @@
 import { Ref } from 'nuxt/dist/app/compat/capi'
 import { iStory } from '~/types/story'
+import { useCustomBridge } from '../customBridge'
 
 type tProjectStories = () => Promise<{
   stories: Ref<iStory[]>
   story: Ref<iStory>
   categories: Ref<iStory[]>
+  listenStory: (arg0: string | string[]) => void
 }>
 
 export const useProjectsStories: tProjectStories = async () => {
@@ -36,14 +38,18 @@ export const useProjectsStories: tProjectStories = async () => {
     console.log(e.message)
   }
 
-  stories.value = stories.value
-    .map(s => {
-      useStoryblokBridge(s.id, evStory => {
-        s = evStory as any
-      })
-      return s
-    })
-    .filter(s => s.name !== 'Index')
+  useCustomBridge(story.value.id, evStory => {
+    console.log(evStory)
+    story.value = evStory
+  })
 
-  return { stories, story, categories }
+  const listenStory = (slug: string) => {
+    const currentStory = stories.value.find(story => story.slug === slug)
+    useCustomBridge(currentStory.id, evStory => {
+      stories.value = stories.value.filter(story => story.slug !== slug)
+      stories.value = [...stories.value, evStory]
+    })
+  }
+
+  return { stories, story, categories, listenStory }
 }

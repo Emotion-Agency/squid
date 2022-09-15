@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useAppStore } from '~/store/app'
 import { useFonts } from '~/composables/fonts'
+import emitter from 'tiny-emitter/instance'
 
 useFonts()
 
@@ -29,11 +30,22 @@ onMounted(async () => {
 
   await parallaxInit()
 
+
+    const sbBridge = new window.StoryblokBridge()
+
+    sbBridge.on(['input', 'published', 'change'], event => {
+
+      emitter.emit('storyChange', event.story)
+      // initStory.value = event.story
+    })
 })
 
 onBeforeUnmount(() => {
   window.parallax && window.parallax.destroy()
 })
+
+
+
 </script>
 
 <template>

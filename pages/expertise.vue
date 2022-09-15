@@ -1,8 +1,14 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { iAccordionItem } from '~/types/accordion'
+import { useExpertiseStory } from '~/composables/stories/expertise.story'
 useTransition()
 useObserver('.section')
+
+const { story } = await useExpertiseStory()
+
+console.log(story.value)
+
 
 const accordionItems: iAccordionItem[] = [
   {
@@ -39,11 +45,14 @@ onBeforeUnmount(() => {
   <main>
     <section class="section section--nm expertise-1">
       <div class="container expertise-1__wrapper">
-        <div class="expertise-1__text-wrapper">
-          <h1 class="expertise-1__title">
-            WE ARE
-            <span class="expertise-1__style-title"> EXPERT</span> COMMUNICATORS.
-          </h1>
+        <div
+          v-if="story.screen_1[0].text"
+          class="expertise-1__text-wrapper"
+        >
+          <RichText
+            :text="story.screen_1[0].text"
+            class="expertise-1__title"
+          />
         </div>
       </div>
       <TheSocials class="bottom-nav-socials" />

@@ -30,7 +30,7 @@ const featuredCase = computed(() => {
 <template>
   <main>
     <Featured
-      v-if="featuredCase"
+      v-if="featuredCase?.content"
       :name="featuredCase.name"
       :category="featuredCase.content.category.name"
       :date="featuredCase.published_at ?? featuredCase.created_at"

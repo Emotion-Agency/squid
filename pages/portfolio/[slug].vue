@@ -11,7 +11,9 @@ const route = useRoute()
 
 const slug = route.params.slug
 
-const { stories } = await useProjectsStories()
+const { stories, listenStory } = await useProjectsStories()
+
+listenStory(slug)
 
 
 const posts = computed(() => {
@@ -40,7 +42,10 @@ const nextPost = computed(() => {
 <template>
   <main>
 
-    <section class="section section--nm post-1">
+    <section
+      v-editable="post.title[0]"
+      class="section section--nm post-1"
+    >
       <div class="container post-1__wrapper">
         <div class="post-1__title">
           <RichText :text="post?.title && post?.title[0].text" />
@@ -62,7 +67,10 @@ const nextPost = computed(() => {
       <TheSocials class="bottom-nav-socials" />
       <NextBlockButton>Scroll</NextBlockButton>
     </section>
-    <section class="section section--nm post-2">
+    <section
+      v-editable="post"
+      class="section section--nm post-2"
+    >
       <div class="post-2__wrapper">
         <TheImage
           :transform="true"
@@ -74,6 +82,7 @@ const nextPost = computed(() => {
     </section>
     <section class="section post-3">
       <BlokTextBlock1
+        v-editable="post.scope[0]"
         class="post-3__wrapper"
         :blok="{
           aligned: post.scope[0]?.aligned,
@@ -82,7 +91,10 @@ const nextPost = computed(() => {
         }"
       />
     </section>
-    <CaseInfo :items="post.case_info[0].case_info" />
+    <CaseInfo
+      v-editable="post.case_info[0]"
+      :items="post.case_info[0].case_info"
+    />
 
     <div
       v-if="post"
@@ -96,6 +108,7 @@ const nextPost = computed(() => {
     </div>
 
     <CaseInfo
+      v-editable="post.case_credits[0]"
       class="post-20"
       :items="post.case_credits[0].case_credit"
     />

@@ -1,11 +1,11 @@
 import { useCustomBridge } from '../customBridge'
 
-export const useHomeStory = async () => {
+export const useExpertiseStory = async () => {
   const initStory = ref(null)
   const storyapi = useStoryblokApi()
 
   try {
-    const { data } = await storyapi.get('cdn/stories/index/', {
+    const { data } = await storyapi.get('cdn/stories/expertise', {
       version: 'draft',
     })
     initStory.value = data.story
@@ -18,6 +18,7 @@ export const useHomeStory = async () => {
   })
 
   const story = computed(() => {
+    console.log(initStory.value.id, initStory.value)
     return initStory.value?.content
   })
 

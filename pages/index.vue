@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { useProjectsStories } from '~/composables/stories/projects.story'
-import { useHomeStory } from '~/composables/stories/home.story'
+import { useHomeStory } from '~~/composables/stories/home.story'
 useTransition()
 useObserver('.section')
 
@@ -20,10 +20,10 @@ let sa
 
 const { story } = await useHomeStory()
 
-console.log(story.value)
 
 
 onMounted(async () => {
+
   const { HorizontalScroll } = await import(
     '~/assets/scripts/HorizontalScroll'
   )
@@ -61,7 +61,17 @@ onBeforeUnmount(() => {
 
 
 const {bottomText, isRotated, isVisible} = useBottomBlock()
+
+definePageMeta({
+  alias: '/index',
+  name: 'Index'
+})
+
+
+
+
 </script>
+
 
 <template>
   <main>
@@ -71,6 +81,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
     >
       <section
         v-if="story.storytelling[0].screen_1[0].text"
+        v-editable="story.storytelling[0].screen_1[0]"
         data-bottom-s="'Don’t worry, the water’s fine'|false"
         class="section section--nm home-1"
       >
@@ -89,6 +100,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
       </section>
       <section
         v-if="story.storytelling[0].screen_2[0].text"
+        v-editable="story.storytelling[0].screen_2[0]"
         data-bottom-s="'Into uncharted territory'|false"
         class="section section--nm home-2"
       >
@@ -114,6 +126,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
             >
               <section
                 v-if="story.storytelling[0].screen_3[0].text"
+                v-editable="story.storytelling[0].screen_3[0]"
                 data-bottom-s="'This is where we thrive'|true"
                 class="section section--nm home-3"
               >
@@ -128,6 +141,8 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
                 </div>
               </section>
               <section
+                v-if="story.storytelling[0].screen_4[0]"
+                v-editable="story.storytelling[0].screen_4[0]"
                 data-bottom-s="'Let’s explore'|true"
                 class="section section--nm home-4"
               >
@@ -140,6 +155,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
               </section>
               <section
                 v-if="story.dropdown_list[0]"
+                v-editable="story.dropdown_list[0]"
                 data-bottom-s="'There’s more to see here'|true"
                 class="section section--nm home-5"
               >
@@ -160,6 +176,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
                 <div class="container grid home-6__wrapper">
                   <div
                     v-if="story.table_texts[0]"
+                    v-editable="story.table_texts[0]"
                     class="home-6__text-wrapper"
                   >
                     <RichText
@@ -182,6 +199,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
                   </div>
                   <div
                     v-if="story.table_texts[1]"
+                    v-editable="story.table_texts[1]"
                     class="home-6__text-wrapper"
                   >
                     <RichText
@@ -213,6 +231,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
                 <div class="grid home-7__wrapper">
                   <div class="container home-7__top-block">
                     <RichText
+                      v-editable="story.headings[0]"
                       class="home-7__top-title"
                       :text="story.headings[0].text"
                     />
@@ -223,6 +242,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
                     data-bottom-s="'see for yourself'|false"
                   >
                     <RichText
+                      v-editable="story.headings[1]"
                       class="home-7__bottom-title"
                       :text="story.headings[1].text"
                     />
@@ -275,6 +295,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
     </section>
     <section
       v-if="story.clients_list[0].clients_points.length"
+      v-editable="story.clients_list[0]"
       data-bottom-s="undefined"
       class="section home-9"
     >
