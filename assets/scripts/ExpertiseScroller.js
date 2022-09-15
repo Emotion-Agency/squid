@@ -13,7 +13,7 @@ export class ExpertiseScroller extends Scrolling {
 
   resize() {
     // this.setHeight()
-    if (screen.width >= 1060) {
+    if (screen.width >= 960) {
       super.init()
     }
   }

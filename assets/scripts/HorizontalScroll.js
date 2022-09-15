@@ -22,7 +22,7 @@ export class HorizontalScroll {
   }
 
   resize() {
-    if (screen.width > 1060) {
+    if (screen.width > 960) {
       this.setHeight()
       raf.on(this.animate)
     } else {

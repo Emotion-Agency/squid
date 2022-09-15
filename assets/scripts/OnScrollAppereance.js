@@ -14,7 +14,7 @@ export class OnScrollAppereance {
   }
 
   animation() {
-    if (screen.width > 1060) {
+    if (screen.width > 960) {
       this.tl = gsap.timeline({
         scrollTrigger: {
           trigger: this.$wrapper,
