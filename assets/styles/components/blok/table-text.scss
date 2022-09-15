@@ -48,7 +48,7 @@
   margin-top: vw(62);
 
   &:nth-of-type(1) {
-    @include col(3, 6);
+    @include col(2, 5);
     @include row(2, 2);
   }
 

@@ -52,6 +52,8 @@ onBeforeUnmount(() => {
         href="/favicon.ico"
       >
       </Link>
+      <Script src="https://player.vimeo.com/api/player.js"></Script>
+
     </Head>
     <AppGrid />
     <UiLoader />

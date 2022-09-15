@@ -87,9 +87,9 @@
 
 .article-section {
   > * + * {
-    margin-top: vw(160);
+    margin-top: vw(220);
     @media (max-width: $br1) {
-      margin-top: 60px;
+      margin-top: 80px;
     }
   }
 }

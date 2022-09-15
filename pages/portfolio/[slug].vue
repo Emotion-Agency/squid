@@ -46,7 +46,7 @@ console.log(post.value)
     <section class="section section--nm post-1">
       <div class="container post-1__wrapper">
         <div class="post-1__title">
-          <RichText :text="post.title[0].text" />
+          <RichText :text="post?.title && post?.title[0].text" />
         </div>
         <div
           v-if="posts.length > 1"
@@ -85,6 +85,8 @@ console.log(post.value)
         }"
       />
     </section>
+    <CaseInfo :items="post.case_info[0].case_info" />
+
     <div
       v-if="post"
       v-editable="post"
@@ -96,100 +98,20 @@ console.log(post.value)
       />
     </div>
 
-    <section class="section post-4">
-      <div class="container post-4__wrapper">
-        <div class="post-4__line"></div>
-        <ul class="grid post-4__list">
-          <li class="post-4__li">
-            <h3 class="post-4__title">Role</h3>
-            <div class="post-4__text-wrapper">
-              <p class="post-4__text">Research</p>
-              <p class="post-4__text">Strategy</p>
-              <p class="post-4__text">Creative</p>
-              <p class="post-4__text">Direction</p>
-              <p class="post-4__text">Production</p>
-            </div>
-          </li>
-          <li class="post-4__li">
-            <h3 class="post-4__title">Deliverables</h3>
-            <div class="post-4__text-wrapper">
-              <p class="post-4__text">Marketing & Branding Strategy</p>
-              <p class="post-4__text">Branding/Art Direction</p>
-              <p class="post-4__text">Copywriting/Brand Voice</p>
-              <p class="post-4__text">Videography/Photography</p>
-              <p class="post-4__text">Digital Presence</p>
-              <p class="post-4__text">Website Design</p>
-              <p class="post-4__text">Social Media Strategy/Launch</p>
-            </div>
-          </li>
-          <li class="post-4__li">
-            <h3 class="post-4__title">Client</h3>
-            <div class="post-4__text-wrapper">
-              <p class="post-4__text">Costa Farms</p>
-            </div>
-          </li>
-          <li class="post-4__li">
-            <h3 class="post-4__title">Company Type</h3>
-            <div class="post-4__text-wrapper">
-              <p class="post-4__text">B2C / B2B</p>
-              <p class="post-4__text">Agriculture</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
+    <CaseInfo
+      class="post-20"
+      :items="post.case_credits[0].case_credit"
+    />
 
-    <section class="section post-20">
-      <div class="container post-20__wrapper">
-        <div class="post-20__line"></div>
-        <ul class="grid post-20__list">
-          <li class="post-20__li">
-            <h3 class="post-20__title">Credits: The Team</h3>
-            <div class="post-20__text-wrapper">
-              <p class="post-20__text">Creative Director: Brent Marmo</p>
-              <p class="post-20__text">
-                Strategic Planning Director: Miles Marmo
-              </p>
-              <p class="post-20__text">
-                Art Director and Designer: Tanya Jacobson
-              </p>
-              <p class="post-20__text">
-                Designer and Producer: Braden Schlegel
-              </p>
-            </div>
-          </li>
-          <li class="post-20__li">
-            <h3 class="post-20__title">Partners</h3>
-            <div class="post-20__text-wrapper">
-              <p class="post-20__text">
-                Videographer: Johnathon Doe Studios / Johnathon Doe Studios
-              </p>
-              <p class="post-20__text">
-                Photographer: Braden Schlegel / Johnathon Doe
-              </p>
-              <p class="post-20__text">Media Team: Johnathon Doe Studios</p>
-              <p class="post-20__text">Post-Production: Johnathon Doe</p>
-              <p class="post-20__text">
-                Digital-Production: Johnathon Doe / Johnathon Doe Studios
-              </p>
-              <p class="post-20__text">VFX Production: Johnathon Doe</p>
-            </div>
-          </li>
-        </ul>
-        <div
-          v-if="posts.length > 1"
-          class="post-20__link-wrapper"
-        >
-          <h3 class="post-20__link-title">Other Case Studies</h3>
-          <PostNavigation
-            class="post-20__nav"
-            :prev-post-link="`/portfolio/${prevPost.slug}/`"
-            :next-post-link="`/portfolio/${nextPost.slug}/`"
-            all-posts-link="/portfolio/"
-          />
-        </div>
-      </div>
-    </section>
+    <div class="container">
+      <h3 class="post-20__link-title">Other Case Studies</h3>
+      <PostNavigation
+        class="post-20__nav"
+        :prev-post-link="`/portfolio/${prevPost.slug}/`"
+        :next-post-link="`/portfolio/${nextPost.slug}/`"
+        all-posts-link="/portfolio/"
+      />
+    </div>
     <TheFooter />
   </main>
 </template>

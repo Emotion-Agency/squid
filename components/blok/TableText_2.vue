@@ -19,7 +19,7 @@ defineProps<iProps>()
 </script>
 
 <template>
-  <section class="section table-text-2">
+  <div class="table-text-2">
     <div class="container table-text-2__wrapper">
       <h2 class="table-text-2__title">{{blok.title}}</h2>
       <div class="table-text-2__list-wrapper">
@@ -37,5 +37,5 @@ defineProps<iProps>()
         </ul>
       </div>
     </div>
-  </section>
+  </div>
 </template>
