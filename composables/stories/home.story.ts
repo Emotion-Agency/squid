@@ -12,6 +12,7 @@ export const useHomeStory = async () => {
   }
 
   useStoryblokBridge(initStory.value.id, evStory => {
+    console.log(initStory.value.id, evStory)
     initStory.value = evStory
   })
 
