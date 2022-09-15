@@ -70,6 +70,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
       class="color-changer"
     >
       <section
+        v-if="story.storytelling[0].screen_1[0].text"
         data-bottom-s="'Don’t worry, the water’s fine'|false"
         class="section section--nm home-1"
       >
@@ -87,6 +88,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
         >{{bottomText}}</NextBlockButton>
       </section>
       <section
+        v-if="story.storytelling[0].screen_2[0].text"
         data-bottom-s="'Into uncharted territory'|false"
         class="section section--nm home-2"
       >
@@ -111,6 +113,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
               class="scroller-el"
             >
               <section
+                v-if="story.storytelling[0].screen_3[0].text"
                 data-bottom-s="'This is where we thrive'|true"
                 class="section section--nm home-3"
               >
@@ -136,12 +139,12 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
                 </div>
               </section>
               <section
+                v-if="story.dropdown_list[0]"
                 data-bottom-s="'There’s more to see here'|true"
                 class="section section--nm home-5"
               >
                 <div class="container grid home-5__wrapper">
                   <TheAccordion
-                    v-if="story.dropdown_list[0]"
                     class="home-5__accordion"
                     :items="story.dropdown_list[0].dropdown_points"
                   >
@@ -150,20 +153,23 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
                 </div>
               </section>
               <section
+                v-if="story.table_texts[0] || story.table_texts[1]"
                 data-bottom-s="'Join us in the abyss'|true"
                 class="section section--nm home-6"
               >
                 <div class="container grid home-6__wrapper">
-                  <div class="home-6__text-wrapper">
+                  <div
+                    v-if="story.table_texts[0]"
+                    class="home-6__text-wrapper"
+                  >
                     <RichText
+                      v-if="story.table_texts[0]?.title[0]?.text"
                       class="home-6__title"
-                      :text="story.table_texts[0].title[0].text"
+                      :text="story.table_texts[0]?.title[0]?.text"
                     />
-
-
                     <div class="home-6__content">
                       <p class="home-6__desc">
-                        {{story.table_texts[0].text}}
+                        {{story.table_texts[0]?.text}}
                       </p>
                       <NuxtLink
                         to="/about/"
@@ -174,14 +180,18 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
                       </NuxtLink>
                     </div>
                   </div>
-                  <div class="home-6__text-wrapper">
+                  <div
+                    v-if="story.table_texts[1]"
+                    class="home-6__text-wrapper"
+                  >
                     <RichText
+                      v-if="story.table_texts[1]?.title[0]?.text"
                       class="home-6__title"
-                      :text="story.table_texts[1].title[0].text"
+                      :text="story.table_texts[1]?.title[0]?.text"
                     />
                     <div class="home-6__content">
                       <p class="home-6__desc">
-                        {{story.table_texts[1].text}}
+                        {{story.table_texts[1]?.text}}
                       </p>
                       <NuxtLink
                         to="/expertise/"
@@ -196,6 +206,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
               </section>
 
               <section
+                v-if="story.headings[0].text"
                 data-bottom-s="'let’s go deeper'|false"
                 class="section section--nm home-7"
               >
@@ -225,6 +236,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
 
     </div>
     <section
+      v-if="projects?.length"
       data-bottom-s="undefined"
       class="section home-8"
     >
