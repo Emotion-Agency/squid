@@ -2,30 +2,39 @@ import { Ref } from 'nuxt/dist/app/compat/capi'
 import { iStory } from '~/types/story'
 import { useCustomBridge } from '../customBridge'
 
-type tProjectStories = () => Promise<{
+type tBlogStories = () => Promise<{
   stories: Ref<iStory[]>
   story: Ref<iStory>
   categories: Ref<iStory[]>
+  tags: Ref<iStory[]>
   featuredPost: Ref<iStory>
   listenStory: (arg0: string | string[]) => void
 }>
 
-export const useProjectsStories: tProjectStories = async () => {
-  const stories = useState<iStory[]>('projectsStory', null)
-  const story = useState<iStory>('projectStory', null)
-  const categories = useState<iStory[]>('projectCategories', null)
+export const useBlogStories: tBlogStories = async () => {
+  const stories = useState<iStory[]>('blogStory', null)
+  const story = useState<iStory>('blogSingleStory', null)
+  const categories = useState<iStory[]>('blogCategories', null)
+  const tags = useState<iStory[]>('blogTags', null)
 
   const storyapi = useStoryblokApi()
 
   try {
-    const { data } = await storyapi.get('cdn/stories/?by_slugs=portfolio/*', {
+    const { data } = await storyapi.get('cdn/stories/?by_slugs=blog/*', {
       version: 'draft',
-      excluding_slugs: 'portfolio/case-categories/*',
-      resolve_relations: ['case.category'],
+      excluding_slugs: 'blog/blog-categories/*,blog/blog-tags/*',
+      resolve_relations: ['article.category'],
     })
 
     const categoriesData = await storyapi.get(
-      'cdn/stories/?by_slugs=portfolio/case-categories/*',
+      'cdn/stories/?by_slugs=blog/blog-categories/*',
+      {
+        version: 'draft',
+      }
+    )
+
+    const tagsData = await storyapi.get(
+      'cdn/stories/?by_slugs=blog/blog-tags/*',
       {
         version: 'draft',
       }
@@ -35,12 +44,13 @@ export const useProjectsStories: tProjectStories = async () => {
     story.value = data.stories.find(s => s.name === 'Index')
 
     categories.value = categoriesData.data.stories
+    tags.value = tagsData.data.stories
   } catch (e) {
     console.log(e.message)
   }
 
   const featuredPost = computed(() => {
-    const featuredId = story?.value?.content?.Featured_case
+    const featuredId = story?.value?.content?.Featured_article
     return stories.value.find(story => story.uuid === featuredId)
   })
 
@@ -57,5 +67,5 @@ export const useProjectsStories: tProjectStories = async () => {
     })
   }
 
-  return { stories, story, categories, listenStory, featuredPost }
+  return { stories, story, categories, listenStory, tags, featuredPost }
 }

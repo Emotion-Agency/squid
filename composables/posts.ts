@@ -1,7 +1,7 @@
 import { Ref } from 'nuxt/dist/app/compat/capi'
 import { iStory } from '~/types/story'
 
-export const usePosts = (posts: Ref<iStory[]>) => {
+export const usePosts = (posts: Ref<iStory[]>, routePath: string) => {
   const filteredPosts = ref<iStory[]>(posts.value)
 
   const router = useRouter()
@@ -23,8 +23,9 @@ export const usePosts = (posts: Ref<iStory[]>) => {
         post?.content?.category?.name?.toLocaleLowerCase() ===
         category.toLocaleLowerCase()
     )
+
     router.push(
-      `/portfolio/?filter=${category.toLocaleLowerCase().replace(' ', '_')}`
+      `/${routePath}/?filter=${category.toLocaleLowerCase().replace(' ', '_')}`
     )
   }
 

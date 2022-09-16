@@ -5,7 +5,7 @@ import { iImage } from '~/types/story'
   interface iProps {
     name?: string
     category?: string
-    date?: string
+    date?: string | number
     author?: string
     description?: string
     link?: string
@@ -15,6 +15,19 @@ import { iImage } from '~/types/story'
   const props = defineProps<iProps>()
 
     const formattedDate = useFormattedDate(props.date)
+
+  const formattedDescription = computed(() => {
+    const descriptionWords = props.description.split(' ')
+    if (!descriptionWords.length) {
+      return ''
+    }
+
+    if (descriptionWords.length <= 40) {
+      return props.description
+    }
+
+    return descriptionWords.slice(0, 40).join(' ') + '...'
+  })
 
 </script>
 
@@ -28,7 +41,7 @@ import { iImage } from '~/types/story'
           <span class="featured__info"><time>{{formattedDate}}</time> / <small>{{author}}</small></span>
         </p>
         <p class="featured__desc">
-          {{description}}
+          {{formattedDescription}}
         </p>
         <TextButton
           class="featured__btn"

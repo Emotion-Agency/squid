@@ -10,9 +10,9 @@ useObserver('.section')
 const $posts = ref(null)
 
 
-const { stories,story, categories } = await useProjectsStories()
+const { stories, categories, featuredPost: featuredCase } = await useProjectsStories()
 
-const { filteredPosts, selectCategory, activeCategory } = usePosts(stories)
+const { filteredPosts, selectCategory, activeCategory } = usePosts(stories, 'portfolio')
 
 watch(filteredPosts, () => {
   const tl = gsap.timeline()
@@ -20,10 +20,6 @@ watch(filteredPosts, () => {
   tl.to($posts.value, { duration: 0.5, opacity: 1 }, 0.5)
 })
 
-
-const featuredCase = computed(() => {
-  return story.value.content.Featured_case
-})
 
 </script>
 
