@@ -1,5 +1,18 @@
 <script lang='ts' setup>
-import { keysGenerator } from '~/assets/scripts/utils/ea'
+
+
+interface iPoint {
+
+  _uid: string
+  roi_point: string
+}
+
+interface iProps {
+title: string
+items: iPoint[]
+}
+
+defineProps<iProps>()
 
 let es
 
@@ -8,40 +21,40 @@ const $wrapper = ref(null)
 const $children = ref(null)
 const $container = ref(null)
 
-const items = ref([
-  {
-    id: keysGenerator(8),
-    text: 'COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.',
-  },
-  {
-    id: keysGenerator(8),
-    text: 'Id senectus cras magna cursus id aliquet sit fames dignissim.',
-  },
-  {
-    id: keysGenerator(8),
-    text: 'Morbi porttitor diam tristique sodales neque id nisl tempus.',
-  },
-  {
-    id: keysGenerator(8),
-    text: 'Feugiat in mauris porttitor consequat est tortor viverra.',
-  },
-  {
-    id: keysGenerator(8),
-    text: 'COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.',
-  },
-  {
-    id: keysGenerator(8),
-    text: 'Id senectus cras magna cursus id aliquet sit fames dignissim.',
-  },
-  {
-    id: keysGenerator(8),
-    text: 'Morbi porttitor diam tristique sodales neque id nisl tempus.',
-  },
-  {
-    id: keysGenerator(8),
-    text: 'Feugiat in mauris porttitor consequat est tortor viverra.',
-  },
-])
+// const items = ref([
+//   {
+//     id: keysGenerator(8),
+//     text: 'COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.',
+//   },
+//   {
+//     id: keysGenerator(8),
+//     text: 'Id senectus cras magna cursus id aliquet sit fames dignissim.',
+//   },
+//   {
+//     id: keysGenerator(8),
+//     text: 'Morbi porttitor diam tristique sodales neque id nisl tempus.',
+//   },
+//   {
+//     id: keysGenerator(8),
+//     text: 'Feugiat in mauris porttitor consequat est tortor viverra.',
+//   },
+//   {
+//     id: keysGenerator(8),
+//     text: 'COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.',
+//   },
+//   {
+//     id: keysGenerator(8),
+//     text: 'Id senectus cras magna cursus id aliquet sit fames dignissim.',
+//   },
+//   {
+//     id: keysGenerator(8),
+//     text: 'Morbi porttitor diam tristique sodales neque id nisl tempus.',
+//   },
+//   {
+//     id: keysGenerator(8),
+//     text: 'Feugiat in mauris porttitor consequat est tortor viverra.',
+//   },
+// ])
 
 onMounted(async () => {
   const { ExpertiseScroller } = await import('~/assets/scripts/ExpertiseScroller')
@@ -72,11 +85,11 @@ onBeforeUnmount(() => {
         >
           <p
             v-for="item in items"
-            :key="item.id"
+            :key="item._uid"
             ref="$children"
             class="expertise-6__text"
           >
-            {{item.text}}
+            {{item.roi_point}}
           </p>
 
         </div>

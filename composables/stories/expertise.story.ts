@@ -18,7 +18,6 @@ export const useExpertiseStory = async () => {
   })
 
   const story = computed(() => {
-    console.log(initStory.value.id, initStory.value)
     return initStory.value?.content
   })
 
