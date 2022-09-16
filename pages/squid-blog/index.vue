@@ -82,7 +82,7 @@ watch(filteredPosts, () => {
               :date="item.published_at ?? item.created_at"
               :description="item.content?.scope && item.content.scope[0]?.main_text"
               :image="item.content?.preview_image ?? item.content?.image"
-              :link="`/portfolio/${item.slug}/`"
+              :link="`/squid-blog/${item.slug}/`"
             />
           </ul>
 

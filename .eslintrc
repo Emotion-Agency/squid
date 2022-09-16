@@ -39,6 +39,7 @@
     "@typescript-eslint/no-empty-interface": "off",
     "vue/prop-name-casing": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
     "prettier/prettier": [
       "off",
       {

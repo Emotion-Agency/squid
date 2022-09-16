@@ -231,7 +231,29 @@
   font-size: vw(65);
   background-color: transparent;
   line-height: 100%;
-  color: #C6C6C6;
+  color: #c6c6c6;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: block;
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    transform: translateX(-110%);
+    transition: transform 0.4s ease;
+    position: relative;
+    top: -4px;
+  }
+
+  &--active {
+    color: var(--black);
+    &::after {
+      transform: translateX(0%);
+    }
+    // text-decoration: underline;
+  }
 }
 
 .aside__posts {
@@ -275,7 +297,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: vw(150)
+  width: vw(150);
 }
 
 .aside__posts-date {
@@ -320,4 +342,16 @@
   line-height: 140%;
   letter-spacing: 0.2em;
   margin-top: vw(40);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.aside__tags-text-wrapper {
+  width: fit-content;
+  display: flex;
+  span {
+    display: block;
+    margin-left: 4px;
+  }
 }

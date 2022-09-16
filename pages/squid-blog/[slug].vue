@@ -1,7 +1,64 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
+import { useBlogStories } from '~/composables/stories/blog.story'
 useTransition()
 useObserver('.section')
+
+const route = useRoute()
+
+const slug = route.params.slug
+
+const { stories, categories, tags, listenStory } = await useBlogStories()
+
+listenStory(slug)
+
+
+const posts = computed(() => {
+  return stories.value
+})
+
+
+const post = computed(() => {
+  return stories.value.find(story => story.slug === slug).content
+})
+
+console.log(post.value)
+
+const activeCategory = computed(() => {
+  const activeId = post?.value?.category
+
+  return categories.value.find(story => story.uuid === activeId)?.name
+})
+
+
+
+const prevPost = computed(() => {
+  const idx = posts.value.findIndex(post => post.slug === slug)
+
+  return idx <= 0 ? posts.value[posts.value.length - 1] : posts.value[idx - 1]
+})
+
+const nextPost = computed(() => {
+  const idx = posts.value.findIndex(post => post.slug === slug)
+
+  return idx >= posts.value.length - 1 ? posts.value[0] : posts.value[idx + 1]
+})
+
+const lastPosts = computed(() => {
+  return posts.value.filter(s => s._uid !== post.value._uid).slice(0, 3)
+})
+
+console.log(lastPosts.value)
+
+
+
+const formattedDate =computed(() => {
+  const date = stories.value.find(story => story.slug === slug).published_at ?? stories.value.find(story => story.slug === slug).created_at
+
+  return useFormattedDate(date)
+})
+
+console.log(tags.value)
 </script>
 
 <template>
@@ -21,26 +78,12 @@ useObserver('.section')
         <section class="section section--nm blog-2">
           <div class="blog-2__wrapper">
             <div class="blog-2__main">
-              <p class="blog-2__category-name">Category: Project</p>
-              <p class="blog-2__date">August 28, 2022 / Miles Marmo</p>
-              <h1 class="blog-2__title">CLARITY HARD SPARKLING WATER</h1>
+              <p class="blog-2__category-name">Category: {{activeCategory}}</p>
+              <p class="blog-2__date">{{formattedDate}} / Miles Marmo</p>
+              <h1 class="blog-2__title">{{post.title}}</h1>
               <div class="blog-2__long-text">
                 <p class="blog-2__desc">
-                  Eel River Brewing is the country’s first 100% certified
-                  organic brewery and regionally has had great success in
-                  northern California and southern Oregon. They observed that
-                  not everyone who visited their “on-premises” operations was
-                  looking for a microbrew. The large consumer gap was wanting a
-                  cleaner, lighter, and “healthier” adult beverage. So, they
-                  developed a hard sparkling water line that represented the Eel
-                  River organic beer brand with its ethos: a clean beverage with
-                  simple, high-quality ingredients.
-                </p>
-                <p class="blog-2__desc">
-                  Eel River Brewing used its knowledge and proprietary brew
-                  process to create a product that only used three clean,
-                  natural ingredients – water, flavoring, alcohol offering 5%
-                  ABV and less than 100 calories.
+                  {{post.description}}
                 </p>
               </div>
             </div>
@@ -236,27 +279,22 @@ useObserver('.section')
           <div class="aside__filter">
             <h2 class="aside__filter-title">CATEGORIES</h2>
             <ul class="aside__filter-list">
-              <li class="aside__filter-li">
-                <button class="aside__filter-btn">CASE STUDIES</button>
+              <li
+                v-for="category in categories"
+                :key="category._uid"
+                class="aside__filter-li"
+              >
+                <NuxtLink
+                  :class="[
+                    activeCategory?.toLocaleLowerCase() === category.name?.toLocaleLowerCase() && 'aside__filter-btn--active',
+                  ]"
+                  :to="`/squid-blog/?filter=${category.name.toLocaleLowerCase()}`"
+                  class="aside__filter-btn"
+                >
+                  {{category.name?.toLocaleLowerCase()}}
+                </NuxtLink>
               </li>
-              <li class="aside__filter-li">
-                <button class="aside__filter-btn">LATEST WORK</button>
-              </li>
-              <li class="aside__filter-li">
-                <button class="aside__filter-btn">EXPERTISE</button>
-              </li>
-              <li class="aside__filter-li">
-                <button class="aside__filter-btn">CAREERS</button>
-              </li>
-              <li class="aside__filter-li">
-                <button class="aside__filter-btn">AGENCY LIFE</button>
-              </li>
-              <li class="aside__filter-li">
-                <button class="aside__filter-btn">MISC</button>
-              </li>
-              <li class="aside__filter-li">
-                <button class="aside__filter-btn">VIEW ALL</button>
-              </li>
+
             </ul>
           </div>
           <div class="aside__posts">
@@ -326,16 +364,23 @@ useObserver('.section')
           <div class="aside__tags">
             <h2 class="aside__tags-main">TAGS</h2>
             <p class="aside__tags-text">
-              Advertising / Art / Agency / SEO / Digital
+              <span
+                v-for="(tag, idx) in tags"
+                :key="tag._uid"
+                class="aside__tags-text-wrapper"
+              >
+                {{tag.name}}
+                <span v-if="idx + 1 < tags.length">/</span>
+              </span>
             </p>
           </div>
         </div>
       </aside>
     </div>
     <PostNavigation
-      class="section"
-      :prev-post-link="`/squid-blog/`"
-      :next-post-link="`/squid-blog/`"
+      class="post-20__nav"
+      :prev-post-link="`/squid-blog/${prevPost.slug}/`"
+      :next-post-link="`/squid-blog/${nextPost.slug}/`"
       all-posts-link="/squid-blog/"
     />
     <TheFooter />
