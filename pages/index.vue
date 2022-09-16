@@ -62,13 +62,6 @@ onBeforeUnmount(() => {
 
 const {bottomText, isRotated, isVisible} = useBottomBlock()
 
-definePageMeta({
-  alias: '/index',
-  name: 'Index'
-})
-
-
-
 
 </script>
 
