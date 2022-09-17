@@ -1,4 +1,4 @@
-import emitter from 'tiny-emitter/instance'
+import emitter from 'tiny-emitter/instance.js'
 import { iStory } from '~/types/story'
 
 type tFunc = (arg0: iStory) => void

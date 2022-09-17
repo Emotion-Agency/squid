@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useAppStore } from '~/store/app'
 import { useFonts } from '~/composables/fonts'
-import emitter from 'tiny-emitter/instance'
+import emitter from 'tiny-emitter/instance.js'
 
 useFonts()
 
