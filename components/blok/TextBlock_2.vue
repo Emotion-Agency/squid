@@ -4,14 +4,16 @@
 
   interface iContent {
     title?: iStyledText[]
-    main_text: string
+    text: string
   }
 
   interface iProps {
    blok: iContent
   }
 
- defineProps<iProps>()
+  defineProps<iProps>()
+
+
 
 </script>
 
@@ -24,7 +26,7 @@
       />
 
       <p class="text-block-2__desc">
-        {{blok.main_text}}
+        {{blok.text}}
       </p>
     </div>
   </div>

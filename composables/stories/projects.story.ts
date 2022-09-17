@@ -45,7 +45,6 @@ export const useProjectsStories: tProjectStories = async () => {
   })
 
   useCustomBridge(story.value.id, evStory => {
-    console.log(evStory)
     story.value = evStory
   })
 

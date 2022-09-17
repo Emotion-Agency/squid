@@ -55,7 +55,6 @@ export const useBlogStories: tBlogStories = async () => {
   })
 
   useCustomBridge(story.value.id, evStory => {
-    console.log(evStory)
     story.value = evStory
   })
 

@@ -11,8 +11,14 @@ const getBlokName = name => {
       return defineAsyncComponent(
         () => import(`~/components/blok/TextBlock_1.vue`)
       )
+      case 'text_block_2':
+      return defineAsyncComponent(
+        () => import(`~/components/blok/TextBlock_2.vue`)
+      )
     case 'image':
       return defineAsyncComponent(() => import(`~/components/blok/Image.vue`))
+      case 'image_with_title':
+      return defineAsyncComponent(() => import(`~/components/blok/ImageWithText.vue`))
     case 'video':
       return defineAsyncComponent(() => import(`~/components/blok/Video.vue`))
     case 'dark_block':
@@ -40,7 +46,7 @@ const getBlokName = name => {
 <template>
   <section class="section article-section">
     <div
-      v-for="blok in body"
+      v-for="(blok) in body"
       :key="blok._uid"
       v-editable="blok"
     >

@@ -10,6 +10,7 @@ interface iProps {
   width?: number
   height?: number
   isLazy?: boolean
+  disabledParallax?: boolean
 }
 
 
@@ -55,16 +56,16 @@ const src = props.transform ? transformedSrc : props.src
     <div
       class="p-img-container"
       :class="resolution && 'p-img-container--cover'"
-      data-parallax="0.06"
+      :data-parallax="!disabledParallax && 0.06"
     >
       <img
         class="parallax-img"
-        :class="imgClass"
+        :class="[imgClass]"
         :src="src"
         :alt="alt"
-        data-parallax="0.06"
-        :data-scale="scale"
-        :data-scale-animation="true"
+        :data-parallax="!disabledParallax && 0.06"
+        :data-scale="!disabledParallax && scale"
+        :data-scale-animation="!disabledParallax && true"
         data-pli
       />
     </div>

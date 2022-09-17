@@ -1,0 +1,21 @@
+.image-with-text {
+  position: relative;
+}
+
+.image-with-text__h {
+  @include snfine-reg;
+  text-transform: uppercase;
+  font-size: 42px;
+  line-height: 0.94em;
+  @media (min-width: $br1) {
+    position: absolute;
+    max-width: vw(600);
+    left: vw(600);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: vw(120);
+  }
+  @media (max-width: $br1) {
+    margin-bottom: 40px;
+  }
+}

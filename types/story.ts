@@ -39,7 +39,7 @@ export interface iStory {
 export interface iImage {
   _uid: string
   filename: string
-  title?: string
+  name?: string
   alt?: string
 }
 

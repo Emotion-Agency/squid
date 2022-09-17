@@ -5,6 +5,7 @@ import { iImage } from '~/types/story'
     fullscreen?: boolean
     halfscreen?: boolean
     image: iImage
+    disable_parallax: boolean
   }
 
   interface iProps {
@@ -20,14 +21,29 @@ import { iImage } from '~/types/story'
     v-if="!blok.fullscreen"
     class="container"
   >
+    <figure>
+      <TheImage
+        :transform="true"
+        :class="blok.halfscreen && 'halfscreen'"
+        :src="blok.image.filename"
+        :disabled-parallax="blok.disable_parallax"
+      />
+      <figcaption
+        v-if="blok.image.name"
+        class="figcaption"
+      >{{blok.image.name}}</figcaption>
+    </figure>
+  </div>
+  <figure v-else>
     <TheImage
       :transform="true"
       :src="blok.image.filename"
+      :class="blok.halfscreen && 'halfscreen'"
+      :disabled-parallax="blok.disable_parallax"
     />
-  </div>
-  <TheImage
-    v-else
-    :transform="true"
-    :src="blok.image.filename"
-  />
+    <figcaption
+      v-if="blok.image.name"
+      class="figcaption"
+    >{{blok.image.name}}</figcaption>
+  </figure>
 </template>
