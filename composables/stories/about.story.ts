@@ -7,8 +7,7 @@ export const useAboutStory = async () => {
 
   try {
     const { data } = await storyapi.get('cdn/stories/about', {
-      version:
-        config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
+      version: config.public.ENVIROMENT === 'development' ? 'draft' : 'draft',
     })
     initStory.value = data.story
   } catch (e) {

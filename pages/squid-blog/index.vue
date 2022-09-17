@@ -18,8 +18,6 @@ watch(filteredPosts, () => {
   tl.to($posts.value, { duration: 0, opacity: 0 })
   tl.to($posts.value, { duration: 0.5, opacity: 1 }, 0.5)
 })
-
-console.log(featuredPost.value)
 </script>
 
 <template>

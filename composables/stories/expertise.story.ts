@@ -7,8 +7,7 @@ export const useExpertiseStory = async () => {
 
   try {
     const { data } = await storyapi.get('cdn/stories/expertise', {
-      version:
-        config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
+      version: config.public.ENVIROMENT === 'development' ? 'draft' : 'draft',
     })
     initStory.value = data.story
   } catch (e) {

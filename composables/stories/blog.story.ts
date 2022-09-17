@@ -22,8 +22,7 @@ export const useBlogStories: tBlogStories = async () => {
 
   try {
     const { data } = await storyapi.get('cdn/stories/?by_slugs=squid-blog/*', {
-      version:
-        config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
+      version: config.public.ENVIROMENT === 'development' ? 'draft' : 'draft',
       cv: +new Date(),
       excluding_slugs: 'squid-blog/blog-categories/*,squid-blog/blog-tags/*',
       resolve_relations: ['Article.category'],
@@ -33,6 +32,7 @@ export const useBlogStories: tBlogStories = async () => {
       'cdn/stories/?by_slugs=squid-blog/blog-categories/*',
       {
         version: 'draft',
+        cv: +new Date(),
       }
     )
 
@@ -40,6 +40,7 @@ export const useBlogStories: tBlogStories = async () => {
       'cdn/stories/?by_slugs=squid-blog/blog-tags/*',
       {
         version: 'draft',
+        cv: +new Date(),
       }
     )
 
