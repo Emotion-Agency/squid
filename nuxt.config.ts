@@ -20,6 +20,7 @@ export default defineNuxtConfig({
 
   publicRuntimeConfig: {
     STORYBLOK_TOKEN: process.env.STORYBLOK_TOKEN,
+    ENVIROMENT: process.env.NODE_ENV,
   },
 
   // head: {

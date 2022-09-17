@@ -272,6 +272,7 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
             :to="`/portfolio/${post.slug}/`"
           >
             <TheImage
+              v-if="post.content?.preview_image?.filename ?? post.content?.image?.filename"
               :src="post.content?.preview_image?.filename ?? post.content?.image?.filename"
               alt="Image"
             />

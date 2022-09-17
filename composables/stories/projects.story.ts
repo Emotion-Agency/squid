@@ -14,12 +14,14 @@ export const useProjectsStories: tProjectStories = async () => {
   const stories = useState<iStory[]>('projectsStory', null)
   const story = useState<iStory>('projectStory', null)
   const categories = useState<iStory[]>('projectCategories', null)
+  const config = useRuntimeConfig()
 
   const storyapi = useStoryblokApi()
 
   try {
     const { data } = await storyapi.get('cdn/stories/?by_slugs=portfolio/*', {
-      version: 'draft',
+      version:
+        config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
       excluding_slugs: 'portfolio/case-categories/*',
       resolve_relations: ['case.category'],
     })
@@ -27,7 +29,8 @@ export const useProjectsStories: tProjectStories = async () => {
     const categoriesData = await storyapi.get(
       'cdn/stories/?by_slugs=portfolio/case-categories/*',
       {
-        version: 'draft',
+        version:
+          config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
       }
     )
 

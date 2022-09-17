@@ -3,10 +3,12 @@ import { useCustomBridge } from '../customBridge'
 export const useAboutStory = async () => {
   const initStory = ref(null)
   const storyapi = useStoryblokApi()
+  const config = useRuntimeConfig()
 
   try {
     const { data } = await storyapi.get('cdn/stories/about', {
-      version: 'draft',
+      version:
+        config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
     })
     initStory.value = data.story
   } catch (e) {

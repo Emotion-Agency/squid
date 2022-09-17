@@ -18,10 +18,12 @@ export const useBlogStories: tBlogStories = async () => {
   const tags = useState<iStory[]>('blogTags', null)
 
   const storyapi = useStoryblokApi()
+  const config = useRuntimeConfig()
 
   try {
     const { data } = await storyapi.get('cdn/stories/?by_slugs=squid-blog/*', {
-      version: 'draft',
+      version:
+        config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
       excluding_slugs: 'squid-blog/blog-categories/*,squid-blog/blog-tags/*',
       resolve_relations: ['article.category'],
     })
@@ -29,14 +31,16 @@ export const useBlogStories: tBlogStories = async () => {
     const categoriesData = await storyapi.get(
       'cdn/stories/?by_slugs=squid-blog/blog-categories/*',
       {
-        version: 'draft',
+        version:
+          config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
       }
     )
 
     const tagsData = await storyapi.get(
       'cdn/stories/?by_slugs=squid-blog/blog-tags/*',
       {
-        version: 'draft',
+        version:
+          config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
       }
     )
 
