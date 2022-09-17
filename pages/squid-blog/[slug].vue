@@ -31,7 +31,7 @@ const activeCategory = computed(() => {
 const activeTags = computed(() => {
   const activeIds = post?.value?.tags
 
-  return activeIds.map(id => {
+  return activeIds?.map(id => {
     return tags.value.find(story => story.uuid === id)
   })
 })
@@ -67,7 +67,6 @@ const getCategory = (catId: string) => {
   return categories.value.find(story => story.uuid === catId)?.name
 }
 
-console.log(post.value)
 
 </script>
 
@@ -185,7 +184,7 @@ console.log(post.value)
             </ul>
           </div>
           <div
-            v-if="tags.length"
+            v-if="activeTags?.length"
             class="aside__tags"
           >
             <h2 class="aside__tags-main">TAGS</h2>
