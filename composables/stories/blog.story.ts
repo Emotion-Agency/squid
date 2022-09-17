@@ -26,7 +26,7 @@ export const useBlogStories: tBlogStories = async () => {
         config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
       cv: +new Date(),
       excluding_slugs: 'squid-blog/blog-categories/*,squid-blog/blog-tags/*',
-      resolve_relations: ['article.category'],
+      resolve_relations: ['Article.category'],
     })
 
     const categoriesData = await storyapi.get(

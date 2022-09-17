@@ -18,8 +18,6 @@ export const useProjectsStories: tProjectStories = async () => {
 
   const storyapi = useStoryblokApi()
 
-  console.log(storyapi)
-
   try {
     const { data } = await storyapi.get('cdn/stories/?by_slugs=portfolio/*', {
       version:
