@@ -21,7 +21,7 @@ const menuItems: iMenuItem[] = [
   },
   {
     to: '/squid-blog/',
-    text: 'SQUID THOUGHTS',
+    text: 'INCLINGS',
   }
 ]
 </script>

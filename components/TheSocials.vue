@@ -1,3 +1,8 @@
+<script lang='ts' setup>
+const { closeMenu } = useMenu()
+
+</script>
+
 <template>
   <ul class="socials">
     <li class="socials__li">
@@ -24,6 +29,7 @@
       <NuxtLink
         to="/contacts/"
         class="socials__link"
+        @click="closeMenu"
       > contact </NuxtLink>
     </li>
   </ul>
