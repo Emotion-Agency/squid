@@ -44,7 +44,10 @@ const getBlokName = name => {
 </script>
 
 <template>
-  <section class="section article-section">
+  <section
+    v-if="body.length"
+    class="section article-section"
+  >
     <div
       v-for="(blok) in body"
       :key="blok._uid"

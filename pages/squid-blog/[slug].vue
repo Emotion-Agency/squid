@@ -83,7 +83,7 @@ const getCategory = (catId: string) => {
         <section class="section section--nm blog-2">
           <div class="blog-2__wrapper">
             <div class="blog-2__main">
-              <p class="blog-2__category-name">Category: {{activeCategory}}</p>
+              <p class="blog-2__category-name">Category: {{activeCategory || 'None'}}</p>
               <p class="blog-2__date">{{formattedDate}} / Miles Marmo</p>
               <h1
                 v-if="post?.title"
@@ -99,7 +99,7 @@ const getCategory = (catId: string) => {
               </div>
             </div>
             <CaseInfo
-              v-if="post.blog_info[0]"
+              v-if="post.blog_info && post.blog_info[0]"
               v-editable="post.blog_info[0]"
               :items="post.blog_info[0].case_info"
               class="blog-2__info"
