@@ -1,6 +1,9 @@
 .home-6 {
   position: relative;
   background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (min-width: $br1) {
     height: 100vh;
@@ -17,8 +20,7 @@
 }
 
 .home-6__wrapper {
-  align-items: center;
-  height: 100%;
+  height: fit-content;
 
   @media (max-width: $br1) {
     display: flex;
@@ -104,6 +106,13 @@
   @media (max-width: $br1) {
     margin-top: 25px;
   }
+  &:hover {
+    .home-6__btn {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .home-6__btn {
@@ -114,6 +123,16 @@
   line-height: 100%;
   letter-spacing: 3.4px;
   margin-right: vw(4);
+  display: block;
+  overflow: hidden;
+  &::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.4s ease;
+  }
 
   @media (max-width: $br1) {
     font-size: 17px;
