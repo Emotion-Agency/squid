@@ -30,6 +30,7 @@ onMounted(async () => {
 
   await parallaxInit()
 
+  setTimeout(() => {
 
     const sbBridge = new window.StoryblokBridge()
 
@@ -38,6 +39,7 @@ onMounted(async () => {
       emitter.emit('storyChange', event.story)
       // initStory.value = event.story
     })
+  }, 200)
 })
 
 onBeforeUnmount(() => {

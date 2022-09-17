@@ -20,21 +20,21 @@ export const useBlogStories: tBlogStories = async () => {
   const storyapi = useStoryblokApi()
 
   try {
-    const { data } = await storyapi.get('cdn/stories/?by_slugs=blog/*', {
+    const { data } = await storyapi.get('cdn/stories/?by_slugs=squid-blog/*', {
       version: 'draft',
-      excluding_slugs: 'blog/blog-categories/*,blog/blog-tags/*',
+      excluding_slugs: 'squid-blog/blog-categories/*,squid-blog/blog-tags/*',
       resolve_relations: ['article.category'],
     })
 
     const categoriesData = await storyapi.get(
-      'cdn/stories/?by_slugs=blog/blog-categories/*',
+      'cdn/stories/?by_slugs=squid-blog/blog-categories/*',
       {
         version: 'draft',
       }
     )
 
     const tagsData = await storyapi.get(
-      'cdn/stories/?by_slugs=blog/blog-tags/*',
+      'cdn/stories/?by_slugs=squid-blog/blog-tags/*',
       {
         version: 'draft',
       }
