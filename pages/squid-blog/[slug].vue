@@ -64,12 +64,15 @@ const getCategory = (catId: string) => {
 </script>
 
 <template>
-  <main v-if="post.title && post.image.filename">
+  <main>
     <section class="section section--nm blog-1">
-      <div class="blog-1__img-wrapper">
+      <div
+        v-if="post?.image?.filename"
+        class="blog-1__img-wrapper"
+      >
         <TheImage
           class="blog-1__img"
-          :src="post.image.filename"
+          :src="post?.image?.filename"
           :alt="post.title"
         />
       </div>
@@ -82,14 +85,21 @@ const getCategory = (catId: string) => {
             <div class="blog-2__main">
               <p class="blog-2__category-name">Category: {{activeCategory}}</p>
               <p class="blog-2__date">{{formattedDate}} / Miles Marmo</p>
-              <h1 class="blog-2__title">{{post.title}}</h1>
+              <h1
+                v-if="post?.title"
+                class="blog-2__title"
+              >{{post?.title}}</h1>
               <div class="blog-2__long-text">
-                <p class="blog-2__desc">
+                <p
+                  v-if="post?.description"
+                  class="blog-2__desc"
+                >
                   {{post.description}}
                 </p>
               </div>
             </div>
             <CaseInfo
+              v-if="post.blog_info[0]"
               v-editable="post.blog_info[0]"
               :items="post.blog_info[0].case_info"
               class="blog-2__info"
@@ -110,7 +120,10 @@ const getCategory = (catId: string) => {
       </article>
       <aside class="aside">
         <div class="aside__wrapper">
-          <div class="aside__filter">
+          <div
+            v-if="categories.length"
+            class="aside__filter"
+          >
             <h2 class="aside__filter-title">CATEGORIES</h2>
             <ul class="aside__filter-list">
               <li
@@ -131,7 +144,10 @@ const getCategory = (catId: string) => {
 
             </ul>
           </div>
-          <div class="aside__posts">
+          <div
+            v-if="lastPosts.length"
+            class="aside__posts"
+          >
             <h2 class="aside__posts-main">LATEST POSTS</h2>
             <ul class="aside__posts-list">
               <li
@@ -160,7 +176,10 @@ const getCategory = (catId: string) => {
               </li>
             </ul>
           </div>
-          <div class="aside__tags">
+          <div
+            v-if="tags.length"
+            class="aside__tags"
+          >
             <h2 class="aside__tags-main">TAGS</h2>
             <p class="aside__tags-text">
               <span
