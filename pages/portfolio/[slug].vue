@@ -43,6 +43,7 @@ const nextPost = computed(() => {
   <main>
 
     <section
+      v-if="post.title &&  post.title[0]"
       v-editable="post.title[0]"
       class="section section--nm post-1"
     >
@@ -68,6 +69,7 @@ const nextPost = computed(() => {
       <NextBlockButton>Scroll</NextBlockButton>
     </section>
     <section
+      v-if="post?.image?.filename"
       v-editable="post"
       class="section section--nm post-2"
     >
@@ -75,13 +77,14 @@ const nextPost = computed(() => {
         <TheImage
           :transform="true"
           class="post-2__img"
-          :src="post.image.filename"
+          :src="post?.image?.filename"
           alt="Image"
         />
       </div>
     </section>
     <section class="section post-3">
       <BlokTextBlock1
+        v-if="post.scope && post.scope[0]"
         v-editable="post.scope[0]"
         class="post-3__wrapper"
         :blok="{
@@ -92,6 +95,7 @@ const nextPost = computed(() => {
       />
     </section>
     <CaseInfo
+      v-if="post.case_info &&  post.case_info[0]"
       v-editable="post.case_info[0]"
       :items="post.case_info[0].case_info"
     />
@@ -108,6 +112,7 @@ const nextPost = computed(() => {
     </div>
 
     <CaseInfo
+      v-if="post.case_credits &&  post.case_credits[0]"
       v-editable="post.case_credits[0]"
       class="post-20"
       :items="post.case_credits[0].case_credit"
