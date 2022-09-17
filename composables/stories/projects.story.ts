@@ -22,6 +22,7 @@ export const useProjectsStories: tProjectStories = async () => {
     const { data } = await storyapi.get('cdn/stories/?by_slugs=portfolio/*', {
       version:
         config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
+      cv: Date.now(),
       excluding_slugs: 'portfolio/case-categories/*',
       resolve_relations: ['case.category'],
     })
