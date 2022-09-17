@@ -29,8 +29,7 @@ export const useProjectsStories: tProjectStories = async () => {
     const categoriesData = await storyapi.get(
       'cdn/stories/?by_slugs=portfolio/case-categories/*',
       {
-        version:
-          config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
+        version: 'draft',
       }
     )
 

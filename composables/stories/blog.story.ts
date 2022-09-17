@@ -31,16 +31,14 @@ export const useBlogStories: tBlogStories = async () => {
     const categoriesData = await storyapi.get(
       'cdn/stories/?by_slugs=squid-blog/blog-categories/*',
       {
-        version:
-          config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
+        version: 'draft',
       }
     )
 
     const tagsData = await storyapi.get(
       'cdn/stories/?by_slugs=squid-blog/blog-tags/*',
       {
-        version:
-          config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
+        version: 'draft',
       }
     )
 
