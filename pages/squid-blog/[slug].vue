@@ -28,7 +28,13 @@ const activeCategory = computed(() => {
   return categories.value.find(story => story.uuid === activeId)?.name
 })
 
+const activeTags = computed(() => {
+  const activeIds = post?.value?.tags
 
+  return activeIds.map(id => {
+    return tags.value.find(story => story.uuid === id)
+  })
+})
 
 const prevPost = computed(() => {
   const idx = posts.value.findIndex(post => post.slug === slug)
@@ -60,6 +66,8 @@ const getFormattedDate = (date: string | number) => {
 const getCategory = (catId: string) => {
   return categories.value.find(story => story.uuid === catId)?.name
 }
+
+console.log(post.value)
 
 </script>
 
@@ -183,7 +191,7 @@ const getCategory = (catId: string) => {
             <h2 class="aside__tags-main">TAGS</h2>
             <p class="aside__tags-text">
               <span
-                v-for="(tag, idx) in tags"
+                v-for="(tag, idx) in activeTags"
                 :key="tag._uid"
                 class="aside__tags-text-wrapper"
               >
