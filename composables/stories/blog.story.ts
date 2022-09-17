@@ -24,7 +24,7 @@ export const useBlogStories: tBlogStories = async () => {
     const { data } = await storyapi.get('cdn/stories/?by_slugs=squid-blog/*', {
       version:
         config.public.ENVIROMENT === 'development' ? 'draft' : 'published',
-      cv: Date.now(),
+      cv: +new Date(),
       excluding_slugs: 'squid-blog/blog-categories/*,squid-blog/blog-tags/*',
       resolve_relations: ['article.category'],
     })
