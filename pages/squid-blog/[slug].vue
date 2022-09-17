@@ -64,7 +64,7 @@ const getCategory = (catId: string) => {
 </script>
 
 <template>
-  <main>
+  <main v-if="post.title && post.image.filename">
     <section class="section section--nm blog-1">
       <div class="blog-1__img-wrapper">
         <TheImage

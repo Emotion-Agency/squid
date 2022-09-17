@@ -29,7 +29,7 @@ watch(filteredPosts, () => {
       :date="featuredPost.published_at ?? featuredPost.created_at"
       author="Miles Marmo"
       :description="featuredPost?.content?.description"
-      :link="`/portfolio/${featuredPost.slug}/`"
+      :link="`/squid-blog/${featuredPost.slug}/`"
       :image="featuredPost.content?.image"
     />
     <section class="section thoughts-2">
