@@ -15,7 +15,7 @@ interface iProps {
 
 
 const props = withDefaults(defineProps<iProps>(),{
-  transform: false,
+  transform: true,
   scale: 1.07,
   isLazy: true,
   alt: 'Squid'

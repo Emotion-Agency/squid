@@ -47,14 +47,18 @@ onBeforeUnmount(() => {
 })
 
 
-
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  }
+})
 </script>
 
 <template>
   <div id="app">
 
     <Head>
-      <Title>Emotion</Title>
+      <Title>Squid Agency</Title>
       <Meta
         name="viewport"
         conten="width=device-width, initial-scale=1"

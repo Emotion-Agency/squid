@@ -24,6 +24,7 @@ onBeforeUnmount(() => {
     <div class="header__wrapper">
       <div class="header__left-elem">
         <button
+          aria-label="Burger menu"
           class="header__burger"
           :class="[isOpenMenu && 'header__burger--active']"
           @click="toggleMenu"
@@ -35,6 +36,7 @@ onBeforeUnmount(() => {
       </div>
       <NuxtLink
         to="/"
+        aria-label="Squid Agency"
         class="header__logo"
         @click="closeMenu()"
       >

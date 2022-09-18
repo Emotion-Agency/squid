@@ -10,6 +10,7 @@ const { story } = await useFooterStory()
   <ul class="socials">
     <li class="socials__li">
       <a
+        aria-label="Facebook link"
         :href="story?.facebook"
         class="socials__link"
         target="_blank"
@@ -20,6 +21,7 @@ const { story } = await useFooterStory()
     </li>
     <li class="socials__li">
       <a
+        aria-label="Linkedin link"
         :href="story?.linkedin"
         class="socials__link"
         target="_blank"
