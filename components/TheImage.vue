@@ -67,6 +67,7 @@ const src = props.transform ? transformedSrc : props.src
         :data-scale="!disabledParallax && scale"
         :data-scale-animation="!disabledParallax && true"
         data-pli
+        loading="lazy"
       />
     </div>
   </div>
