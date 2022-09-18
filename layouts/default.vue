@@ -61,7 +61,7 @@ useHead({
       <Title>Squid Agency</Title>
       <Meta
         name="viewport"
-        conten="width=device-width"
+        content="width=device-width"
       >
       </Meta>
       <Meta
