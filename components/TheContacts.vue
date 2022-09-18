@@ -1,33 +1,58 @@
+<script lang='ts' setup>
+  import { useFooterStory } from '~~/composables/stories/footer.story'
+
+const { story } = await useFooterStory()
+
+
+
+const emailMarkup = computed(() => {
+  if (!story.value.email) {
+    return ''
+  }
+  const emailArr = story.value.email.split('@')
+
+  return `<span class="contacts__style-email">${emailArr[0]}</span>@${emailArr[1]}`
+})
+</script>
+
 <template>
   <div class="contacts">
     <div class="grid container contacts__wrapper">
       <div class="contacts__email-wrapper">
-        <h2 class="contacts__small-text">Let’s Start a Conversation</h2>
+        <h2 class="contacts__small-text">{{story.title}}</h2>
         <a
           class="contacts__email"
-          href="mailto:hello@agencysquid.com"
+          :href="`mailto:${story.email}`"
         >
-          <span class="contacts__email-text">
-            <span class="contacts__style-email">hello</span>@agencysquid.com
-          </span>
+          <span
+            class="contacts__email-text"
+            v-html="emailMarkup"
+          />
+
           <span class="contacts__email-line"></span>
         </a>
       </div>
-      <div class="contacts__phone">
+      <div
+        v-if="story.phone"
+        class="contacts__phone"
+      >
         <h2 class="contacts__title">Phone</h2>
         <p class="conctacts__info">
-          <a href="tel:+6127996620">(612) 799-6620</a>
+          <a :href="`tel:${story.phone.replace(/\D/g, '')}`">{{story.phone}}</a>
         </p>
       </div>
-      <div class="contacts__place">
+      <div
+        v-if="story.adress && story.adress[0]"
+        class="contacts__place"
+      >
         <h2 class="contacts__title">Office</h2>
         <p class="conctacts__info">
           <a
-            href="#"
+            :href="story.adress[0].map_link"
             target="_blank"
             rel="noreferer noopener"
           >
-            2521 27th Ave S Minneapolis MN 55406
+            {{story.adress[0].adress}}
           </a>
         </p>
       </div>

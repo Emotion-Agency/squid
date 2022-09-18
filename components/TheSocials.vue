@@ -1,13 +1,16 @@
 <script lang='ts' setup>
+  import { useFooterStory } from '~~/composables/stories/footer.story'
 const { closeMenu } = useMenu()
 
+
+const { story } = await useFooterStory()
 </script>
 
 <template>
   <ul class="socials">
     <li class="socials__li">
       <a
-        href="#"
+        :href="story?.facebook"
         class="socials__link"
         target="_blank"
         rel="noreferer noopener"
@@ -17,7 +20,7 @@ const { closeMenu } = useMenu()
     </li>
     <li class="socials__li">
       <a
-        href="#"
+        :href="story?.linkedin"
         class="socials__link"
         target="_blank"
         rel="noreferer noopener"
