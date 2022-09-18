@@ -24,6 +24,10 @@ onBeforeUnmount(() => {
 
 <template>
   <main>
+    <PageMeta
+      v-if="story.meta.length"
+      :meta="story.meta[0]"
+    />
     <section class="section section--nm expertise-1">
       <div class="container expertise-1__wrapper">
         <div

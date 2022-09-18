@@ -16,6 +16,10 @@ const scrollBottom = () => {
 
 <template>
   <main>
+    <PageMeta
+      v-if="story.meta.length"
+      :meta="story.meta[0]"
+    />
     <section class="section section--nm about-1">
       <div class="container about-1__wrapper">
         <div

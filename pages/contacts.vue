@@ -3,7 +3,7 @@ import { useTransition } from '~/composables/transition'
 useTransition()
 </script>
   
-  <template>
+<template>
   <main>
     <TheFooter />
   </main>

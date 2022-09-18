@@ -5,7 +5,7 @@ import { iImage } from '~/types/story'
     fullscreen?: boolean
     halfscreen?: boolean
     image: iImage
-    disable_parallax: boolean
+    disable_parallax?: boolean
   }
 
   interface iProps {

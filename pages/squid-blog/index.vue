@@ -7,7 +7,7 @@ import { useBlogStories } from '~/composables/stories/blog.story'
 useTransition()
 useObserver('.section')
 
-const { stories, categories, featuredPost } = await useBlogStories()
+const { story, stories, categories, featuredPost } = await useBlogStories()
 const { filteredPosts, selectCategory, activeCategory } = usePosts(stories, 'squid-blog')
 
 
@@ -22,6 +22,10 @@ watch(filteredPosts, () => {
 
 <template>
   <main>
+    <PageMeta
+      v-if="story.content.meta.length"
+      :meta="story.content.meta[0]"
+    />
     <Featured
       v-if="featuredPost?.content"
       :name="featuredPost.name"

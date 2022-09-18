@@ -10,7 +10,7 @@ useObserver('.section')
 const $posts = ref(null)
 
 
-const { stories, categories, featuredPost: featuredCase } = await useProjectsStories()
+const { story, stories, categories, featuredPost: featuredCase } = await useProjectsStories()
 
 const { filteredPosts, selectCategory, activeCategory } = usePosts(stories, 'portfolio')
 
@@ -20,11 +20,15 @@ watch(filteredPosts, () => {
   tl.to($posts.value, { duration: 0.5, opacity: 1 }, 0.5)
 })
 
-
+console.log(story.value)
 </script>
 
 <template>
   <main>
+    <PageMeta
+      v-if="story.content.meta.length"
+      :meta="story.content.meta[0]"
+    />
     <Featured
       v-if="featuredCase?.content"
       :name="featuredCase.name"

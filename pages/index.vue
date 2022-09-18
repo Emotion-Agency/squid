@@ -68,6 +68,10 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
 
 <template>
   <main>
+    <PageMeta
+      v-if="story.meta.length"
+      :meta="story.meta[0]"
+    />
     <div
       ref="$colorEl"
       class="color-changer"

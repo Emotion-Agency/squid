@@ -69,6 +69,10 @@ const getCategory = (catId: string) => {
 
 <template>
   <main>
+    <PageMeta
+      v-if="post.meta.length"
+      :meta="post.meta[0]"
+    />
     <section class="section section--nm blog-1">
       <div
         v-if="post?.image?.filename"
@@ -125,7 +129,7 @@ const getCategory = (catId: string) => {
       <aside class="aside">
         <div class="aside__wrapper">
           <div
-            v-if="categories.length"
+            v-if="categories?.length"
             class="aside__filter"
           >
             <h2 class="aside__filter-title">CATEGORIES</h2>
@@ -149,7 +153,7 @@ const getCategory = (catId: string) => {
             </ul>
           </div>
           <div
-            v-if="lastPosts.length"
+            v-if="lastPosts?.length"
             class="aside__posts"
           >
             <h2 class="aside__posts-main">LATEST POSTS</h2>

@@ -41,7 +41,10 @@ const nextPost = computed(() => {
 
 <template>
   <main>
-
+    <PageMeta
+      v-if="post?.meta?.length"
+      :meta="post.meta[0]"
+    />
     <section
       v-if="post.title &&  post.title[0]"
       v-editable="post.title[0]"
@@ -52,7 +55,7 @@ const nextPost = computed(() => {
           <RichText :text="post?.title && post?.title[0].text" />
         </div>
         <div
-          v-if="posts.length > 1"
+          v-if="posts?.length > 1"
           class="post-1__btns-wrapper"
         >
           <NuxtLink

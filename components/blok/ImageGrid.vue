@@ -9,7 +9,7 @@ interface iGridItem {
 interface iContent {
   title: string
   image: iGridItem[]
-  disable_parallax: boolean
+  disable_parallax?: boolean
 }
 
 interface iProps {

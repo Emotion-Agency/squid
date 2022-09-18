@@ -49,7 +49,7 @@ onBeforeUnmount(() => {
 
 useHead({
   htmlAttrs: {
-    lang: 'en'
+    lang: 'en-US'
   }
 })
 </script>
@@ -61,9 +61,49 @@ useHead({
       <Title>Squid Agency</Title>
       <Meta
         name="viewport"
-        conten="width=device-width, initial-scale=1"
+        conten="width=device-width"
       >
       </Meta>
+      <Meta
+        property="og:locale"
+        content="en_US"
+      />
+      <Meta
+        property="og:type"
+        content="website"
+      />
+      <Meta
+        property="og:url"
+        content="https://agencysquid.com/"
+      />
+      <Meta
+        property="article:publisher"
+        content="https://www.facebook.com/agencysquid/"
+      />
+      <Meta
+        property="og:image"
+        content="/meta/Squid-Wordmark.png"
+      />
+      <Meta
+        property="og:image:width"
+        content="180"
+      />
+      <Meta
+        property="og:image:height"
+        content="180"
+      />
+      <Meta
+        property="og:image:type"
+        content="image/png"
+      />
+      <Meta
+        name="twitter:card"
+        content="summary_large_image"
+      />
+      <Meta
+        name="twitter:image"
+        content="/meta/twitter.png"
+      />
       <Link
         rel="icon"
         type="image/x-icon"
