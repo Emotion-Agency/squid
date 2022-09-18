@@ -23,9 +23,7 @@ const post = computed(() => {
 })
 
 const activeCategory = computed(() => {
-  const activeId = post?.value?.category
-
-  return categories.value.find(story => story.uuid === activeId)?.name
+  return post?.value?.category?.name
 })
 
 const activeTags = computed(() => {
@@ -66,7 +64,6 @@ const getFormattedDate = (date: string | number) => {
 const getCategory = (catId: string) => {
   return categories.value.find(story => story.uuid === catId)?.name
 }
-
 
 </script>
 
