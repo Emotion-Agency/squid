@@ -21,40 +21,6 @@ const $wrapper = ref(null)
 const $children = ref(null)
 const $container = ref(null)
 
-// const items = ref([
-//   {
-//     id: keysGenerator(8),
-//     text: 'COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.',
-//   },
-//   {
-//     id: keysGenerator(8),
-//     text: 'Id senectus cras magna cursus id aliquet sit fames dignissim.',
-//   },
-//   {
-//     id: keysGenerator(8),
-//     text: 'Morbi porttitor diam tristique sodales neque id nisl tempus.',
-//   },
-//   {
-//     id: keysGenerator(8),
-//     text: 'Feugiat in mauris porttitor consequat est tortor viverra.',
-//   },
-//   {
-//     id: keysGenerator(8),
-//     text: 'COSTA FARMS MET THEIR $1 BILLION FINANCIAL GOAL.',
-//   },
-//   {
-//     id: keysGenerator(8),
-//     text: 'Id senectus cras magna cursus id aliquet sit fames dignissim.',
-//   },
-//   {
-//     id: keysGenerator(8),
-//     text: 'Morbi porttitor diam tristique sodales neque id nisl tempus.',
-//   },
-//   {
-//     id: keysGenerator(8),
-//     text: 'Feugiat in mauris porttitor consequat est tortor viverra.',
-//   },
-// ])
 
 onMounted(async () => {
   const { ExpertiseScroller } = await import('~/assets/scripts/ExpertiseScroller')

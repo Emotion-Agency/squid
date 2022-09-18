@@ -7,7 +7,6 @@ export default class Scrolling {
     this.$sc = document.querySelector('#scroll-container')
 
     this.onScroll = this.onScroll.bind(this)
-    this.init()
   }
 
   init() {

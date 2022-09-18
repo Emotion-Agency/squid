@@ -52,7 +52,7 @@
   }
 
   @media (max-width: $br1) {
-    margin-top: 40px;
+    margin-top: 32px;
   }
 }
 
@@ -73,6 +73,9 @@
   &.router-link-exact-active {
     span {
       transform: translateY(-10px);
+      @media (max-width: $br1) {
+        transform: translateY(-5px);
+      }
     }
     &::after {
       transform: translateY(0%);
@@ -92,6 +95,5 @@
 
   @media (max-width: $br1) {
     font-size: 36px;
-    line-height: 100%;
   }
 }

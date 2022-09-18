@@ -4,7 +4,6 @@
 const { story } = await useFooterStory()
 
 
-
 const emailMarkup = computed(() => {
   if (!story.value.email) {
     return ''
