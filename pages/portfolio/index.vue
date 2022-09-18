@@ -35,6 +35,8 @@ watch(filteredPosts, () => {
       :link="`/portfolio/${featuredCase.slug}/`"
       :image="featuredCase.content?.image"
     />
+    <TheSocials class="bottom-nav-socials" />
+
     <section class="section thoughts-2">
       <div class="container thoughts-2__wrapper">
         <p class="thoughts-2__title">CATEGORIES</p>
