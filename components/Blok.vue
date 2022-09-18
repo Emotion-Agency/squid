@@ -45,7 +45,7 @@ const getBlokName = name => {
 
 <template>
   <section
-    v-if="body.length"
+    v-if="body && body.length"
     class="section article-section"
   >
     <div

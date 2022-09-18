@@ -200,7 +200,7 @@ const getCategory = (catId: string) => {
       </aside>
     </div>
     <PostNavigation
-      class="post-20__nav"
+      class="section blog__nav"
       :prev-post-link="`/squid-blog/${prevPost.slug}/`"
       :next-post-link="`/squid-blog/${nextPost.slug}/`"
       all-posts-link="/squid-blog/"
