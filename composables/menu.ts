@@ -1,7 +1,7 @@
 import gsap from 'gsap'
 
 export const useMenu = () => {
-  const isOpenMenu = ref(false)
+  const isOpenMenu = useState<boolean>('menu', () => false)
 
   const openMenu = () => {
     window.ss && (window.ss.isFixed = true)
