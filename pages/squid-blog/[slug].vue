@@ -150,7 +150,8 @@ const getCategory = (catId: string) => {
                   :class="[
                     activeCategory?.toLocaleLowerCase() === category.name?.toLocaleLowerCase() && 'aside__filter-btn--active',
                   ]"
-                  :to="`/squid-blog/?filter=${category.name.toLocaleLowerCase()}`"
+                  :to="`/squid-blog/?filter=${category.name?.toLocaleLowerCase()
+                  .replace(/\s/gm, '_')}`"
                   class="aside__filter-btn"
                 >
                   {{category.name?.toLocaleLowerCase()}}
