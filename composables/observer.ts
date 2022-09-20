@@ -22,7 +22,8 @@ export const useObserver = ($node: string) => {
   onBeforeUnmount(() => {
     const sections = [...document.querySelectorAll($node)]
     sections.forEach(section => {
-      intersectionObserverInstance(section).off()
+      intersectionObserverInstance &&
+        intersectionObserverInstance(section).off()
     })
   })
 }
