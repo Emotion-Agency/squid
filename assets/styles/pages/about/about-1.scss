@@ -15,7 +15,7 @@
 }
 
 .about-1__title {
-  * {
+  > * {
     font-size: vw(200);
     line-height: 100%;
     letter-spacing: 0.05em;
@@ -25,9 +25,12 @@
     @media (max-width: $br4) {
       font-size: 52px;
     }
+    > * {
+      display: inline !important;
+    }
   }
 
-  max-width: vw(1456);
+  max-width: vw(1500);
   width: 100%;
 
   @media (max-width: $br1) {

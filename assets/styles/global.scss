@@ -113,3 +113,45 @@ h6 {
     font-size: 16px;
   }
 }
+
+.char-inner {
+  display: inline-flex;
+  position: relative;
+  left: vw(-4);
+  letter-spacing: -0.025em;
+}
+
+.char {
+  display: inline-flex !important;
+  position: relative;
+}
+
+.char::-webkit-scrollbar {
+  display: none;
+}
+
+body:not(.in-storyblok) {
+  [data-a-t] {
+    transform: translateY(60px);
+    opacity: 0;
+    will-change: transform;
+  }
+
+  [data-a-o] {
+    opacity: 0;
+    will-change: opacity;
+  }
+
+  [data-a-h] {
+    opacity: 0;
+    .char {
+      transform: translateX(140%);
+      opacity: 0;
+      will-change: transform;
+    }
+  }
+
+  .word {
+    display: inline-block;
+  }
+}

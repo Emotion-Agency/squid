@@ -36,13 +36,17 @@ onBeforeUnmount(() => {
           class="expertise-1__text-wrapper"
         >
           <RichText
+            data-a-h
             :text="story.screen_1[0].text"
             class="expertise-1__title"
           />
         </div>
       </div>
-      <TheSocials class="bottom-nav-socials" />
-      <NextBlockButton>Scroll</NextBlockButton>
+      <TheSocials
+        data-a-o
+        class="bottom-nav-socials"
+      />
+      <NextBlockButton data-a-o>Scroll</NextBlockButton>
     </section>
     <section
       v-editable="story"

@@ -35,15 +35,25 @@ import { iImage } from '~/types/story'
   <section class="section section--nm featured">
     <div class="featured__wrapper">
       <div class="container featured__left-block">
-        <h1 class="featured__title">{{name}}</h1>
-        <p class="featured__small-text">
+        <h1
+          data-a-h
+          class="featured__title"
+        >{{name}}</h1>
+        <p
+          data-a-t
+          class="featured__small-text"
+        >
           <span class="featured__italic-text"> Category: {{category}} </span>
           <span class="featured__info"><time>{{formattedDate}}</time> / <small>{{author}}</small></span>
         </p>
-        <p class="featured__desc">
+        <p
+          data-a-t
+          class="featured__desc"
+        >
           {{formattedDescription}}
         </p>
         <TextButton
+          data-a-t
           class="featured__btn"
           tag="nuxt-link"
           :to="link"
@@ -51,7 +61,10 @@ import { iImage } from '~/types/story'
           READ MORE
         </TextButton>
       </div>
-      <div class="featured__right-block">
+      <div
+        data-a-o
+        class="featured__right-block"
+      >
         <TheImage
           :transform="true"
           class="featured__img"

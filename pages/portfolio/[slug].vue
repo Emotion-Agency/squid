@@ -52,10 +52,14 @@ const nextPost = computed(() => {
     >
       <div class="container post-1__wrapper">
         <div class="post-1__title">
-          <RichText :text="post?.title && post?.title[0].text" />
+          <RichText
+            data-a-h
+            :text="post?.title && post?.title[0].text"
+          />
         </div>
         <div
           v-if="posts?.length > 1"
+          data-a-o
           class="post-1__btns-wrapper"
         >
           <NuxtLink
@@ -68,12 +72,16 @@ const nextPost = computed(() => {
           >NEXT</NuxtLink>
         </div>
       </div>
-      <TheSocials class="bottom-nav-socials" />
-      <NextBlockButton>Scroll</NextBlockButton>
+      <TheSocials
+        data-a-o
+        class="bottom-nav-socials"
+      />
+      <NextBlockButton data-a-o>Scroll</NextBlockButton>
     </section>
     <section
       v-if="post?.image?.filename"
       v-editable="post"
+      data-a-o
       class="section section--nm post-2"
     >
       <div class="post-2__wrapper">

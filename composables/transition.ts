@@ -4,12 +4,41 @@ import { resetScroll } from '~/assets/scripts/utils/resetScroll'
 
 export const useTransition = () => {
   const route = useRoute()
+  const { isLoaded, isInEditor, isWaiting } = useLoadState()
+
+  watch(isLoaded, async () => {
+    if (isLoaded.value && !isInEditor.value) {
+      const { appAnimation } = await import(
+        '~/assets/scripts/utils/appAnimation'
+      )
+      setTimeout(() => {
+        appAnimation()
+      }, 150)
+    }
+  })
+
+  onMounted(async () => {
+    setTimeout(() => {
+      resetScroll()
+    }, 500)
+
+    if (isLoaded.value && !isInEditor.value) {
+      const { appAnimation } = await import(
+        '~/assets/scripts/utils/appAnimation'
+      )
+      setTimeout(() => {
+        appAnimation()
+      }, 800)
+    }
+  })
   const pageTransition: TransitionProps = {
     duration: 250,
     mode: 'out-in',
     css: false,
     appear: true,
     onEnter(el, done) {
+      isWaiting.value = false
+      document.documentElement.style.cursor = 'auto'
       setTimeout(() => {
         resetScroll()
       }, 150)
@@ -22,6 +51,8 @@ export const useTransition = () => {
     },
 
     onLeave(el, done) {
+      isWaiting.value = true
+      document.documentElement.style.cursor = 'wait'
       setTimeout(() => {
         window.ss.isFixed = true
       }, 500)

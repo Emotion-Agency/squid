@@ -1,8 +1,14 @@
 <script lang='ts' setup>
 
+const $el = ref(null)
+
+
 const { isOpenMenu,closeMenu,toggleMenu } = useMenu()
 
+const { isLoaded } = useLoadState()
+
 let navbarPos
+
 
 onMounted(async () => {
   const { default: NavbarPos } = await import('~/assets/scripts/utils/navbarPos')
@@ -18,8 +24,9 @@ onBeforeUnmount(() => {
 <template>
 
   <header
+    ref="$el"
     class="header navbar"
-    :class="[isOpenMenu && 'header--active']"
+    :class="[isOpenMenu && 'header--active', !isLoaded && 'loading']"
   >
     <div class="header__wrapper">
       <div class="header__left-elem">

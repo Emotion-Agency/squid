@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { useAppStore } from '~/store/app'
 import { useFonts } from '~/composables/fonts'
 import emitter from 'tiny-emitter/instance.js'
 
 useFonts()
 
-const appStore = useAppStore()
+const { isInEditor } = useLoadState()
 
 const parallaxInit = async () => {
   const { Parallax } = await import('@emotionagency/parallax')
@@ -14,13 +13,8 @@ const parallaxInit = async () => {
 }
 
 onMounted(async () => {
-  const { default: supportsWebP } = await import('supports-webp')
 
-  if (await supportsWebP) {
-    appStore.setIsWebp(true)
-  } else {
-    appStore.setIsWebp(false)
-  }
+
   const { hello } = await import('~/assets/scripts/utils/hello')
   hello()
 
@@ -31,13 +25,16 @@ onMounted(async () => {
   await parallaxInit()
 
   setTimeout(() => {
-
     const sbBridge = new window.StoryblokBridge()
 
     sbBridge.on(['input', 'published', 'change'], event => {
-
       emitter.emit('storyChange', event.story)
-      // initStory.value = event.story
+    })
+
+    sbBridge.pingEditor(() => {
+      if (sbBridge.isInEditor()) {
+        isInEditor.value = true
+      }
     })
   }, 200)
 })
@@ -46,11 +43,10 @@ onBeforeUnmount(() => {
   window.parallax && window.parallax.destroy()
 })
 
-
 useHead({
   htmlAttrs: {
-    lang: 'en-US'
-  }
+    lang: 'en-US',
+  },
 })
 </script>
 
@@ -111,8 +107,9 @@ useHead({
       >
       </Link>
       <Script src="https://player.vimeo.com/api/player.js"></Script>
-
     </Head>
+    <AppLoader />
+
     <AppGrid />
     <UiLoader />
 
@@ -120,6 +117,5 @@ useHead({
       <TheHeader />
       <slot />
     </SmoothScroll>
-
   </div>
 </template>

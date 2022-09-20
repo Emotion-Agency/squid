@@ -4,7 +4,7 @@ useTransition()
 </script>
   
 <template>
-  <main>
+  <main data-a-o>
     <TheFooter />
   </main>
 </template>

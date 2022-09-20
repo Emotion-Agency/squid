@@ -28,13 +28,17 @@ const scrollBottom = () => {
           class="about-1__text-wrapper"
         >
           <RichText
+            data-a-h
             class="about-1__title"
             :text="story.screen_1[0].text"
           />
         </div>
       </div>
-      <TheSocials class="bottom-nav-socials" />
-      <NextBlockButton>Scroll</NextBlockButton>
+      <TheSocials
+        data-a-o
+        class="bottom-nav-socials"
+      />
+      <NextBlockButton data-a-o>Scroll</NextBlockButton>
     </section>
     <section
       v-editable="story"

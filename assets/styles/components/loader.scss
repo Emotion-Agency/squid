@@ -1,0 +1,30 @@
+.loader {
+  @include coverdiv(fixed);
+  z-index: 10000;
+  background-color: #fff;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.loader__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
+}
+
+.loader__percent {
+  @include snfine-reg-it;
+  font-size: 60px;
+  margin-right: 20px;
+  margin-bottom: 12px;
+}
+
+.loader__progress {
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+}

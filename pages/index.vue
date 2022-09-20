@@ -8,8 +8,6 @@ useObserver('.section')
 const { stories: projects } = await useProjectsStories()
 
 
-
-
 const $el = ref(null)
 const $container = ref(null)
 const $scroller = ref(null)
@@ -59,7 +57,6 @@ onBeforeUnmount(() => {
 })
 
 
-
 const {bottomText, isRotated, isVisible} = useBottomBlock()
 
 
@@ -84,12 +81,17 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
       >
         <div class="container home-1__wrapper">
           <RichText
+            data-a-h
             class="home-1__title"
             :text="story.storytelling[0].screen_1[0].text"
           />
         </div>
-        <TheSocials class="bottom-nav-socials" />
+        <TheSocials
+          data-a-o
+          class="bottom-nav-socials"
+        />
         <NextBlockButton
+          data-a-o
           :is-fixed="true"
           :is-rotated="isRotated"
           :is-visible="isVisible"

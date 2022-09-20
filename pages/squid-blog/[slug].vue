@@ -70,13 +70,14 @@ const getCategory = (catId: string) => {
 <template>
   <main>
     <PageMeta
-      v-if="post.meta.length"
+      v-if="post?.meta?.length"
       :meta="post.meta[0]"
     />
     <section class="section section--nm blog-1">
       <div
         v-if="post?.image?.filename"
         class="blog-1__img-wrapper"
+        data-a-o
       >
         <TheImage
           class="blog-1__img"
@@ -84,9 +85,15 @@ const getCategory = (catId: string) => {
           :alt="post.title"
         />
       </div>
-      <TheSocials class="bottom-nav-socials" />
+      <TheSocials
+        data-a-o
+        class="bottom-nav-socials"
+      />
     </section>
-    <div class="container blog-wrapper">
+    <div
+      data-a-o
+      class="container blog-wrapper"
+    >
       <article class="article">
         <section class="section section--nm blog-2">
           <div class="blog-2__wrapper">
@@ -129,7 +136,7 @@ const getCategory = (catId: string) => {
       <aside class="aside">
         <div class="aside__wrapper">
           <div
-            v-if="categories?.length"
+            v-if="categories && categories?.length"
             class="aside__filter"
           >
             <h2 class="aside__filter-title">CATEGORIES</h2>
