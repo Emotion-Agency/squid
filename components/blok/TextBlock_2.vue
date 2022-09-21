@@ -1,5 +1,7 @@
 <script lang='ts' setup>
   import {iStyledText} from '~/types/story'
+import { useBreakLine } from '~/composables/breakLine'
+
 
 
   interface iContent {
@@ -14,6 +16,7 @@
   defineProps<iProps>()
 
 
+    const breakLine = useBreakLine()
 
 </script>
 
@@ -25,9 +28,10 @@
         :text="blok.title[0].text"
       />
 
-      <p class="text-block-2__desc">
-        {{blok.text}}
-      </p>
+      <p
+        class="text-block-2__desc"
+        v-html="breakLine(blok.text)"
+      />
     </div>
   </div>
 </template>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { useBlogStories } from '~/composables/stories/blog.story'
+import { useBreakLine } from '~/composables/breakLine'
 useTransition()
 useObserver('.section')
 
@@ -65,6 +66,8 @@ const getCategory = (catId: string) => {
   return categories.value.find(story => story.uuid === catId)?.name
 }
 
+
+const breakLine = useBreakLine()
 </script>
 
 <template>
@@ -108,9 +111,9 @@ const getCategory = (catId: string) => {
                 <p
                   v-if="post?.description"
                   class="blog-2__desc"
-                >
-                  {{post.description}}
-                </p>
+                  v-html="breakLine(post.description)"
+                />
+
               </div>
             </div>
             <CaseInfo

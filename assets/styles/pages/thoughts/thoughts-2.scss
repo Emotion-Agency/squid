@@ -155,6 +155,7 @@
 .thoughts-2__name {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 
   @media (max-width: $br1) {
     flex-direction: column;
@@ -179,6 +180,7 @@
   line-height: 100%;
   letter-spacing: 1.7px;
   color: #919191;
+  text-align: end;
 
   @media (max-width: $br1) {
     letter-spacing: 0.1em;
