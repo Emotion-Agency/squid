@@ -1,4 +1,8 @@
 <script lang='ts' setup>
+import { raf } from '~~/assets/scripts/utils/ea'
+
+const disableHover = ref(false)
+
   interface iContent {
     full_screen?: boolean
     platform?: 'youtube' | 'vimeo'
@@ -10,6 +14,21 @@
   }
 
   defineProps<iProps>()
+
+    const detectScrolling = () => {
+
+      const isScrolling = window?.ss?.state?.scrolling
+
+      disableHover.value = isScrolling
+    }
+
+  onMounted(() => {
+    raf.on(detectScrolling)
+  })
+
+  onBeforeUnmount(() => {
+    raf.off(detectScrolling)
+  })
 </script>
   
 <template>
@@ -17,6 +36,7 @@
     v-if="blok.platform === 'vimeo'"
     class="vimeo-video"
     :class="!blok.full_screen && 'container'"
+    :style="disableHover && {pointerEvents: 'none'}"
   >
 
     <div style="padding:56.84% 0 0 0;position:relative;"><iframe
@@ -31,6 +51,7 @@
     v-if="blok.platform === 'youtube'"
     class="youtube-video"
     :class="!blok.full_screen && 'container'"
+    :style="disableHover && {pointerEvents: 'none'}"
   >
     <div style="padding:56.84% 0 0 0;position:relative;">
       <iframe
