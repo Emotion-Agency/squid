@@ -117,13 +117,12 @@ h6 {
 .char-inner {
   display: inline-flex;
   position: relative;
-  left: vw(-4);
-  letter-spacing: -0.025em;
+  left: -0.1em;
+  // letter-spacing: -0.025em;
 }
 
 .char {
-  display: inline-flex !important;
-  position: relative;
+  display: inline-block !important;
 }
 
 .char::-webkit-scrollbar {

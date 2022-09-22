@@ -8,6 +8,7 @@
   @media (min-width: $br1) {
     height: 100vh;
     width: 100vw;
+    min-width: 100vw;
   }
 
   @media (max-width: $br1) {

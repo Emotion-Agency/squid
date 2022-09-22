@@ -49,6 +49,9 @@
     position: absolute;
     top: vh(340);
   }
+  @media (max-width: $br1) {
+    margin-bottom: 12vh;
+  }
 }
 
 .home-7__bottom-block {

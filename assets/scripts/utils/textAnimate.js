@@ -14,9 +14,9 @@ const textAnimate = () => {
       tagName: 'span',
     })
 
-    text.words?.forEach(word => {
-      word.innerHTML = `<span class="word-inner">${word.innerHTML}</span>`
-      word.setAttribute('data-word', word.innerText)
+    text.chars?.forEach(char => {
+      char.innerHTML = `<span class="char-inner">${char.innerHTML}</span>`
+      char.setAttribute('data-char', char.innerText)
     })
 
     $toAnimate = [...$el.querySelectorAll('.char')]
