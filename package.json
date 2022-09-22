@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@emotionagency/parallax": "^1.0.3",
-    "@emotionagency/smoothscroll": "latest",
+    "@emotionagency/smoothscroll": "^1.0.3",
     "@emotionagency/utils": "latest",
     "@nuxtjs/axios": "^5.13.6",
     "@pinia/nuxt": "^0.1.8",

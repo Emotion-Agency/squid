@@ -291,10 +291,10 @@
   dependencies:
     "@emotionagency/utils" "*"
 
-"@emotionagency/smoothscroll@latest":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@emotionagency/smoothscroll/-/smoothscroll-1.0.2.tgz#bbd39d50ae410f31d1326b1a5085029542ab52a0"
-  integrity sha512-KCX4PVbd/kEkoUleYNn3eBKEQpPGX/Yo7FLc3hncht6BW2mjdNV0CInPKyAeVbsSfrnX7CFOWAn52SJIpDOzhw==
+"@emotionagency/smoothscroll@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@emotionagency/smoothscroll/-/smoothscroll-1.0.3.tgz#731efff534f0086818f6349df818232cb7d87a6e"
+  integrity sha512-23IJoDv6Ibn2wxCt5SwPk88oo8LJ7Wu2QEFg/GGc2IiWn0KXFxEBTByHeCNSRfIw1Z4nI1VBvzRIMStiRq5bVQ==
   dependencies:
     virtual-scroll "^2.1.1"
 
