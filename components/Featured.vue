@@ -44,7 +44,10 @@ import { iImage } from '~/types/story'
           class="featured__small-text"
         >
           <span class="featured__italic-text"> Category: {{category}} </span>
-          <span class="featured__info"><time>{{formattedDate}}</time> / <small>{{author}}</small></span>
+          <span
+            v-if="formattedDate && author"
+            class="featured__info"
+          ><time>{{formattedDate}}</time> / <small>{{author}}</small></span>
         </p>
         <p
           data-a-t

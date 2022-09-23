@@ -39,7 +39,10 @@ import { iImage } from '~~/types/story';
             <p class="thoughts-2__category">{{category}}</p>
           </div>
           <div class="thoughts-2__desc">
-            <p class="thoughts-2__date">{{formattedDate}} / {{author}}</p>
+            <p
+              v-if="formattedDate && author"
+              class="thoughts-2__date"
+            >{{formattedDate}} / {{author}}</p>
             <p class="thoughts-2__text">
               {{description}}
             </p>
