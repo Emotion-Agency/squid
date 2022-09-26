@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useProjectsStories } from '~/composables/stories/projects.story'
 import { useTransition } from '~/composables/transition'
-import { useBreakLine } from '~/composables/breakLine'
 
 
 
@@ -39,7 +38,7 @@ const nextPost = computed(() => {
   return idx >= posts.value.length - 1 ? posts.value[0] : posts.value[idx + 1]
 })
 
-const breakLine = useBreakLine()
+
 
 </script>
 
@@ -104,7 +103,7 @@ const breakLine = useBreakLine()
         class="post-3__wrapper"
         :blok="{
           aligned: post.scope[0]?.aligned,
-          main_text: breakLine(post.scope[0]?.main_text),
+          main_text: post.scope[0]?.main_text,
           title: post.scope[0]?.title
         }"
       />

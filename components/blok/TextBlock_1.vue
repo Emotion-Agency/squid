@@ -1,22 +1,19 @@
-<script lang='ts' setup>
+<script lang="ts" setup>
 import { useBreakLine } from '~/composables/breakLine'
 
-  
-  interface iContent {
-    title?: string
-    main_text: string
-    aligned?: boolean
-  }
+interface iContent {
+  title?: string
+  main_text: string
+  aligned?: boolean
+}
 
-  interface iProps {
-   blok: iContent
-  }
+interface iProps {
+  blok: iContent
+}
 
- defineProps<iProps>()
+defineProps<iProps>()
 
 const breakLine = useBreakLine()
-
-
 </script>
 
 <template>
@@ -28,13 +25,12 @@ const breakLine = useBreakLine()
       <h2
         v-if="blok.title"
         class="text-block-1__title"
-      >{{blok.title}}</h2>
+      >{{ blok.title }}</h2>
       <p
+        v-if="blok.main_text"
         class="text-block-1__desc"
         v-html="breakLine(blok.main_text)"
       />
-
-
     </div>
   </div>
 </template>
