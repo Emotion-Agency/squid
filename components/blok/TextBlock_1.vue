@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-import { useBreakLine } from '~/composables/breakLine'
+import { Richtext } from 'storyblok-js-client'
+
 
 interface iContent {
   title?: string
-  main_text: string
+  main_text: Richtext
   aligned?: boolean
 }
 
 interface iProps {
   blok: iContent
 }
-
 defineProps<iProps>()
 
-const breakLine = useBreakLine()
+
 
 
 </script>
@@ -28,11 +28,13 @@ const breakLine = useBreakLine()
         v-if="blok.title"
         class="text-block-1__title"
       >{{ blok.title }}</h2>
-      <p
+      <!-- <p
         v-if="blok.main_text"
-        class="text-block-1__desc"
         v-html="breakLine(blok.main_text)"
-      />
+      /> -->
+      <div class="text-block-1__desc">
+        <RichText :text="blok.main_text" />
+      </div>
     </div>
   </div>
 </template>
