@@ -91,7 +91,7 @@ watch(filteredPosts, () => {
               :category="item.content?.category?.name"
               author="Miles Marmo"
               :date="item.published_at ?? item.created_at"
-              :description="item.content?.scope && item.content.scope[0]?.main_text"
+              :description="item.content?.description"
               :image="item.content?.preview_image ?? item.content?.image"
               :link="`/squid-blog/${item.slug}/`"
             />

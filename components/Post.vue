@@ -1,5 +1,7 @@
 <script lang='ts' setup>
-import { iImage } from '~~/types/story';
+import { Richtext } from 'storyblok-js-client'
+import { iImage } from '~/types/story'
+import { RichText } from '~~/.nuxt/components';
 
   interface iProps {
     id: string
@@ -7,7 +9,7 @@ import { iImage } from '~~/types/story';
     category?: string
     date?: string | number
     author?: string
-    description?: string
+    description?: string | Richtext
     image?: iImage
     link?: string
   }
@@ -15,6 +17,27 @@ import { iImage } from '~~/types/story';
  const props =  defineProps<iProps>()
 
     const formattedDate = useFormattedDate(props.date)
+
+  const typeOfDescription = computed(() => {
+    return typeof props.description
+  })
+
+  const formattedDescription = computed(() => {
+    if (typeof props.description !== 'string') {
+      return
+    }
+    
+    const descriptionWords = props.description.split(' ')
+    if (!descriptionWords.length) {
+      return ''
+    }
+
+    if (descriptionWords.length <= 40) {
+      return props.description
+    }
+
+    return descriptionWords.slice(0, 40).join(' ') + '...'
+  })
 
 </script>
 
@@ -43,9 +66,17 @@ import { iImage } from '~~/types/story';
               v-if="formattedDate && author"
               class="thoughts-2__date"
             >{{formattedDate}} / {{author}}</p>
-            <p class="thoughts-2__text">
-              {{description}}
+            <p
+              v-if="typeOfDescription === 'string'"
+              class="thoughts-2__text"
+            >
+              {{formattedDescription}}
             </p>
+            <RichText
+              v-else-if="typeOfDescription === 'object'"
+              class="thoughts-2__text"
+              :text="description"
+            />
             <TextButton
               class="thoughts-2__text-btn"
               tag="button"

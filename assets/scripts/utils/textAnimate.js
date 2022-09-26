@@ -21,8 +21,6 @@ const textAnimate = () => {
 
     $toAnimate = [...$el.querySelectorAll('.char')]
     $el.classList.add('splitted')
-
-    console.log($toAnimate)
   }
 
   return {

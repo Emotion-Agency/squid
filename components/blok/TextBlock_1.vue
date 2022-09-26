@@ -4,18 +4,22 @@ import { Richtext } from 'storyblok-js-client'
 
 interface iContent {
   title?: string
-  main_text: Richtext
+  main_text: string | Richtext
   aligned?: boolean
 }
 
 interface iProps {
   blok: iContent
 }
-defineProps<iProps>()
+
+const props = defineProps<iProps>()
 
 
+  const typeOfMainText = computed(() => {
+    return typeof props.blok.main_text
+  })
 
-
+const breakLine = useBreakLine()
 </script>
 
 <template>
@@ -28,11 +32,14 @@ defineProps<iProps>()
         v-if="blok.title"
         class="text-block-1__title"
       >{{ blok.title }}</h2>
-      <!-- <p
-        v-if="blok.main_text"
+      <p
+        v-if="blok.main_text && typeOfMainText === 'string'"
         v-html="breakLine(blok.main_text)"
-      /> -->
-      <div class="text-block-1__desc">
+      />
+      <div
+        v-else-if="blok.main_text && typeOfMainText === 'object'"
+        class="text-block-1__desc"
+      >
         <RichText :text="blok.main_text" />
       </div>
     </div>

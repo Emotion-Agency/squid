@@ -7,7 +7,7 @@ import { Richtext } from 'storyblok-js-client'
 
 
 interface iProps {
-  text: Richtext
+  text: Richtext | string | any
 }
 
 const props = defineProps<iProps>()
