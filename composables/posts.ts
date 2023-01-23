@@ -8,9 +8,13 @@ export const usePosts = (posts: Ref<iStory[]>, routePath: string) => {
   const route = useRoute()
 
   const selectCategory = (category: string) => {
-    setTimeout(() => {
-      window.parallax && window.parallax.update()
-    }, 500)
+    try {
+      setTimeout(() => {
+        window?.parallax && window?.parallax?.update()
+      }, 500)
+    } catch (error) {
+      console.log(error)
+    }
 
     if (category === 'all') {
       filteredPosts.value = posts.value
@@ -35,9 +39,7 @@ export const usePosts = (posts: Ref<iStory[]>, routePath: string) => {
       ?.replace('_', ' ')
   })
 
-  onMounted(() => {
-    selectCategory(activeCategory.value)
-  })
+  selectCategory(activeCategory.value)
 
   return { filteredPosts, selectCategory, activeCategory }
 }

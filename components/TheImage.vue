@@ -13,27 +13,26 @@ interface iProps {
   disabledParallax?: boolean
 }
 
-
-const props = withDefaults(defineProps<iProps>(),{
+const props = withDefaults(defineProps<iProps>(), {
   transform: true,
   scale: 1.07,
   isLazy: true,
-  alt: 'Squid'
+  alt: 'Squid',
 })
 
 const width = props.width ?? 0
 const height = props.height ?? 0
-let transformedSrc: string
 
-if (props.width || props.height) {
-
-  transformedSrc = transformImage(props.src,{ size: `${width}x${height}` })
-} else {
-  transformedSrc = transformImage(props.src)
-}
+const transformedSrc = computed(() => {
+  if (props.width || props.height) {
+    return transformImage(props.src, { size: `${width}x${height}` })
+  } else {
+    return transformImage(props.src)
+  }
+})
 
 const getImageResolution = computed(() => {
-  const resolution = height / width * 100
+  const resolution = (height / width) * 100
   return resolution.toFixed(2) + '%'
 })
 
@@ -43,15 +42,16 @@ if (width && height) {
   resolution.value = getImageResolution
 }
 
-
-const src = props.transform ? transformedSrc : props.src
+const source = computed(() => {
+  return props.transform ? transformedSrc.value : props.src
+})
 </script>
-  
+
 <template>
   <div
     v-if="src"
     class="p-img-wrapper"
-    :style="resolution && { paddingBottom: resolution.value,height: '0px' }"
+    :style="resolution && { paddingBottom: resolution.value, height: '0px' }"
   >
     <div
       class="p-img-container"
@@ -61,7 +61,7 @@ const src = props.transform ? transformedSrc : props.src
       <img
         class="parallax-img"
         :class="[imgClass]"
-        :src="src"
+        :src="source"
         :alt="alt"
         :data-parallax="!disabledParallax && 0.06"
         :data-scale="!disabledParallax && scale"
