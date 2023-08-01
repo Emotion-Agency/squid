@@ -55,4 +55,9 @@
   @media (max-width: $br4) {
     @include col(1, 4);
   }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
 }

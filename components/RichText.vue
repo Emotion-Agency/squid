@@ -13,6 +13,10 @@ const props = defineProps<iProps>()
 
 const storyapi = useStoryblokApi()
 const richtext = computed(() => {
-  return storyapi.richTextResolver.render(props.text)
+  try {
+    return storyapi.richTextResolver.render(props.text)
+  } catch (error) {
+    return ''
+  }
 })
 </script>
