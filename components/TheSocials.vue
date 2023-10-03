@@ -1,7 +1,6 @@
-<script lang='ts' setup>
-  import { useFooterStory } from '~~/composables/stories/footer.story'
+<script lang="ts" setup>
+import { useFooterStory } from '~~/composables/stories/footer.story'
 const { closeMenu } = useMenu()
-
 
 const { story } = await useFooterStory()
 </script>
@@ -42,11 +41,9 @@ const { story } = await useFooterStory()
       </a>
     </li>
     <li class="socials__li">
-      <NuxtLink
-        to="/contacts/"
-        class="socials__link"
-        @click="closeMenu"
-      > contact </NuxtLink>
+      <NuxtLink to="/contact/" class="socials__link" @click="closeMenu">
+        contact
+      </NuxtLink>
     </li>
   </ul>
 </template>
