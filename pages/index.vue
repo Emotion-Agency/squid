@@ -7,7 +7,6 @@ useObserver('.section')
 
 const { stories: projects } = await useProjectsStories()
 
-
 const $el = ref(null)
 const $container = ref(null)
 const $scroller = ref(null)
@@ -18,61 +17,41 @@ let sa
 
 const { story } = await useHomeStory()
 
-
+const { bottomText, isRotated, isVisible, init, destroy } = useBottomBlock()
 
 onMounted(async () => {
+  const { HorizontalScroll } = await import('~/assets/scripts/HorizontalScroll')
 
-  const { HorizontalScroll } = await import(
-    '~/assets/scripts/HorizontalScroll'
-  )
-
-  const { OnScrollColor } = await import(
-    '~/assets/scripts/OnScrollColor'
-  )
+  const { OnScrollColor } = await import('~/assets/scripts/OnScrollColor')
 
   const { OnScrollAppereance } = await import(
     '~/assets/scripts/OnScrollAppereance'
   )
 
-
   setTimeout(() => {
-
     new OnScrollColor($colorEl.value)
 
-    new HorizontalScroll(
-      $el.value,
-      $container.value,
-      $scroller.value
-    )
+    new HorizontalScroll($el.value, $container.value, $scroller.value)
 
     setTimeout(() => {
+      sa = new OnScrollAppereance($scrollEl.value, $container.value)
+    }, 100)
+  }, 500)
 
-      sa = new OnScrollAppereance($scrollEl.value,$container.value)
-    },100)
-  },500)
+  init()
 })
 
 onBeforeUnmount(() => {
   sa && sa.destroy()
+
+  destroy()
 })
-
-
-const {bottomText, isRotated, isVisible} = useBottomBlock()
-
-
 </script>
-
 
 <template>
   <main>
-    <PageMeta
-      v-if="story.meta.length"
-      :meta="story.meta[0]"
-    />
-    <div
-      ref="$colorEl"
-      class="color-changer"
-    >
+    <PageMeta v-if="story.meta.length" :meta="story.meta[0]" />
+    <div ref="$colorEl" class="color-changer">
       <section
         v-if="story.storytelling[0].screen_1[0].text"
         v-editable="story.storytelling[0].screen_1[0]"
@@ -86,16 +65,14 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
             :text="story.storytelling[0].screen_1[0].text"
           />
         </div>
-        <TheSocials
-          data-a-o
-          class="bottom-nav-socials"
-        />
+        <TheSocials data-a-o class="bottom-nav-socials" />
         <NextBlockButton
           data-a-o
           :is-fixed="true"
           :is-rotated="isRotated"
           :is-visible="isVisible"
-        >{{bottomText}}</NextBlockButton>
+          >{{ bottomText }}</NextBlockButton
+        >
       </section>
       <section
         v-if="story.storytelling[0].screen_2[0].text"
@@ -111,18 +88,9 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
         </div>
       </section>
       <div class="home-all-w">
-        <div
-          ref="$container"
-          class="wrapper"
-        >
-          <div
-            ref="$scroller"
-            class="scroller"
-          >
-            <div
-              ref="$el"
-              class="scroller-el"
-            >
+        <div ref="$container" class="wrapper">
+          <div ref="$scroller" class="scroller">
+            <div ref="$el" class="scroller-el">
               <section
                 v-if="story.storytelling[0].screen_3[0].text"
                 v-editable="story.storytelling[0].screen_3[0]"
@@ -185,12 +153,9 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
                     />
                     <div class="home-6__content">
                       <p class="home-6__desc">
-                        {{story.table_texts[0]?.text}}
+                        {{ story.table_texts[0]?.text }}
                       </p>
-                      <NuxtLink
-                        to="/about/"
-                        class="home-6__btn-wrapper"
-                      >
+                      <NuxtLink to="/about/" class="home-6__btn-wrapper">
                         <div class="home-6__btn">LEARN MORE</div>
                         <small class="home-6__btn-text">about us</small>
                       </NuxtLink>
@@ -208,12 +173,9 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
                     />
                     <div class="home-6__content">
                       <p class="home-6__desc">
-                        {{story.table_texts[1]?.text}}
+                        {{ story.table_texts[1]?.text }}
                       </p>
-                      <NuxtLink
-                        to="/expertise/"
-                        class="home-6__btn-wrapper"
-                      >
+                      <NuxtLink to="/expertise/" class="home-6__btn-wrapper">
                         <div class="home-6__btn">LEARN MORE</div>
                         <small class="home-6__btn-text">expertise</small>
                       </NuxtLink>
@@ -252,7 +214,6 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
           </div>
         </div>
       </div>
-
     </div>
     <section
       v-if="projects?.length"
@@ -263,31 +224,30 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
         <div class="container home-8__text">
           <h1 class="home-8__title">CASE STUDIES</h1>
           <p class="home-8__desc">
-            {{story.cases_description}}
+            {{ story.cases_description }}
           </p>
         </div>
       </div>
       <ul class="container home-8__img-list">
-        <li
-          v-for="post in projects"
-          :key="post._uid"
-          class="home-8__img-li"
-        >
-          <NuxtLink
-            class="home-8__img-link"
-            :to="`/portfolio/${post.slug}/`"
-          >
+        <li v-for="post in projects" :key="post._uid" class="home-8__img-li">
+          <NuxtLink class="home-8__img-link" :to="`/portfolio/${post.slug}/`">
             <TheImage
-              v-if="post.content?.preview_image?.filename ?? post.content?.image?.filename"
-              :src="post.content?.preview_image?.filename ?? post.content?.image?.filename"
+              v-if="
+                post.content?.preview_image?.filename ??
+                post.content?.image?.filename
+              "
+              :src="
+                post.content?.preview_image?.filename ??
+                post.content?.image?.filename
+              "
               alt="Image"
             />
             <div class="home-8__text-wrapper">
-              <p class="home-8__name">{{post.name}}</p>
+              <p class="home-8__name">{{ post.name }}</p>
               <div class="home-8__line-wrapper">
                 <span class="home-8__line"></span>
               </div>
-              <button class="home-8__link"> view case study </button>
+              <button class="home-8__link">view case study</button>
             </div>
           </NuxtLink>
         </li>
@@ -312,15 +272,14 @@ const {bottomText, isRotated, isVisible} = useBottomBlock()
             >
               <div class="home-9__item-wrapper">
                 <h3 class="home-9__item-text">
-                  {{item.title}}
+                  {{ item.title }}
                 </h3>
                 <div class="home-9__item-img-wrapper">
-
                   <img
                     class="home-9__item-img"
                     :src="item.image.filename"
                     alt=""
-                  >
+                  />
                 </div>
               </div>
             </li>

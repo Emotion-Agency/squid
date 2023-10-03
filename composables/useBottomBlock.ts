@@ -24,16 +24,17 @@ export const useBottomBlock = () => {
     })
   }
 
-  onMounted(async () => {
-    await delayPromise(500)
-    $items.value = document.querySelectorAll('[data-bottom-s]')
+  const init = () => {
+    delayPromise(1000).then(() => {
+      $items.value = document.querySelectorAll('[data-bottom-s]')
 
-    raf.on(animate)
-  })
+      raf.on(animate)
+    })
+  }
 
-  onBeforeUnmount(() => {
+  const destroy = () => {
     raf.off(animate)
-  })
+  }
 
-  return { bottomText, isRotated, isVisible }
+  return { bottomText, isRotated, isVisible, init, destroy }
 }
