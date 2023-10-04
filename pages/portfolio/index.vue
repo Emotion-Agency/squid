@@ -38,14 +38,7 @@ watch(filteredPosts, () => {
 <template>
   <main>
     <PageMeta v-if="story.content.meta.length" :meta="story.content.meta[0]" />
-    <Featured
-      v-if="featuredCase?.content"
-      :name="featuredCase.name"
-      :category="featuredCase.content.category.name"
-      :description="featuredCase.content?.scope[0]?.main_text"
-      :link="`/portfolio/${featuredCase.slug}/`"
-      :image="featuredCase.content?.image"
-    />
+
     <TheSocials data-a-o class="bottom-nav-socials" />
 
     <section data-a-t class="section thoughts-2">
