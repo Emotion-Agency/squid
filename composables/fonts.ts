@@ -25,6 +25,6 @@ const fontsMetaList = [
 ]
 export const useFonts = () => {
   useHead({
-    link: [...fontsMetaList],
+    link: [...fontsMetaList] as any,
   })
 }
