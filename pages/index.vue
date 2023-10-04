@@ -2,6 +2,12 @@
 import { useTransition } from '~/composables/transition'
 import { useProjectsStories } from '~/composables/stories/projects.story'
 import { useHomeStory } from '~~/composables/stories/home.story'
+import { pageTransition } from '~/assets/scripts/transition'
+
+definePageMeta({
+  pageTransition,
+})
+
 useTransition()
 useObserver('.section')
 

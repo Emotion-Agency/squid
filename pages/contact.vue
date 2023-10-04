@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { useContactStory } from '~~/composables/stories/contact.story'
+import { pageTransition } from '~/assets/scripts/transition'
+
+definePageMeta({
+  pageTransition,
+})
 useTransition()
 
 const { story } = await useContactStory()

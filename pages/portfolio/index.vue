@@ -4,6 +4,11 @@ import gsap from 'gsap'
 import { useTransition } from '~/composables/transition'
 import { usePosts } from '~/composables/posts'
 import { useProjectsStories } from '~/composables/stories/projects.story'
+import { pageTransition } from '~/assets/scripts/transition'
+
+definePageMeta({
+  pageTransition,
+})
 useTransition()
 useObserver('.section')
 
@@ -20,10 +25,13 @@ const { filteredPosts, selectCategory, activeCategory } = usePosts(
   stories,
   'portfolio'
 )
+
 watch(filteredPosts, () => {
-  const tl = gsap.timeline()
-  tl.to($posts.value, { duration: 0, opacity: 0 })
-  tl.to($posts.value, { duration: 0.5, opacity: 1 }, 0.5)
+  if (process.client) {
+    const tl = gsap.timeline()
+    tl.to($posts.value, { duration: 0, opacity: 0 })
+    tl.to($posts.value, { duration: 0.5, opacity: 1 }, 0.5)
+  }
 })
 </script>
 

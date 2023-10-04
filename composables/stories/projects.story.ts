@@ -1,6 +1,7 @@
 import { Ref } from 'nuxt/dist/app/compat/capi'
 import { iStory } from '~/types/story'
 import { useCustomBridge } from '../customBridge'
+import { useGetStories } from './getStories'
 
 type tProjectStories = () => Promise<{
   stories: Ref<iStory[]>
@@ -11,44 +12,35 @@ type tProjectStories = () => Promise<{
 }>
 
 export const useProjectsStories: tProjectStories = async () => {
-  const stories = useState<iStory[]>('projectsStory', null)
-  const story = useState<iStory>('projectStory', null)
-  const categories = useState<iStory[]>('projectCategories', null)
-  const config = useRuntimeConfig()
+  const stories = useState<iStory[]>('projectsStory', () => null)
+  const story = useState<iStory>('projectStory', () => null)
+  const categories = useState<iStory[]>('projectCategories', () => null)
 
-  const storyapi = useStoryblokApi()
+  const res = await useGetStories({
+    by_slugs: 'portfolio/*',
+    excluding_slugs: 'portfolio/case-categories/*',
+    resolve_relations: 'case.category',
+  })
 
-  try {
-    const { data } = await storyapi.get('cdn/stories/?by_slugs=portfolio/*', {
-      version: config.public.ENVIROMENT === 'development' ? 'draft' : 'draft',
-      cv: +new Date(),
-      excluding_slugs: 'portfolio/case-categories/*',
-      resolve_relations: ['case.category'],
-    })
+  const categoriesData = await useGetStories({
+    by_slugs: 'portfolio/case-categories/*',
+  })
 
-    const categoriesData = await storyapi.get(
-      'cdn/stories/?by_slugs=portfolio/case-categories/*',
-      {
-        version: 'draft',
-      }
-    )
+  stories.value = res.value.filter(s => s.name !== 'Index')
+  story.value = res.value.find(s => s.name === 'Index')
 
-    stories.value = data.stories.filter(s => s.name !== 'Index')
-    story.value = data.stories.find(s => s.name === 'Index')
-
-    categories.value = categoriesData.data.stories
-  } catch (e) {
-    console.log(e.message)
-  }
+  categories.value = categoriesData.value
 
   const featuredPost = computed(() => {
     const featuredId = story?.value?.content?.Featured_case
     return stories.value.find(story => story.uuid === featuredId)
   })
 
-  useCustomBridge(story.value.id, evStory => {
-    story.value = evStory
-  })
+  if (process.client) {
+    useCustomBridge(story.value.id, evStory => {
+      story.value = evStory
+    })
+  }
 
   const listenStory = (slug: string) => {
     const currentStory = stories.value.find(story => story.slug === slug)

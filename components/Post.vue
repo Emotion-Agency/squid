@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { Richtext } from 'storyblok-js-client'
 import { iImage } from '~/types/story'
-import { RichText } from '~~/.nuxt/components'
 
 interface iProps {
   id: string

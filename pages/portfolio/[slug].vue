@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { useProjectsStories } from '~/composables/stories/projects.story'
 import { useTransition } from '~/composables/transition'
+import { pageTransition } from '~/assets/scripts/transition'
 
-
+definePageMeta({
+  pageTransition,
+})
 
 useTransition()
 useObserver('.section')
-
 
 const route = useRoute()
 
@@ -16,7 +18,6 @@ const { stories, listenStory } = await useProjectsStories()
 
 listenStory(slug)
 
-
 const posts = computed(() => {
   return stories.value
 })
@@ -24,7 +25,6 @@ const posts = computed(() => {
 const post = computed(() => {
   return stories.value.find(story => story.slug === slug).content
 })
-
 
 const prevPost = computed(() => {
   const idx = posts.value.findIndex(post => post.slug === slug)
@@ -37,48 +37,34 @@ const nextPost = computed(() => {
 
   return idx >= posts.value.length - 1 ? posts.value[0] : posts.value[idx + 1]
 })
-
-
-
 </script>
 
 <template>
   <main>
-    <PageMeta
-      v-if="post?.meta?.length"
-      :meta="post.meta[0]"
-    />
+    <PageMeta v-if="post?.meta?.length" :meta="post.meta[0]" />
     <section
-      v-if="post.title &&  post.title[0]"
+      v-if="post.title && post.title[0]"
       v-editable="post.title[0]"
       class="section section--nm post-1"
     >
       <div class="container post-1__wrapper">
         <div class="post-1__title">
-          <RichText
-            data-a-h
-            :text="post?.title && post?.title[0].text"
-          />
+          <RichText data-a-h :text="post?.title && post?.title[0].text" />
         </div>
-        <div
-          v-if="posts?.length > 1"
-          data-a-o
-          class="post-1__btns-wrapper"
-        >
+        <div v-if="posts?.length > 1" data-a-o class="post-1__btns-wrapper">
           <NuxtLink
             :to="`/portfolio/${prevPost.slug}`"
             class="post-1__btn post-1__btn--prev"
-          >PREVIOUS</NuxtLink>
+            >PREVIOUS</NuxtLink
+          >
           <NuxtLink
             :to="`/portfolio/${nextPost.slug}`"
             class="post-1__btn post-1__btn--next"
-          >NEXT</NuxtLink>
+            >NEXT</NuxtLink
+          >
         </div>
       </div>
-      <TheSocials
-        data-a-o
-        class="bottom-nav-socials"
-      />
+      <TheSocials data-a-o class="bottom-nav-socials" />
       <NextBlockButton data-a-o>Scroll</NextBlockButton>
     </section>
     <section
@@ -104,29 +90,22 @@ const nextPost = computed(() => {
         :blok="{
           aligned: post.scope[0]?.aligned,
           main_text: post.scope[0]?.main_text,
-          title: post.scope[0]?.title
+          title: post.scope[0]?.title,
         }"
       />
     </section>
     <CaseInfo
-      v-if="post.case_info &&  post.case_info[0]"
+      v-if="post.case_info && post.case_info[0]"
       v-editable="post.case_info[0]"
       :items="post.case_info[0].case_info"
     />
 
-    <div
-      v-if="post"
-      v-editable="post"
-    >
-      <Blok
-        v-for="blok in post.body"
-        :key="blok._uid"
-        :body="blok.body"
-      />
+    <div v-if="post" v-editable="post">
+      <Blok v-for="blok in post.body" :key="blok._uid" :body="blok.body" />
     </div>
 
     <CaseInfo
-      v-if="post.case_credits &&  post.case_credits[0]"
+      v-if="post.case_credits && post.case_credits[0]"
       v-editable="post.case_credits[0]"
       class="post-20"
       :items="post.case_credits[0].case_credit"

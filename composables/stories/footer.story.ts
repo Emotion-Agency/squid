@@ -1,16 +1,10 @@
+import { useGetStory } from './getStory'
+
 export const useFooterStory = async () => {
   const initStory = ref(null)
-  const storyapi = useStoryblokApi()
-  const config = useRuntimeConfig()
 
-  try {
-    const { data } = await storyapi.get('cdn/stories/contacts-info', {
-      version: config.public.ENVIROMENT === 'development' ? 'draft' : 'draft',
-    })
-    initStory.value = data.story
-  } catch (e) {
-    console.log(e.message)
-  }
+  const res = await useGetStory('contacts-info')
+  initStory.value = res.value
 
   const story = computed(() => {
     return initStory.value?.content

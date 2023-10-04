@@ -2,6 +2,12 @@
 import { useTransition } from '~/composables/transition'
 import { useBlogStories } from '~/composables/stories/blog.story'
 import { useBreakLine } from '~/composables/breakLine'
+import { pageTransition } from '~/assets/scripts/transition'
+
+definePageMeta({
+  pageTransition,
+})
+
 useTransition()
 useObserver('.section')
 
@@ -13,11 +19,9 @@ const { stories, categories, tags, listenStory } = await useBlogStories()
 
 listenStory(slug)
 
-
 const posts = computed(() => {
   return stories.value
 })
-
 
 const post = computed(() => {
   return stories.value.find(story => story.slug === slug).content
@@ -51,9 +55,10 @@ const lastPosts = computed(() => {
   return [...posts.value].filter(s => s.slug !== slug).slice(0, 3)
 })
 
-
 const formattedDate = computed(() => {
-  const date = stories.value.find(story => story.slug === slug).published_at ?? stories.value.find(story => story.slug === slug).created_at
+  const date =
+    stories.value.find(story => story.slug === slug).published_at ??
+    stories.value.find(story => story.slug === slug).created_at
 
   return useFormattedDate(date)
 })
@@ -66,54 +71,40 @@ const getCategory = (catId: string) => {
   return categories.value.find(story => story.uuid === catId)?.name
 }
 
-
 const breakLine = useBreakLine()
 </script>
 
 <template>
   <main>
-    <PageMeta
-      v-if="post?.meta?.length"
-      :meta="post.meta[0]"
-    />
+    <PageMeta v-if="post?.meta?.length" :meta="post?.meta[0]" />
     <section class="section section--nm blog-1">
-      <div
-        v-if="post?.image?.filename"
-        class="blog-1__img-wrapper"
-        data-a-o
-      >
+      <div v-if="post?.image?.filename" class="blog-1__img-wrapper" data-a-o>
         <TheImage
           class="blog-1__img"
           :src="post?.image?.filename"
           :alt="post.title"
         />
       </div>
-      <TheSocials
-        data-a-o
-        class="bottom-nav-socials"
-      />
+      <TheSocials data-a-o class="bottom-nav-socials" />
     </section>
-    <div
-      data-a-o
-      class="container blog-wrapper"
-    >
+    <div data-a-o class="container blog-wrapper">
       <article class="article">
         <section class="section section--nm blog-2">
           <div class="blog-2__wrapper">
             <div class="blog-2__main">
-              <p class="blog-2__category-name">Category: {{activeCategory || 'None'}}</p>
-              <p class="blog-2__date">{{formattedDate}} / Miles Marmo</p>
-              <h1
-                v-if="post?.title"
-                class="blog-2__title"
-              >{{post?.title}}</h1>
+              <p class="blog-2__category-name">
+                Category: {{ activeCategory || 'None' }}
+              </p>
+              <p class="blog-2__date">{{ formattedDate }} / Miles Marmo</p>
+              <h1 v-if="post?.title" class="blog-2__title">
+                {{ post?.title }}
+              </h1>
               <div class="blog-2__long-text">
                 <p
                   v-if="post?.description"
                   class="blog-2__desc"
                   v-html="breakLine(post.description)"
                 />
-
               </div>
             </div>
             <CaseInfo
@@ -122,10 +113,7 @@ const breakLine = useBreakLine()
               :items="post.blog_info[0].case_info"
               class="blog-2__info"
             />
-            <div
-              v-if="post"
-              v-editable="post"
-            >
+            <div v-if="post" v-editable="post">
               <Blok
                 v-for="(blok, idx) in post.body"
                 :key="blok._uid"
@@ -138,10 +126,7 @@ const breakLine = useBreakLine()
       </article>
       <aside class="aside">
         <div class="aside__wrapper">
-          <div
-            v-if="categories && categories?.length"
-            class="aside__filter"
-          >
+          <div v-if="categories && categories?.length" class="aside__filter">
             <h2 class="aside__filter-title">CATEGORIES</h2>
             <ul class="aside__filter-list">
               <li
@@ -151,22 +136,21 @@ const breakLine = useBreakLine()
               >
                 <NuxtLink
                   :class="[
-                    activeCategory?.toLocaleLowerCase() === category.name?.toLocaleLowerCase() && 'aside__filter-btn--active',
+                    activeCategory?.toLocaleLowerCase() ===
+                      category.name?.toLocaleLowerCase() &&
+                      'aside__filter-btn--active',
                   ]"
-                  :to="`/squid-blog/?filter=${category.name?.toLocaleLowerCase()
-                  .replace(/\s/gm, '_')}`"
+                  :to="`/squid-blog/?filter=${category.name
+                    ?.toLocaleLowerCase()
+                    .replace(/\s/gm, '_')}`"
                   class="aside__filter-btn"
                 >
-                  {{category.name?.toLocaleLowerCase()}}
+                  {{ category.name?.toLocaleLowerCase() }}
                 </NuxtLink>
               </li>
-
             </ul>
           </div>
-          <div
-            v-if="lastPosts?.length"
-            class="aside__posts"
-          >
+          <div v-if="lastPosts?.length" class="aside__posts">
             <h2 class="aside__posts-main">LATEST POSTS</h2>
             <ul class="aside__posts-list">
               <li
@@ -174,10 +158,7 @@ const breakLine = useBreakLine()
                 :key="item._uid"
                 class="aside__posts-li"
               >
-                <NuxtLink
-                  :to="`/squid-blog/${item.slug}/`"
-                  class="aside__link"
-                >
+                <NuxtLink :to="`/squid-blog/${item.slug}/`" class="aside__link">
                   <img
                     v-if="item.content.image.filename"
                     class="aside__posts-img"
@@ -186,19 +167,22 @@ const breakLine = useBreakLine()
                   />
                   <div class="aside__posts-block">
                     <div class="aside__posts-text">
-                      <p class="aside__posts-date">{{getFormattedDate(item.published_at || item.created_at)}}</p>
-                      <p class="aside__posts-title">{{item.content.title}}</p>
+                      <p class="aside__posts-date">
+                        {{
+                          getFormattedDate(item.published_at || item.created_at)
+                        }}
+                      </p>
+                      <p class="aside__posts-title">{{ item.content.title }}</p>
                     </div>
-                    <p class="aside__posts-name">{{getCategory(item.content.category)}}</p>
+                    <p class="aside__posts-name">
+                      {{ getCategory(item.content.category) }}
+                    </p>
                   </div>
                 </NuxtLink>
               </li>
             </ul>
           </div>
-          <div
-            v-if="activeTags?.length"
-            class="aside__tags"
-          >
+          <div v-if="activeTags?.length" class="aside__tags">
             <h2 class="aside__tags-main">TAGS</h2>
             <p class="aside__tags-text">
               <span
@@ -206,7 +190,7 @@ const breakLine = useBreakLine()
                 :key="tag._uid"
                 class="aside__tags-text-wrapper"
               >
-                {{tag.name}}
+                {{ tag.name }}
                 <span v-if="idx + 1 < tags.length">/</span>
               </span>
             </p>

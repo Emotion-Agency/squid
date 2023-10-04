@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { useTransition } from '~/composables/transition'
 import { useExpertiseStory } from '~/composables/stories/expertise.story'
+import { pageTransition } from '~/assets/scripts/transition'
+
+definePageMeta({
+  pageTransition,
+})
+
 useTransition()
 useObserver('.section')
 
@@ -24,10 +30,7 @@ onBeforeUnmount(() => {
 
 <template>
   <main>
-    <PageMeta
-      v-if="story.meta.length"
-      :meta="story.meta[0]"
-    />
+    <PageMeta v-if="story.meta.length" :meta="story.meta[0]" />
     <section class="section section--nm expertise-1">
       <div class="container expertise-1__wrapper">
         <div
@@ -42,30 +45,21 @@ onBeforeUnmount(() => {
           />
         </div>
       </div>
-      <TheSocials
-        data-a-o
-        class="bottom-nav-socials"
-      />
+      <TheSocials data-a-o class="bottom-nav-socials" />
       <NextBlockButton data-a-o>Scroll</NextBlockButton>
     </section>
-    <section
-      v-editable="story"
-      class="section expertise-2"
-    >
+    <section v-editable="story" class="section expertise-2">
       <div class="container expertise-2__wrapper">
         <div class="grid expertise-2__text-wrapper">
           <p class="expertise-2__text">
-            {{ story.screen_2}}
+            {{ story.screen_2 }}
           </p>
         </div>
       </div>
     </section>
     <section class="section expertise-3">
       <div class="container expertise-3__wrapper">
-        <IconsCircle
-          ref="$rotatingEl"
-          class="expertise-3__img"
-        />
+        <IconsCircle ref="$rotatingEl" class="expertise-3__img" />
       </div>
     </section>
     <section
@@ -78,7 +72,7 @@ onBeforeUnmount(() => {
           class="expertise-4__table-text"
           :blok="{
             title: story.screen_3[0].title,
-            content: story.screen_3[0].content
+            content: story.screen_3[0].content,
           }"
         />
       </div>
@@ -113,7 +107,7 @@ onBeforeUnmount(() => {
         :blok="{
           title: story.screen_6[0].title,
           main_text: story.screen_6[0].main_text,
-          aligned: story.screen_6[0].aligned
+          aligned: story.screen_6[0].aligned,
         }"
       />
     </section>

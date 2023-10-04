@@ -1,15 +1,22 @@
 <script setup lang="ts">
-  import gsap from 'gsap'
+import gsap from 'gsap'
 import { useTransition } from '~/composables/transition'
 import { usePosts } from '~/composables/posts'
 import { useBlogStories } from '~/composables/stories/blog.story'
+import { pageTransition } from '~/assets/scripts/transition'
+
+definePageMeta({
+  pageTransition,
+})
 
 useTransition()
 useObserver('.section')
 
 const { story, stories, categories, featuredPost } = await useBlogStories()
-const { filteredPosts, selectCategory, activeCategory } = usePosts(stories, 'squid-blog')
-
+const { filteredPosts, selectCategory, activeCategory } = usePosts(
+  stories,
+  'squid-blog'
+)
 
 const $posts = ref(null)
 
@@ -22,10 +29,7 @@ watch(filteredPosts, () => {
 
 <template>
   <main>
-    <PageMeta
-      v-if="story.content.meta.length"
-      :meta="story.content.meta[0]"
-    />
+    <PageMeta v-if="story.content.meta.length" :meta="story.content.meta[0]" />
     <Featured
       v-if="featuredPost?.content"
       :name="featuredPost.name"
@@ -36,14 +40,8 @@ watch(filteredPosts, () => {
       :link="`/squid-blog/${featuredPost.slug}/`"
       :image="featuredPost.content?.image"
     />
-    <TheSocials
-      data-a-o
-      class="bottom-nav-socials"
-    />
-    <section
-      data-a-t
-      class="section thoughts-2"
-    >
+    <TheSocials data-a-o class="bottom-nav-socials" />
+    <section data-a-t class="section thoughts-2">
       <div class="container thoughts-2__wrapper">
         <p class="thoughts-2__title">CATEGORIES</p>
         <div class="thoughts-2__filter">
@@ -55,16 +53,16 @@ watch(filteredPosts, () => {
             <button
               class="thoughts-2__btn"
               :class="[
-                activeCategory === category.name?.toLocaleLowerCase() && 'thoughts-2__btn--active',
+                activeCategory === category.name?.toLocaleLowerCase() &&
+                  'thoughts-2__btn--active',
               ]"
               @click="selectCategory(category.name)"
             >
-              {{category.name}}
+              {{ category.name }}
             </button>
             <div class="thoughts-2__line">/</div>
           </div>
           <div class="thoughts-2__btn-wrapper">
-
             <button
               class="thoughts-2__btn"
               :class="[activeCategory === 'all' && 'thoughts-2__btn--active']"
@@ -73,16 +71,9 @@ watch(filteredPosts, () => {
               ALL
             </button>
           </div>
-
         </div>
-        <div
-          ref="$posts"
-          class="thoughts-2__img-list-wrapper"
-        >
-          <ul
-            v-if="filteredPosts.length"
-            class="thoughts-2__img-list"
-          >
+        <div ref="$posts" class="thoughts-2__img-list-wrapper">
+          <ul v-if="filteredPosts.length" class="thoughts-2__img-list">
             <Post
               v-for="item in filteredPosts"
               :id="item.content._uid"
@@ -97,10 +88,7 @@ watch(filteredPosts, () => {
             />
           </ul>
 
-          <div
-            v-else
-            class="no-posts"
-          >no posts yet</div>
+          <div v-else class="no-posts">no posts yet</div>
         </div>
         <!-- <button
           v-if="filteredPosts.length"
