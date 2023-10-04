@@ -1,4 +1,3 @@
-import { useCustomBridge } from '../customBridge'
 import { useGetStory } from './getStory'
 
 export const useContactStory = async () => {
@@ -8,7 +7,7 @@ export const useContactStory = async () => {
   initStory.value = res.value
 
   if (process.client) {
-    useCustomBridge(initStory.value.id, evStory => {
+    useStoryblokBridge(initStory.value.id, evStory => {
       initStory.value = evStory
     })
   }

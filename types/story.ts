@@ -1,4 +1,4 @@
-import { Richtext } from 'storyblok-js-client'
+import Richtext from 'storyblok-js-client'
 
 export interface iMeta {
   title: string
@@ -27,9 +27,9 @@ export interface iStory {
   slug: string
   created_at: string
   first_published_at: string
-  published_at: number
+  published_at: string
   name: string
-  _uid: string
+  _uid?: string
   uuid: string
   id: number
   title?: string

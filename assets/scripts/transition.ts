@@ -24,7 +24,7 @@ export const pageTransition: TransitionProps = {
     document.documentElement.style.cursor = 'wait'
     setTimeout(() => {
       window.ss.isFixed = true
-    }, 500)
+    }, 200)
 
     gsap.fromTo(
       el,
