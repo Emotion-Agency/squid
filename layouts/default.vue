@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { useFonts } from '~/composables/fonts'
-import emitter from 'tiny-emitter/instance.js'
 
 const GOOGLE_TM_ID = 'GTM-W9CZGXJ'
 
 useFonts()
-
-const { isInEditor } = useLoadState()
 
 const parallaxInit = async () => {
   const { Parallax } = await import('@emotionagency/parallax')
@@ -23,24 +20,6 @@ onMounted(async () => {
   resize.on(winSizes)
 
   await parallaxInit()
-
-  setTimeout(() => {
-    const sbBridge = new window.StoryblokBridge()
-
-    if (!sbBridge) {
-      return
-    }
-
-    sbBridge.on(['input', 'published', 'change'], event => {
-      emitter.emit('storyChange', event.story)
-    })
-
-    sbBridge.pingEditor(() => {
-      if (sbBridge.isInEditor()) {
-        isInEditor.value = true
-      }
-    })
-  }, 200)
 })
 
 onBeforeUnmount(() => {
