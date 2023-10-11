@@ -22,6 +22,7 @@ export const useBlogStories: tBlogStories = async () => {
     by_slugs: 'squid-blog/*',
     excluding_slugs: 'squid-blog/blog-categories/*,squid-blog/blog-tags/*',
     resolve_relations: 'Article.category',
+    sort_by: 'created_at:desc',
   })
 
   const categoriesData = await useGetStories({
