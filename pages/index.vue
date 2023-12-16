@@ -106,10 +106,7 @@ onBeforeUnmount(() => {
                 <div class="container home-3__wrapper">
                   <div class="home-1__title">
                     <RichText :text="story.storytelling[0].screen_3[0].text" />
-                    <RichText
-                      class="home-1__title--gray"
-                      :text="story.storytelling[0].screen_3[1].text"
-                    />
+                    <RichText :text="story.storytelling[0].screen_3[1].text" />
                   </div>
                 </div>
               </section>

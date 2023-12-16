@@ -11,7 +11,7 @@
   min-height: 100%;
 
   @media (min-width: $br1) {
-    padding-top: 40vh;
+    padding-top: 26vh;
   }
   @media (max-width: $br1) {
     display: flex;
@@ -23,7 +23,8 @@
 .home-4__text {
   * {
     font-size: vw(40);
-    line-height: 138%;
+    line-height: 1.37em;
+    text-transform: uppercase;
     letter-spacing: 1.4px;
     @media (max-width: $br1) {
       font-size: 20px;
@@ -32,11 +33,12 @@
   @include col(3, 10);
 
   @media (min-width: $br1) {
-    max-width: vw(1030);
+    max-width: vw(975);
   }
 
   @media (max-width: $br4) {
     @include col(1, 4);
+    line-height: 1.4em;
     max-width: 100%;
   }
 }
