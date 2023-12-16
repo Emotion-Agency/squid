@@ -15,9 +15,10 @@
 .home-1__title {
   h1,
   h2 {
-    font-size: vw(156);
-    line-height: 100%;
+    font-size: vw(200);
+    line-height: 1em;
     letter-spacing: 0.07em;
+
     @media (max-width: $br1) {
       font-size: 56px;
     }

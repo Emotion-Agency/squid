@@ -12,7 +12,7 @@
   top: 0;
   left: 0;
   padding: vw(65);
-  padding-top: vw(40);
+  padding-top: vw(72);
   transition: transform 0.5s ease, opacity 0.5s ease;
   &.loading {
     transform: translateY(-100%);
@@ -24,10 +24,6 @@
   }
 
   &--active {
-    .header__line {
-      background-color: #fff;
-    }
-
     .header__logo {
       path {
         fill: #fff;
@@ -87,7 +83,7 @@
   display: block;
   height: 2px;
   width: 100%;
-  background-color: #a7a9ac;
+  background-color: var(--white);
   transition: all 0.3s ease;
 
   &:nth-of-type(2) {
@@ -108,24 +104,12 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  width: vw(106);
-  height: vw(46);
+  width: vw(178);
+  height: vw(33);
 
   @media (max-width: $br1) {
-    width: 74px;
+    width: 90px;
     height: 16px;
-  }
-
-  &:hover {
-    .header__logo-img {
-      &--1 {
-        opacity: 0;
-      }
-
-      &--2 {
-        opacity: 1;
-      }
-    }
   }
 }
 
@@ -133,21 +117,7 @@
   display: block;
   position: absolute;
   right: 0;
-  width: vw(106);
-  height: vw(23);
-  transition: opacity 0.3s ease;
-
-  @media (max-width: $br1) {
-    width: 74px;
-    height: 16px;
-  }
-
-  &--2 {
-    height: vw(46);
-    opacity: 0;
-
-    @media (max-width: $br1) {
-      height: 23px;
-    }
-  }
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
 }

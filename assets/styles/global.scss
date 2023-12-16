@@ -100,6 +100,21 @@ h6 {
   .snfine-regcond-it {
     @include snfine-regcond-it;
   }
+  .articulat-cf {
+    @include articulat-cf;
+  }
+  .awesome-serif {
+    @include awesome-serif;
+  }
+  .space-mono-reg {
+    @include space-mono-reg;
+  }
+  .space-mono-bold {
+    @include space-mono-bold;
+  }
+  .ed-mentasta-reg {
+    @include ed-mentasta-reg;
+  }
 }
 
 .figcaption {
