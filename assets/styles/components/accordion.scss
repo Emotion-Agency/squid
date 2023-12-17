@@ -29,12 +29,6 @@
       }
     }
   }
-  + .accordion__btn {
-    margin-top: vh(38);
-    @media (max-width: $br1) {
-      margin-top: 40px;
-    }
-  }
 }
 
 .accordion__content {
@@ -43,16 +37,18 @@
 
   @media (min-width: $br1) {
     display: grid;
-    align-items: end;
+    align-items: center;
     grid-template-columns: fit-content(vh(152)) 1fr fit-content(vh(152));
     column-gap: vh(120);
     grid-auto-flow: row;
+    padding: vh(36) 0;
   }
 
   @media (max-width: $br1) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding: 40px 0;
   }
 }
 
@@ -142,19 +138,5 @@
 .accordion__line {
   width: 100%;
   height: 1px;
-  margin-bottom: vh(36);
   background-color: #cc69a3;
-
-  @media (max-width: $br1) {
-    margin-bottom: 40px;
-  }
-
-  &:last-of-type {
-    margin-bottom: 0;
-    margin-top: vh(36);
-
-    @media (max-width: $br1) {
-      margin-top: 40px;
-    }
-  }
 }

@@ -159,7 +159,7 @@ onBeforeUnmount(() => {
                         {{ story.table_texts[0]?.text }}
                       </p>
                       <NuxtLink to="/about/" class="home-6__btn-wrapper">
-                        <div class="home-6__btn">LEARN MORE</div>
+                        <div class="home-6__btn">Learn more</div>
                         <small class="home-6__btn-text">about us</small>
                       </NuxtLink>
                     </div>
@@ -179,7 +179,7 @@ onBeforeUnmount(() => {
                         {{ story.table_texts[1]?.text }}
                       </p>
                       <NuxtLink to="/expertise/" class="home-6__btn-wrapper">
-                        <div class="home-6__btn">LEARN MORE</div>
+                        <div class="home-6__btn">Learn more</div>
                         <small class="home-6__btn-text">expertise</small>
                       </NuxtLink>
                     </div>
