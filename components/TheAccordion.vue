@@ -1,7 +1,6 @@
-<script lang='ts' setup>
+<script lang="ts" setup>
 import { iAccordionItem } from '~/types/accordion'
 import { keysGenerator } from '~/assets/scripts/utils/ea'
-
 
 interface iProps {
   items: iAccordionItem[]
@@ -9,23 +8,28 @@ interface iProps {
 
 const props = defineProps<iProps>()
 
-const updatedItems = ref({ ...props }.items.map(item => ({ ...item,isOpen: false,id: keysGenerator(8) })))
-
-
+const updatedItems = ref(
+  { ...props }.items.map(item => ({
+    ...item,
+    isOpen: false,
+    id: keysGenerator(8),
+  }))
+)
 
 const onClick = (id: string) => {
   updatedItems.value = updatedItems.value.map(el => {
     if (id === el.id) {
       return {
-        ...el,isOpen: !el.isOpen
+        ...el,
+        isOpen: !el.isOpen,
       }
     }
 
     return {
-      ...el,isOpen: false
+      ...el,
+      isOpen: false,
     }
   })
-
 }
 </script>
 
@@ -33,14 +37,15 @@ const onClick = (id: string) => {
   <div class="accordion">
     <slot></slot>
     <AccordionItem
-      v-for="item in updatedItems"
+      v-for="(item, idx) in updatedItems"
       :id="item.id"
       :key="item.title"
       :title="item.title"
       :text="item.text"
       :is-open="item.isOpen"
+      :last-item="idx === updatedItems.length - 1"
+      :number-item="idx + 1"
       @clicked="onClick"
     />
-
   </div>
 </template>
