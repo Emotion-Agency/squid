@@ -32,28 +32,35 @@
 }
 
 .home-8__title {
-  @include cd-reg;
-  font-size: vw(90);
-  line-height: 124%;
-  max-width: vw(370);
+  @include space-mono-bold;
+  color: var(--bg);
+  font-size: vw(50);
+  line-height: 1.5em;
+  letter-spacing: 3px;
+
+  @media (min-width: $br1) {
+    max-width: vw(370);
+  }
 
   @media (max-width: $br1) {
-    font-size: 56px;
-    line-height: 100%;
+    font-size: 40px;
+    line-height: 1em;
   }
 }
 
 .home-8__desc {
-  @include cd-reg;
+  @include articulat-cf;
+  color: var(--bg);
   font-size: vw(22);
-  line-height: 140%;
+  line-height: 1.4em;
   letter-spacing: 0.1em;
   max-width: vw(370);
+  margin-top: vw(97);
 
   @media (max-width: $br1) {
     max-width: 50%;
     font-size: 16px;
-    margin-top: 22px;
+    margin-top: 38px;
   }
 
   @media (max-width: $br3) {
@@ -152,10 +159,11 @@
 }
 
 .home-8__name {
-  @include cd-semibold;
-  font-size: vw(17);
-  line-height: 100%;
+  @include space-mono-bold;
+  font-size: vw(18);
+  line-height: 1em;
   letter-spacing: 0.14em;
+  text-transform: uppercase;
 
   @media (max-width: $br1) {
     font-size: 16px;
@@ -182,15 +190,16 @@
 }
 
 .home-8__link {
-  @include snfine-reg-it;
+  @include articulat-cf;
   font-size: vw(23);
-  line-height: 100%;
+  line-height: 1em;
   letter-spacing: 1.15px;
   background-color: transparent;
   color: inherit;
+  white-space: nowrap;
 
   @media (max-width: $br1) {
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 16px;
   }
 }
