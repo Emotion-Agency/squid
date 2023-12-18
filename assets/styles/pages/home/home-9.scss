@@ -1,12 +1,15 @@
 .home-9 {
   position: relative;
   padding-bottom: vw(300);
+  background-color: var(--bg);
 
   @media (max-width: $br1) {
+    padding-top: 200px;
     padding-bottom: 200px;
   }
 
   @media (max-width: $br3) {
+    padding-top: 120px;
     padding-bottom: 120px;
   }
 }
@@ -32,15 +35,16 @@
 }
 
 .home-9__title {
-  @include cd-reg;
-  font-size: vw(90);
-  line-height: 124%;
+  @include articulat-cf;
+  font-size: vw(65);
+  line-height: 1.3em;
   max-width: vw(536);
   height: fit-content;
+  color: var(--white);
 
   @media (max-width: $br1) {
-    font-size: 56px;
-    line-height: 100%;
+    font-size: 45px;
+    line-height: 1em;
     max-width: none;
   }
 }
@@ -54,7 +58,7 @@
 
 .home-9__list {
   @media (max-width: $br1) {
-    margin-top: 92px;
+    margin-top: 82px;
   }
 }
 
@@ -82,18 +86,17 @@
 
 .home-9__item-wrapper {
   position: relative;
-  background-color: #fff;
 }
 
 .home-9__item-text {
-  @include cd-semibold;
+  @include articulat-cf;
   font-size: vw(50);
-  line-height: 140%;
+  line-height: 1.4em;
   position: relative;
   z-index: 3;
-  color: #fff;
+  color: var(--white);
   mix-blend-mode: difference;
-  text-transform: uppercase;
+  text-transform: capitalize;
 
   @media (max-width: $br1) {
     font-size: 24px;
