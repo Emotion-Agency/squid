@@ -124,6 +124,7 @@
 
 .menu__content {
   @include col(8, 12);
+  opacity: 0;
 
   @media (max-width: $br1) {
     display: none;

@@ -33,7 +33,6 @@ export const useMenu = () => {
         y: 0,
         opacity: 1,
         ease: 'power2.out',
-        stagger: 0.1,
         overflow: 5,
       },
       0.5
