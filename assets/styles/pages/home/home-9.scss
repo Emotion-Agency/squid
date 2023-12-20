@@ -41,6 +41,7 @@
   max-width: vw(536);
   height: fit-content;
   color: var(--white);
+  text-transform: capitalize;
 
   @media (max-width: $br1) {
     font-size: 45px;

@@ -2,163 +2,148 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   width: 100%;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: 5000;
-  background-color: var(--accent);
+  position: relative;
+  background: linear-gradient(90deg, #e36852 0%, #cc69a3 100%);
+  min-height: 100vh;
+
+  @media (min-width: $br1) {
+    padding: vw(200) vw(70);
+    padding-bottom: vw(100);
+  }
+
+  @media (max-width: $br1) {
+    padding-top: 75px;
+    padding-bottom: 25px;
+  }
 }
 
 .contacts__wrapper {
-  position: relative;
-
+  height: 100%;
   @media (max-width: $br1) {
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
-.contacts__email-wrapper {
-  @include col(1, 12);
-  position: relative;
-
-  @media (max-width: $br4) {
-    @include col(1, 4);
+.contacts__list-items {
+  @media (min-width: $br1) {
+    margin-top: vw(94);
+    @include col(1, 5);
   }
 }
 
-.contacts__small-text {
-  @include cd-semibold;
-  font-size: vw(17);
-  line-height: 100%;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #707070;
-  margin-bottom: vw(18);
+.contacts__item {
+  margin-top: vw(46);
 
   @media (max-width: $br1) {
-    font-size: 14px;
-    margin-bottom: 20px;
+    margin-top: 36px;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:nth-child(2) {
+    margin-top: vw(70);
+
+    @media (max-width: $br1) {
+      margin-top: 48px;
+    }
+  }
+}
+
+.contacts__item-title {
+  @include awesome-serif;
+  font-size: vw(45);
+  line-height: 1em;
+  letter-spacing: 4.5px;
+  color: var(--white);
+  margin-bottom: vw(22);
+
+  @media (max-width: $br1) {
+    font-size: 24px;
+    letter-spacing: 2.4px;
+    margin-bottom: 12px;
   }
 }
 
 .contacts__email {
-  @include cd-light;
-  color: #707070;
-  font-size: vw(90);
-  line-height: 124%;
-  letter-spacing: 1px;
-  .contacts__email-text {
-    transition: transform 0.3s ease, color 0.3s ease;
-    display: block;
-  }
+  @include space-mono-reg;
+  font-size: vw(45);
+  line-height: 1em;
+  color: var(--white);
+
   &:hover {
     .contacts__email-text {
-      transform: translateY(-5px);
-      color: #fff;
+      transform: translateY(8px);
     }
   }
 
   @media (max-width: $br1) {
-    font-size: 24px;
-    line-height: 100%;
+    font-size: 25px;
+  }
+
+  @media (max-width: $br5) {
+    font-size: vw(25, $minWidth);
   }
 }
 
 .contacts__email-line {
-  position: absolute;
-  content: '';
-  height: 2px;
-  background-color: #707070;
+  display: block;
   width: 100%;
-  bottom: -15px;
-  left: 0;
-}
-
-.contacts__style-email {
-  @include snfine-reg-it;
-}
-
-.contacts__phone {
-  margin-top: vw(70);
-
-  @media (min-width: $br1) {
-    @include col(1, 4);
-    @include row(2, 2);
-  }
+  height: 2px;
+  background-color: var(--white);
+  margin-top: vw(28);
 
   @media (max-width: $br1) {
-    @include col(1, 4);
-    @include row(2, 2);
-    margin-top: 36px;
-  }
-
-  @media (max-width: $br3) {
-    @include col(1, 12);
-    @include row(2, 2);
-  }
-
-  @media (max-width: $br4) {
-    @include col(1, 4);
-    @include row(2, 2);
+    margin-top: 14px;
   }
 }
 
-.contacts__place {
-  margin-top: vw(70);
-
-  @media (min-width: $br1) {
-    @include col(5, 9);
-    @include row(2, 2);
-  }
-
-  @media (max-width: $br1) {
-    @include col(5, 9);
-    @include row(2, 2);
-    margin-top: 36px;
-  }
-
-  @media (max-width: $br3) {
-    @include col(1, 12);
-    @include row(3, 3);
-  }
-
-  @media (max-width: $br4) {
-    @include col(1, 4);
-    @include row(3, 3);
-  }
+.contacts__email-text {
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
-.contacts__title {
-  @include snfine-reg-it;
-  font-size: vw(45);
-  line-height: 100%;
-  letter-spacing: 4.5px;
-  color: #707070;
-
-  @media (max-width: $br1) {
-    font-size: 24px;
-    letter-spacing: 0.1em;
-  }
-}
-
-.conctacts__info {
-  @include cd-light;
+.contacts__link {
+  @include articulat-cf;
   font-size: vw(35);
-  line-height: 130%;
-  color: #707070;
-  margin-top: vw(30);
-  transition: color 0.3s ease, transform 0.3s ease;
-  &:hover {
-    color: #fff;
-    transform: translateX(8px);
-  }
+  line-height: 1.28em;
+  color: var(--white);
+  transition: transform 0.3s ease;
+  display: block;
 
   @media (max-width: $br1) {
     font-size: 20px;
-    line-height: 130%;
-    margin-top: 12px;
+    line-height: 1em;
+  }
+
+  &:hover {
+    transform: translateX(5px);
+  }
+}
+
+.contacts__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @media (min-width: $br1) {
+    @include col(7, 11);
+  }
+
+  @media (max-width: $br1) {
+    width: 70%;
+  }
+
+  @media (max-width: $br3) {
+    width: 100%;
   }
 }

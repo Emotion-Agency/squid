@@ -16,34 +16,36 @@ const emailMarkup = computed(() => {
 <template>
   <div class="contacts">
     <div class="grid container contacts__wrapper">
-      <div class="contacts__email-wrapper">
-        <h2 class="contacts__small-text">{{ story.title }}</h2>
-        <a class="contacts__email" :href="`mailto:${story.email}`">
-          <span class="contacts__email-text" v-html="emailMarkup" />
-
-          <span class="contacts__email-line"></span>
-        </a>
-      </div>
-      <div v-if="story.phone" class="contacts__phone">
-        <h2 class="contacts__title">Phone</h2>
-        <p class="conctacts__info">
-          <a :href="`tel:${story.phone.replace(/\D/g, '')}`">{{
-            story.phone
-          }}</a>
-        </p>
-      </div>
-      <div v-if="story.adress && story.adress[0]" class="contacts__place">
-        <h2 class="contacts__title">Office</h2>
-        <p class="conctacts__info">
+      <ul class="contacts__list-items">
+        <li v-if="story.email" class="contacts__item">
+          <h2 class="contacts__item-title">Email</h2>
+          <a class="contacts__email" :href="`mailto:${story.email}`">
+            <span class="contacts__email-text" v-html="emailMarkup" />
+            <span class="contacts__email-line" />
+          </a>
+        </li>
+        <li v-if="story.phone" class="contacts__item">
+          <h2 class="contacts__item-title">Phone</h2>
+          <a
+            class="contacts__link"
+            :href="`tel:${story.phone.replace(/\D/g, '')}`"
+          >
+            {{ story.phone }}
+          </a>
+        </li>
+        <li v-if="story.adress && story.adress[0]" class="contacts__item">
+          <h2 class="contacts__item-title">Office</h2>
           <a
             :href="story.adress[0].map_link"
             target="_blank"
             rel="noreferer noopener"
+            class="contacts__link"
           >
             {{ story.adress[0].adress }}
           </a>
-        </p>
-      </div>
+        </li>
+      </ul>
+      <TheForm class="contacts__form" />
     </div>
   </div>
 </template>
