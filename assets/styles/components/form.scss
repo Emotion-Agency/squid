@@ -4,11 +4,33 @@
     margin-top: 40px;
   }
 }
+
 .form__inputs-wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  label {
+    margin-top: vw(40);
+
+    @media (max-width: $br1) {
+      margin-top: 35px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-top: vw(60);
+
+      @media (max-width: $br1) {
+        margin-top: 40px;
+      }
+    }
+  }
 }
+
 .form__btn {
   display: flex;
   justify-content: flex-start;
@@ -16,7 +38,7 @@
   height: vw(41);
   width: vw(181);
   max-width: 100%;
-  background: #001123;
+  background-color: var(--white);
   padding: 0 vw(16);
   align-self: flex-end;
   margin-top: vw(30);
@@ -29,8 +51,9 @@
     line-height: 1em;
     letter-spacing: 1.75px;
     text-transform: uppercase;
-    color: var(--white);
+    color: var(--bg);
     z-index: 2;
+    transition: color 0.3s ease;
 
     @media (max-width: $br1) {
       font-size: 17px;
@@ -38,6 +61,9 @@
   }
 
   &:hover {
+    span {
+      color: var(--white);
+    }
     &::before {
       opacity: 1;
     }

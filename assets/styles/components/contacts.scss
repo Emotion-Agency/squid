@@ -9,7 +9,7 @@
   right: 0;
   z-index: 5000;
   position: relative;
-  background: linear-gradient(90deg, #e36852 0%, #cc69a3 100%);
+  background-color: var(--bg);
   min-height: 100vh;
 
   @media (min-width: $br1) {
