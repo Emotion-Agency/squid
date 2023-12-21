@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { Richtext } from 'storyblok-js-client'
+import Richtext from 'storyblok-js-client'
 
 interface iContent {
-  title?: string
+  title?: string | any
   main_text: string | Richtext
   aligned?: boolean
 }
@@ -23,7 +23,11 @@ const breakLine = useBreakLine()
 <template>
   <div class="container">
     <div class="text-block-1" :class="!blok.aligned && 'text-block-1--aligned'">
-      <h2 v-if="blok.title" class="text-block-1__title">{{ blok.title }}</h2>
+      <RichText
+        v-if="blok.title"
+        class="text-block-1__title"
+        :text="blok.title[0].text"
+      />
       <p
         v-if="blok.main_text && typeOfMainText === 'string'"
         v-html="breakLine(blok.main_text)"

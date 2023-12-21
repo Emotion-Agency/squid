@@ -124,11 +124,23 @@
 }
 
 .expertise-6__btn {
-  @include space-mono-reg;
+  @include space-mono-bold;
   font-size: vw(16);
   line-height: 1.9em;
   margin-top: vw(22);
   display: block;
+  color: var(--white);
+  position: relative;
+  transition: color 0.3s ease;
+  background-size: 200% 200%;
+  background-image: linear-gradient(90deg, #e36852 0%, #cc69a3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  width: fit-content;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0);
+  }
 
   @media (max-width: $br1) {
     font-size: 16px;
