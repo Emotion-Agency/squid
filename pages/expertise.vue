@@ -34,13 +34,17 @@ onBeforeUnmount(() => {
     <section class="section section--nm expertise-1">
       <div class="container expertise-1__wrapper">
         <div
-          v-if="story.screen_1[0].text"
+          v-if="story.screen_1[0].title_1[0].text"
           v-editable="story.screen_1[0]"
-          class="expertise-1__text-wrapper"
+          class="grid expertise-1__text-wrapper"
         >
           <RichText
             data-a-h
-            :text="story.screen_1[0].text"
+            :text="story.screen_1[0].title_1[0].text"
+            class="expertise-1__text"
+          />
+          <RichText
+            :text="story.screen_1[0].title_2[0].text"
             class="expertise-1__title"
           />
         </div>
