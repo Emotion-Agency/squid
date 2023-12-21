@@ -1,6 +1,6 @@
 .expertise-2 {
   position: relative;
-  background-color: var(--black);
+  background-color: var(--bg);
   color: var(--white);
 }
 
@@ -9,11 +9,11 @@
 }
 
 .expertise-2__text {
-  @include cd-reg;
+  @include articulat-cf;
   @include col(3, 10);
   width: 100%;
   font-size: vw(40);
-  line-height: 140%;
+  line-height: 1.4em;
 
   @media (max-width: $br1) {
     font-size: 20px;

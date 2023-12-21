@@ -1,6 +1,6 @@
 .expertise-6 {
   position: relative;
-  background-color: var(--black);
+  background-color: var(--bg);
   color: var(--white);
 
   @media (min-width: $br1) {
@@ -28,10 +28,21 @@
   }
 }
 
+.expertise-6__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: vw(30);
+
+  @media (max-width: $br1) {
+    row-gap: 20px;
+  }
+}
+
 .expertise-6__title {
-  @include cd-reg;
+  @include space-mono-bold;
+  letter-spacing: 5px;
   font-size: vw(90);
-  line-height: 100%;
+  line-height: 1em;
   height: fit-content;
 
   @media (max-width: $br1) {
@@ -39,37 +50,88 @@
   }
 }
 
+.expertise-6__desc {
+  @include articulat-cf;
+  font-size: vw(22);
+  line-height: 1.4em;
+  letter-spacing: 1px;
+  max-width: vw(337);
+
+  @media (max-width: $br1) {
+    max-width: 80%;
+    font-size: 22px;
+  }
+
+  @media (max-width: $br4) {
+    max-width: 100%;
+  }
+}
+
 .expertise-6__scroll-wrapper {
   @media (min-width: $br1) {
     overflow: hidden;
-    height: vw(130);
+    height: vw(360);
   }
 }
 
-.expertise-6__text-wrapper {
+.expertise-6__list-items {
   overflow: hidden;
 }
 
-.expertise-6__text {
-  @include cd-semibold;
-  text-transform: uppercase;
-  font-size: vw(50);
-  line-height: 130%;
-  letter-spacing: -0.01em;
-  max-width: vw(950);
-  @media (min-width: $br1) {
-    + .expertise-6__text {
-      margin-top: vw(40);
-    }
+.expertise-6__item {
+  margin-top: vw(12);
+  max-width: vw(843);
+
+  &:first-of-type {
+    margin-top: 0;
   }
 
   @media (max-width: $br1) {
-    font-size: 24px;
-    max-width: 60%;
-    margin-top: 20px;
+    max-width: 70%;
+    margin-top: 42px;
   }
 
-  @media (max-width: $br3) {
+  @media (max-width: $br4) {
     max-width: 100%;
+  }
+}
+
+.expertise-6__item-title {
+  @include articulat-cf;
+  font-size: vw(50);
+  line-height: 1.4em;
+
+  @media (max-width: $br1) {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+}
+
+.expertise-6__text {
+  @include articulat-cf;
+  font-size: vw(23);
+  line-height: 1.3em;
+  letter-spacing: 1px;
+  max-width: vw(188);
+  margin-top: vw(36);
+
+  @media (max-width: $br1) {
+    line-height: 1.4em;
+    font-size: 16px;
+    max-width: 136px;
+    margin-top: 33px;
+  }
+}
+
+.expertise-6__btn {
+  @include space-mono-reg;
+  font-size: vw(16);
+  line-height: 1.9em;
+  margin-top: vw(22);
+  display: block;
+
+  @media (max-width: $br1) {
+    font-size: 16px;
+    margin-top: 8px;
   }
 }

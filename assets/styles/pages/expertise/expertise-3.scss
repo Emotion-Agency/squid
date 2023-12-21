@@ -1,6 +1,6 @@
 .expertise-3 {
   position: relative;
-  background-color: var(--black);
+  background-color: var(--bg);
   color: var(--white);
 }
 
@@ -19,5 +19,11 @@
   @media (max-width: $br1) {
     width: 142px;
     height: 142px;
+  }
+
+  path {
+    &:nth-last-child(-n + 4) {
+      stroke: #cc69a3;
+    }
   }
 }

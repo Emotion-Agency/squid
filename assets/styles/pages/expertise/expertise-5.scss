@@ -1,6 +1,6 @@
 .expertise-5 {
   position: relative;
-  background-color: var(--black);
+  background-color: var(--bg);
   color: var(--white);
 }
 
@@ -19,10 +19,10 @@
 }
 
 .expertise-5__rotate-text {
-  @include cd-semibold;
+  @include space-mono-bold;
   color: var(--white);
   letter-spacing: 4px;
-  line-height: 100%;
+  line-height: 1em;
   width: fit-content;
 
   @media (min-width: $br1) {
