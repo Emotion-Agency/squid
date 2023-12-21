@@ -1,4 +1,4 @@
-<script lang='ts' setup>
+<script lang="ts" setup>
 const onClick = () => {
   window.ss.state.target = window.ss.max
 }
@@ -6,11 +6,8 @@ const onClick = () => {
 
 <template>
   <section class="section expertise-8">
-    <div class="container expertise-8__wrapper">
-      <button
-        class="expertise-8__btn"
-        @click="onClick"
-      >
+    <div class="container grid expertise-8__wrapper">
+      <button class="expertise-8__btn" @click="onClick">
         <span class="expertise-8__text">Step One</span>
         <span class="expertise-8__text">CONTACT US</span>
         <span class="expertise-8__arrow">
