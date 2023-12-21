@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 interface iPoint {
   _uid: string
-  roi_point: string
+  roi_point_title: string
+  roi_point_description: string
 }
 
 interface iProps {
   title: string
+  description: string
   items: iPoint[]
 }
 
@@ -35,10 +37,9 @@ onBeforeUnmount(() => {
   <section ref="$el" class="section expertise-6">
     <div ref="$container" class="container expertise-6__wrapper">
       <div class="expertise-6__content">
-        <h2 class="expertise-6__title">ROI</h2>
+        <h2 class="expertise-6__title">{{ title }}</h2>
         <p class="expertise-6__desc">
-          Lorem ipsum dolor, blah words and a little blurb about our select case
-          studies.
+          {{ description }}
         </p>
       </div>
       <div class="expertise-6__scroll-wrapper">
@@ -50,10 +51,9 @@ onBeforeUnmount(() => {
             class="expertise-6__item"
           >
             <h3 class="expertise-6__item-title">
-              White Claw Hard Seltzer becomes #1 hard seltzer brand, growing
-              300%+ for the first 4 years.
+              {{ item.roi_point_title }}
             </h3>
-            <p class="expertise-6__text">White Claw Hard Seltzer</p>
+            <p class="expertise-6__text">{{ item.roi_point_description }}</p>
             <NuxtLink to="/portfolio/" class="expertise-6__btn"
               >VIEW CASE STUDY</NuxtLink
             >

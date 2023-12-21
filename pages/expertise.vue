@@ -99,6 +99,7 @@ onBeforeUnmount(() => {
       v-if="story.screen_5[0]"
       v-editable="story.screen_5[0]"
       :title="story.screen_5[0].title"
+      :description="story.screen_5[0].description"
       :items="story.screen_5[0].points"
     />
     <section
