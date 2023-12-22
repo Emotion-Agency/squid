@@ -64,6 +64,7 @@ onBeforeUnmount(() => {
         data-bottom-s="'Don’t worry, the water’s fine'|false"
         class="section section--nm home-1"
       >
+        <TheVideo class="home-1__video" />
         <div class="container home-1__wrapper">
           <RichText
             data-a-h

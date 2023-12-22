@@ -2,7 +2,7 @@
 import Richtext from 'storyblok-js-client'
 
 interface iContent {
-  title?: string | any
+  title?: string | Richtext
   main_text: string | Richtext
   aligned?: boolean
 }

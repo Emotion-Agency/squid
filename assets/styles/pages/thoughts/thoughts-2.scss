@@ -16,9 +16,9 @@
 }
 
 .thoughts-2__title {
-  @include cd-semibold;
+  @include space-mono-bold;
   font-size: vw(22);
-  line-height: 100%;
+  line-height: 1em;
   letter-spacing: 4.4px;
   text-transform: uppercase;
 
@@ -29,16 +29,16 @@
 }
 
 .thoughts-2__filter {
-  @include snfine-reg;
-  font-size: vw(110);
-  line-height: 100%;
-  text-transform: uppercase;
+  @include awesome-serif;
+  font-size: vw(120);
+  line-height: 1em;
+  text-transform: capitalize;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: vw(90);
-  color: #c6c6c6;
+  color: #7784a2;
 
   @media (max-width: $br1) {
     flex-direction: column;
@@ -55,27 +55,31 @@
 .thoughts-2__btn {
   background-color: transparent;
   color: inherit;
-  text-transform: uppercase;
   font: inherit;
   transition: color 0.4s ease;
-  overflow: hidden;
   line-height: 1em;
+
   &::after {
     content: '';
     display: block;
     width: 100%;
     height: 6px;
-    background-color: #000;
-    transform: translateX(-110%);
+    background-color: #0f223f;
+    transform: scaleX(0);
+    transform-origin: 0;
     transition: transform 0.4s ease;
     position: relative;
-    top: -6px;
+    top: vw(4);
+
+    @media (max-width: $br1) {
+      top: 4px;
+    }
   }
 
   &--active {
-    color: var(--black);
+    color: #0f223f;
     &::after {
-      transform: translateX(0%);
+      transform: scaleX(1);
     }
     // text-decoration: underline;
   }

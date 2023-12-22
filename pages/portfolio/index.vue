@@ -68,7 +68,7 @@ watch(filteredPosts, () => {
               :class="[activeCategory === 'all' && 'thoughts-2__btn--active']"
               @click="selectCategory('all')"
             >
-              ALL
+              All
             </button>
           </div>
         </div>

@@ -27,7 +27,7 @@ export class OnScrollColor {
     this.tl.fromTo(
       this.$el,
       {
-        backgroundColor: 'rgba(0, 17, 35, 1)',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
         color: 'rgba(255, 255, 255, 1)',
       },
       {
