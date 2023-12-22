@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Richtext } from 'storyblok-js-client'
+import Richtext from 'storyblok-js-client'
 import { iImage } from '~/types/story'
 
 interface iProps {
@@ -53,7 +53,9 @@ const formattedDescription = computed(() => {
         <div class="thoughts-2__text-wrapper">
           <div class="thoughts-2__name">
             <h3 class="thoughts-2__block-title">{{ title }}</h3>
-            <p class="thoughts-2__category">{{ category }}</p>
+            <p class="thoughts-2__category">
+              Category <span>{{ category }}</span>
+            </p>
           </div>
           <div class="thoughts-2__desc">
             <p v-if="formattedDate && author" class="thoughts-2__date">

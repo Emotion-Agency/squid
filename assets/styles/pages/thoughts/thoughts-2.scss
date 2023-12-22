@@ -17,6 +17,7 @@
 
 .thoughts-2__title {
   @include space-mono-bold;
+  color: var(--bg);
   font-size: vw(22);
   line-height: 1em;
   letter-spacing: 4.4px;
@@ -37,7 +38,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: vw(90);
+  margin-top: vw(70);
   color: #7784a2;
 
   @media (max-width: $br1) {
@@ -81,13 +82,12 @@
     &::after {
       transform: scaleX(1);
     }
-    // text-decoration: underline;
   }
 }
 
 .thoughts-2__line {
-  padding-left: vw(8);
-  padding-right: vw(8);
+  padding-left: vw(20);
+  padding-right: vw(20);
 
   @media (max-width: $br1) {
     display: none;
@@ -159,19 +159,20 @@
 .thoughts-2__name {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 16px;
 
   @media (max-width: $br1) {
     flex-direction: column;
+    gap: 12px;
   }
 }
 
 .thoughts-2__block-title {
-  @include snfine-reg;
+  @include awesome-serif;
   font-size: vw(30);
-  line-height: 100%;
+  line-height: 1em;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
+  text-transform: capitalize;
 
   @media (max-width: $br1) {
     font-size: 30px;
@@ -179,17 +180,23 @@
 }
 
 .thoughts-2__category {
-  @include snfine-reg-it;
+  @include space-mono-reg;
   font-size: vw(17);
-  line-height: 100%;
-  letter-spacing: 1.7px;
-  color: #919191;
-  text-align: end;
+  line-height: 1em;
+  color: var(--bg);
+
+  @media (min-width: $br1) {
+    text-align: end;
+    flex: 1 0 auto;
+  }
 
   @media (max-width: $br1) {
-    letter-spacing: 0.1em;
     font-size: 17px;
     margin-top: 12px;
+  }
+
+  span {
+    text-decoration: underline;
   }
 }
 
@@ -206,28 +213,26 @@
 }
 
 .thoughts-2__date {
-  @include cd-reg;
+  @include articulat-cf;
   font-size: vw(14);
-  line-height: 180%;
-  letter-spacing: 0.7px;
+  line-height: 1em;
+  letter-spacing: 0.6px;
   margin-top: vw(15);
 
   @media (max-width: $br1) {
-    line-height: 100%;
-    letter-spacing: 0.05em;
     font-size: 12px;
     margin-top: 12px;
   }
 }
 
 .thoughts-2__text {
-  @include cd-reg;
+  @include articulat-cf;
   font-size: vw(16);
-  line-height: 160%;
+  line-height: 1.6em;
   margin-top: vw(13);
 
   @media (max-width: $br1) {
-    line-height: 150%;
+    line-height: 1.5em;
     font-size: 16px;
     margin-top: 12px;
   }
