@@ -219,6 +219,14 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </div>
+    <ExpertiseScroller
+      v-if="story.roi_list[0]"
+      v-editable="story.roi_list[0]"
+      :title="story.roi_list[0].title"
+      :description="story.roi_list[0].description"
+      :items="story.roi_list[0].points"
+      :is-home="true"
+    />
     <section
       v-if="projects?.length"
       data-bottom-s="undefined"

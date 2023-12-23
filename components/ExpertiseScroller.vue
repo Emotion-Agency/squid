@@ -9,6 +9,7 @@ interface iProps {
   title: string
   description: string
   items: iPoint[]
+  isHome?: boolean
 }
 
 defineProps<iProps>()
@@ -34,7 +35,11 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section ref="$el" class="section expertise-6">
+  <section
+    ref="$el"
+    class="section expertise-6"
+    :class="isHome && 'expertise-6--home'"
+  >
     <div ref="$container" class="container expertise-6__wrapper">
       <div class="expertise-6__content">
         <h2 class="expertise-6__title">{{ title }}</h2>

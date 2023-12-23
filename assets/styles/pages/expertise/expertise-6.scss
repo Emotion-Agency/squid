@@ -9,6 +9,15 @@
     flex-direction: column;
     padding-top: 0;
   }
+
+  &--home {
+    background-color: var(--white);
+    color: var(--bg);
+
+    .expertise-6__btn {
+      color: var(--bg);
+    }
+  }
 }
 
 .expertise-6__wrapper {
