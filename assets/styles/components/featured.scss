@@ -36,8 +36,9 @@
 
 .featured__title {
   @include space-mono-bold;
-  font-size: vw(100);
-  line-height: 1em;
+  font-size: vw(85);
+  line-height: 1.2em;
+  letter-spacing: 2px;
   text-transform: uppercase;
 
   @media (max-width: $br1) {

@@ -30,13 +30,21 @@ const formattedDescription = computed(() => {
 
   return descriptionWords.slice(0, 40).join(' ') + '...'
 })
+
+const formattedName = computed(() => {
+  if (props.name.length > 30) {
+    return props.name.slice(0, 30) + '...'
+  }
+
+  return props.name
+})
 </script>
 
 <template>
   <section class="section section--nm featured">
     <div class="featured__wrapper">
       <div class="container featured__left-block">
-        <h1 data-a-h class="featured__title">{{ name }}</h1>
+        <h1 data-a-h class="featured__title">{{ formattedName }}</h1>
         <p data-a-t class="featured__small-text">
           <span class="featured__italic-text">
             Category <span>{{ category }}</span>
