@@ -51,6 +51,7 @@
   line-height: 1.25em;
   text-transform: uppercase;
   text-align: start;
+  color: var(--bg);
 
   @media (max-width: $br1) {
     font-size: 40px;

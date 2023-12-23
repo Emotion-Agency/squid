@@ -1,6 +1,6 @@
 .dark-block {
   position: relative;
-  background-color: var(--black);
+  background-color: var(--bg);
   color: var(--white);
   height: 100vh;
 }
@@ -9,9 +9,6 @@
   display: flex;
   align-items: center;
   height: 100%;
-
-  @media (min-width: $br1) {
-  }
 }
 
 .dark-block__title {

@@ -65,7 +65,7 @@
     display: block;
     width: 0%;
     height: 1px;
-    background-color: black;
+    background-color: var(--bg);
     transition: width 0.4s ease;
   }
   &:hover {

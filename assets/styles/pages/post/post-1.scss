@@ -55,7 +55,7 @@
   @include cd-reg;
   font-size: vw(30);
   line-height: 100%;
-  color: var(--black);
+  color: var(--bg);
   text-decoration-line: underline;
   background-color: transparent;
   @media (min-width: $br1) {
