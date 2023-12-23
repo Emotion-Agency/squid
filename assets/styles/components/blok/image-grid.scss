@@ -12,13 +12,17 @@
 }
 
 .image-grid__title {
-  @include snfine-reg;
+  * {
+    font-size: vw(120);
+    line-height: 1em;
+    color: var(--white);
+
+    @media (max-width: $br1) {
+      font-size: 52px;
+    }
+  }
   position: relative;
-  font-size: vw(120);
-  line-height: 100%;
-  text-transform: uppercase;
   max-width: vw(988);
-  color: #fff;
   mix-blend-mode: difference;
   z-index: 2;
 
@@ -30,7 +34,6 @@
     max-width: 440px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 52px;
   }
 
   @media (max-width: $br4) {

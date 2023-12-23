@@ -2,7 +2,7 @@
 import { transformImage } from '~/assets/scripts/storyblokImage'
 
 interface iProps {
-  src: string
+  src?: string
   alt?: string
   imgClass?: string
   transform?: boolean

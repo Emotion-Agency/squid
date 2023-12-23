@@ -14,11 +14,10 @@
 }
 
 .table-text__title {
-  @include snfine-reg;
-  font-size: vw(45);
-  line-height: 100%;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  @include awesome-serif;
+  font-size: vw(40);
+  line-height: 1em;
+  letter-spacing: 2px;
 
   &:nth-of-type(1) {
     @include col(1, 5);
@@ -34,6 +33,7 @@
 
   @media (max-width: $br1) {
     font-size: 32px;
+    letter-spacing: 1.28px;
   }
 }
 
@@ -42,9 +42,9 @@
 }
 
 .table-text__desc {
-  @include cd-reg;
+  @include articulat-cf;
   font-size: vw(22);
-  line-height: 140%;
+  line-height: 1.4em;
   margin-top: vw(62);
 
   &:nth-of-type(1) {

@@ -11,10 +11,6 @@ useTransition()
 useObserver('.section')
 
 const { story } = await useAboutStory()
-
-const scrollBottom = () => {
-  window.ss.state.target = window.ss.max
-}
 </script>
 
 <template>
@@ -23,14 +19,18 @@ const scrollBottom = () => {
     <section class="section section--nm about-1">
       <div class="container about-1__wrapper">
         <div
-          v-if="story.screen_1[0]"
+          v-if="story.screen_1[0].title_1[0].text"
           v-editable="story.screen_1[0]"
-          class="about-1__text-wrapper"
+          class="grid about-1__text-wrapper"
         >
           <RichText
             data-a-h
+            :text="story.screen_1[0].title_1[0].text"
+            class="about-1__text"
+          />
+          <RichText
+            :text="story.screen_1[0].title_2[0].text"
             class="about-1__title"
-            :text="story.screen_1[0].text"
           />
         </div>
       </div>
@@ -79,7 +79,7 @@ const scrollBottom = () => {
       <BlokImageGrid
         class="about-5__img-grid"
         :blok="{
-          title: story.screen_5[0].title,
+          title: story.screen_5[0].title[0].text,
           image: story.screen_5[0].image,
         }"
       />
@@ -118,24 +118,7 @@ const scrollBottom = () => {
     >
       <BlokTableText :blok="story.screen_8[0]" />
     </section>
-    <section v-if="story" v-editable="story" class="section about-9">
-      <div class="container about-9__wrapper">
-        <div class="grid about-9__content">
-          <h2 class="about-9__title">{{ story.last_title }}</h2>
-        </div>
-        <div class="about-9__text-wrapper">
-          <button class="about-9__text" @click="scrollBottom">
-            {{ story.last_text_1 }}
-          </button>
-          <button class="about-9__text" @click="scrollBottom">
-            {{ story.last_text_2 }}
-          </button>
-          <button class="about-9__text" @click="scrollBottom">
-            {{ story.last_text_3 }}
-          </button>
-        </div>
-      </div>
-    </section>
+    <AboutScrollBottom v-if="story" v-editable="story" />
     <TheFooter />
   </main>
 </template>

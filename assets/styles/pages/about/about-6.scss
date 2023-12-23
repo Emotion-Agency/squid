@@ -7,7 +7,7 @@
 }
 
 .about-6__title {
-  @include cd-semibold;
+  @include space-mono-bold;
   @include col(3, 9);
   font-size: vw(40);
   line-height: 100%;
@@ -28,15 +28,17 @@
 }
 
 .about-6__text {
-  @include cd-reg;
+  @include articulat-cf;
   @include col(3, 9);
   width: 100%;
   font-size: vw(40);
-  line-height: 140%;
+  line-height: 1.5em;
   margin-top: vw(16);
+  letter-spacing: 0.15px;
 
   @media (max-width: $br1) {
     @include col(3, 10);
+    line-height: 1.4em;
     font-size: 20px;
     margin-top: 16px;
   }
