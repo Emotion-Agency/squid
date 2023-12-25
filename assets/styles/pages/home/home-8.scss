@@ -21,6 +21,33 @@
   }
 }
 
+.home-8__square {
+  bottom: -7vh;
+  top: auto;
+  left: vw(26);
+  width: vw(433);
+  height: vw(448);
+
+  @media (max-width: $br1) {
+    top: 80px;
+    left: auto;
+    right: $g-sm;
+    width: 249px;
+    height: 238px;
+  }
+
+  @media (max-width: $br3) {
+    right: $g-s;
+  }
+
+  &--active {
+    @media (min-width: $br1) {
+      width: vw(500);
+      height: vw(360);
+    }
+  }
+}
+
 .home-8__text {
   display: flex;
   flex-direction: column;

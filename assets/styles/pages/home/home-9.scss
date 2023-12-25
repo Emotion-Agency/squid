@@ -22,6 +22,33 @@
   }
 }
 
+.home-9__square {
+  top: vw(-160);
+  left: vw(520);
+  right: auto;
+  width: vw(58);
+  height: vw(56);
+
+  @media (max-width: $br1) {
+    position: absolute;
+    top: -68px;
+    right: $g-sm;
+    left: auto;
+    width: 58px;
+    height: 56px;
+  }
+
+  @media (max-width: $br3) {
+    right: $g-s;
+  }
+
+  &--active {
+    @media (min-width: $br1) {
+      width: vw(174);
+    }
+  }
+}
+
 .home-9__title-wrapper {
   @media (min-width: $br1) {
     display: flex;

@@ -41,6 +41,7 @@ onBeforeUnmount(() => {
     :class="isHome && 'expertise-6--home'"
   >
     <div ref="$container" class="container expertise-6__wrapper">
+      <TheSquare class="expertise-6__square" />
       <div class="expertise-6__content">
         <h2 class="expertise-6__title">{{ title }}</h2>
         <p class="expertise-6__desc">

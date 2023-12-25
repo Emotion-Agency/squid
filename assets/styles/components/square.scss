@@ -1,0 +1,12 @@
+.square {
+  display: block;
+  pointer-events: none;
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #cc69a3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease, height 0.3s ease;
+}

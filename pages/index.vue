@@ -118,6 +118,7 @@ onBeforeUnmount(() => {
                 class="section section--nm home-4"
               >
                 <div class="container grid home-4__wrapper">
+                  <TheSquare class="home-4__square" />
                   <RichText
                     class="home-4__text"
                     :text="story.storytelling[0].screen_4[0].text"
@@ -233,6 +234,7 @@ onBeforeUnmount(() => {
       class="section home-8"
     >
       <div class="home-8__wrapper">
+        <TheSquare class="home-8__square" />
         <div class="container home-8__text">
           <h1 class="home-8__title">CASE STUDIES</h1>
           <p class="home-8__desc">
@@ -273,6 +275,7 @@ onBeforeUnmount(() => {
     >
       <div class="container home-9__wrapper">
         <div class="home-9__title-wrapper">
+          <TheSquare class="home-9__square" />
           <h2 class="home-9__title">Some client’s We’ve helped</h2>
         </div>
         <div class="home-9__list-wrapper">
