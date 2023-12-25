@@ -39,6 +39,7 @@ const { story } = await useAboutStory()
     </section>
     <section v-editable="story" class="section about-2">
       <div class="container about-2__wrapper">
+        <TheSquare class="about-2__square" />
         <div class="grid about-2__text-wrapper">
           <p class="about-2__text">
             {{ story.screen_2 }}

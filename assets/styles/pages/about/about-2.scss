@@ -6,6 +6,33 @@
   height: 100%;
 }
 
+.about-2__square {
+  top: vw(-160);
+  right: vw(326);
+  left: auto;
+  width: vw(256);
+  height: vw(118);
+
+  @media (max-width: $br1) {
+    position: absolute;
+    top: -90px;
+    left: auto;
+    right: $g-sm;
+    width: 165px;
+    height: 76px;
+  }
+
+  @media (max-width: $br3) {
+    right: $g-s;
+  }
+
+  &--active {
+    @media (min-width: $br1) {
+      width: vw(320);
+    }
+  }
+}
+
 .about-2__text {
   @include articulat-cf;
   @include col(3, 10);

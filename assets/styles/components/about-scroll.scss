@@ -2,13 +2,15 @@
   position: relative;
   background-color: var(--white);
   color: var(--bg);
-  padding-bottom: vw(300);
+  padding-top: vh(200);
+  padding-bottom: vh(200);
 
-  @media (max-width: $br1) {
-    padding-bottom: 200px;
+  @media (min-width: $br1) {
+    height: 100vh;
   }
 
-  @media (max-width: $br3) {
+  @media (max-width: $br1) {
+    padding-top: 120px;
     padding-bottom: 120px;
   }
 }
@@ -17,12 +19,40 @@
   height: 100%;
 }
 
+.about-scroll__square {
+  left: vw(472);
+  top: 50%;
+  transform: translateY(-50%);
+  width: vw(972);
+  height: 90vh;
+
+  @media (max-width: $br1) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: $g-sm;
+    width: 60%;
+    height: 50vh;
+  }
+
+  @media (max-width: $br3) {
+    right: $g-s;
+  }
+
+  &--active {
+    @media (min-width: $br1) {
+      width: vw(372);
+    }
+  }
+}
+
 .about-scroll__btn {
   @include col(3, 10);
   display: flex;
   flex-direction: column;
   background-color: transparent;
   width: fit-content;
+  justify-content: center;
   max-width: vw(380);
 
   @media (max-width: $br1) {
