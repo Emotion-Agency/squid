@@ -13,7 +13,11 @@ export const useMenu = () => {
 
     const tl = gsap.timeline()
 
-    tl.to(menuBg, { duration: 1, y: '0%', ease: 'power2.out', overflow: 5 }, 0)
+    tl.to(
+      menuBg,
+      { duration: 1, y: '0%', ease: 'power2.out', overwrite: true },
+      0
+    )
     tl.to(
       menuItems,
       {
@@ -22,7 +26,7 @@ export const useMenu = () => {
         opacity: 1,
         ease: 'power2.out',
         stagger: 0.1,
-        overflow: 5,
+        overwrite: true,
       },
       0.5
     )
@@ -33,7 +37,7 @@ export const useMenu = () => {
         y: 0,
         opacity: 1,
         ease: 'power2.out',
-        overflow: 5,
+        overwrite: true,
       },
       0.5
     )
@@ -53,17 +57,17 @@ export const useMenu = () => {
 
     tl.to(
       menuBg,
-      { duration: 1, y: '100%', ease: 'power2.out', overflow: 5 },
+      { duration: 1, y: '100%', ease: 'power2.out', overwrite: true },
       0.2
     )
     tl.to(
       menuItems,
-      { duration: 0.5, y: 40, opacity: 0, ease: 'power2.out', overflow: 5 },
+      { duration: 0.5, y: 40, opacity: 0, ease: 'power2.out', overwrite: true },
       0
     )
     tl.to(
       menuContent,
-      { duration: 0.5, y: 40, opacity: 0, ease: 'power2.out', overflow: 5 },
+      { duration: 0.5, y: 40, opacity: 0, ease: 'power2.out', overwrite: true },
       0
     )
 
