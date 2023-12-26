@@ -5,6 +5,7 @@ export class OnScrollColor {
   constructor($el, opts = {}) {
     gsap.registerPlugin(ScrollTrigger)
     this.$el = $el
+    this.$home = document.querySelector('.home-1')
     // this.$wrapper = $wrapper
     this.offset = opts.offset || 0
     this.breakpoint = opts.breakpoint || 960
@@ -35,6 +36,17 @@ export class OnScrollColor {
         color: 'rgba(255, 255, 255, 1)',
         ease: 'linear.none',
       }
+    )
+
+    this.tl.fromTo(
+      this.$home,
+      {
+        opacity: 1,
+      },
+      {
+        opacity: 0,
+      },
+      0
     )
   }
 
