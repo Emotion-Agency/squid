@@ -20,7 +20,8 @@
 }
 
 .about-scroll__square {
-  left: vw(472);
+  right: vw(472);
+  left: auto;
   top: 50%;
   transform: translateY(-50%);
   width: vw(972);
@@ -28,8 +29,7 @@
 
   @media (max-width: $br1) {
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
     right: $g-sm;
     width: 60%;
     height: 50vh;
@@ -41,7 +41,7 @@
 
   &.js-active {
     @media (min-width: $br1) {
-      width: vw(372);
+      width: vw(272);
     }
   }
 }
@@ -52,8 +52,12 @@
   flex-direction: column;
   background-color: transparent;
   width: fit-content;
-  justify-content: center;
+  justify-content: flex-end;
   max-width: vw(380);
+
+  @media (min-width: $br1) {
+    padding-bottom: vh(100);
+  }
 
   @media (max-width: $br1) {
     max-width: 270px;
