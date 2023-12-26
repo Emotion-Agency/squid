@@ -62,7 +62,6 @@
 
 .menu__link {
   display: block;
-  overflow: hidden;
   color: var(--white);
 
   span {
@@ -70,30 +69,10 @@
     display: block;
   }
 
-  &:hover {
-    span {
-      transform: translateY(-10px);
-      @media (max-width: $br1) {
-        transform: translateY(-5px);
-      }
-    }
-    &::after {
-      transform: translateY(0%);
-    }
-  }
-
-  &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: vw(4);
-    transform: translateY(100%);
-    transform-origin: bottom;
-    transition: transform 0.3s ease;
-    background-color: var(--white);
-
-    @media (max-width: $br1) {
-      height: 4px;
+  &:hover,
+  &.router-link-exact-active {
+    .menu__text::after {
+      transform: translateX(0%);
     }
   }
 
@@ -106,9 +85,27 @@
   @include space-mono-reg;
   font-size: vw(65);
   line-height: 1em;
+  overflow: hidden;
+
+  width: fit-content;
 
   @media (max-width: $br1) {
     font-size: 36px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: vw(4);
+    transform: translateX(-100%);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+    background-color: var(--white);
+
+    @media (max-width: $br1) {
+      height: 4px;
+    }
   }
 }
 

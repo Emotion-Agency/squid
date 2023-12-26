@@ -44,6 +44,7 @@ onBeforeUnmount(() => {
             class="expertise-1__text"
           />
           <RichText
+            data-a-t
             :text="story.screen_1[0].title_2[0].text"
             class="expertise-1__title"
           />

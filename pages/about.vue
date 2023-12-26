@@ -29,6 +29,7 @@ const { story } = await useAboutStory()
             class="about-1__text"
           />
           <RichText
+            data-a-t
             :text="story.screen_1[0].title_2[0].text"
             class="about-1__title"
           />
