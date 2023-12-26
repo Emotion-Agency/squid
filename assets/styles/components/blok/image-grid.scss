@@ -15,7 +15,7 @@
   * {
     font-size: vw(120);
     line-height: 1em;
-    color: #ffeedc;
+    color: var(--blend-color);
 
     @media (max-width: $br1) {
       font-size: 52px;

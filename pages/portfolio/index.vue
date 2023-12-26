@@ -33,6 +33,12 @@ watch(filteredPosts, () => {
     tl.to($posts.value, { duration: 0.5, opacity: 1 }, 0.5)
   }
 })
+
+const { headerColor } = useMenu()
+
+onMounted(() => {
+  headerColor.value = 'dark'
+})
 </script>
 
 <template>

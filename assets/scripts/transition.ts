@@ -3,7 +3,6 @@ import { TransitionProps } from 'nuxt/dist/app/compat/capi'
 import { resetScroll } from './utils/resetScroll'
 
 export const pageTransition: TransitionProps = {
-  duration: 250,
   mode: 'out-in',
   css: false,
   appear: true,

@@ -24,6 +24,7 @@ let sa
 const { story } = await useHomeStory()
 
 const { bottomText, isRotated, isVisible, init, destroy } = useBottomBlock()
+const { headerColor } = useMenu()
 
 onMounted(async () => {
   const { HorizontalScroll } = await import('~/assets/scripts/HorizontalScroll')
@@ -45,6 +46,8 @@ onMounted(async () => {
   }, 500)
 
   init()
+
+  headerColor.value = 'white'
 })
 
 onBeforeUnmount(() => {

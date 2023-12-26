@@ -13,7 +13,7 @@
   left: 0;
   padding: vw(65);
   padding-top: vw(72);
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease, padding 0.3s ease;
   &.loading {
     transform: translateY(-100%);
     opacity: 0;
@@ -27,6 +27,29 @@
     .header__logo {
       path {
         fill: #fff;
+      }
+    }
+  }
+
+  &--bg {
+    background-color: var(--bg);
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  &--dark:not(.header--active) {
+    &.header--bg {
+      background-color: var(--white);
+    }
+    .header__logo {
+      path {
+        fill: var(--bg);
+      }
+    }
+
+    .header__burger {
+      .header__line {
+        background-color: var(--bg);
       }
     }
   }

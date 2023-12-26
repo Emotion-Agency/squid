@@ -1,12 +1,14 @@
 .nav-open {
   .bottom-nav-socials {
     --s-color: #fff;
+    mix-blend-mode: normal;
   }
 }
 
 .bottom-nav-socials {
   position: fixed;
   z-index: 100;
+  mix-blend-mode: difference;
   display: flex;
   align-items: flex-end;
 
@@ -40,6 +42,11 @@
   }
   &--fixed {
     position: fixed;
+  }
+
+  &--hidden {
+    visibility: hidden;
+    opacity: 0 !important;
   }
 }
 

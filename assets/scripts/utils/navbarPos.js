@@ -39,6 +39,16 @@ export default class NavbarPos {
     this.isHidden && this.removeVisibility()
 
     this.scrollPos = -this.$sc.scrollTop
+
+    this.addBg()
+  }
+
+  addBg() {
+    if (this.$sc.scrollTop > window.innerHeight) {
+      this.$navbar.classList.add('header--bg')
+      return
+    }
+    this.$navbar.classList.remove('header--bg')
   }
 
   get isHidden() {

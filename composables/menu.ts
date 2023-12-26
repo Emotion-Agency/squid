@@ -2,6 +2,7 @@ import gsap from 'gsap'
 
 export const useMenu = () => {
   const isOpenMenu = useState<boolean>('menu', () => false)
+  const headerColor = useState<'white' | 'dark'>('headerColor', () => 'dark')
 
   const openMenu = () => {
     window.ss && (window.ss.isFixed = true)
@@ -83,5 +84,6 @@ export const useMenu = () => {
     openMenu,
     closeMenu,
     toggleMenu,
+    headerColor,
   }
 }

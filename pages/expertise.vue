@@ -15,12 +15,16 @@ const { story } = await useExpertiseStory()
 const $rotatingEl = ref(null)
 let ros
 
+const { headerColor } = useMenu()
+
 onMounted(async () => {
   const { RotateOnScroll } = await import('~/assets/scripts/RotateOnScroll')
 
   ros = new RotateOnScroll($rotatingEl.value.$el)
 
   ros.animate()
+
+  headerColor.value = 'white'
 })
 
 onBeforeUnmount(() => {

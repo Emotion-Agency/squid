@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const $el = ref(null)
 
-const { isOpenMenu, closeMenu, toggleMenu } = useMenu()
+const { isOpenMenu, closeMenu, toggleMenu, headerColor } = useMenu()
 
 const { isLoaded } = useLoadState()
 
@@ -24,7 +24,11 @@ onBeforeUnmount(() => {
   <header
     ref="$el"
     class="header navbar"
-    :class="[isOpenMenu && 'header--active', !isLoaded && 'loading']"
+    :class="[
+      isOpenMenu && 'header--active',
+      !isLoaded && 'loading',
+      `header--${headerColor}`,
+    ]"
   >
     <div class="header__wrapper">
       <div class="header__left-elem">

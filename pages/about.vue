@@ -11,6 +11,12 @@ useTransition()
 useObserver('.section')
 
 const { story } = await useAboutStory()
+
+const { headerColor } = useMenu()
+
+onMounted(() => {
+  headerColor.value = 'dark'
+})
 </script>
 
 <template>

@@ -1,6 +1,7 @@
 .home-8 {
   position: relative;
   padding-bottom: vw(280);
+  background-color: var(--white);
 
   @media (max-width: $br1) {
     padding-top: 120px;

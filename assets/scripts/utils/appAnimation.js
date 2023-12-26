@@ -11,7 +11,7 @@ export const appAnimation = () => {
 
   $aT.length &&
     tl.to($aT, { duration: 1, y: '0%', opacity: 1, ease, stagger: 0.1 }, 0.2)
-  $aO.length && tl.to($aO, { duration: 1, opacity: 1, ease }, 0.2)
+  $aO.length && tl.to($aO, { duration: 1, autoAlpha: 1, ease }, 0.2)
 
   setTimeout(() => {
     $ah.length &&
