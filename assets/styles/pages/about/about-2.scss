@@ -26,7 +26,7 @@
     right: $g-s;
   }
 
-  &--active {
+  &.js-active {
     @media (min-width: $br1) {
       width: vw(320);
     }

@@ -21,7 +21,7 @@
     height: 25vh;
   }
 
-  &--active {
+  &.js-active {
     @media (min-width: $br1) {
       height: vw(260);
     }

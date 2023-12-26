@@ -121,7 +121,7 @@ onBeforeUnmount(() => {
                 class="section section--nm home-4"
               >
                 <div class="container grid home-4__wrapper">
-                  <TheSquare class="home-4__square" />
+                  <TheSquare axis="x" class="home-4__square" />
                   <RichText
                     class="home-4__text"
                     :text="story.storytelling[0].screen_4[0].text"

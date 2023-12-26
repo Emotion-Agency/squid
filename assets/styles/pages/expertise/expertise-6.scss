@@ -52,7 +52,7 @@
         left: 12px;
       }
 
-      &--active {
+      &.js-active {
         @media (min-width: $br1) {
           width: vw(224);
           height: vw(248);
@@ -99,7 +99,7 @@
     left: 12px;
   }
 
-  &--active {
+  &.js-active {
     @media (min-width: $br1) {
       width: vw(421);
       height: 60vh;
