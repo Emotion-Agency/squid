@@ -237,7 +237,7 @@ onBeforeUnmount(() => {
       class="section home-8"
     >
       <div class="home-8__wrapper">
-        <TheSquare class="home-8__square" />
+        <TheSquare :offset="0.5" class="home-8__square" />
         <div class="container home-8__text">
           <h1 class="home-8__title">CASE STUDIES</h1>
           <p class="home-8__desc">
