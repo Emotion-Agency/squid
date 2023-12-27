@@ -16,15 +16,16 @@ const emailMarkup = computed(() => {
 <template>
   <div class="contacts">
     <div class="grid container contacts__wrapper">
-      <ul class="contacts__list-items">
-        <li v-if="story.email" class="contacts__item">
+      <div class="contacts__list-items">
+        <p class="contacts__list-text">Let’s Start a Conversation</p>
+        <div v-if="story.email" class="contacts__item">
           <h2 class="contacts__item-title">Email</h2>
           <a class="contacts__email" :href="`mailto:${story.email}`">
             <span class="contacts__email-text" v-html="emailMarkup" />
             <span class="contacts__email-line" />
           </a>
-        </li>
-        <li v-if="story.phone" class="contacts__item">
+        </div>
+        <div v-if="story.phone" class="contacts__item">
           <h2 class="contacts__item-title">Phone</h2>
           <a
             class="contacts__link"
@@ -32,8 +33,8 @@ const emailMarkup = computed(() => {
           >
             {{ story.phone }}
           </a>
-        </li>
-        <li v-if="story.adress && story.adress[0]" class="contacts__item">
+        </div>
+        <div v-if="story.adress && story.adress[0]" class="contacts__item">
           <h2 class="contacts__item-title">Office</h2>
           <a
             :href="story.adress[0].map_link"
@@ -43,8 +44,8 @@ const emailMarkup = computed(() => {
           >
             {{ story.adress[0].adress }}
           </a>
-        </li>
-      </ul>
+        </div>
+      </div>
       <TheForm class="contacts__form" />
     </div>
   </div>
