@@ -12,7 +12,7 @@
   top: 0;
   left: 0;
   padding: vw(65);
-  padding-top: vw(72);
+  padding-top: vw(40);
   transition: transform 0.5s ease, opacity 0.5s ease, padding 0.3s ease;
   &.loading {
     transform: translateY(-100%);
@@ -68,8 +68,13 @@
   flex-direction: column;
   justify-content: center;
   background-color: transparent;
-  width: 44px;
-  height: 44px;
+  width: vw(44);
+  height: vw(44);
+
+  @media (max-width: $br1) {
+    width: 44px;
+    height: 44px;
+  }
 
   &--active {
     .header__line {

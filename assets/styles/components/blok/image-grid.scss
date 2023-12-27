@@ -22,12 +22,12 @@
     }
   }
   position: relative;
-  max-width: vw(988);
+  max-width: vw(707);
   mix-blend-mode: difference;
   z-index: 2;
 
   @media (min-width: $br1) {
-    margin-left: vw(140);
+    margin-left: vw(92);
   }
 
   @media (max-width: $br1) {
@@ -48,7 +48,7 @@
   width: 100%;
 
   &--with-title {
-    margin-top: vw(-180);
+    margin-top: vw(-130);
     @media (max-width: $br1) {
       margin-top: -80px;
     }

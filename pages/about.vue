@@ -42,7 +42,7 @@ onMounted(() => {
         </div>
       </div>
       <TheSocials data-a-o class="bottom-nav-socials" />
-      <NextBlockButton data-a-o>Scroll</NextBlockButton>
+      <NextBlockButton :colorful="true" data-a-o>Scroll</NextBlockButton>
     </section>
     <section v-editable="story" class="section about-2">
       <div class="container about-2__wrapper">

@@ -33,6 +33,8 @@
   @include row(1, 1);
   align-self: flex-end;
   width: 100%;
+  position: relative;
+  left: vw(-60);
 
   @media (max-width: $br4) {
     @include col(1, 3);

@@ -30,17 +30,6 @@ const { story } = await useFooterStory()
       </a>
     </li>
     <li class="socials__li">
-      <a
-        aria-label="Instagram link"
-        :href="story?.instagram"
-        class="socials__link"
-        target="_blank"
-        rel="noreferer noopener"
-      >
-        <IconsInstagram class="socials__socials-img" />
-      </a>
-    </li>
-    <li class="socials__li">
       <NuxtLink to="/contact/" class="socials__link" @click="closeMenu">
         contact
       </NuxtLink>

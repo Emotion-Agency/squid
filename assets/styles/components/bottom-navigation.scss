@@ -10,12 +10,12 @@
   z-index: 100;
   mix-blend-mode: difference;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 
   @media (min-width: $br1) {
     @include col(1, 1);
     position: fixed;
-    bottom: vw(86);
+    bottom: vw(30);
     z-index: 100;
     left: vw(65);
   }
@@ -25,14 +25,14 @@
     // transform: translateX(-50%);
     width: 100%;
     justify-content: center;
-    bottom: 22px;
+    bottom: 20px;
   }
 }
 
 .bottom-nav-btn {
   @include col(6, 8);
   position: absolute;
-  bottom: vw(86);
+  bottom: vw(30);
   z-index: 85;
   left: 50%;
   transform: translateX(-50%);
