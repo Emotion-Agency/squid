@@ -42,8 +42,16 @@
       background-color: var(--white);
     }
     .header__logo {
-      path {
-        fill: var(--bg);
+      svg {
+        g {
+          > :nth-of-type(-n + 4) {
+            g {
+              path {
+                fill: var(--bg);
+              }
+            }
+          }
+        }
       }
     }
 
@@ -155,6 +163,16 @@
 
     @media (max-width: $br1) {
       transform: translate3d(20px, 0, 0) !important;
+    }
+  }
+
+  g {
+    > :nth-of-type(-n + 4) {
+      g {
+        path {
+          fill: var(--white);
+        }
+      }
     }
   }
 }
