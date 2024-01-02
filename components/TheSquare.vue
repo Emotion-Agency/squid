@@ -20,7 +20,7 @@ const animate = () => {
       $el.value?.classList.add('js-active')
       return
     }
-    $el.value?.classList.remove('js-active')
+    // $el.value?.classList.remove('js-active')
 
     return
   }
@@ -29,7 +29,7 @@ const animate = () => {
     $el.value?.classList.add('js-active')
     return
   }
-  $el.value?.classList.remove('js-active')
+  // $el.value?.classList.remove('js-active')
 }
 
 onMounted(() => {
