@@ -34,7 +34,18 @@
   align-self: flex-end;
   width: 100%;
   position: relative;
-  left: vw(-60);
+
+  @media (min-width: $br1) {
+    left: vw(-60);
+  }
+
+  @media (max-width: $br1) {
+    left: -20px;
+  }
+
+  @media (max-width: $br3) {
+    left: 0;
+  }
 
   @media (max-width: $br4) {
     @include col(1, 3);
