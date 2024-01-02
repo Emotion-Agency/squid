@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import SquidLogo from './SquidLogo.vue'
+
 const $el = ref(null)
 
 const { isOpenMenu, closeMenu, toggleMenu, headerColor } = useMenu()
@@ -43,14 +45,7 @@ onBeforeUnmount(() => {
           <span class="header__line"></span>
         </button>
       </div>
-      <NuxtLink
-        to="/"
-        aria-label="Squid Agency"
-        class="header__logo"
-        @click="closeMenu()"
-      >
-        <IconsLogo class="header__logo-img" />
-      </NuxtLink>
+      <SquidLogo />
     </div>
     <TheMenu :class="[isOpenMenu && 'menu--active']" @close="closeMenu()" />
   </header>

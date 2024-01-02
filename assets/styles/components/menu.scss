@@ -18,7 +18,7 @@
 }
 
 .menu__bg {
-  background: linear-gradient(90deg, #e36852 0%, #cc69a3 100%);
+  background: var(--gradient);
   position: absolute;
   top: 0;
   left: 0;
