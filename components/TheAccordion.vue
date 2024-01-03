@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { iAccordionItem } from '~/types/accordion'
 import { keysGenerator } from '~/assets/scripts/utils/ea'
+import type { AccordionItem } from '#build/components'
 
 interface iProps {
   items: iAccordionItem[]
@@ -31,6 +32,14 @@ const onClick = (id: string) => {
     }
   })
 }
+
+const $accordionItems = ref<(typeof AccordionItem)[]>([])
+
+onMounted(() => {
+  setTimeout(() => {
+    $accordionItems.value[0].onClick()
+  }, 1000)
+})
 </script>
 
 <template>
@@ -38,6 +47,7 @@ const onClick = (id: string) => {
     <slot></slot>
     <AccordionItem
       v-for="(item, idx) in updatedItems"
+      ref="$accordionItems"
       :id="item.id"
       :key="item.title"
       :title="item.title"

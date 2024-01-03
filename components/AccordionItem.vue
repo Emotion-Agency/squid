@@ -24,12 +24,22 @@ const onResize = () => {
 }
 
 const onClick = () => {
-  resize.on(onResize)
+  onResize()
   emit('clicked', props.id)
 }
 
+onMounted(() => {
+  setTimeout(() => {
+    resize.on(onResize)
+  }, 0)
+})
+
 onBeforeUnmount(() => {
   resize.off(onResize)
+})
+
+defineExpose({
+  onClick,
 })
 </script>
 
