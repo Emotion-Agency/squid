@@ -12,7 +12,6 @@ export class ExpertiseScroller extends Scrolling {
   }
 
   resize() {
-    // this.setHeight()
     if (screen.width >= 960) {
       super.init()
     }
@@ -25,19 +24,15 @@ export class ExpertiseScroller extends Scrolling {
   get top() {
     const min = 0
     const max =
-      this.$el.getBoundingClientRect().height -
-      this.$children[this.length - 1].getBoundingClientRect().height
+      this.$el.getBoundingClientRect().width -
+      this.$children[this.length - 1].getBoundingClientRect().width
     return this.computeFromMinToMax(min, max)
-  }
-
-  setHeight() {
-    this.$el.style.height = this.length * (window.innerHeight * 0.5) + 'px'
   }
 
   onScroll() {
     super.onScroll()
 
-    this.$el.style.transform = `translateY(${-this.top + 'px'})`
+    this.$el.style.transform = `translateX(${-this.top + 'px'})`
   }
   destroy() {
     super.destroy()
