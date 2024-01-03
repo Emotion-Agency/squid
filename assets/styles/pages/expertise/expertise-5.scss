@@ -47,7 +47,7 @@
 }
 
 .expertise-5__accordion {
-  @include col(3, 8);
+  @include col(3, 10);
 
   @media (max-width: $br1) {
     @include col(1, 12);

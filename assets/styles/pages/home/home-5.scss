@@ -55,7 +55,7 @@
 }
 
 .home-5__accordion {
-  @include col(2, 8);
+  @include col(2, 9);
   @media (min-width: $br1) {
     max-width: vw(950);
   }

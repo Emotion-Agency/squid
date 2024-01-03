@@ -169,19 +169,19 @@
 
 .thoughts-2__block-title {
   @include awesome-serif;
-  font-size: vw(30);
+  font-size: vw(28);
   line-height: 1em;
   letter-spacing: 0.05em;
   text-transform: capitalize;
 
   @media (max-width: $br1) {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 
 .thoughts-2__category {
   @include space-mono-reg;
-  font-size: vw(17);
+  font-size: vw(14);
   line-height: 1em;
   color: var(--bg);
 
@@ -191,7 +191,7 @@
   }
 
   @media (max-width: $br1) {
-    font-size: 17px;
+    font-size: 14px;
     margin-top: 12px;
   }
 
