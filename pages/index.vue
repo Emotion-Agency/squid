@@ -223,7 +223,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </div>
-    <ExpertiseScroller
+    <RoiScroller
       v-if="story.roi_list[0]"
       v-editable="story.roi_list[0]"
       :title="story.roi_list[0].title"

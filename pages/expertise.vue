@@ -100,7 +100,7 @@ onBeforeUnmount(() => {
         </TheAccordion>
       </div>
     </section>
-    <ExpertiseScroller
+    <RoiScroller
       v-if="story.screen_5[0]"
       v-editable="story.screen_5[0]"
       :title="story.screen_5[0].title"
