@@ -17,9 +17,7 @@ useHead({
         pointer-events: none;
         width: 100%;
         height: 100%;
-        opacity: 0;
       "
-      data-a-o
     >
       <iframe
         src="https://player.vimeo.com/video/893454470?h=777eb2a6c8&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;background=1&autoplay=1&loop=1&muted=1&&title=0&byline=0"
