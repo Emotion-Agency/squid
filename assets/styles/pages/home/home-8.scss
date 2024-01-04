@@ -53,10 +53,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-left: vw(228);
 
   @media (min-width: $br1) {
     justify-content: center;
+    padding-left: vw(228);
   }
 }
 
@@ -167,6 +167,12 @@
   @media (max-width: $br3) {
     width: 100%;
   }
+
+  &:hover {
+    .home-8__link {
+      color: rgba(0, 0, 0, 0);
+    }
+  }
 }
 
 .home-8__img-link {
@@ -226,6 +232,11 @@
   background-color: transparent;
   color: inherit;
   white-space: nowrap;
+  background-size: cover;
+  background-image: linear-gradient(90deg, #e36852 0%, #cc69a3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: color 0.3s ease;
 
   @media (max-width: $br1) {
     font-size: 16px;

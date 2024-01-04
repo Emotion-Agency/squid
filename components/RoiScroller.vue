@@ -12,14 +12,17 @@ interface iProps {
   isHome?: boolean
 }
 
-defineProps<iProps>()
+const props = defineProps<iProps>()
 
 let es
 
 const $el = ref(null)
+const $scrollWrapper = ref(null)
 const $wrapper = ref(null)
 const $children = ref(null)
 const $container = ref(null)
+
+const blockHeight = ref(0)
 
 onMounted(async () => {
   const { ExpertiseScroller } = await import(
@@ -32,6 +35,10 @@ onMounted(async () => {
 onBeforeUnmount(() => {
   es && es.destroy()
 })
+
+onMounted(() => {
+  blockHeight.value = props.items.length * 100
+})
 </script>
 
 <template>
@@ -39,6 +46,7 @@ onBeforeUnmount(() => {
     ref="$el"
     class="section expertise-6"
     :class="isHome && 'expertise-6--home'"
+    :style="`--block-height: ${blockHeight}vh`"
   >
     <div ref="$container" class="container expertise-6__wrapper">
       <TheSquare class="expertise-6__square" />
@@ -48,7 +56,7 @@ onBeforeUnmount(() => {
           {{ description }}
         </p>
       </div>
-      <div class="expertise-6__scroll-wrapper">
+      <div ref="$scrollWrapper" class="expertise-6__scroll-wrapper">
         <ul ref="$wrapper" class="expertise-6__list-items">
           <li
             ref="$children"

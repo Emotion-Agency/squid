@@ -4,7 +4,7 @@
   color: var(--white);
 
   @media (min-width: $br1) {
-    height: 300vh;
+    height: var(--block-height);
     display: flex;
     flex-direction: column;
     padding-top: 0;
@@ -23,6 +23,7 @@
     .expertise-6__content {
       @media (min-width: $br1) {
         row-gap: vw(170);
+        padding-left: calc(vw(228) - $g-offset);
       }
     }
 
@@ -33,7 +34,7 @@
     .expertise-6__square {
       bottom: 52vh;
       top: auto;
-      left: vw(185);
+      left: vw(272);
       width: vw(308);
       height: vw(332);
 
@@ -149,17 +150,32 @@
 .expertise-6__scroll-wrapper {
   @media (min-width: $br1) {
     overflow: hidden;
-    height: vw(360);
+    width: vw(843);
+  }
+
+  @media (max-width: $br1) {
+    width: 100%;
+    margin-top: 85px;
   }
 }
 
 .expertise-6__list-items {
   overflow: hidden;
+  width: fit-content;
+
+  @media (min-width: $br1) {
+    display: flex;
+    align-items: baseline;
+    column-gap: vw(200);
+  }
 }
 
 .expertise-6__item {
   margin-top: vw(12);
-  max-width: vw(843);
+
+  @media (min-width: $br1) {
+    width: vw(843);
+  }
 
   &:first-of-type {
     margin-top: 0;
