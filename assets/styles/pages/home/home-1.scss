@@ -56,6 +56,7 @@
     background-color: var(--bg);
     pointer-events: none;
     opacity: 0;
+    z-index: 3;
   }
 
   @media (min-width: $br1) {
