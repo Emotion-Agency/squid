@@ -16,14 +16,13 @@
   width: vw(284);
   height: vw(284);
 
+  .cls-1 {
+    fill: url(#New_Gradient_Swatch_4);
+    stroke-width: 0px;
+  }
+
   @media (max-width: $br1) {
     width: 142px;
     height: 142px;
-  }
-
-  path {
-    &:nth-last-child(-n + 4) {
-      stroke: #cc69a3;
-    }
   }
 }
