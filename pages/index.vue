@@ -61,13 +61,14 @@ onBeforeUnmount(() => {
   <main>
     <PageMeta v-if="story.meta.length" :meta="story.meta[0]" />
     <div ref="$colorEl" class="color-changer">
+      <TheVideo class="home-1__video" />
+
       <section
         v-if="story.storytelling[0].screen_1[0].text"
         v-editable="story.storytelling[0].screen_1[0]"
         data-bottom-s="'Don’t worry, the water’s fine'|false"
         class="section section--nm home-1"
       >
-        <TheVideo class="home-1__video" />
         <div class="container home-1__wrapper">
           <RichText
             data-a-h

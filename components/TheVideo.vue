@@ -31,5 +31,6 @@ useHead({
         title="Coco Home"
       ></iframe>
     </div>
+    <div class="video__overlay"></div>
   </div>
 </template>
