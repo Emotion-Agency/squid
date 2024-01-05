@@ -38,8 +38,25 @@ const inputsList = reactive([
   },
 ])
 
-const onSubmit = () => {
-  console.log('submitted')
+const $inputs = ref(null)
+
+const onSubmit = async () => {
+  try {
+    await fetch('https://formspree.io/f/xrgngrzb', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: inputsList[0].value,
+        email: inputsList[1].value,
+        subject: inputsList[2].value,
+        message: inputsList[3].value,
+      }),
+    })
+    inputsList.forEach(input => (input.value = ''))
+    $inputs.value?.forEach(input => input?.reset())
+  } catch (error) {
+    alert('Something went wrong! Pease try again later.')
+    console.log(error)
+  }
 }
 
 const onChange = val => {
@@ -52,6 +69,7 @@ const onChange = val => {
     <div class="form__inputs-wrapper">
       <TheInput
         v-for="(input, idx) in inputsList"
+        ref="$inputs"
         :key="idx"
         :required="input.required"
         :id="input.id"
