@@ -1,30 +1,23 @@
-import gsap from 'gsap'
-import { TransitionProps } from 'nuxt/dist/app/compat/capi'
 import { resetScroll } from '~/assets/scripts/utils/resetScroll'
+import { appAnimation } from '~/assets/scripts/utils/appAnimation'
 
 export const useTransition = () => {
   const { isLoaded, isInEditor } = useLoadState()
 
-  watch(isLoaded, async () => {
+  watch(isLoaded, () => {
     if (isLoaded.value && !isInEditor.value) {
-      const { appAnimation } = await import(
-        '~/assets/scripts/utils/appAnimation'
-      )
       setTimeout(() => {
         appAnimation()
       }, 150)
     }
   })
 
-  onMounted(async () => {
+  onMounted(() => {
     setTimeout(() => {
       resetScroll()
     }, 500)
 
     if (isLoaded.value && !isInEditor.value) {
-      const { appAnimation } = await import(
-        '~/assets/scripts/utils/appAnimation'
-      )
       setTimeout(() => {
         appAnimation()
       }, 800)

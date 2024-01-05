@@ -9,9 +9,11 @@ export const usePosts = (posts: Ref<iStory[]>, routePath: string) => {
 
   const selectCategory = (category: string) => {
     try {
-      setTimeout(() => {
-        window?.parallax && window?.parallax?.update()
-      }, 500)
+      if (process.client) {
+        setTimeout(() => {
+          window?.parallax && window?.parallax?.update()
+        }, 500)
+      }
     } catch (error) {
       console.log(error)
     }

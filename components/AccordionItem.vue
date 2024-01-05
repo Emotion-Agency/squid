@@ -1,16 +1,16 @@
-<script lang='ts' setup>
+<script lang="ts" setup>
 import { resize } from '~/assets/scripts/utils/ea/resize/resize'
-
 
 interface iProps {
   title: string
   text: string
   id: string
   isOpen: boolean
+  lastItem: boolean
+  numberItem: number
 }
 
 const props = defineProps<iProps>()
-
 
 const emit = defineEmits(['clicked'])
 
@@ -20,16 +20,26 @@ const height = ref(0)
 
 const onResize = () => {
   height.value = $child.value.scrollHeight * 0.01
-  $el.value.style.setProperty('--h',`${height.value}px`)
+  $el.value.style.setProperty('--h', `${height.value}px`)
 }
 
 const onClick = () => {
-  resize.on(onResize)
-  emit('clicked',props.id)
+  onResize()
+  emit('clicked', props.id)
 }
+
+onMounted(() => {
+  setTimeout(() => {
+    resize.on(onResize)
+  }, 0)
+})
 
 onBeforeUnmount(() => {
   resize.off(onResize)
+})
+
+defineExpose({
+  onClick,
 })
 </script>
 
@@ -40,16 +50,18 @@ onBeforeUnmount(() => {
     :class="[isOpen && 'opened']"
     @click="onClick"
   >
-    <div class="accordion__top">
+    <div class="accordion__line" />
+    <div class="accordion__content">
+      <p class="accordion__number">0{{ numberItem }}</p>
       <h2 class="accordion__title">{{ title }}</h2>
-      <IconsDropDown />
+      <div class="accordion__plus-container">
+        <span></span>
+        <span></span>
+      </div>
+      <p ref="$child" class="accordion__text">
+        {{ text }}
+      </p>
     </div>
-    <p
-      ref="$child"
-      class="accordion__text"
-    >
-      {{ text }}
-    </p>
-    <p class="accordion__line"></p>
+    <div v-if="lastItem" class="accordion__line" />
   </button>
 </template>

@@ -13,7 +13,7 @@
   left: 0;
   padding: vw(65);
   padding-top: vw(40);
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease, padding 0.3s ease;
   &.loading {
     transform: translateY(-100%);
     opacity: 0;
@@ -24,13 +24,40 @@
   }
 
   &--active {
-    .header__line {
-      background-color: #fff;
-    }
-
     .header__logo {
       path {
         fill: #fff;
+      }
+    }
+  }
+
+  &--bg {
+    background-color: var(--bg);
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  &--dark:not(.header--active) {
+    &.header--bg {
+      background-color: var(--white);
+    }
+    .header__logo {
+      svg {
+        g {
+          > :nth-of-type(-n + 4) {
+            g {
+              path {
+                fill: var(--bg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .header__burger {
+      .header__line {
+        background-color: var(--bg);
       }
     }
   }
@@ -49,8 +76,13 @@
   flex-direction: column;
   justify-content: center;
   background-color: transparent;
-  width: 44px;
-  height: 44px;
+  width: vw(44);
+  height: vw(44);
+
+  @media (max-width: $br1) {
+    width: 44px;
+    height: 44px;
+  }
 
   &--active {
     .header__line {
@@ -87,7 +119,7 @@
   display: block;
   height: 2px;
   width: 100%;
-  background-color: #a7a9ac;
+  background-color: var(--white);
   transition: all 0.3s ease;
 
   &:nth-of-type(2) {
@@ -107,47 +139,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  width: vw(106);
-  height: vw(46);
+  position: absolute;
+  top: 34%;
+  right: 0;
+  transform: translateY(-50%);
+  width: vw(220);
+  height: vw(33);
 
   @media (max-width: $br1) {
-    width: 74px;
-    height: 16px;
-  }
-
-  &:hover {
-    .header__logo-img {
-      &--1 {
-        opacity: 0;
-      }
-
-      &--2 {
-        opacity: 1;
-      }
-    }
+    width: 180px;
+    height: 33px;
   }
 }
 
 .header__logo-img {
   display: block;
-  position: absolute;
-  right: 0;
-  width: vw(106);
-  height: vw(23);
-  transition: opacity 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  pointer-events: none;
 
-  @media (max-width: $br1) {
-    width: 74px;
-    height: 16px;
-  }
-
-  &--2 {
-    height: vw(46);
-    opacity: 0;
+  svg {
+    transform: translate3d(vw(30), 0, 0) !important;
 
     @media (max-width: $br1) {
-      height: 23px;
+      transform: translate3d(20px, 0, 0) !important;
+    }
+  }
+
+  g {
+    > :nth-of-type(-n + 4) {
+      g {
+        path {
+          fill: var(--white);
+        }
+      }
     }
   }
 }

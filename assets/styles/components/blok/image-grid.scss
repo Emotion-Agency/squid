@@ -12,25 +12,28 @@
 }
 
 .image-grid__title {
-  @include snfine-reg;
+  * {
+    font-size: vw(120);
+    line-height: 1em;
+    color: var(--blend-color);
+
+    @media (max-width: $br1) {
+      font-size: 52px;
+    }
+  }
   position: relative;
-  font-size: vw(120);
-  line-height: 100%;
-  text-transform: uppercase;
-  max-width: vw(988);
-  color: #fff;
+  max-width: vw(707);
   mix-blend-mode: difference;
   z-index: 2;
 
   @media (min-width: $br1) {
-    margin-left: vw(140);
+    margin-left: vw(92);
   }
 
   @media (max-width: $br1) {
     max-width: 440px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 52px;
   }
 
   @media (max-width: $br4) {
@@ -45,7 +48,7 @@
   width: 100%;
 
   &--with-title {
-    margin-top: vw(-180);
+    margin-top: vw(-130);
     @media (max-width: $br1) {
       margin-top: -80px;
     }

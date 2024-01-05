@@ -1,17 +1,18 @@
-<script lang='ts' setup>
+<script lang="ts" setup>
+import SquidLogo from './SquidLogo.vue'
 
 const $el = ref(null)
 
-
-const { isOpenMenu,closeMenu,toggleMenu } = useMenu()
+const { isOpenMenu, closeMenu, toggleMenu, headerColor } = useMenu()
 
 const { isLoaded } = useLoadState()
 
 let navbarPos
 
-
 onMounted(async () => {
-  const { default: NavbarPos } = await import('~/assets/scripts/utils/navbarPos')
+  const { default: NavbarPos } = await import(
+    '~/assets/scripts/utils/navbarPos'
+  )
   navbarPos = new NavbarPos()
   navbarPos.init()
 })
@@ -22,11 +23,14 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-
   <header
     ref="$el"
     class="header navbar"
-    :class="[isOpenMenu && 'header--active', !isLoaded && 'loading']"
+    :class="[
+      isOpenMenu && 'header--active',
+      !isLoaded && 'loading',
+      `header--${headerColor}`,
+    ]"
   >
     <div class="header__wrapper">
       <div class="header__left-elem">
@@ -41,19 +45,8 @@ onBeforeUnmount(() => {
           <span class="header__line"></span>
         </button>
       </div>
-      <NuxtLink
-        to="/"
-        aria-label="Squid Agency"
-        class="header__logo"
-        @click="closeMenu()"
-      >
-        <IconsLogo class="header__logo-img header__logo-img--1" />
-        <IconsLogoSquid class="header__logo-img header__logo-img--2" />
-      </NuxtLink>
+      <SquidLogo />
     </div>
-    <TheMenu
-      :class="[isOpenMenu && 'menu--active']"
-      @close="closeMenu()"
-    />
+    <TheMenu :class="[isOpenMenu && 'menu--active']" @close="closeMenu()" />
   </header>
 </template>

@@ -5,6 +5,7 @@ export class OnScrollColor {
   constructor($el, opts = {}) {
     gsap.registerPlugin(ScrollTrigger)
     this.$el = $el
+    this.$home = document.querySelector('.video__overlay')
     // this.$wrapper = $wrapper
     this.offset = opts.offset || 0
     this.breakpoint = opts.breakpoint || 960
@@ -18,23 +19,21 @@ export class OnScrollColor {
         trigger: this.$el,
         pin: false,
         start: 0,
-        end: window.innerHeight * 2.5,
+        end: window.innerHeight * 1.5,
         scrub: 0.1,
         scroller: document.getElementById('scroll-container'),
       },
     })
 
     this.tl.fromTo(
-      this.$el,
+      this.$home,
       {
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        color: 'rgba(0, 0, 0, 1)',
+        opacity: 0,
       },
       {
-        backgroundColor: 'rgba(0, 0, 0, 1)',
-        color: 'rgba(255, 255, 255, 1)',
-        ease: 'linear.none',
-      }
+        opacity: 1,
+      },
+      0
     )
   }
 

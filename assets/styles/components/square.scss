@@ -1,0 +1,14 @@
+.square {
+  display: block;
+  pointer-events: none;
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #cc69a3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.8s cubic-bezier(0.76, 0, 0.24, 1),
+    height 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+  transition-delay: 0.3s;
+}

@@ -72,6 +72,12 @@ const getCategory = (catId: string) => {
 }
 
 const breakLine = useBreakLine()
+
+const { headerColor } = useMenu()
+
+onMounted(() => {
+  headerColor.value = 'dark'
+})
 </script>
 
 <template>

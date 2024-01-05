@@ -1,3 +1,5 @@
+@import url('https://use.typekit.net/anu3wah.css');
+
 // ClashDisplay
 
 @mixin cd-light {
@@ -38,4 +40,34 @@
   font-weight: 400;
   font-stretch: condensed;
   font-style: italic;
+}
+
+// Articulat CF
+@mixin articulat-cf {
+  font-family: 'articulat-cf', sans-serif;
+  font-weight: 400;
+}
+
+// Awesome Serif Italic
+@mixin awesome-serif {
+  font-family: 'Awesome Serif Italic', serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+// Space Mono
+@mixin space-mono-reg {
+  font-family: 'Space Mono', monospace;
+  font-weight: 400;
+}
+
+@mixin space-mono-bold {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+}
+
+// ED Mentasta
+@mixin ed-mentasta-reg {
+  font-family: 'ED Mentasta', serif;
+  font-weight: 400;
 }

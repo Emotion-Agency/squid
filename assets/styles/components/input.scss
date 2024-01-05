@@ -1,0 +1,132 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &--textarea {
+    padding: 0 vw(5);
+
+    @media (max-width: $br1) {
+      padding: 0 5px;
+    }
+
+    .input__title {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: $br1) {
+    font-size: 15px;
+  }
+}
+
+.input__title {
+  @include space-mono-bold;
+  font-size: vw(17);
+  line-height: 1em;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-left: vw(5);
+
+  @media (max-width: $br1) {
+    font-size: 15px;
+    margin-left: 5px;
+  }
+}
+
+.input__type {
+  margin-top: vw(26);
+  padding: vw(12) vw(5);
+
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+  }
+
+  &::placeholder {
+    @include articulat-cf;
+    font-size: vw(22);
+    line-height: 1em;
+    color: #ccc;
+    letter-spacing: normal;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.4s ease;
+
+    @media (max-width: $br1) {
+      margin-top: 15px;
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: $br1) {
+    padding: 0 5px;
+    padding-bottom: 6px;
+    margin-top: 10px;
+  }
+}
+
+.input__type[type='text'] {
+  @include space-mono-reg;
+  color: var(--white);
+  font-size: vw(17);
+  background: transparent;
+  border: none;
+  overflow: hidden;
+
+  @media (max-width: $br1) {
+    font-size: 15px;
+  }
+}
+
+.input__type[type='textarea'] {
+  @include space-mono-reg;
+  color: var(--white);
+  font-size: vw(17);
+  background: transparent;
+  border: 1px solid var(--white);
+  overflow: hidden;
+
+  @media (max-width: $br1) {
+    font-size: 15px;
+  }
+}
+
+.input__type--textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+  height: vw(215);
+
+  @media (max-width: $br1) {
+    height: 95px;
+    padding-top: 18px;
+  }
+}
+
+.input__line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--white);
+}
+
+.input__error {
+  @include space-mono-reg;
+  color: var(--red);
+  font-size: vw(14);
+  position: absolute;
+  bottom: vw(-24);
+  text-transform: lowercase;
+
+  @media (max-width: $br1) {
+    font-size: 12px;
+    bottom: -18px;
+  }
+}

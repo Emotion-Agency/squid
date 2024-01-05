@@ -1,13 +1,23 @@
 .text-button {
-  @include cd-semibold;
+  @include space-mono-bold;
   display: block;
   background-color: transparent;
   width: fit-content;
   font-size: vw(16);
-  line-height: 100%;
+  line-height: 1em;
   letter-spacing: 0.2em;
   width: 100%;
   color: inherit;
+  position: relative;
+  transition: color 0.3s ease;
+  background-size: cover;
+  background-image: linear-gradient(90deg, #e36852 0%, #cc69a3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0);
+  }
 
   @media (max-width: $br1) {
     font-size: 14px;

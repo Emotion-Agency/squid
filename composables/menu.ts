@@ -2,6 +2,7 @@ import gsap from 'gsap'
 
 export const useMenu = () => {
   const isOpenMenu = useState<boolean>('menu', () => false)
+  const headerColor = useState<'white' | 'dark'>('headerColor', () => 'dark')
 
   const openMenu = () => {
     window.ss && (window.ss.isFixed = true)
@@ -9,10 +10,15 @@ export const useMenu = () => {
 
     const menuBg = document.querySelector('.menu__bg')
     const menuItems = document.querySelectorAll('.menu__li')
+    const menuContent = document.querySelector('.menu__content')
 
     const tl = gsap.timeline()
 
-    tl.to(menuBg, { duration: 1, y: '0%', ease: 'power2.out', overflow: 5 }, 0)
+    tl.to(
+      menuBg,
+      { duration: 1, y: '0%', ease: 'power2.out', overwrite: true },
+      0
+    )
     tl.to(
       menuItems,
       {
@@ -21,7 +27,18 @@ export const useMenu = () => {
         opacity: 1,
         ease: 'power2.out',
         stagger: 0.1,
-        overflow: 5,
+        overwrite: true,
+      },
+      0.5
+    )
+    tl.to(
+      menuContent,
+      {
+        duration: 1,
+        y: 0,
+        opacity: 1,
+        ease: 'power2.out',
+        overwrite: true,
       },
       0.5
     )
@@ -35,18 +52,24 @@ export const useMenu = () => {
 
     const menuBg = document.querySelector('.menu__bg')
     const menuItems = document.querySelectorAll('.menu__li')
+    const menuContent = document.querySelector('.menu__content')
 
     const tl = gsap.timeline()
 
     tl.to(
+      menuBg,
+      { duration: 1, y: '100%', ease: 'power2.out', overwrite: true },
+      0.2
+    )
+    tl.to(
       menuItems,
-      { duration: 0.5, y: 40, opacity: 0, ease: 'power2.out', overflow: 5 },
+      { duration: 0.5, y: 40, opacity: 0, ease: 'power2.out', overwrite: true },
       0
     )
     tl.to(
-      menuBg,
-      { duration: 1, y: '100%', ease: 'power2.out', overflow: 5 },
-      0.2
+      menuContent,
+      { duration: 0.5, y: 40, opacity: 0, ease: 'power2.out', overwrite: true },
+      0
     )
 
     isOpenMenu.value = false
@@ -61,5 +84,6 @@ export const useMenu = () => {
     openMenu,
     closeMenu,
     toggleMenu,
+    headerColor,
   }
 }

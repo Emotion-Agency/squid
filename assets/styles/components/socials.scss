@@ -1,5 +1,5 @@
 .socials {
-  --s-color: #a7a9ac;
+  --s-color: var(--white);
   display: flex;
   align-items: baseline;
 }
@@ -8,12 +8,6 @@
   position: relative;
   transition: transform 0.3s ease;
 
-  &:nth-of-type(3) {
-    .socials__socials-img {
-      width: 14px;
-      height: 14px;
-    }
-  }
   &:nth-of-type(4) {
     a {
       position: relative;
@@ -35,38 +29,46 @@
     content: '';
     display: block;
     width: 100%;
-    height: 0px;
+    height: 2px;
     background-color: var(--s-color);
     transition: height 0.3s ease, background-color 0.3s ease;
     position: absolute;
     bottom: -7px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
   }
 
   &:hover {
-    transform: translateY(-5px);
     &::after {
-      height: 5px;
+      transform: scaleX(1);
+      transform-origin: left;
     }
   }
 }
 
 .socials__socials-img {
   display: block;
-  width: 16px;
-  height: 16px;
+  width: vw(16);
+  height: vw(16);
   max-width: 100%;
+
+  @media (max-width: $br1) {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .socials__link {
-  @include snfine-reg-it;
-  font-size: 20px;
-  line-height: 100%;
+  @include space-mono-bold;
+  font-size: vw(25);
+  line-height: 1em;
   letter-spacing: 1.15px;
   display: block;
   color: var(--s-color);
 
   @media (max-width: $br1) {
-    font-size: 23px;
+    font-size: 20px;
   }
   svg {
     path {

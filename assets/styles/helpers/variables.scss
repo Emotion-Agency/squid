@@ -2,7 +2,10 @@
   --black: #000;
   --white: #fff;
   --accent: #ebe71d;
+  --bg: #001123;
+  --blend-color: #ffeedc;
   --red: #e73737;
+  --gradient: linear-gradient(90deg, #e36852 0%, #cc69a3 100%);
 }
 
 //screen config
@@ -16,6 +19,7 @@ $br1: 960px;
 $br2: 860px;
 $br3: 768px;
 $br4: 460px;
+$br5: 375px;
 
 //easings
 $easing: cubic-bezier(0.16, 1, 0.3, 1);

@@ -1,4 +1,4 @@
-<script lang='ts' setup>
+<script lang="ts" setup>
 interface iProps {
   isFixed?: boolean
   isRotated?: boolean
@@ -6,7 +6,7 @@ interface iProps {
 }
 
 withDefaults(defineProps<iProps>(), {
-  isVisible: true
+  isVisible: true,
 })
 
 const onClick = () => {
@@ -17,7 +17,10 @@ const onClick = () => {
 <template>
   <button
     class="next-page-btn bottom-nav-btn"
-    :class="[isFixed && 'bottom-nav-btn--fixed', !isVisible && 'bottom-nav-btn--hidden']"
+    :class="[
+      isFixed && 'bottom-nav-btn--fixed',
+      !isVisible && 'bottom-nav-btn--hidden',
+    ]"
     @click="onClick"
   >
     <slot></slot>

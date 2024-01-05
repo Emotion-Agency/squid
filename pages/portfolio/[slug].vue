@@ -37,6 +37,12 @@ const nextPost = computed(() => {
 
   return idx >= posts.value.length - 1 ? posts.value[0] : posts.value[idx + 1]
 })
+
+const { headerColor } = useMenu()
+
+onMounted(() => {
+  headerColor.value = 'dark'
+})
 </script>
 
 <template>

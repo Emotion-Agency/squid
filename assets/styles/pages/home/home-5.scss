@@ -1,6 +1,6 @@
 .home-5 {
   position: relative;
-  background-color: var(--black);
+  background-color: var(--bg);
 
   @media (min-width: $br1) {
     height: 100vh;
@@ -9,10 +9,12 @@
 
   @media (max-width: $br1) {
     padding-top: 200px;
+    padding-bottom: 200px;
   }
 
   @media (max-width: $br3) {
     padding-top: 120px;
+    padding-bottom: 120px;
   }
 }
 
@@ -31,16 +33,15 @@
 }
 
 .home-5__rotate-text {
-  @include cd-semibold;
+  @include space-mono-bold;
   color: var(--white);
   letter-spacing: 4px;
-  line-height: 100%;
+  line-height: 1em;
   width: fit-content;
 
   @media (min-width: $br1) {
-    @include col(1, 1);
     position: relative;
-    top: 5vh;
+    top: -8vh;
     left: -18vh;
     font-size: vh(20);
     transform: rotate(-90deg);
@@ -48,13 +49,13 @@
 
   @media (max-width: $br1) {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     font-size: 16px;
   }
 }
 
 .home-5__accordion {
-  @include col(2, 8);
+  @include col(2, 9);
   @media (min-width: $br1) {
     max-width: vw(950);
   }

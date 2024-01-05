@@ -33,6 +33,12 @@ watch(filteredPosts, () => {
     tl.to($posts.value, { duration: 0.5, opacity: 1 }, 0.5)
   }
 })
+
+const { headerColor } = useMenu()
+
+onMounted(() => {
+  headerColor.value = 'dark'
+})
 </script>
 
 <template>
@@ -68,7 +74,7 @@ watch(filteredPosts, () => {
               :class="[activeCategory === 'all' && 'thoughts-2__btn--active']"
               @click="selectCategory('all')"
             >
-              ALL
+              All
             </button>
           </div>
         </div>

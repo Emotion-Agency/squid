@@ -3,15 +3,16 @@
 }
 
 .next-page-btn {
-  @include cd-reg;
+  @include space-mono-reg;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   max-width: vw(360);
   background-color: transparent;
-  color: #777777;
-  font-size: vw(15);
+  color: var(--white);
+  mix-blend-mode: difference;
+  font-size: vw(18);
   line-height: 100%;
 
   &:hover {
@@ -39,4 +40,8 @@
   display: block;
   width: vw(25);
   height: vw(12);
+
+  path {
+    stroke: var(--white);
+  }
 }

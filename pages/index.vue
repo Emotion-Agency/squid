@@ -24,6 +24,7 @@ let sa
 const { story } = await useHomeStory()
 
 const { bottomText, isRotated, isVisible, init, destroy } = useBottomBlock()
+const { headerColor } = useMenu()
 
 onMounted(async () => {
   const { HorizontalScroll } = await import('~/assets/scripts/HorizontalScroll')
@@ -45,6 +46,8 @@ onMounted(async () => {
   }, 500)
 
   init()
+
+  headerColor.value = 'white'
 })
 
 onBeforeUnmount(() => {
@@ -58,6 +61,8 @@ onBeforeUnmount(() => {
   <main>
     <PageMeta v-if="story.meta.length" :meta="story.meta[0]" />
     <div ref="$colorEl" class="color-changer">
+      <TheVideo data-a-o class="home-1__video" />
+
       <section
         v-if="story.storytelling[0].screen_1[0].text"
         v-editable="story.storytelling[0].screen_1[0]"
@@ -106,10 +111,7 @@ onBeforeUnmount(() => {
                 <div class="container home-3__wrapper">
                   <div class="home-1__title">
                     <RichText :text="story.storytelling[0].screen_3[0].text" />
-                    <RichText
-                      class="home-1__title--gray"
-                      :text="story.storytelling[0].screen_3[1].text"
-                    />
+                    <RichText :text="story.storytelling[0].screen_3[1].text" />
                   </div>
                 </div>
               </section>
@@ -120,6 +122,7 @@ onBeforeUnmount(() => {
                 class="section section--nm home-4"
               >
                 <div class="container grid home-4__wrapper">
+                  <TheSquare axis="x" class="home-4__square" />
                   <RichText
                     class="home-4__text"
                     :text="story.storytelling[0].screen_4[0].text"
@@ -162,7 +165,7 @@ onBeforeUnmount(() => {
                         {{ story.table_texts[0]?.text }}
                       </p>
                       <NuxtLink to="/about/" class="home-6__btn-wrapper">
-                        <div class="home-6__btn">LEARN MORE</div>
+                        <div class="home-6__btn">Learn more</div>
                         <small class="home-6__btn-text">about us</small>
                       </NuxtLink>
                     </div>
@@ -182,7 +185,7 @@ onBeforeUnmount(() => {
                         {{ story.table_texts[1]?.text }}
                       </p>
                       <NuxtLink to="/expertise/" class="home-6__btn-wrapper">
-                        <div class="home-6__btn">LEARN MORE</div>
+                        <div class="home-6__btn">Learn more</div>
                         <small class="home-6__btn-text">expertise</small>
                       </NuxtLink>
                     </div>
@@ -221,12 +224,21 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </div>
+    <RoiScroller
+      v-if="story.roi_list[0]"
+      v-editable="story.roi_list[0]"
+      :title="story.roi_list[0].title"
+      :description="story.roi_list[0].description"
+      :items="story.roi_list[0].points"
+      :is-home="true"
+    />
     <section
       v-if="projects?.length"
       data-bottom-s="undefined"
       class="section home-8"
     >
       <div class="home-8__wrapper">
+        <TheSquare :offset="0.5" class="home-8__square" />
         <div class="container home-8__text">
           <h1 class="home-8__title">CASE STUDIES</h1>
           <p class="home-8__desc">
@@ -267,7 +279,8 @@ onBeforeUnmount(() => {
     >
       <div class="container home-9__wrapper">
         <div class="home-9__title-wrapper">
-          <h2 class="home-9__title">SOME CLIENTS WE’VE HELPED</h2>
+          <TheSquare class="home-9__square" />
+          <h2 class="home-9__title">Some client’s We’ve helped</h2>
         </div>
         <div class="home-9__list-wrapper">
           <ul class="home-9__list">

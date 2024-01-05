@@ -8,6 +8,12 @@ definePageMeta({
 })
 useTransition()
 
+const { headerColor } = useMenu()
+
+onMounted(() => {
+  headerColor.value = 'white'
+})
+
 const { story } = await useContactStory()
 </script>
 

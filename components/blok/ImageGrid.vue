@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { iImage } from '~/types/story'
+import Richtext from 'storyblok-js-client'
 
 interface iGridItem {
   image: iImage
@@ -7,7 +8,7 @@ interface iGridItem {
 }
 
 interface iContent {
-  title: string
+  title: string | Richtext
   image: iGridItem[]
   disable_parallax?: boolean
 }
@@ -17,18 +18,12 @@ interface iProps {
 }
 
 defineProps<iProps>()
-
 </script>
 
 <template>
   <div class="image-grid">
     <div class="container image-grid__wrapper">
-      <h2
-        v-if="blok.title"
-        class="image-grid__title"
-      >
-        {{ blok.title }}
-      </h2>
+      <RichText :text="blok.title" class="image-grid__title" />
       <ul
         class="image-grid__img-list"
         :class="blok.title && 'image-grid__img-list--with-title'"
@@ -47,10 +42,7 @@ defineProps<iProps>()
               :src="item.image.filename"
               :alt="item.image.alt"
             />
-            <figcaption
-              v-if="item.image.name"
-              class="figcaption"
-            >
+            <figcaption v-if="item.image.name" class="figcaption">
               {{ item.image.name }}
             </figcaption>
           </figure>

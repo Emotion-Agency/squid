@@ -15,12 +15,16 @@ const { story } = await useExpertiseStory()
 const $rotatingEl = ref(null)
 let ros
 
+const { headerColor } = useMenu()
+
 onMounted(async () => {
   const { RotateOnScroll } = await import('~/assets/scripts/RotateOnScroll')
 
   ros = new RotateOnScroll($rotatingEl.value.$el)
 
   ros.animate()
+
+  headerColor.value = 'white'
 })
 
 onBeforeUnmount(() => {
@@ -34,13 +38,18 @@ onBeforeUnmount(() => {
     <section class="section section--nm expertise-1">
       <div class="container expertise-1__wrapper">
         <div
-          v-if="story.screen_1[0].text"
+          v-if="story.screen_1[0].title_1[0].text"
           v-editable="story.screen_1[0]"
-          class="expertise-1__text-wrapper"
+          class="grid expertise-1__text-wrapper"
         >
           <RichText
             data-a-h
-            :text="story.screen_1[0].text"
+            :text="story.screen_1[0].title_1[0].text"
+            class="expertise-1__text"
+          />
+          <RichText
+            data-a-t
+            :text="story.screen_1[0].title_2[0].text"
             class="expertise-1__title"
           />
         </div>
@@ -91,10 +100,11 @@ onBeforeUnmount(() => {
         </TheAccordion>
       </div>
     </section>
-    <ExpertiseScroller
+    <RoiScroller
       v-if="story.screen_5[0]"
       v-editable="story.screen_5[0]"
       :title="story.screen_5[0].title"
+      :description="story.screen_5[0].description"
       :items="story.screen_5[0].points"
     />
     <section

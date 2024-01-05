@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { Richtext } from 'storyblok-js-client'
+import Richtext from 'storyblok-js-client'
 
 interface iProps {
   text: Richtext | string | any | object
