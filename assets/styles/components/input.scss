@@ -50,8 +50,7 @@
     @include articulat-cf;
     font-size: vw(22);
     line-height: 1em;
-    color: var(--white);
-    text-transform: capitalize;
+    color: #ccc;
     letter-spacing: normal;
     pointer-events: none;
     transition: opacity 0.3s ease, transform 0.4s ease;
@@ -123,7 +122,7 @@
   color: var(--red);
   font-size: vw(14);
   position: absolute;
-  bottom: vw(-20);
+  bottom: vw(-24);
   text-transform: lowercase;
 
   @media (max-width: $br1) {
