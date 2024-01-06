@@ -23,6 +23,8 @@ export const useGetStory = async (route: string) => {
               ? 'draft'
               : 'published',
           cv: Date.now(),
+
+          resolve_relations: 'roi_points.case_study',
         })
 
         response.value = data.story
