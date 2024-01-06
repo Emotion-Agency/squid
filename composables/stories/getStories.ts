@@ -21,6 +21,7 @@ export const useGetStories = async (opts: ISbStoriesParams) => {
           sort_by: 'name:asc',
           version: 'draft',
           cv: Date.now(),
+          resolve_relations: 'roi_points.case_study',
           ...opts,
         })
 

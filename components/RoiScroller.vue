@@ -1,8 +1,10 @@
 <script lang="ts" setup>
+import { iStory } from '~/types/story'
+
 interface iPoint {
   _uid: string
   roi_point_title: string
-  roi_point_description: string
+  case_study: iStory
 }
 
 interface iProps {
@@ -67,8 +69,11 @@ onMounted(() => {
             <h3 class="expertise-6__item-title">
               {{ item.roi_point_title }}
             </h3>
-            <p class="expertise-6__text">{{ item.roi_point_description }}</p>
-            <NuxtLink to="/portfolio/" class="expertise-6__btn"
+            <p class="expertise-6__text">{{ item?.case_study?.name }}</p>
+            <NuxtLink
+              v-if="item?.case_study?.full_slug"
+              :to="`/${item?.case_study?.full_slug}`"
+              class="expertise-6__btn"
               >VIEW CASE STUDY</NuxtLink
             >
           </li>
