@@ -281,7 +281,7 @@ onBeforeUnmount(() => {
       <div class="container home-9__wrapper">
         <div class="home-9__title-wrapper">
           <TheSquare class="home-9__square" />
-          <h2 class="home-9__title">Some client’s We’ve helped</h2>
+          <h2 class="home-9__title">Some clients We’ve helped</h2>
         </div>
         <div class="home-9__list-wrapper">
           <ul class="home-9__list">
