@@ -3,10 +3,10 @@
 </template>
 
 <script setup lang="ts">
-import Richtext from 'storyblok-js-client'
+import type { ISbRichtext } from 'storyblok-js-client'
 
 interface iProps {
-  text: Richtext | string | any | object
+  text: ISbRichtext | string | []
 }
 
 const props = defineProps<iProps>()
@@ -14,6 +14,9 @@ const props = defineProps<iProps>()
 const storyapi = useStoryblokApi()
 const richtext = computed(() => {
   try {
+    if (typeof props.text === 'string') return props.text
+
+    if (Array.isArray(props.text)) return props.text.join('')
     return storyapi.richTextResolver.render(props.text)
   } catch (error) {
     return ''
