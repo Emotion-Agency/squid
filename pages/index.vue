@@ -27,7 +27,6 @@ const { bottomText, isRotated, isVisible, init, destroy } = useBottomBlock()
 const { headerColor } = useMenu()
 
 onMounted(async () => {
-  console.log(story.value)
   const { HorizontalScroll } = await import('~/assets/scripts/HorizontalScroll')
 
   const { OnScrollColor } = await import('~/assets/scripts/OnScrollColor')

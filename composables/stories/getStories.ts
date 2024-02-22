@@ -20,6 +20,7 @@ export const useGetStories = async (opts: ISbStoriesParams) => {
         const { data }: tResStory = await storyapi.get('cdn/stories/', {
           sort_by: 'name:asc',
           version: 'draft',
+          per_page: 100,
           cv: Date.now(),
           resolve_relations: 'roi_points.case_study',
           ...opts,
