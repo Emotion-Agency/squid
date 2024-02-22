@@ -114,7 +114,7 @@ onMounted(() => {
               </div>
             </div>
             <CaseInfo
-              v-if="post.blog_info && post.blog_info[0]"
+              v-if="post?.blog_info && post?.blog_info[0]"
               v-editable="post.blog_info[0]"
               :items="post.blog_info[0].case_info"
               class="blog-2__info"
@@ -164,11 +164,14 @@ onMounted(() => {
                 :key="item._uid"
                 class="aside__posts-li"
               >
-                <NuxtLink :to="`/squid-blog/${item.slug}/`" class="aside__link">
+                <NuxtLink
+                  :to="`/squid-blog/${item?.slug}/`"
+                  class="aside__link"
+                >
                   <img
-                    v-if="item.content.image.filename"
+                    v-if="item?.content?.image?.filename"
                     class="aside__posts-img"
-                    :src="item.content.image.filename"
+                    :src="item?.content?.image?.filename"
                     alt="Image"
                   />
                   <div class="aside__posts-block">
@@ -178,10 +181,12 @@ onMounted(() => {
                           getFormattedDate(item.published_at || item.created_at)
                         }}
                       </p>
-                      <p class="aside__posts-title">{{ item.content.title }}</p>
+                      <p class="aside__posts-title">
+                        {{ item.content?.title }}
+                      </p>
                     </div>
                     <p class="aside__posts-name">
-                      {{ getCategory(item.content.category) }}
+                      {{ getCategory(item.content?.category) }}
                     </p>
                   </div>
                 </NuxtLink>
@@ -206,8 +211,8 @@ onMounted(() => {
     </div>
     <PostNavigation
       class="section blog__nav"
-      :prev-post-link="`/squid-blog/${prevPost.slug}/`"
-      :next-post-link="`/squid-blog/${nextPost.slug}/`"
+      :prev-post-link="`/squid-blog/${prevPost?.slug}/`"
+      :next-post-link="`/squid-blog/${nextPost?.slug}/`"
       all-posts-link="/squid-blog/"
     />
     <TheFooter />

@@ -35,11 +35,14 @@ onMounted(() => {
 
 <template>
   <main>
-    <PageMeta v-if="story.content.meta.length" :meta="story.content.meta[0]" />
+    <PageMeta
+      v-if="story.content?.meta?.length"
+      :meta="story.content?.meta[0]"
+    />
     <Featured
       v-if="featuredPost?.content"
       :name="featuredPost.name"
-      :category="featuredPost.content.category.name"
+      :category="featuredPost.content?.category?.name"
       :date="featuredPost.published_at ?? featuredPost.created_at"
       author="Miles Marmo"
       :description="featuredPost?.content?.description"
