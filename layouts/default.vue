@@ -66,6 +66,7 @@ useHead({
       <Meta name="twitter:card" content="summary_large_image" />
       <Meta name="twitter:image" content="/meta/twitter.png" />
       <Link rel="icon" type="image/x-icon" href="/favicon.ico"> </Link>
+      <Link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></Link>
     </Head>
     <AppLoader />
 
