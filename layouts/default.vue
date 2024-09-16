@@ -51,6 +51,11 @@ useHead({
   <div id="app">
     <Head>
       <Title>Agency Squid</Title>
+      <Meta
+        name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      />
+
       <Meta name="viewport" content="width=device-width"> </Meta>
       <Meta property="og:locale" content="en_US" />
       <Meta property="og:type" content="website" />
@@ -66,7 +71,12 @@ useHead({
       <Meta name="twitter:card" content="summary_large_image" />
       <Meta name="twitter:image" content="/meta/twitter.png" />
       <Link rel="icon" type="image/x-icon" href="/favicon.ico"> </Link>
-      <Link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"></Link>
+      <Link
+        rel="sitemap"
+        type="application/xml"
+        title="Sitemap"
+        href="/sitemap.xml"
+      ></Link>
     </Head>
     <AppLoader />
 
