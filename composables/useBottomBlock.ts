@@ -16,7 +16,8 @@ export const useBottomBlock = () => {
         $item.getBoundingClientRect().top <= 0 &&
         $item.getBoundingClientRect().left <= 0
       ) {
-        isVisible.value = !(data === 'undefined')
+        console.log(data, text, rotated)
+        isVisible.value = !(data === 'undefined') && text !== 'undefined'
 
         bottomText.value = text
         isRotated.value = rotated

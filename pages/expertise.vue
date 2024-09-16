@@ -25,8 +25,6 @@ onMounted(async () => {
   ros.animate()
 
   headerColor.value = 'white'
-
-  console.log(story.value.screen_4)
 })
 
 onBeforeUnmount(() => {

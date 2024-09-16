@@ -48,6 +48,8 @@ onMounted(async () => {
   init()
 
   headerColor.value = 'white'
+
+  console.log(story.value.bottom_phrases)
 })
 
 onBeforeUnmount(() => {
@@ -66,7 +68,7 @@ onBeforeUnmount(() => {
       <section
         v-if="story.storytelling[0].screen_1[0].text"
         v-editable="story.storytelling[0].screen_1[0]"
-        data-bottom-s="'Don’t worry, the water’s fine'|false"
+        :data-bottom-s="`${story?.bottom_phrases[0]?.text}|${story?.bottom_phrases[0]?.rotated}`"
         class="section section--nm home-1"
       >
         <div class="container home-1__wrapper">
@@ -88,7 +90,7 @@ onBeforeUnmount(() => {
       <section
         v-if="story.storytelling[0].screen_2[0].text"
         v-editable="story.storytelling[0].screen_2[0]"
-        data-bottom-s="'Into uncharted territory'|false"
+        :data-bottom-s="`${story?.bottom_phrases[1]?.text}|${story?.bottom_phrases[1]?.rotated}`"
         class="section section--nm home-2"
       >
         <div class="container home-2__wrapper">
@@ -105,7 +107,7 @@ onBeforeUnmount(() => {
               <section
                 v-if="story.storytelling[0].screen_3[0].text"
                 v-editable="story.storytelling[0].screen_3[0]"
-                data-bottom-s="'This is where we thrive'|true"
+                :data-bottom-s="`${story?.bottom_phrases[2]?.text}|${story?.bottom_phrases[2]?.rotated}`"
                 class="section section--nm home-3"
               >
                 <div class="container home-3__wrapper">
@@ -118,7 +120,7 @@ onBeforeUnmount(() => {
               <section
                 v-if="story.storytelling[0].screen_4[0]"
                 v-editable="story.storytelling[0].screen_4[0]"
-                data-bottom-s="'Let’s explore'|true"
+                :data-bottom-s="`${story?.bottom_phrases[3]?.text}|${story?.bottom_phrases[3]?.rotated}`"
                 class="section section--nm home-4"
               >
                 <div class="container grid home-4__wrapper">
@@ -132,7 +134,7 @@ onBeforeUnmount(() => {
               <section
                 v-if="story.dropdown_list[0]"
                 v-editable="story.dropdown_list[0]"
-                data-bottom-s="'There’s more to see here'|true"
+                :data-bottom-s="`${story?.bottom_phrases[4]?.text}|${story?.bottom_phrases[4]?.rotated}`"
                 class="section section--nm home-5"
               >
                 <div class="container grid home-5__wrapper">
@@ -148,7 +150,7 @@ onBeforeUnmount(() => {
               </section>
               <section
                 v-if="story.table_texts[0] || story.table_texts[1]"
-                data-bottom-s="'Join us in the abyss'|true"
+                :data-bottom-s="`${story?.bottom_phrases[5]?.text}|${story?.bottom_phrases[5]?.rotated}`"
                 class="section section--nm home-6"
               >
                 <div class="container grid home-6__wrapper">
@@ -197,7 +199,7 @@ onBeforeUnmount(() => {
 
               <section
                 v-if="story.headings[0].text"
-                data-bottom-s="'let’s go deeper'|false"
+                :data-bottom-s="`${story?.bottom_phrases[6]?.text}|${story?.bottom_phrases[6]?.rotated}`"
                 class="section section--nm home-7"
               >
                 <div class="grid home-7__wrapper">
@@ -211,7 +213,7 @@ onBeforeUnmount(() => {
                   <div
                     ref="$scrollEl"
                     class="container home-7__bottom-block"
-                    data-bottom-s="'see for yourself'|false"
+                    :data-bottom-s="`${story?.bottom_phrases[7]?.text}|${story?.bottom_phrases[7]?.rotated}`"
                   >
                     <RichText
                       v-editable="story.headings[1]"
