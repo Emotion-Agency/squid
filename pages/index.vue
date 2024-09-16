@@ -140,7 +140,9 @@ onBeforeUnmount(() => {
                     class="home-5__accordion"
                     :items="story.dropdown_list[0].dropdown_points"
                   >
-                    <p class="home-5__rotate-text">WE ARE</p>
+                    <p v-if="story?.dropdown_text" class="home-5__rotate-text">
+                      {{ story?.dropdown_text }}
+                    </p>
                   </TheAccordion>
                 </div>
               </section>
