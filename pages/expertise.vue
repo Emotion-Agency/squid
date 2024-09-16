@@ -25,10 +25,20 @@ onMounted(async () => {
   ros.animate()
 
   headerColor.value = 'white'
+
+  console.log(story.value.screen_4)
 })
 
 onBeforeUnmount(() => {
   ros && ros.destroy()
+})
+
+const screen4Dropdown = computed(() => {
+  return story.value?.screen_4?.find(item => item.component === 'dropdown_list')
+})
+
+const screen4Badge = computed(() => {
+  return story.value?.screen_4?.find(item => item.component === 'badge')
 })
 </script>
 
@@ -87,16 +97,18 @@ onBeforeUnmount(() => {
       </div>
     </section>
     <section
-      v-if="story.screen_4[0]"
-      v-editable="story.screen_4[0]"
+      v-if="screen4Dropdown"
+      v-editable="screen4Dropdown"
       class="section expertise-5"
     >
       <div class="container grid expertise-5__wrapper">
         <TheAccordion
           class="expertise-5__accordion"
-          :items="story.screen_4[0].dropdown_points"
+          :items="screen4Dropdown.dropdown_points"
         >
-          <p class="expertise-5__rotate-text">MASTER PLAN</p>
+          <p v-if="screen4Badge" class="expertise-5__rotate-text">
+            {{ screen4Badge.text }}
+          </p>
         </TheAccordion>
       </div>
     </section>
