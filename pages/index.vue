@@ -49,7 +49,7 @@ onMounted(async () => {
 
   headerColor.value = 'white'
 
-  console.log(story.value.bottom_phrases)
+  console.log(story.value)
 })
 
 onBeforeUnmount(() => {
@@ -168,9 +168,16 @@ onBeforeUnmount(() => {
                       <p class="home-6__desc">
                         {{ story.table_texts[0]?.text }}
                       </p>
-                      <NuxtLink to="/about/" class="home-6__btn-wrapper">
-                        <div class="home-6__btn">Learn more</div>
-                        <small class="home-6__btn-text">about us</small>
+                      <NuxtLink
+                        :to="story?.table_texts[0]?.link_url?.cached_url"
+                        class="home-6__btn-wrapper"
+                      >
+                        <div class="home-6__btn">
+                          {{ story?.table_texts[0]?.link_text_1 }}
+                        </div>
+                        <small class="home-6__btn-text">{{
+                          story?.table_texts[0]?.link_text_2
+                        }}</small>
                       </NuxtLink>
                     </div>
                   </div>
@@ -188,9 +195,16 @@ onBeforeUnmount(() => {
                       <p class="home-6__desc">
                         {{ story.table_texts[1]?.text }}
                       </p>
-                      <NuxtLink to="/expertise/" class="home-6__btn-wrapper">
-                        <div class="home-6__btn">Learn more</div>
-                        <small class="home-6__btn-text">expertise</small>
+                      <NuxtLink
+                        :to="story?.table_texts[1]?.link_url?.cached_url"
+                        class="home-6__btn-wrapper"
+                      >
+                        <div class="home-6__btn">
+                          {{ story?.table_texts[1]?.link_text_1 }}
+                        </div>
+                        <small class="home-6__btn-text">{{
+                          story?.table_texts[1]?.link_text_2
+                        }}</small>
                       </NuxtLink>
                     </div>
                   </div>
