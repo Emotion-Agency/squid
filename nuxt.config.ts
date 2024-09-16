@@ -4,17 +4,15 @@ export default defineNuxtConfig({
   build: {
     transpile: ['fsevents'],
   },
-  modules: [
-    [
-      '@storyblok/nuxt',
-      {
-        accessToken: process.env.STORYBLOK_TOKEN,
-        apiOptions: {
-          region: 'us',
-        },
+  modules: [[
+    '@storyblok/nuxt',
+    {
+      accessToken: process.env.STORYBLOK_TOKEN,
+      apiOptions: {
+        region: 'us',
       },
-    ],
-  ],
+    },
+  ], '@nuxtjs/robots'],
 
   runtimeConfig: {
     public: {

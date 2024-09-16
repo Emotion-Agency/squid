@@ -29,6 +29,7 @@
     "@emotionagency/parallax": "^1.0.3",
     "@emotionagency/smoothscroll": "^1.0.3",
     "@emotionagency/utils": "latest",
+    "@nuxtjs/robots": "^4.1.7",
     "@storyblok/nuxt": "^5.1.0",
     "axios": "^1.3.3",
     "gsap": "^3.10.3",
