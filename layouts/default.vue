@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useFonts } from '~/composables/fonts'
 
 const GOOGLE_TM_ID = 'GTM-W9CZGXJ'
 
 useFonts()
+
+gsap.registerPlugin(ScrollTrigger)
 
 const parallaxInit = async () => {
   const { Parallax } = await import('@emotionagency/parallax')

@@ -3,6 +3,7 @@ import { useTransition } from '~/composables/transition'
 import { useProjectsStories } from '~/composables/stories/projects.story'
 import { useHomeStory } from '~~/composables/stories/home.story'
 import { pageTransition } from '~/assets/scripts/transition'
+import { delayPromise } from '~/assets/scripts/utils/ea'
 
 definePageMeta({
   pageTransition,
@@ -19,6 +20,7 @@ const $scroller = ref(null)
 
 const $scrollEl = ref(null)
 const $colorEl = ref(null)
+const $overlay = ref(null)
 let sa
 
 const { story } = await useHomeStory()
@@ -35,15 +37,14 @@ onMounted(async () => {
     '~/assets/scripts/OnScrollAppereance'
   )
 
-  setTimeout(() => {
-    new OnScrollColor($colorEl.value)
+  await delayPromise(500)
+  new OnScrollColor($colorEl.value, $overlay.value)
 
-    new HorizontalScroll($el.value, $container.value, $scroller.value)
+  new HorizontalScroll($el.value, $container.value, $scroller.value)
 
-    setTimeout(() => {
-      sa = new OnScrollAppereance($scrollEl.value, $container.value)
-    }, 100)
-  }, 500)
+  await delayPromise(100)
+
+  sa = new OnScrollAppereance($scrollEl.value, $container.value)
 
   init()
 
@@ -61,7 +62,9 @@ onBeforeUnmount(() => {
   <main>
     <PageMeta v-if="story.meta.length" :meta="story.meta[0]" />
     <div ref="$colorEl" class="color-changer">
-      <TheVideo data-a-o class="home-1__video" :video-id="story?.hero_video" />
+      <TheVideo data-a-o class="home-1__video" :video-id="story?.hero_video">
+        <div ref="$overlay" class="home-1__video-overlay"></div>
+      </TheVideo>
 
       <section
         v-if="story.storytelling[0].screen_1[0].text"

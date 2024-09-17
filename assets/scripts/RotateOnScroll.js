@@ -5,8 +5,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 export class RotateOnScroll {
   constructor($el) {
     this.$el = $el
-
-    gsap.registerPlugin(ScrollTrigger)
   }
 
   animate() {
