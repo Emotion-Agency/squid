@@ -3,6 +3,7 @@ import { iImage } from '~/types/story'
 import Richtext from 'storyblok-js-client'
 
 interface iGridItem {
+  vimeo_video_id?: string
   image: iImage
   _uid: string
 }
@@ -17,7 +18,7 @@ interface iProps {
   blok: iContent
 }
 
-defineProps<iProps>()
+const props = defineProps<iProps>()
 </script>
 
 <template>
@@ -35,7 +36,13 @@ defineProps<iProps>()
           :data-parallax="!blok.disable_parallax && -0.1"
         >
           <figure>
+            <TheVideo
+              v-if="item.vimeo_video_id"
+              :videoId="item.vimeo_video_id"
+              class="image-grid__video"
+            />
             <TheImage
+              v-else
               :transform="true"
               :disabled-parallax="blok.disable_parallax"
               class="image-grid__img"
