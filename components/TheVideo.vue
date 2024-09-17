@@ -8,8 +8,8 @@ const props = defineProps<iProps>()
 const $el = ref(null)
 
 onMounted(() => {
-  const containerHeight = $el.value.offsetHeight
-  const containerWidth = $el.value.offsetWidth
+  const containerHeight = window.innerHeight
+  const containerWidth = window.innerWidth
 
   // @ts-ignore
   new window.Vimeo.Player($el.value, {
@@ -26,7 +26,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div style="background-color: var(--bg)" ref="$el" class="video">
+  <div ref="$el" class="s-video">
     <slot />
   </div>
 </template>

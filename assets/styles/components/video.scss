@@ -1,6 +1,7 @@
-.video {
+.s-video {
   object-fit: cover;
   width: 100%;
+  background-color: var(--bg);
   height: 100%;
   overflow: hidden;
   display: flex;

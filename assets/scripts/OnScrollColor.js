@@ -2,9 +2,9 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export class OnScrollColor {
-  constructor($el, opts = {}) {
+  constructor($el, $overlay, opts = {}) {
     this.$el = $el
-    this.$home = document.querySelector('[data-overlay]')
+    this.$home = $overlay
     // this.$wrapper = $wrapper
     this.offset = opts.offset || 0
     this.breakpoint = opts.breakpoint || 960
