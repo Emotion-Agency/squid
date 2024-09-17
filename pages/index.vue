@@ -48,8 +48,6 @@ onMounted(async () => {
   init()
 
   headerColor.value = 'white'
-
-  console.log(story.value)
 })
 
 onBeforeUnmount(() => {

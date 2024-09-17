@@ -5,8 +5,17 @@
       "src": "nuxt.config.ts",
       "use": "@nuxtjs/vercel-builder",
       "config": {
-        "serverFiles": ["package.json"]
+        "serverFiles": [
+          "package.json"
+        ]
       }
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*[^/])$",
+      "destination": "/$1/",
+      "permanent": true
     }
   ]
 }

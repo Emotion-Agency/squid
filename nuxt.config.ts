@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ['fsevents'],
   },
+
   modules: [
     [
       '@storyblok/nuxt',
