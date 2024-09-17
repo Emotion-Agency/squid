@@ -7,7 +7,9 @@ const GOOGLE_TM_ID = 'GTM-W9CZGXJ'
 
 useFonts()
 
-gsap.registerPlugin(ScrollTrigger)
+if (process.client) {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const parallaxInit = async () => {
   const { Parallax } = await import('@emotionagency/parallax')
