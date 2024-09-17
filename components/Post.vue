@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import Richtext from 'storyblok-js-client'
 import { iImage } from '~/types/story'
+import TheVideo from './TheVideo.vue'
 
 interface iProps {
   id: string
@@ -10,6 +11,7 @@ interface iProps {
   author?: string
   description?: string | Richtext | object
   image?: iImage
+  video?: string
   link?: string
 }
 
@@ -42,8 +44,11 @@ const formattedDescription = computed(() => {
 <template>
   <li class="thoughts-2__li">
     <NuxtLink :to="link" class="thoughts-2__link">
+      <div v-if="video">
+        <TheVideo :videoId="video" class="thoughts-2__video" />
+      </div>
       <TheImage
-        v-if="image?.filename"
+        v-else-if="image?.filename"
         :transform="true"
         class="thoughts-2__img"
         :src="image.filename"
@@ -64,11 +69,10 @@ const formattedDescription = computed(() => {
             <p v-if="typeOfDescription === 'string'" class="thoughts-2__text">
               {{ formattedDescription }}
             </p>
-            <RichText
-              v-else-if="typeOfDescription === 'object'"
-              class="thoughts-2__text"
-              :text="description"
-            />
+
+            <ClientOnly v-else-if="typeOfDescription === 'object'">
+              <RichText class="thoughts-2__text" :text="description" />
+            </ClientOnly>
             <TextButton class="thoughts-2__text-btn" tag="button">
               READ MORE
             </TextButton>

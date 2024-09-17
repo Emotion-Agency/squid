@@ -90,6 +90,7 @@ onMounted(() => {
                 item.content?.scope && item.content.scope[0]?.main_text
               "
               :image="item.content?.preview_image ?? item.content?.image"
+              :video="item.content?.vimeo_video_id"
               :link="`/portfolio/${item.slug}/`"
             />
           </ul>

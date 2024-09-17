@@ -3,9 +3,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export class OnScrollColor {
   constructor($el, opts = {}) {
-    gsap.registerPlugin(ScrollTrigger)
     this.$el = $el
-    this.$home = document.querySelector('.video__overlay')
+    this.$home = document.querySelector('[data-overlay]')
     // this.$wrapper = $wrapper
     this.offset = opts.offset || 0
     this.breakpoint = opts.breakpoint || 960

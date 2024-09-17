@@ -1,40 +1,32 @@
 <script setup lang="ts">
-useHead({
-  script: [
-    {
-      src: 'https://player.vimeo.com/api/player.js',
-    },
-  ],
-})
-
 interface iProps {
   videoId: string
 }
 
-defineProps<iProps>()
+const props = defineProps<iProps>()
+
+const $el = ref(null)
+
+onMounted(() => {
+  const containerHeight = $el.value.offsetHeight
+  const containerWidth = $el.value.offsetWidth
+
+  // @ts-ignore
+  new window.Vimeo.Player($el.value, {
+    id: props.videoId,
+    loop: true,
+    autoplay: true,
+    background: true,
+    playsinline: true,
+    responsive: containerWidth > containerHeight,
+    // width: window.innerWidth,
+    height: containerHeight,
+  })
+})
 </script>
 
 <template>
-  <div style="background-color: var(--bg)">
-    <div
-      style="
-        padding: 56.25% 0 0 0;
-        position: relative;
-        pointer-events: none;
-        width: 100%;
-        height: 100%;
-      "
-    >
-      <iframe
-        :src="`https://player.vimeo.com/video/${videoId}?h=777eb2a6c8&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;background=1&autoplay=1&loop=1&muted=1&&title=0&byline=0`"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-        autoplay
-        muted
-        title="Coco Home"
-      ></iframe>
-    </div>
-    <div class="video__overlay"></div>
+  <div style="background-color: var(--bg)" ref="$el" class="video">
+    <slot />
   </div>
 </template>

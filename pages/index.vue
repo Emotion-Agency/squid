@@ -61,7 +61,9 @@ onBeforeUnmount(() => {
   <main>
     <PageMeta v-if="story.meta.length" :meta="story.meta[0]" />
     <div ref="$colorEl" class="color-changer">
-      <TheVideo data-a-o class="home-1__video" :video-id="story?.hero_video" />
+      <TheVideo data-a-o class="home-1__video" :video-id="story?.hero_video">
+        <div data-overlay class="home-1__video-overlay"></div>
+      </TheVideo>
 
       <section
         v-if="story.storytelling[0].screen_1[0].text"
