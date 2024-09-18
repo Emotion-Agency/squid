@@ -1,9 +1,12 @@
 <script setup lang="ts">
 interface iProps {
   videoId: string
+  responsive?: boolean
 }
 
-const props = defineProps<iProps>()
+const props = withDefaults(defineProps<iProps>(), {
+  responsive: true,
+})
 
 const $el = ref(null)
 
@@ -18,7 +21,7 @@ onMounted(() => {
     autoplay: true,
     background: true,
     playsinline: true,
-    responsive: containerWidth > containerHeight,
+    responsive: props.responsive || window.innerWidth > window.innerHeight,
     // width: window.innerWidth,
     height: containerHeight,
   })

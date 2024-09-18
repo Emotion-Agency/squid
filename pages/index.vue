@@ -62,7 +62,12 @@ onBeforeUnmount(() => {
   <main>
     <PageMeta v-if="story.meta.length" :meta="story.meta[0]" />
     <div ref="$colorEl" class="color-changer">
-      <TheVideo data-a-o class="home-1__video" :video-id="story?.hero_video">
+      <TheVideo
+        data-a-o
+        class="home-1__video"
+        :video-id="story?.hero_video"
+        :responsive="false"
+      >
         <div ref="$overlay" class="home-1__video-overlay"></div>
       </TheVideo>
 
