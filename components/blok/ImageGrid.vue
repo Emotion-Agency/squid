@@ -36,11 +36,21 @@ const props = defineProps<iProps>()
           :data-parallax="!blok.disable_parallax && -0.1"
         >
           <figure>
-            <TheVideo
-              v-if="item.vimeo_video_id"
-              :videoId="item.vimeo_video_id"
-              class="image-grid__video"
-            />
+            <div class="p-img-wrapper" v-if="item.vimeo_video_id">
+              <div
+                class="p-img-container"
+                :data-parallax="!blok.disable_parallax && 0.06"
+              >
+                <TheVideo
+                  :videoId="item.vimeo_video_id"
+                  class="image-grid__video"
+                  :data-parallax="!blok.disable_parallax && 0.06"
+                  :data-scale="!blok.disable_parallax && 1.07"
+                  :data-scale-animation="!blok.disable_parallax && true"
+                />
+              </div>
+            </div>
+
             <TheImage
               v-else
               :transform="true"
